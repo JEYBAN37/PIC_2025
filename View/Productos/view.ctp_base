@@ -1,0 +1,544 @@
+<?php $this->layout = 'printactividades' ?>
+
+
+
+<div class="btn-group">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		<?php echo __('Acciones'); ?> <span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu">
+		<li><?php echo $this->Html->link(__('Home'), array('controller' => 'users', 'action' => 'home')); ?></li>
+		<li><?php echo $this->Html->link(__('Regresar'),  array('controller' => 'productos', 'action' => 'nuebus')); ?></li>
+		<li><?php echo $this->Html->link(__('Editar Producto'), array('action' => 'edit', $producto['Producto']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Actualizar soportes'), array('action' => 'editanexo', $producto['Producto']['id'])); ?></li>
+		<li><?php echo $this->Html->link(__('Agregar observacion SMS'), array('action' => 'smsedit', $producto['Producto']['id'])); ?></li>
+		<li class="divider"></li>
+		<li><a href="javascript:window.print();"> Imprimir</a> </li>
+		<li><a class="copi" href="javascript:getlink();">Copiar URL</a> </li>
+	</ul>
+</div>
+
+<?php
+// IMPORTANTE: Cambiar la informacion de datos de conexion
+$serv = 'localhost';
+$port = '3307';
+$userS = 'root';
+$passS = '20166';
+$bd = 'cake_Pic_2020';
+?>
+
+<div class="productos view">
+
+	<table class="table-hover table-striped table-bordered">
+		<!-- Lo cambiaremos por CSS -->
+		<tr>
+			<td rowspan="4"><img src="../../img/logoescudopasto.jpg" width="110" height="80"></td>
+		</tr>
+		<tr>
+			<td colspan="6">PROCESO SALUD PÚBLICA</td>
+		</tr>
+		<tr>
+			<td colspan="6">NOMBRE DEL FORMATO: ANEXO TECNICO PIC</td>
+		</tr>
+		<td>VIGENCIA: 2020</td>
+		<td>VERSION:01</td>
+		<td>CÓDIGO: XX-X-001</td>
+		<td>PÁGINA:</td>
+
+		</tr>
+	</table>
+
+
+	<table class="table-hover table-striped table-bordered">
+		<!-- Lo cambiaremos por CSS -->
+		<tr>
+			<td colspan="8" style="text-align: center; "><?php echo __('Producto Anexo Tecnico 2019'); ?></td>
+		</tr>
+		<tr>
+			<td><?php echo __('Id Tarea'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['id']); ?>
+			</td>
+			<td><?php echo __('Num producto'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['numproductos']); ?>
+			</td>
+			<td><?php echo __('Linea'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['lineaoperativa']); ?>
+			</td>
+			<td><?php echo __('Dimensión'); ?></td>
+
+			<td>
+				<?php echo h($producto['Producto']['nombredim']); ?>
+			</td>
+
+		</tr>
+		<tr>
+			<td><?php echo __('Dimensión'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['dimensiones']); ?>
+			</td>
+			<td><?php echo __('Presupuesto tarea'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['valortarea']); ?>
+			</td>
+			<td><?php echo __('Normas'); ?></td>
+			<td colspan="3">
+				<?php echo h($producto['Producto']['linormativas']); ?>
+			</td>
+		</tr>
+
+
+
+		<tr>
+			<td><?php echo __('Linea PPSC'); ?></td>
+			<td colspan="3">
+				<?php echo h($producto['Producto']['lineappsc']); ?>
+
+
+
+			</td>
+			<td><?php echo __('Sub linea PPSC'); ?></td>
+			<td colspan="3">
+				<?php echo h($producto['Producto']['sublineappsc']); ?>
+
+
+		</tr>
+
+
+
+		<tr>
+			<td><?php echo __('Producto'); ?></td>
+			<td colspan="5">
+				<?php echo h($producto['Producto']['resultado']); ?>
+			</td>
+			<td><?php echo __('Resumen'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['activity']); ?>
+			</td>
+		</tr>
+		<tr>
+			<td><?php echo __('Cursos de Vida'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['vidacursos']); ?>
+			</td>
+			<td><?php echo __('Entorno'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['entorno']); ?>
+			</td>
+			<td><?php echo __('Tecnologia'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['tecnologias']); ?>
+			</td>
+			<td><?php echo __('% producto'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['porcproducto']); ?>
+			</td>
+		</tr>
+		<tr>
+			<td><?php echo __('Tarea'); ?></td>
+			<td colspan="5">
+				<?php echo h($producto['Producto']['tarea']); ?>
+			</td>
+			<td><?php echo __('% tarea'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['porctareas']); ?>
+			</td>
+		</tr>
+		<tr>
+			<td><?php echo __('Objetivo CB'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['clasobjetivos']); ?>
+			</td>
+			<td><?php echo __('Evidencia requerida'); ?></td>
+			<td colspan="5">
+				<?php echo h($producto['Producto']['evidencia']); ?>
+			</td>
+		</tr>
+		<tr>
+			<td><?php echo __('% de avance'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['porcentajeavance']); ?>
+			</td>
+
+			<td><?php echo __('Observación PIC'); ?></td>
+			<td colspan="3">
+				<?php echo h($producto['Producto']['observacionpic']); ?>
+			</td>
+			<td><?php echo __('Estado'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['estado']); ?>
+			</td>
+		</tr>
+		<tr>
+			<td><?php echo __('Observación SMS'); ?></td>
+			<td colspan="7">
+				<?php echo h($producto['Producto']['observacionsms']); ?>
+			</td>
+		</tr>
+		<tr>
+
+			<td><?php echo __('Anexo'); ?></td>
+			<td colspan="7">
+				<?php echo $this->Html->link('../files/producto/anexo/' . $producto['Producto']['dirproduc'] . '/' . $producto['Producto']['anexo']); ?>
+			</td>
+		</tr>
+
+		<tr>
+			<td><?php echo __('Enlace'); ?></td>
+			<td colspan="3">
+				<?php echo $this->Html->link($producto['Producto']['enlace']); ?>
+
+
+
+			</td>
+			<td><?php echo __('Enlace'); ?></td>
+			<td colspan="3">
+				<?php echo $this->Html->link($producto['Producto']['enlacedos']); ?>
+			</td>
+
+		</tr>
+	</table>
+
+	<table class="table-hover table-striped table-bordered">
+		<tr>
+			<td><?php echo __('Responsable equipo PIC'); ?></td>
+			<td>
+				<?php echo h($producto['Responsable']['nombres']); ?>
+
+			</td>
+			<td><?php echo __('Fecha Registro'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['created']); ?>
+			</td>
+		</tr>
+		<tr>
+			<td><?php echo __('Referente SMS'); ?></td>
+			<td>
+				<?php echo h($producto['Referente']['nombres']); ?>
+			</td>
+			<td><?php echo __('Fecha Actualizado'); ?></td>
+			<td>
+				<?php echo h($producto['Producto']['modified']); ?>
+			</td>
+		</tr>
+	</table>
+
+</div>
+
+
+<div class="related">
+	<h3><?php echo __('Actas'); ?></h3>
+	<?php if (!empty($producto['Acta'])) : ?>
+
+		<table cellpadding="0" cellspacing="0" class="table-hover table-striped table-bordered">
+			<tr>
+				<th><?php echo __('Id'); ?></th>
+				<th><?php echo __('Fecha'); ?></th>
+				<th><?php echo __('Tema'); ?></th>
+				<th><?php echo __('barrio'); ?></th>
+				<th><?php echo __('Responsable Id'); ?></th>
+				<th><?php echo __('Objetivo'); ?></th>
+				<th><?php echo __('Anexo'); ?></th>
+				<th class="actions"><?php echo __('Acciones'); ?></th>
+			</tr>
+
+
+			<?php foreach ($producto['Acta'] as $acta) :
+
+				if (!empty($acta['id'])) {
+			?>
+					<tr>
+						<td><?php echo $acta['id']; ?></td>
+						<td><?php echo $acta['fecha']; ?></td>
+						<td><?php echo $acta['tema']; ?></td>
+						<td><?php
+							//echo $acta['ubicacion_id']; 
+							$link = mysqli_connect($serv, $userS, $passS);
+							mysqli_select_db($link, $bd);
+							$tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes correctamente
+							$result = mysqli_query($link, "SELECT barrio FROM Ubicaciones WHERE id = " . $acta['ubicacion_id']);
+							while ($fila = mysqli_fetch_array($result)) {
+								echo $fila['barrio'];
+
+								mysqli_close($link);
+							}
+
+							?></td>
+						<td><?php
+							//echo $acta['responsable_id']; 
+							$link = mysqli_connect($serv, $userS, $passS);
+							mysqli_select_db($link, $bd);
+							$tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes correctamente
+							$result = mysqli_query($link, "SELECT nombres FROM Responsables WHERE id = " . $acta['responsable_id']);
+							while ($fila = mysqli_fetch_array($result)) {
+								echo $fila['nombres'];
+
+								mysqli_close($link);
+							}
+
+							?></td>
+						<td><?php echo $acta['objactividad']; ?></td>
+						<td><?php echo $acta['anexo']; ?></td>
+						<td class="actions">
+							<?php //echo $this->Html->link(__('Ver'), array('controller' => 'actas', 'action' => 'view', $acta['id'])); 
+							echo $this->Html->link("Ver", "../actas/view/" . $acta['id'], array('target' => '_blank')); ?>
+							<?php //echo $this->Html->link(__('Editar'), array('controller' => 'actas', 'action' => 'edit', $acta['id'])); 
+							echo $this->Html->link("Editar", "../actas/edit/" . $acta['id'], array('target' => '_blank')); ?>
+						</td>
+					</tr>
+			<?php
+				}
+			endforeach;
+			?>
+		</table>
+	<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Nueva Acta'), array('controller' => 'actas', 'action' => 'atd')); ?> </li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="related">
+	<h3><?php echo __('Actividades'); ?></h3>
+	<?php if (!empty($producto['Actividad'])) : ?>
+		<table cellpadding="0" cellspacing="0" class="table-hover table-striped table-bordered">
+			<tr>
+				<th><?php echo __('Id'); ?></th>
+				<th><?php echo __('Fecha'); ?></th>
+				<th><?php echo __('Tema'); ?></th>
+				<th><?php echo __('Barrio'); ?></th>
+				<th><?php echo __('Tipo'); ?></th>
+				<th><?php echo __('Anexo'); ?></th>
+				<th><?php echo __('Responsable'); ?></th>
+
+				<th class="actions"><?php echo __('Acciones'); ?></th>
+			</tr>
+			<?php foreach ($producto['Actividad'] as $actividad) :
+				if (!empty($actividad['id'])) {
+			?>
+					<tr>
+						<td><?php echo $actividad['id']; ?></td>
+						<td><?php echo $actividad['fecha']; ?></td>
+						<td><?php echo $actividad['tema']; ?></td>
+						<td><?php
+							//echo $actividad['ubicacion_id']; 
+							$link = mysqli_connect($serv, $userS, $passS);
+							mysqli_select_db($link, $bd);
+							$tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes correctamente
+							$result = mysqli_query($link, "SELECT barrio FROM Ubicaciones WHERE id = " . $actividad['ubicacion_id']);
+							while ($fila = mysqli_fetch_array($result)) {
+								echo $fila['barrio'];
+
+								mysqli_close($link);
+							}
+							?></td>
+						<td><?php echo $actividad['caracteristicasesion']; ?></td>
+						<td><?php echo $actividad['anexo']; ?></td>
+						<td><?php
+							//echo $actividad['responsable_id']; 
+							$link = mysqli_connect($serv, $userS, $passS);
+							mysqli_select_db($link, $bd);
+							$tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes correctamente
+							$result = mysqli_query($link, "SELECT nombres FROM Responsables WHERE id = " . $actividad['responsable_id']);
+							while ($fila = mysqli_fetch_array($result)) {
+								echo $fila['nombres'];
+
+								mysqli_close($link);
+							}
+							?></td>
+
+						<td class="actions">
+							<?php //echo $this->Html->link(__('Ver'), array('controller' => 'actividades', 'action' => 'view', $actividad['id'])); 
+							echo $this->Html->link("Ver", "../actividades/view/" . $actividad['id'], array('target' => '_blank')); ?>
+							<?php //echo $this->Html->link(__('Editar'), array('controller' => 'actividades', 'action' => 'edit', $actividad['id'])); 
+							echo $this->Html->link("Editar", "../actividades/edit/" . $actividad['id'], array('target' => '_blank')); ?>
+						</td>
+					</tr>
+			<?php
+				}
+			endforeach;
+			?>
+		</table>
+	<?php endif; ?>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Nueva Actividad'), array('controller' => 'actividades', 'action' => 'atd')); ?> </li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="related">
+	<h3><?php echo __('Planes de Sesión'); ?></h3>
+	<?php if (!empty($producto['Plsesion'])) : ?>
+		<table cellpatding="0" cellspacing="0" class="table-hover table-striped table-bordered">
+			<tr>
+				<th><?php echo __('Id'); ?></th>
+				<th><?php echo __('Fecha'); ?></th>
+				<th><?php echo __('Tema'); ?></th>
+				<th><?php echo __('Intension'); ?></th>
+				<th><?php echo __('Dimension'); ?></th>
+				<th><?php echo __('Responsable'); ?></th>
+
+				<th class="actions"><?php echo __('Acciones'); ?></th>
+			</tr>
+			<?php foreach ($producto['Plsesion'] as $plsesion) :
+				if (!empty($plsesion['id'])) {
+			?>
+					<tr>
+						<td><?php echo $plsesion['id']; ?></td>
+						<td><?php echo $plsesion['fecha']; ?></td>
+						<td><?php echo $plsesion['tema']; ?></td>
+						<td><?php echo $plsesion['intension']; ?></td>
+						<td><?php echo $plsesion['dimension']; ?></td>
+						<td><?php
+							//echo $plsesion['responsable_id']; 
+							$link = mysqli_connect($serv, $userS, $passS);
+							mysqli_select_db($link, $bd);
+							$tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes correctamente
+							$result = mysqli_query($link, "SELECT nombres FROM Responsables WHERE id = " . $plsesion['responsable_id']);
+							while ($fila = mysqli_fetch_array($result)) {
+								echo $fila['nombres'];
+
+								mysqli_close($link);
+							}
+							?></td>
+
+						<td class="actions">
+							<?php //echo $this->Html->link(__('Ver'), array('target' => '_blank','controller' => 'plsesiones', 'action' => 'view', $plsesion['id'])); 
+							echo $this->Html->link("Ver", "../plsesiones/view/" . $plsesion['id'], array('target' => '_blank'));
+							?>
+							<?php //echo $this->Html->link(__('Editar'), array('controller' => 'plsesiones', 'action' => 'edit', $plsesion['id'])); 
+							echo $this->Html->link("Editar", "../plsesiones/edit/" . $plsesion['id'], array('target' => '_blank'));
+							?>
+						</td>
+					</tr>
+			<?php }
+			endforeach; ?>
+		</table>
+	<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Nuevo Plan de Sesión'), array('controller' => 'plsesiones', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>
+
+<div class="related">
+	<h3><?php echo __('Informes / eventos'); ?></h3>
+	<?php if (!empty($producto['Infoevento'])) : ?>
+		<table cellpatding="0" cellspacing="0" class="table-hover table-striped table-bordered">
+			<tr>
+				<th><?php echo __('Id'); ?></th>
+				<th><?php echo __('Fecha'); ?></th>
+				<th><?php echo __('Tema'); ?></th>
+				<th><?php echo __('Tipo'); ?></th>
+				<th><?php echo __('anexo'); ?></th>
+				<th><?php echo __('Observacion'); ?></th>
+				<th><?php echo __('Responsable'); ?></th>
+
+				<th class="actions"><?php echo __('Acciones'); ?></th>
+			</tr>
+			<?php foreach ($producto['Infoevento'] as $infoevento) :
+				if (!empty($infoevento['id'])) {
+			?>
+					<tr>
+						<td><?php echo $infoevento['id']; ?></td>
+						<td><?php echo $infoevento['fecha']; ?></td>
+						<td><?php echo $infoevento['tema']; ?></td>
+						<td><?php echo $infoevento['tipo']; ?></td>
+						<td><?php echo $infoevento['anexo']; ?></td>
+						<td><?php echo $infoevento['observacion']; ?></td>
+						<td><?php
+							//echo $plsesion['responsable_id']; 
+							$link = mysqli_connect($serv, $userS, $passS);
+							mysqli_select_db($link, $bd);
+							$tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes correctamente
+							$result = mysqli_query($link, "SELECT nombres FROM Responsables WHERE id = " . $infoevento['responsable_id']);
+							while ($fila = mysqli_fetch_array($result)) {
+								echo $fila['nombres'];
+
+								mysqli_close($link);
+							}
+							?></td>
+
+						<td class="actions">
+							<?php //echo $this->Html->link(__('Ver'), array('target' => '_blank','controller' => 'plsesiones', 'action' => 'view', $plsesion['id'])); 
+							echo $this->Html->link("Ver", "../infoeventos/view/" . $infoevento['id'], array('target' => '_blank'));
+							?>
+							<?php //echo $this->Html->link(__('Editar'), array('controller' => 'plsesiones', 'action' => 'edit', $plsesion['id'])); 
+							echo $this->Html->link("Editar", "../infoeventos/edit/" . $infoevento['id'], array('target' => '_blank'));
+							?>
+						</td>
+					</tr>
+			<?php }
+			endforeach; ?>
+		</table>
+	<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Nuevo informe'), array('controller' => 'infoeventos', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>
+
+<div class="related">
+	<h3><?php echo __('Sistematizacion procesos'); ?></h3>
+	<?php if (!empty($producto['Proactividad'])) : ?>
+		<table cellpatding="0" cellspacing="0" class="table-hover table-striped table-bordered">
+			<tr>
+				<th><?php echo __('Id'); ?></th>
+				<th><?php echo __('grupo'); ?></th>
+				<th><?php echo __('objactividad'); ?></th>
+				<th><?php echo __('Responsable'); ?></th>
+
+				<th class="actions"><?php echo __('Acciones'); ?></th>
+			</tr>
+			<?php foreach ($producto['Proactividad'] as $proactividad) :
+				if (!empty($proactividad['id'])) {
+			?>
+					<tr>
+						<td><?php echo $proactividad['id']; ?></td>
+						<td><?php echo $proactividad['grupo']; ?></td>
+						<td><?php echo $proactividad['objactividad']; ?></td>
+
+						<td><?php
+							//echo $plsesion['responsable_id']; 
+							$link = mysqli_connect($serv, $userS, $passS);
+							mysqli_select_db($link, $bd);
+							$tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes correctamente
+							$result = mysqli_query($link, "SELECT nombres FROM Responsables WHERE id = " . $proactividad['responsable_id']);
+							while ($fila = mysqli_fetch_array($result)) {
+								echo $fila['nombres'];
+
+								mysqli_close($link);
+							}
+							?></td>
+
+						<td class="actions">
+							<?php //echo $this->Html->link(__('Ver'), array('target' => '_blank','controller' => 'plsesiones', 'action' => 'view', $plsesion['id'])); 
+							echo $this->Html->link("Ver", "../proactividades/view/" . $proactividad['id'], array('target' => '_blank'));
+							?>
+							<?php //echo $this->Html->link(__('Editar'), array('controller' => 'plsesiones', 'action' => 'edit', $plsesion['id'])); 
+							echo $this->Html->link("Editar", "../proactividades/edit/" . $proactividad['id'], array('target' => '_blank'));
+							?>
+						</td>
+					</tr>
+			<?php }
+			endforeach; ?>
+		</table>
+	<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Nuevo informe'), array('controller' => 'proactividades', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,336 @@
+<?php
+
+App::uses('AppController', 'Controller');
+App::uses('Sanitize', 'Utility');
+
+/**
+
+ * Actas Controller
+
+ *
+
+ * @property Acta $Acta
+
+ * @property PaginatorComponent $Paginator
+
+ * @property SessionComponent $Session
+ * 
+ * 
+ * 
+
+ */
+
+ Router::connect(
+    '/:controller/:year/:month/:day',
+    array('action' => 'index'),
+    array(
+        'year' => '[12][0-9]{3}',
+        'month' => '0[1-9]|1[012]',
+        'day' => '0[1-9]|[12][0-9]|3[01]'
+    )
+);
+class ActasController extends AppController
+{
+   
+    /**
+
+     * Components
+
+     *
+
+     * @var array
+
+     */
+    public $helpers = array('Html', 'Form');
+    public $components = array('Paginator', 'Session', 'RequestHandler');
+
+   
+
+
+    /**
+     * index method
+     * @return void
+     */
+    public function index() {
+		$this->Acta->recursive = 0;
+        
+        $count = $this->Acta->find('count');
+        $this->Paginator->settings['limit'] = $count;
+		
+        $this->set("actas", $this->paginate());
+		
+	}
+
+    /**
+     * view method
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+
+        if (!$this->Acta->exists($id)) {
+
+            throw new NotFoundException(__('Invalid acta'));
+        }
+
+        $options = array('conditions' => array('Acta.' . $this->Acta->primaryKey => $id));
+
+        $this->pdfConfig = array(
+            'download' => true,
+            'filename' => 'acta_' . $id . '.pdf');
+
+        $this->set('acta', $this->Acta->find('first', $options));
+    }
+
+    /**
+     * add method
+     * @return void
+     */
+    public function add() {
+
+        if ($this->request->is('post')) {
+
+            $this->Acta->create();
+
+            if ($this->Acta->save($this->request->data)) {
+
+               // $this->Session->setFlash(__('The acta has been saved.'));
+                //return $this->redirect(array('action' => 'nuebus'));
+                                
+                $id = $this->Acta->id; 
+                $aux = "view/$id";
+                return $this->redirect(array('action' => $aux));
+            } else {
+
+                $this->Session->setFlash('El acta no se ha guardado.  por favor verificar el formulario. Revise nuevamente todos los campos de selección.','default',array('class'=>'alert alert-danger'));
+            }
+        }
+        $productos = $this->Acta->Producto->find('list');
+        $ubicaciones = $this->Acta->Ubicacion->find('list');
+
+        $responsables = $this->Acta->Responsable->find('list');
+
+        $this->set(compact('productos','ubicaciones', 'responsables'));
+    }
+
+    /**
+
+     * edit method
+
+     *
+
+     * @throws NotFoundException
+
+     * @param string $id
+
+     * @return void
+
+     */
+    public function edit($id = null) {
+
+        if (!$this->Acta->exists($id)) {
+
+            throw new NotFoundException(__('Invalid acta'));
+        }
+
+        if ($this->request->is(array('post', 'put'))) {
+
+            if ($this->Acta->save($this->request->data)) {
+
+                //$this->Session->setFlash(__('The acta has been saved.'));
+
+                $aux = "view/$id";
+
+                return $this->redirect(array('action' => $aux));
+            } else {
+
+                $this->Session->setFlash(__('El acta no se ha guardado. Por favor, revise el formulario.', 'defalut', array('class'=>'alert alert-success')));
+            }
+        } else {
+
+            $options = array('conditions' => array('Acta.' . $this->Acta->primaryKey => $id));
+
+            $this->request->data = $this->Acta->find('first', $options);
+        }
+
+        $productos = $this->Acta->Producto->find('list');
+        $ubicaciones = $this->Acta->Ubicacion->find('list');
+        $responsables = $this->Acta->Responsable->find('list');
+        $this->set(compact('productos','ubicaciones', 'responsables'));
+
+    }
+
+    public function editanexo($id = null) {
+
+        if (!$this->Acta->exists($id)) {
+
+            throw new NotFoundException(__('Invalid acta'));
+        }
+
+        if ($this->request->is(array('post', 'put'))) {
+
+            //$name = date("Y_m_d H_i") + $this->request->data;
+            //if ($this->Acta->save($name)) {
+            if ($this->Acta->save($this->request->data)) {
+
+                //$this->Session->setFlash(__('The acta has been saved.'));
+
+                //return $this->redirect(array('action' => 'nuebus'));
+
+               $id = $this->Acta->id; 
+                $aux = "view/$id";
+                return $this->redirect(array('action' => $aux));
+            } else {
+
+                $this->Session->setFlash('El soporte del acta no se ha guardado. Por favor, revise el formulario.', 'default',array('class'=>'alert alert-danger'));
+            }
+        } else {
+
+            $options = array('conditions' => array('Acta.' . $this->Acta->primaryKey => $id));
+
+            $this->request->data = $this->Acta->find('first', $options);
+        }
+
+        $ubicaciones = $this->Acta->Ubicacion->find('list');
+
+        $responsables = $this->Acta->Responsable->find('list');
+
+        $this->set(compact('ubicaciones', 'responsables'));
+    }
+
+    function nuebus() {        
+        $this->Acta->recursive = 0;
+        
+        $paginate = array("fields" => array("id","producto_id", "tema", "fecha"));
+        $this->Paginator->settings = $paginate;
+        
+        $count = $this->Acta->find('count');
+        $this->Paginator->settings['limit'] = $count;
+        
+        $this->set("l", $this->paginate());
+    }
+
+
+    public function delete($id) {
+
+    //$this->Acta->id = $id;
+    /*if (!$this->Acta->exists()) {
+      throw new NotFoundException(__('El acta no es válida.'));
+    }
+    $this->request->allowMethod('post', 'delete');
+    if ($this->Acta->delete()) {
+      $this->Session->setFlash(__('El acta se ha eliminado.'));
+    } else {
+      $this->Session->setFlash(__('El acta no se pudo eliminar. Por favor, inténtelo de nuevo.'));
+    }
+    return $this->redirect(array('action' => 'nuebus'));*/
+
+        $this->Acta->delete($id);
+
+        $this->redirect("nuebus");
+  }
+
+    /*function check() {
+
+        $campos = array("Tema", "Comunas", "Poblaciones", "Dimension", "Pro_asociado");
+
+        if (isset($this->data) && !empty($this->data)) {
+
+            $con = array(strtolower($campos[$this->data["Acta"]["Campo"]]) . " like" => "%" . $this->data["Acta"]["Busqueda"] . "%"); //array("or" => array("tema like" => "%".$this->data["Actividad"]["Busqueda"]."%", "poblacion like " => "%".$this->data["Actividad"]["Busqueda"]."%","eje like " => "%".$this->data["Actividad"]["Busqueda"]."%","prioridad like " => "%".$this->data["Actividad"]["Busqueda"]."%","comuna_id like " => "%".$this->data["Actividad"]["Busqueda"]."%"));
+        } else {
+
+            $con = null;
+        }
+
+        $this->Acta->recursive = 0;
+
+        $paginate = array("fields" => array("id", "tema", "fecha", "lugar", "comunas", "dimension", "pro_asociado", "grupo", "anexo"), "conditions" => $con, "limit" => 30);
+
+        $this->Paginator->settings = $paginate;
+
+        $this->set("Campos", $campos);
+
+        $this->set("l", $this->paginate());
+    }*/
+
+    /*function nuebus() {
+        $campos = array("Dimension");
+        if(isset($this->data) && !empty($this->data)){
+
+        $campoFiltro = $this->data["Acta"]["Campo"];
+        $textoFiltro = $this->data["Acta"]["Dimension"];
+
+        $filtroPro = $this->data["Acta"]["Pro_asociado"];
+        $filtroGrupo = $this->data["Acta"]["grupo"];
+        $filtroTema = $this->data["Acta"]["tema"];
+        $filtroComunas = $this->data["Acta"]["comunas"];
+        $filtroCorregimiento = $this->data["Acta"]["corregimiento"];
+
+      $con = array(strtolower($campos[$campoFiltro])." like" => "%".$textoFiltro."%");//array("or" => array("tema like" => "%".$this->data["Actividad"]["Busqueda"]."%", "poblacion like " => "%".$this->data["Actividad"]["Busqueda"]."%","eje like " => "%".$this->data["Actividad"]["Busqueda"]."%","prioridad like " => "%".$this->data["Actividad"]["Busqueda"]."%","comuna_id like " => "%".$this->data["Actividad"]["Busqueda"]."%"));
+      $pro = "UPPER(pro_asociado) like '%" . $filtroPro . "%'";
+      $grupo = "UPPER(grupo) like '%" . $filtroGrupo . "%'";
+      $tema = "UPPER(tema) like '%" . $filtroTema . "%'";
+      $comunas = "UPPER(comunas) like '%" . $filtroComunas . "%'";
+      $corregimiento = "UPPER(corregimiento) like '%" . $filtroCorregimiento . "%'";
+      
+
+      array_push($con, $pro);
+      array_push($con, $grupo);
+      array_push($con, $tema);
+      array_push($con, $comunas);
+      array_push($con, $corregimiento);
+      
+
+
+    } else {
+      $con = null;
+    }
+        $this->Acta->recursive = 0;
+    $paginate = array("fields" => array("id", "tema", "fecha", "comunas", "dimension", "pro_asociado", "grupo", "anexo"), "conditions" => $con, "limit" => 30);
+    $this->Paginator->settings = $paginate;
+    $this->set("Campos", $campos);
+    $this->set("l", $this->paginate());
+
+    
+  }*/
+
+    /**
+
+     * delete method
+
+     *
+
+     * @throws NotFoundException
+
+     * @param string $id
+
+     * @return void
+
+     */
+    /* public function ____________($id = null) {
+
+      $this->Acta->id = $id;
+
+      if (!$this->Acta->exists()) {
+
+      throw new NotFoundException(__('Invalid acta'));
+
+      }
+
+      $this->request->allowMethod('post', '_____');
+
+      if ($this->Acta->delete()) {
+
+      $this->Session->setFlash(__('The acta has been _____.'));
+
+      } else {
+
+      $this->Session->setFlash(__('The acta could not be _____. Please, try again.'));
+
+      }
+
+      return $this->redirect(array('action' => 'index'));
+
+      } */
+}
