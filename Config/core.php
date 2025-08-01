@@ -65,6 +65,7 @@
  */
 
 	Configure::write('debug', 2);
+	Configure::write('Security.jwt_key', 'tu_clave_secreta_aqui');
 
 
 

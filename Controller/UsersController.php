@@ -1,125 +1,91 @@
 <?php
+App::import('Vendor', 'JWT', array('file' => 'firebase/php-jwt-main/src/JWT.php'));
+App::uses('Hash', 'Utility');
 
+use Firebase\JWT\JWT;
 
-
-class UsersController extends AppController {
-
-    //put your code here
+class UsersController extends AppController
+{
 
     var $uses = array("User");
-
     var $helpers = array("Html", "Form");
+    var $paginate = array("order" => "username", "limit" => 10);
+    var $nivs = array("A" => "Administrador", "U" => "Investigador", "D" => "Digitador");
 
-    var $paginate = array("order" => "username", "limit" => 5);
 
-    var $nivs = array("A" => "Administrador", "U" => "Investigador","D" => "Digitador");
-
-    
-
-   /*function add($niv=null){
-
-        if(isset($this->data)&&!empty($this->data)){
-
-            $this->request->data["User"]["password"]=md5($this->request->data["User"]["password"]);
-
-            if($this->User->save($this->data)){
-
-                $this->Session->setFlash("Usuario registrado exitosamente");
-
-            } else {
-
-                $this->Session->setFlash("Problema en el registro");
-
-            }
-
-            if($niv != null){
-
-                $this->redirect("admin");
-
-            } else {
-
-                $this->redirect("admin");
-
-            }
-
-        } else {
-
-            //if($niv != null){
-
-                $this->set("nivs", $this->nivs);
-
-            //}
-
-        }
-
-    }*/
-
-public function home() {
-        $this->User->recursive = 0;
-        $this->set('users', $this->Paginator->paginate());
+    public function home()
+    {/* solo es una pagina*/
     }
 
+    public function isAuthorized($user = null)
+    {
+        return true;
+    }
 
+    public function add()
+    {
+        $this->autoRender = false;
+        $this->response->type('json');
 
-   public function add() {
         if ($this->request->is('post')) {
-            $this->User->create();
-            //$this->request->data["User"]["password"]=md5($this->request->data["User"]["password"]);
-            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved.'));
-                return $this->redirect(array('action' => 'admin'));
-            } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            if (!$data) {
+                $this->response->statusCode(400);
+                echo json_encode(['status' => 'error', 'message' => 'Datos JSON inválidos']);
+                return;
             }
-        }
-        $groups = $this->User->Group->find('list');
-        $this->set(compact('groups'));
-    }
 
-    
+            if (empty($data['password'])) {
+                $this->response->statusCode(400);
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'El campo "password" es obligatorio'
+                ]);
+                return;
+            }
 
-     function edit($id=null){
+            // Validar si ya existe el usuario con el mismo nombre
+            $existingUser = $this->User->find('first', [
+                'conditions' => ['User.username' => $data['username']]
+            ]);
 
-        if(isset($this->data) && !empty($this->data)){
+            if ($existingUser) {
+                $this->response->statusCode(409); // 409 Conflict
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'El nombre de usuario ya existe'
+                ]);
+                return;
+            }
 
-            //$this->request->data["User"]["password"]=md5($this->request->data["User"]["password"]);
-try {
-            $this->User->save($this->data);
-}catch(\Exception $e){
-        
-
-    }
-            $this->redirect("admin");
-            //return $this->redirect(array('action' => 'admin'));
-
+            $this->User->create();
+            if ($this->User->save($data)) {
+                $this->response->statusCode(201);
+                echo json_encode([
+                    'status' => 'success',
+                    'message' => 'Usuario guardado exitosamente',
+                    'user' => $this->User->read(null, $this->User->id)
+                ]);
+            } else {
+                $this->response->statusCode(400);
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Errores de validación',
+                    'errors' => $this->User->validationErrors
+                ]);
+            }
         } else {
-
-            $this->set("nivs", $this->nivs);
-
-            $this->set("datos", $this->User->find("first", array("conditions" => array("User.id" => $id))));
-
-            $this->Session->setFlash("ACTUALIZACION DE USUARIOS");
-
+            $this->response->statusCode(405);
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Método no permitido'
+            ]);
         }
-
     }
 
-    
-    
-
-    function delete($id=null){
-try {
-    $this->User->delete($id);        
- }catch(\Exception $e){
-        
-
-    }
-    $this->redirect("admin");
-}
-
-
-   function login() {
-
+    public function login()
+    {
         if ((isset($this->data)) && (!empty($this->data))) {
 
             $r = $this->User->find("first", array(
@@ -134,16 +100,31 @@ try {
                 $this->Session->write("usr", $r["User"]["nombre"]);
 
                 $this->Session->write("nvl", $r["User"]["nivel"]);
-                
+
                 $auxUser = array('username' => $r["User"]["username"], 'password' => $r["User"]["password"], 'group_id' => $r["User"]["group_id"]);
                 $this->Auth->login($auxUser);
-                //$this->redirect("bienvenida");
+
                 if ($this->Session->read('Auth.User')) {
                     $this->Session->setFlash('You are logged in!');
-                   // return $this->redirect('/');
+                    $payload = array(
+                        'id' => $r["User"]["id"],
+                        'username' => $r["User"]["username"],
+                        'exp' => time() + 3600  // 1 hora de validez
+                    );
+
+                    // Crear el token con la clave secreta (debe estar definida en core.php)
+                    $jwt = JWT::encode($payload, Configure::read('Security.jwt_key'));
+
+                    $this->Session->write('Auth.Token', $jwt);
+
+                    // Mostrar token (solo para pruebas, luego quítalo)
+                    $this->Session->setFlash('¡Inicio de sesión exitoso! Tu token: ' . $jwt);
+
+
+                    $this->Session->write("Auth.Token", $jwt);
+
                     $this->redirect("home");
-                    
-                }                
+                }
             } else {
 
                 $this->Session->setFlash("SIN ACCESO AL SISTEMA");
@@ -155,226 +136,161 @@ try {
 
         $this->layout = 'login';
     }
-    
 
-     function logout() {
-        $this->Session->setFlash('Good-Bye');
-        $this->redirect($this->Auth->logout());
-    }
+    function salir()
+    {
+        $token = $this->Session->read('Auth.Token');
 
-    
+        if (!empty($token)) {
+            $this->loadModel('RevokedToken');
+            $this->RevokedToken->create();
+            $this->RevokedToken->save(['token' => $token]);
+        }
 
-    function bienvenida(){
-
-        $this->Session->setFlash("Bienvenid@s");
-
-    }
-
-    
-
-    function salir(){
-
+        $this->Session->delete('Auth');
+        $this->Session->delete('Auth.Token');
         $this->Session->destroy();
-
         $this->Auth->logout();
-
         $this->redirect("login");
-
     }
 
-    
-
-   function admin(){
-
+    function admin()
+    {
         $r = $this->paginate("User");
-
         $this->set("usrs", $r);
-
-        $this->set("nivs", $this->nivs);
-
-        $this->Session->setFlash("ADMINISTRACION DE USUARIOS");
-
     }
 
 
-      public function beforefilter() {
-        parent::beforeFilter();
-        $this->Auth->allow();
+    public function userList()
+    {
+        $this->autoRender = false;
+        $this->response->type('json');
+
+        $this->User->Behaviors->load('Containable');
+
+        $conditions = [];
+
+        // Parámetros GET o POST
+        $page = $this->request->data('page') ?: $this->request->query('page');
+        $limit = $this->request->data('limit') ?: $this->request->query('limit');
+        $nombre = $this->request->data('nombre') ?: $this->request->query('nombre');
+        $username = $this->request->data('username') ?: $this->request->query('username');
+        $nivel = $this->request->data('nivel') ?: $this->request->query('nivel');
+
+        $page = max(1, (int)$page);
+        $limit = max(1, (int)$limit ?: 10);
+        $offset = ($page - 1) * $limit;
+
+        // Filtros con AND y LIKE
+        if (!empty($nombre)) {
+            $conditions['User.nombre_usuario LIKE'] = "%$nombre%";
+        }
+
+        if (!empty($username)) {
+            $conditions['User.username LIKE'] = "%$username%";
+        }
+
+        if (!empty($nivel)) {
+            $conditions['User.nivel LIKE'] = "%$nivel%";
+        }
+
+        $rawUsers = $this->User->find('all', [
+            'conditions' => $conditions,
+            'contain' => ['Group' => ['fields' => ['Group.id']]],
+            'limit' => $limit,
+            'offset' => $offset,
+            'order' => ['User.username' => 'ASC']
+        ]);
+
+        $users = array_map(function ($item) {
+            return [
+                'id' => $item['User']['id'],
+                'username' => $item['User']['username'],
+                'nombre' => $item['User']['nombre_usuario'],
+                'nivel' => $item['User']['nivel'],
+                'group' => isset($item['Group']) ? $item['Group'] : null
+            ];
+        }, $rawUsers);
+
+        echo json_encode([
+            'page' => $page,
+            'limit' => $limit,
+            'data' => $users
+        ]);
     }
 
-    public function initDB() {
-        $group = $this->User->Group;
 
-        // Allow admins to everything
-        $group->id = 1;
-        $this->Acl->allow($group, 'controllers');
-        //$this->Acl->allow($group, 'controllers/users/delete');
-       // $this->Acl->allow($group, 'controllers/actas/delete');
-      //  $this->Acl->deny($group, 'controllers/Productos/smsedit');
-     // $this->Acl->allow($group, 'controllers/productos/index');
+    public function edit($id = null)
+    {
+        $this->autoRender = false;
+        $this->response->type('json');
 
-        // allow managers to posts and widgets
-        $group->id = 2;
-       /* $this->Acl->deny($group, 'controllers');
-        $this->Acl->allow($group, 'controllers/Actas/view');
-        $this->Acl->deny($group, 'controllers/Actas/edit');
-        $this->Acl->deny($group, 'controllers/Actas/add');
-        $this->Acl->deny($group, 'controllers/Actas/delete');
-        $this->Acl->allow($group, 'controllers/Actas/nuebus');
-        $this->Acl->deny($group, 'controllers/Actas/editanexo');
-        $this->Acl->allow($group, 'controllers/Actividades/view');
-        $this->Acl->deny($group, 'controllers/Actividades/delete');
-        $this->Acl->deny($group, 'controllers/Actividades/edit');
-        $this->Acl->deny($group, 'controllers/Actividades/editanexo');
-        $this->Acl->allow($group, 'controllers/Actividades/nuebus');
-        $this->Acl->allow($group, 'controllers/Productosactividades/nuebus');
-        $this->Acl->allow($group, 'controllers/Productosactividades/checkanexos');
-        $this->Acl->deny($group, 'controllers/Productosactividades/edit');
-        $this->Acl->deny($group, 'controllers/Productosactividades/add');
-        $this->Acl->allow($group, 'controllers/Personas/nuebus');
-        $this->Acl->deny($group, 'controllers/Personas/edit8');
-        $this->Acl->deny($group, 'controllers/Personas/add2');
-        $this->Acl->deny($group, 'controllers/Personas/edit2');
-        $this->Acl->deny($group, 'controllers/Personas/add7');
-        $this->Acl->allow($group, 'controllers/Productosactividades/view');
-        $this->Acl->allow($group, 'controllers/Personas/view');
-        $this->Acl->allow($group, 'controllers/Canalizaciones/nuebus');
-        $this->Acl->deny($group, 'controllers/Canalizaciones/add');
-        $this->Acl->deny($group, 'controllers/Canalizaciones/edit');
-        $this->Acl->allow($group, 'controllers/Canalizaciones/view');
-        $this->Acl->allow($group, 'controllers/Productosactividades/tarearevisada');
-        $this->Acl->allow($group, 'controllers/Planes/view');
-        $this->Acl->deny($group, 'controllers/Planes/edit');
-        $this->Acl->deny($group, 'controllers/Planes/add');
-        $this->Acl->allow($group, 'controllers/Planes/nuebus');
-         $this->Acl->allow($group, 'controllers/ActaViewTests/nuebus');
-        $this->Acl->allow($group, 'controllers/actividadesviewtests/nuebus');
-        $this->Acl->allow($group, 'controllers/Plsesiones/nuebus');
-        $this->Acl->allow($group, 'controllers/Plsesiones/view');*/
-       // $this->Acl->allow($group, 'controllers/eventosviewtests/nuebus');       
-       // $this->Acl->allow($group, 'controllers/infoeventos/view');
+        if (!$id) {
+            $this->response->statusCode(400);
+            echo json_encode(['status' => 'error', 'message' => 'ID requerido']);
+            return;
+        }
 
-     /* $this->Acl->allow($group, 'controllers/productos/index');
-      $this->Acl->allow($group, 'controllers/Planes/nuebus');
-      $this->Acl->allow($group, 'controllers/Actas/index');
-      $this->Acl->allow($group, 'controllers/actividadesviewtests/nuebus');
-      $this->Acl->allow($group, 'controllers/Plsesiones/nuebus');
-      $this->Acl->allow($group, 'controllers/Plsesiones/view');
-      $this->Acl->allow($group, 'controllers/eventosviewtests/nuebus');       
-      $this->Acl->allow($group, 'controllers/infoeventos/view');
-      $this->Acl->allow($group, 'controllers/ActaViewTests/nuebus');
-      $this->Acl->allow($group, 'controllers/actividadesviewtests/nuebus');
-      $this->Acl->allow($group, 'controllers/Plsesiones/nuebus');
-      $this->Acl->allow($group, 'controllers/Plsesiones/view');
-      $this->Acl->allow($group, 'controllers/eventosviewtests/nuebus');       
-      $this->Acl->allow($group, 'controllers/infoeventos/view');
-      $this->Acl->allow($group, 'controllers/Actividades/view');
-      $this->Acl->allow($group, 'controllers/productos/view');*/
-      //$this->Acl->allow($group, 'controllers/Productos/smsedit');
-      //$this->Acl->allow($group, 'controllers/Plsesiones/view');
-      //$this->Acl->allow($group, 'controllers/Proactividades/view');
-      //$this->Acl->allow($group, 'controllers/procesoregistros/view');
+        if ($this->request->is(['put', 'post'])) {
+            $this->User->id = $id;
 
+            if (!$this->User->exists()) {
+                $this->response->statusCode(404);
+                echo json_encode(['status' => 'error', 'message' => 'Usuario no encontrado']);
+                return;
+            }
 
+            $data = $this->request->input('json_decode', true);
 
-        // allow users to only add and edit on posts and widgets
-        $group->id = 3;
-       /* $this->Acl->deny($group, 'controllers');
-        $this->Acl->allow($group, 'controllers/Actas/view');
-        $this->Acl->allow($group, 'controllers/Actas/edit');
-        $this->Acl->allow($group, 'controllers/Actas/add');
-        $this->Acl->deny($group, 'controllers/Actas/delete');
-        $this->Acl->allow($group, 'controllers/Actividades/nuebus');
-        $this->Acl->allow($group, 'controllers/Actas/nuebus');
-        $this->Acl->allow($group, 'controllers/Actas/editanexo');        
-        $this->Acl->deny($group, 'controllers/Actividades/delete');
-        $this->Acl->allow($group, 'controllers/Actividades/edit');        
-        //$this->Acl->allow($group, 'controllers/Actividades/nuebus');
-        $this->Acl->allow($group, 'controllers/Productosactividades/nuebus');
-        //$this->Acl->deny($group, 'controllers/Productosactividades/checkanexos');
-        $this->Acl->allow($group, 'controllers/Productosactividades/edit');
-        $this->Acl->allow($group, 'controllers/Productosactividades/add');
-        $this->Acl->allow($group, 'controllers/Personas/nuebus');
-        $this->Acl->allow($group, 'controllers/Personas/edit8');
-        $this->Acl->allow($group, 'controllers/Personas/add2');
-        $this->Acl->allow($group, 'controllers/Personas/edit2');
-        $this->Acl->allow($group, 'controllers/Personas/add7');
-        $this->Acl->allow($group, 'controllers/Personas/view');
-        $this->Acl->allow($group, 'controllers/Productosactividades/view');
-        $this->Acl->allow($group, 'controllers/Actividades/add');
-        $this->Acl->allow($group, 'controllers/Actividades/view');
-        $this->Acl->allow($group, 'controllers/Actividades/editanexo');
-        $this->Acl->allow($group, 'controllers/Personas/add');
-        $this->Acl->allow($group, 'controllers/Canalizaciones/nuebus');
-        $this->Acl->allow($group, 'controllers/Canalizaciones/add');
-        $this->Acl->allow($group, 'controllers/Canalizaciones/edit');
-        $this->Acl->allow($group, 'controllers/Canalizaciones/view');
-        $this->Acl->allow($group, 'controllers/Planes/view');
-        $this->Acl->allow($group, 'controllers/Planes/edit');
-        $this->Acl->allow($group, 'controllers/Planes/add');
-        $this->Acl->allow($group, 'controllers/Planes/nuebus');        
-        $this->Acl->allow($group, 'controllers/Planes/edit2');
-        $this->Acl->allow($group, 'controllers/Planes/addplaneshistoricos');
-        $this->Acl->allow($group, 'controllers/Planes/editanexo');        
-        $this->Acl->allow($group, 'controllers/Plsesiones/nuebus');
-        $this->Acl->allow($group, 'controllers/Plsesiones/add');
-        $this->Acl->allow($group, 'controllers/Plsesiones/edit');
-        $this->Acl->allow($group, 'controllers/Plsesiones/nuebus');
-        $this->Acl->allow($group, 'controllers/Plsesiones/view');
-        $this->Acl->allow($group, 'controllers/Plsmomentos/edit');
-        $this->Acl->allow($group, 'controllers/Plsmomentos/add');
-        $this->Acl->allow($group, 'controllers/Plsmomentos/view');
-        $this->Acl->allow($group, 'controllers/planes/addplaneshistoricos');  
-        $this->Acl->allow($group, 'controllers/ActaViewTests/nuebus');
-        $this->Acl->allow($group, 'controllers/Actas/editanexo');
-        $this->Acl->allow($group, 'controllers/ActaViewTests/nuebus');
-        $this->Acl->deny($group, 'controllers/Actividades/add');
-        $this->Acl->deny($group, 'controllers/Personas/add');
-        $this->Acl->allow($group, 'controllers/actividadesviewtests/nuebus');
-        $this->Acl->allow($group, 'controllers/eventosviewtests/nuebus');
-        $this->Acl->allow($group, 'controllers/infoeventos/add');
-        $this->Acl->allow($group, 'controllers/infoeventos/view');
-        $this->Acl->allow($group, 'controllers/infoeventos/edit');  
-        $this->Acl->allow($group, 'controllers/infoeventos/editanexo');    */   
-    
-       /* $this->Acl->allow($group, 'controllers/Productos/editanexo');
-        $this->Acl->deny($group, 'controllers/infoeventos/delete');
-        $this->Acl->allow($group, 'controllers/Actas/edit');
-        $this->Acl->allow($group, 'controllers/Actas/add');*/
+            // Si quieres encriptar la contraseña
+            if (!empty($data['User']['password'])) {
+                $data['User']['password'] = md5($data['User']['password']);
+            }
 
-        //$this->Acl->allow($group, 'controllers/productos/index');
-
-        /*$this->Acl->allow($group, 'controllers/proactividades/index');
-        $this->Acl->allow($group, 'controllers/proactividades/add');
-        $this->Acl->allow($group, 'controllers/proactividades/edit');
-        $this->Acl->allow($group, 'controllers/proactividades/editanexo');*/
-        /*$this->Acl->allow($group, 'controllers/sistematizacionprocesosviewtests/nuebus');
-        $this->Acl->allow($group, 'controllers/procesoregistros/add');
-        $this->Acl->allow($group, 'controllers/procesoregistros/edit');
-        
-        $this->Acl->allow($group, 'controllers/procesoregistros/editanexo');*/
-      //  $this->Acl->allow($group, 'controllers/Actas/index');
-
-       // $this->Acl->allow($group, 'controllers/Productos/editpic');
-      // $this->Acl->allow($group, 'controllers/Productos/editanexo');
-      //$this->Acl->allow($group, 'controllers/productos/view');
-      //$this->Acl->allow($group, 'controllers/Plsesiones/editanexo');
-      //$this->Acl->allow($group, 'controllers/Plsesiones/view');
-      //$this->Acl->allow($group, 'controllers/Proactividades/view');
-
-      //$this->Acl->allow($group, 'controllers/procesoregistros/view');
-      $this->Acl->allow($group, 'controllers/Actas/view');
-      $this->Acl->allow($group, 'controllers/Actas/edit');
-      $this->Acl->allow($group, 'controllers/Actas/add');
-
-
-
-        // allow basic users to log out
-        //$this->Acl->allow($group, 'controllers/users/logout');
-
-        // we add an exit to avoid an ugly "missing views" error message
-        echo "all done";
-        exit;
+            if ($this->User->save($data)) {
+                echo json_encode(['status' => 'success', 'message' => 'Usuario actualizado']);
+            } else {
+                $this->response->statusCode(400);
+                echo json_encode(['status' => 'error', 'message' => 'No se pudo actualizar el usuario']);
+            }
+        } else {
+            $this->response->statusCode(405); // Method Not Allowed
+            echo json_encode(['status' => 'error', 'message' => 'Método no permitido']);
+        }
     }
 
+
+
+    public function delete($id = null)
+    {
+        $this->autoRender = false;
+        $this->response->type('json');
+
+        if (!$id) {
+            $this->response->statusCode(400);
+            echo json_encode(['status' => 'error', 'message' => 'ID requerido']);
+            return;
+        }
+
+
+        if ($this->request->is('delete')) {
+            $this->User->id = $id;
+
+            if (!$this->User->exists()) {
+                $this->response->statusCode(404);
+                echo json_encode(['status' => 'error', 'message' => 'Usuario no encontrado']);
+                return;
+            }
+
+            if ($this->User->delete($id)) {
+                echo json_encode(['status' => 'success', 'message' => 'Usuario eliminado']);
+            } else {
+                $this->response->statusCode(500);
+                echo json_encode(['status' => 'error', 'message' => 'Error al eliminar el usuario']);
+            }
+        } else {
+            $this->response->statusCode(405);
+            echo json_encode(['status' => 'error', 'message' => 'Método no permitido']);
+        }
+    }
 }
