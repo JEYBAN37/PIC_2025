@@ -7,14 +7,33 @@ use Firebase\JWT\JWT;
 class UsersController extends AppController
 {
 
-    var $uses = array("User");
+    public $name = 'Users';
+
+    var $uses = array("User", "Usuario");
     var $helpers = array("Html", "Form");
     var $paginate = array("order" => "username", "limit" => 10);
     var $nivs = array("A" => "Administrador", "U" => "Investigador", "D" => "Digitador");
 
 
+    public function beforeFilter()
+    {
+        parent::beforeFilter();
+        $this->Auth->allow('loginApi'); // Permite acceder sin estar autenticado
+    }
+
+
     public function home()
     {/* solo es una pagina*/
+        // Si quieres proteger esta vista, verificamos la sesión
+        // En cualquier acción protegida
+        $user = $this->request->getSession()->read('Auth.User');
+        debug($user);
+
+        if (!$this->request->getSession()->read('Auth.User')) {
+            return $this->redirect('/login'); // redirigir si no está autenticado
+        }
+
+        $this->set('user', $this->request->getSession()->read('Auth.User'));
     }
 
     public function isAuthorized($user = null)
@@ -84,58 +103,59 @@ class UsersController extends AppController
         }
     }
 
-    public function login()
+    public function loginApi()
     {
-        if ((isset($this->data)) && (!empty($this->data))) {
+        $this->autoRender = false;
+        $this->response->type('json');
 
-            $r = $this->User->find("first", array(
+        if ($this->request->is('post')) {
+            $data = $this->request->input('json_decode', true);
+            $username = isset($data['username']) ? $data['username'] : null;
+            $password = isset($data['password']) ? $data['password'] : null;
+
+
+            $user = $this->User->find("first", array(
                 "conditions" => array(
-                    "username" => $this->data["User"]["username"],
-                    "password" => md5($this->data["User"]["password"])
+                    "username" => $username,
+                    "password" => $password
+                )
+            ));
+        }
+
+
+        if (!empty($this->data)) {
+            $username = $this->data["username"];
+            $password = md5($this->data["password"]);
+
+            $user = $this->User->find("first", array(
+                "conditions" => array(
+                    "username" => $username,
+                    "password" => $password
                 )
             ));
 
-            if (isset($r) && !empty($r)) {
-
-                $this->Session->write("usr", $r["User"]["nombre"]);
-
-                $this->Session->write("nvl", $r["User"]["nivel"]);
-
-                $auxUser = array('username' => $r["User"]["username"], 'password' => $r["User"]["password"], 'group_id' => $r["User"]["group_id"]);
-                $this->Auth->login($auxUser);
-
-                if ($this->Session->read('Auth.User')) {
-                    $this->Session->setFlash('You are logged in!');
-                    $payload = array(
-                        'id' => $r["User"]["id"],
-                        'username' => $r["User"]["username"],
-                        'exp' => time() + 3600  // 1 hora de validez
-                    );
-
-                    // Crear el token con la clave secreta (debe estar definida en core.php)
-                    $jwt = JWT::encode($payload, Configure::read('Security.jwt_key'));
-
-                    $this->Session->write('Auth.Token', $jwt);
-
-                    // Mostrar token (solo para pruebas, luego quítalo)
-                    $this->Session->setFlash('¡Inicio de sesión exitoso! Tu token: ' . $jwt);
-
-
-                    $this->Session->write("Auth.Token", $jwt);
-
-                    $this->redirect("home");
-                }
+            if ($user) {
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Login exitoso',
+                    'user' => [
+                        'id' => $user['User']['id'],
+                        'username' => $user['User']['username']
+                    ],
+                    'redirect' => Router::url(['controller' => 'Users', 'action' => 'home'])
+                ]);
             } else {
-
-                $this->Session->setFlash("SIN ACCESO AL SISTEMA");
+                $this->response->statusCode(401);
+                return json_encode(['error' => 'Usuario o contraseña incorrectos']);
             }
         } else {
-
-            $this->Session->setFlash("SIN ACCESO AL SISTEMA");
+            $this->response->statusCode(405);
+            return json_encode(['error' => 'Método no permitido']);
         }
-
-        $this->layout = 'login';
     }
+
+
+
 
     function salir()
     {
@@ -153,13 +173,6 @@ class UsersController extends AppController
         $this->Auth->logout();
         $this->redirect("login");
     }
-
-    function admin()
-    {
-        $r = $this->paginate("User");
-        $this->set("usrs", $r);
-    }
-
 
     public function userList()
     {

@@ -42,14 +42,36 @@ class AppController extends Controller
 
     function beforeFilter()
     {
-        parent::beforeFilter();
 
+        //Manejo de Cors
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+        // Permitir CORS y manejo de OPTIONS
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            header('Access-Control-Allow-Origin: *');
+            header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+            header("Access-Control-Allow-Headers: Content-Type, Authorization");
+            exit(0);
+        }
+        parent::beforeFilter();
         $isApiRequest = $this->request->is('json') ||
             $this->RequestHandler->prefers('json') ||
             $this->request->is('ajax');
 
-        if ($isApiRequest) {
+        // Detectar si es una redirección desde frontend
+        $isRedirectAfterLogin = !$this->request->is('ajax') && !$this->request->is('json') && $this->Auth->user();
+
+        $currentAction = $this->params['action'];
+        $publicActions = ['loginApi', 'registroApi']; // puedes agregar más acciones públicas aquí
+
+
+        if ($isApiRequest && !in_array($currentAction, $publicActions)) {
             $this->handleApiAuthentication();
+        } elseif ($isRedirectAfterLogin) {
+            // Ya estás autenticado, permite carga normal de vista
+            $this->Auth->allow(); // o dejar que pase
         } else {
             $this->configureAuthComponent();
         }
@@ -85,7 +107,7 @@ class AppController extends Controller
 
         $token = str_replace('Bearer ', '', $token);
 
-                $this->loadModel('RevokedToken');
+        $this->loadModel('RevokedToken');
 
         $revoked = $this->RevokedToken->find('first', [
             'conditions' => ['RevokedToken.token' => $token]

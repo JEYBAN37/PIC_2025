@@ -50,9 +50,9 @@
 
  */
 
-	//Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+//Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 
-	Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
+Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
 
 /**
 
@@ -60,7 +60,7 @@
 
  */
 
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 
 
@@ -72,7 +72,7 @@
 
  */
 
-	CakePlugin::routes();
+CakePlugin::routes();
 
 
 
@@ -84,5 +84,8 @@
 
  */
 
-	require CAKE . 'Config' . DS . 'routes.php';
+require CAKE . 'Config' . DS . 'routes.php';
 
+
+// en routes.php
+Router::connect('/api/login', array('controller' => 'usuarios', 'action' => 'loginApi'));
