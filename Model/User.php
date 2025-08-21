@@ -1,5 +1,5 @@
 <?php
-App::uses('AppModel', 'Model','SimplePasswordHasher', 'Controller/Component/Auth');
+App::uses('AppModel', 'Model', 'SimplePasswordHasher', 'Controller/Component/Auth');
 
 
 /**
@@ -8,22 +8,31 @@ App::uses('AppModel', 'Model','SimplePasswordHasher', 'Controller/Component/Auth
  * @property Group $Group
  * @property Mnuuser $Mnuuser
  */
-class User extends AppModel {
+class User extends AppModel
+{
 
-/**
- * Validation rules
- *
- * @var array
+	/**
+	 * Validation rules
+	 *
+	 * @var array
 
 
 
- */    
+	 */
 
 	public $validate = array(
 		'username' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+			'unique' => array(
+				'rule' => array('checkUniqueUsername'),
+				'message' => 'Este usuario ya está en uso'
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -74,55 +83,58 @@ class User extends AppModel {
 
 
 	public $useTable = 'users';
-    var $name = "User";
-    //public $belongsTo = array('Group');
-    public $actsAs = array('Acl' => array('type' => 'requester'));
+	var $name = "User";
+	//public $belongsTo = array('Group');
+	public $actsAs = array('Acl' => array('type' => 'requester'));
 
-    public function parentNode() {
-        if (!$this->id && empty($this->data)) {
-            return null;
-        }
-        if (isset($this->data['User']['group_id'])) {
-            $groupId = $this->data['User']['group_id'];
-        } else {
-            $groupId = $this->field('group_id');
-        }
-        if (!$groupId) {
-            return null;
-        } else {
-            return array('Group' => array('id' => $groupId));
-        }
-    }
+	public function parentNode()
+	{
+		if (!$this->id && empty($this->data)) {
+			return null;
+		}
+		if (isset($this->data['User']['group_id'])) {
+			$groupId = $this->data['User']['group_id'];
+		} else {
+			$groupId = $this->field('group_id');
+		}
+		if (!$groupId) {
+			return null;
+		} else {
+			return array('Group' => array('id' => $groupId));
+		}
+	}
 
-    public function bindNode($user) {
-        return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
-    }
+	public function bindNode($user)
+	{
+		return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
+	}
 
-    /*public function beforeSave($options = array()) {
+	/*public function beforeSave($options = array()) {
         $this->data['User']['password'] = AuthComponent::password(
           $this->data['User']['password']
         );
         return true;
     }*/
 
-     public function beforeSave($options = array()) {
-        if (!empty($this->data[$this->alias]['password'])) {
-            //$passwordHasher = new SimplePasswordHasher(array('hashType' => 'md5'));
-            //$this->data[$this->alias]['password'] = $passwordHasher->hash(
-            //    $this->data[$this->alias]['password']
-            //);
-            $this->data[$this->alias]['password'] = md5($this->data[$this->alias]['password']);
-        }
-        return true;
+	public function beforeSave($options = array())
+	{
+		if (!empty($this->data[$this->alias]['password'])) {
+			//$passwordHasher = new SimplePasswordHasher(array('hashType' => 'md5'));
+			//$this->data[$this->alias]['password'] = $passwordHasher->hash(
+			//    $this->data[$this->alias]['password']
+			//);
+			$this->data[$this->alias]['password'] = md5($this->data[$this->alias]['password']);
+		}
+		return true;
 	}
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-/**
- * belongsTo associations
- *
- * @var array
- */
+	/**
+	 * belongsTo associations
+	 *
+	 * @var array
+	 */
 	public $belongsTo = array(
 		'Group' => array(
 			'className' => 'Group',
@@ -133,11 +145,11 @@ class User extends AppModel {
 		)
 	);
 
-/**
- * hasMany associations
- *
- * @var array
- */
+	/**
+	 * hasMany associations
+	 *
+	 * @var array
+	 */
 	/*public $hasMany = array(
 		'Mnuuser' => array(
 			'className' => 'Mnuuser',
@@ -154,4 +166,17 @@ class User extends AppModel {
 		)
 	);*/
 
+
+	public function checkUniqueUsername($check)
+	{
+		$username = array_values($check)[0];
+		$conditions = ['User.username' => $username];
+
+		// Si estamos editando, excluir al propio usuario
+		if (!empty($this->data['User']['id'])) {
+			$conditions['User.id !='] = $this->data['User']['id'];
+		}
+
+		return !$this->find('count', ['conditions' => $conditions]);
+	}
 }

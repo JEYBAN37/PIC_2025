@@ -85,7 +85,7 @@ public $default = array(
     'database' => 'cake_pic_2025',
     'prefix' => '',
     'unix_socket' => 'C:/xampp/mysql/mysql.sock',
-    //'encoding' => 'utf8',
+    'encoding' => 'utf8',
 );
 
 

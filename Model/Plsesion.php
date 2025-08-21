@@ -26,12 +26,12 @@ class Plsesion extends AppModel
     public $validate = array(
         'fecha' => array(
             'date' => array(
-                'rule' => array('date'),
-                'message' => 'Complete los campos requeridos',
-                //'allowEmpty' => false,
-                //'required' => false,
-                //'last' => false, // Stop validation after this rule
-                //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            'rule' => array('date'),
+            'message' => 'Complete los campos requeridos',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
         'hora_fin' => array(
@@ -421,9 +421,8 @@ class Plsesion extends AppModel
                 'message' => 'Archivo excede el límite de tamaño de archivo de subida'
             ),
             'isValidMimeType' => array(
-
-                'rule' => array('isValidExtension', array('rar', 'zip', 'pdf')),
-                'message' => 'El archivo debe ser de tipo pdf, zip, or rar'
+                'rule' => array('isValidExtension', array('rar', 'zip', 'pdf')), // se puede agregar más tipos de archivos
+                'message' => 'El archivo debe ser de tipo pdf, zip, o rar'
             ),
             'isBelowMaxSize' => array(
                 'rule' => array('isBelowMaxSize', 3000000),

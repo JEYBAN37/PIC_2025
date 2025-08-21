@@ -16,85 +16,110 @@ App::uses('AppController', 'Controller');
 
  */
 
-class ResponsablesController extends AppController {
+class ResponsablesController extends AppController
+{
 
 
 
-/**
+	/**
 
- * Components
+	 * Components
 
- *
+	 *
 
- * @var array
+	 * @var array
 
- */
+	 */
 
 	public $components = array('Paginator', 'Session');
 
 
 
-/**
+	/**
 
- * index method
+	 * index method
 
- *
+	 *
 
- * @return void
+	 * @return void
 
- */
+	 */
 
-	public function index() {
+	public function index()
+	{
 
 		$this->Responsable->recursive = 0;
 
 		$this->set('responsables', $this->Paginator->paginate());
-
 	}
 
 
 
-/**
+	/**
 
- * view method
+	 * view method
 
- *
+	 *
 
- * @throws NotFoundException
+	 * @throws NotFoundException
 
- * @param string $id
+	 * @param string $id
 
- * @return void
+	 * @return void
 
- */
+	 */
 
-	public function view($id = null) {
+	public function view($id = null)
+	{
 
 		if (!$this->Responsable->exists($id)) {
 
 			throw new NotFoundException(__('Responsable no válido'));
-
 		}
 
 		$options = array('conditions' => array('Responsable.' . $this->Responsable->primaryKey => $id));
 
 		$this->set('responsable', $this->Responsable->find('first', $options));
+	}
 
+	public function viewAnalitic()
+	{
+		$this->Auth->allow();
+		$this->autoRender = false;
+		$this->response->type('json');
+		if ($this->request->is('get')) {
+			$count = $this->Responsable->find('count');
+			$this->response->body(json_encode(['count' => $count]));
+		}
+	}
+
+	public function viewResponsablesApi()
+	{
+		$this->Auth->allow();
+		$this->autoRender = false;
+		$this->response->type('json');
+		if ($this->request->is('get')) {
+			$responsables = $this->Responsable->find('all', array(
+				'fields' => array('id', 'numero', 'nombres', 'celular', 'correo')
+			));
+			$this->response->body(json_encode(['responsables' => $responsables]));
+		}
 	}
 
 
 
-/**
+	/**
 
- * add method
+	 * add method
 
- *
+	 *
 
- * @return void
+	 * @return void
 
- */
+	 */
 
-	public function add() {
+	public function add()
+	{
 
 		if ($this->request->is('post')) {
 
@@ -105,39 +130,35 @@ class ResponsablesController extends AppController {
 				$this->Session->setFlash(__('Se guardo correctamente.'));
 
 				return $this->redirect(array('action' => 'nuebus'));
-
 			} else {
 
 				$this->Session->setFlash(__('No se ha podido guardar. Por favor, inténtar nuevamente.'));
-
 			}
-
 		}
-
 	}
 
 
 
-/**
+	/**
 
- * edit method
+	 * edit method
 
- *
+	 *
 
- * @throws NotFoundException
+	 * @throws NotFoundException
 
- * @param string $id
+	 * @param string $id
 
- * @return void
+	 * @return void
 
- */
+	 */
 
-	public function edit($id = null) {
+	public function edit($id = null)
+	{
 
 		if (!$this->Responsable->exists($id)) {
 
 			throw new NotFoundException(__('Responsable no válido'));
-
 		}
 
 		if ($this->request->is(array('post', 'put'))) {
@@ -147,77 +168,71 @@ class ResponsablesController extends AppController {
 				$this->Session->setFlash(__('Edición éxitosa.'));
 
 				return $this->redirect(array('action' => 'nuebus'));
-
 			} else {
 
 				$this->Session->setFlash(__('No se ha editado. Por favor, verifique e inténte nuevamente.'));
-
 			}
-
 		} else {
 
 			$options = array('conditions' => array('Responsable.' . $this->Responsable->primaryKey => $id));
 
 			$this->request->data = $this->Responsable->find('first', $options);
-
 		}
-
 	}
 
 
 
-	function nuebus() {
+	function nuebus()
+	{
 
-        $campos = array("Numero","Nombres");
+		$campos = array("Numero", "Nombres");
 
-        if(isset($this->data) && !empty($this->data)){
+		if (isset($this->data) && !empty($this->data)) {
 
-			$con = array(strtolower($campos[$this->data["Responsable"]["Campo"]])." like" => "%".$this->data["Responsable"]["Busqueda"]."%");//array("or" => array("tema like" => "%".$this->data["Actividad"]["Busqueda"]."%", "poblacion like " => "%".$this->data["Actividad"]["Busqueda"]."%","eje like " => "%".$this->data["Actividad"]["Busqueda"]."%","prioridad like " => "%".$this->data["Actividad"]["Busqueda"]."%","comuna_id like " => "%".$this->data["Actividad"]["Busqueda"]."%"));
+			$con = array(strtolower($campos[$this->data["Responsable"]["Campo"]]) . " like" => "%" . $this->data["Responsable"]["Busqueda"] . "%"); //array("or" => array("tema like" => "%".$this->data["Actividad"]["Busqueda"]."%", "poblacion like " => "%".$this->data["Actividad"]["Busqueda"]."%","eje like " => "%".$this->data["Actividad"]["Busqueda"]."%","prioridad like " => "%".$this->data["Actividad"]["Busqueda"]."%","comuna_id like " => "%".$this->data["Actividad"]["Busqueda"]."%"));
 
 
 
 		} else {
 
 			$con = null;
-
 		}
 
-        $this->Responsable->recursive = 0;
+		$this->Responsable->recursive = 0;
 
-		$paginate = array("fields" => array("id" , "numero" , "nombres", "celular","correo"), "conditions" => $con, "limit" => 30);
+		$paginate = array("fields" => array("id", "numero", "nombres", "celular", "correo"), "conditions" => $con, "limit" => 30);
 
 		$this->Paginator->settings = $paginate;
 
 		$this->set("Campos", $campos);
 
 		$this->set("l", $this->paginate());
-
 	}
 
 
 
-/**
+	/**
 
- * delete method
+	 * delete method
 
- *
+	 *
 
- * @throws NotFoundException
+	 * @throws NotFoundException
 
- * @param string $id
+	 * @param string $id
 
- * @return void
+	 * @return void
 
- */
+	 */
 
-	public function delete($id = null) {
+	public function delete($id = null)
+	{
 
 		$this->Responsable->id = $id;
 
 		if (!$this->Responsable->exists()) {
 
 			throw new NotFoundException(__('Responsable no válido'));
-
 		}
 
 		$this->request->allowMethod('post', 'delete');
@@ -225,20 +240,11 @@ class ResponsablesController extends AppController {
 		if ($this->Responsable->delete()) {
 
 			$this->Session->setFlash(__('Se ha eliminado exitosamente.'));
-
 		} else {
 
 			$this->Session->setFlash(__('No se puede eliminar. Por favor, inténtelo nuevamente.'));
-
 		}
 
 		return $this->redirect(array('action' => 'nuebus'));
-
 	}
-
 }
-
-
-
-
-
