@@ -1,156 +1,83 @@
-<?php $this->layout = 'printactividades' ?>
+
+<?php $this->layout = 'default' ?>
+
+<!-- Incluye DataTables y Buttons -->
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script> <!-- 👈 necesario -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 
 
-<h3><a><img src="../img/logoescudopasto.jpg" width="40" height="auto" ></a> Plan de Salud Publica de Intervenciones Colectivas </h3></h3></a>
-
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-
-                <h2><?php echo __('Sistematizacion de Procesos'); ?></h2>
-
-
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        <?php echo __('Acciones'); ?> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><?php echo $this->Html->link(__('Home'), array('controller' => 'users', 'action' => 'home')); ?></li>
-                        <li><?php echo $this->Html->link(__('Regresar'),  array('controller' => 'proactividades', 'action' => 'index')); ?></li>
-                        <li><?php echo $this->Html->link(__('Nueva sistematización de proceso'), array('controller' => 'proactividades', 'action' => 'add')); ?></li>
-                        <li><?php echo $this->Html->link(__('Registro de sesiones'), array('controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus')); ?> </li>
-                        <li><?php echo $this->Html->link(__('Agregar sesión'), array('controller' => 'procesoregistros', 'action' => 'add')); ?> </li>
-                    </ul>
-                </div>
-            </div>
-			<!-- /.panel-heading -->
-			<div class="panel-body">
-				<div class="dataTable_wrapper">
-
-					<div class="row">
-						<div class="col-sm-12">
-
-							<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-								<thead>
-									<tr>
-
-
-										<th>id</th>
-										<th>Producto</th>
-										<th>Dimension</th>
-										<th>Población</th>
-										<th>Grupo</th>
-										<th>Objetivo</th>
-										<th>Responsable</th>
-										<th>Creado</th>
-										<th>Modificado</th>										
-										<th>Opciones</th>
-
-
-
-									</tr>
-								</thead>
-								<tbody>
-
-									<?php foreach ($proactividades as $proactividad) : ?>
-										<tr class="gradeA odd">
-
-											<td class="sorting_1"><?php echo ($proactividad['Proactividad']['id']); ?>
-											</td>
-											<td><?php echo ($proactividad['Producto']['activity']); ?></td>
-											<td><?php echo ($proactividad['Producto']['dimensiones']); ?></td>
-											<td><?php echo ($proactividad['Proactividad']['poblaciones']); ?></td>
-											<td><?php echo ($proactividad['Proactividad']['grupo']); ?></td>
-											<td><?php echo ($proactividad['Proactividad']['objactividad']); ?></td>
-											<td><?php echo ($proactividad['Responsable']['nombres']); ?></td>
-											<td> <?php echo $this->Time->format('d-m-Y h:i A', ($proactividad['Proactividad']['created'])); ?></td>
-											<td> <?php echo $this->Time->format('d-m-Y h:i A', ($proactividad['Proactividad']['modified'])); ?></td>
-											
-
-											<td class="actions">
-												<div class="btn-group">
-													<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-														<?php echo __('Acciones'); ?> <span class="caret"></span>
-													</button>
-													<ul class="dropdown-menu" role="menu">
-														<li><?php echo $this->Html->link(__('Ver'), array('action' => 'view', $proactividad['Proactividad']['id'])); ?></li>
-														<li><?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $proactividad['Proactividad']['id'])); ?> </li>
-													</ul>
-												</div>
-											</td>
-										</tr>
-
-
-									<?php endforeach; ?>
-
-
-								</tbody>
-							</table>
-						</div>
-					</div>
-
-				</div>
-				<!-- /.table-responsive -->
-
-			</div>
-			<!-- /.panel-body -->
-		</div>
-		<!-- /.panel -->
-	</div>
-	<!-- /.col-lg-12 -->
+<div class="p-4 overflow-x-auto mt-[100px]">
+  <table id="miTabla" class="stripe hover w-full text-sm text-left text-gray-600">
+	<thead class="bg-gray-100 text-gray-800 font-semibold">
+	  <tr>
+		<th class="px-4 py-2">ID</th>
+		<th class="px-4 py-2">Producto</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <?php foreach ($proactividades as $proactividad) : ?>
+		<tr class="hover:bg-gray-50">
+		  <td class="px-4 py-2"><?= $proactividad['Proactividad']['id'] ?></td>
+		  <td class="px-4 py-2"><?= $proactividad['Producto']['activity'] ?></td>
+		</tr>
+	  <?php endforeach; ?>
+	</tbody>
+  </table>
 </div>
 
 <script>
-	$(document).ready(function() {
-		$('#dataTables-example').DataTable({
-			responsive: true,
-			dom: 'Bfrtip',
-			language: {
-				searchBuilder: {
-					button: 'Filter',
-				}
-			},
-			buttons: [
-				'pageLength',
-				'copyHtml5',
-				'excelHtml5',
-				'csvHtml5',
-				'colvis',
-				'searchBuilder'
-			]
-		});
+  $(document).ready(function() {
+	$('#miTabla').DataTable({
+	  responsive: true,
+	  dom: '<"flex items-center justify-between mb-4"<"w-1/3 flex items-center"<"w-full"f>><"w-1/3 flex items-center justify-center font-semibold "p><"w-1/3"B>>rt',
+	  lengthMenu: [
+		[10],
+		[10]
+	  ],
+	  pageLength: 10,
+	  buttons: [
+
+		{
+		  extend: 'copy',
+		  text: 'Copiar',
+		  className: 'bg-blue-600 text-white font-medium text-sm mr-2 p-4 py-2 rounded hover:bg-green-600 transition-colors cursor-pointer items-center'
+		},
+		{
+		  extend: 'csv',
+		  text: 'CSV',
+		  className: 'bg-blue-600 text-white font-medium text-sm mr-2 p-4 py-2 rounded hover:bg-green-600 transition-colors cursor-pointer items-center'
+		},
+		{
+		  extend: 'excel',
+		  text: 'Excel',
+		  className: 'bg-blue-600 text-white font-medium text-sm mr-2 p-4 py-2 rounded hover:bg-green-600 transition-colors cursor-pointer items-center'
+		},
+		{
+		  extend: 'pdf',
+		  text: 'PDF',
+		  className: 'bg-blue-600 text-white font-medium text-sm mr-2 p-4 py-2 rounded hover:bg-green-600 transition-colors cursor-pointer items-center'
+		},
+		{
+		  extend: 'print',
+		  text: 'Imprimir',
+		  className: 'bg-blue-600 text-white font-medium text-sm mr-2 p-4 py-2 rounded hover:bg-green-600 transition-colors cursor-pointer items-center'
+		},
+	  ],
 	});
 
-	function fnExcelReport() {
-		var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
-		var textRange;
-		var j = 0;
-		tab = document.getElementById('dataTables-example'); // id of table
-
-		for (j = 0; j < tab.rows.length; j++) {
-			tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
-		}
-
-		tab_text = tab_text + "</table>";
-
-		tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, ""); //remove if u want links in your table
-		tab_text = tab_text.replace(/<img[^>]*>/gi, ""); // remove if u want images in your table
-		tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
-
-		var ua = window.navigator.userAgent;
-		var msie = ua.indexOf("MSIE ");
-
-		if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) // If Internet Explorer
-		{
-			txtArea1.document.open("txt/html", "replace");
-			txtArea1.document.write(tab_text);
-			txtArea1.document.close();
-			txtArea1.focus();
-			sa = txtArea1.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
-		} else
-			sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
-
-		//return (sa);
-	}
+	// 🎨 Estilizar el selector de filas (lengthMenu)
+	setTimeout(() => {
+	  $('select[name="miTabla_length"]').addClass(
+		'border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none'
+	  );
+	}, 100);
+  });
 </script>

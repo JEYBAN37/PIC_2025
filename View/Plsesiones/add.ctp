@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading" class="page-header">
-                    <?php $this->layout = 'formulario' ?>
+                  
                     <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
                 </div>
                 <?php echo $this->Form->create('Plsesion', array('type' => 'file', 'novalidate' => 'novalidate')); ?>

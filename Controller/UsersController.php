@@ -53,7 +53,8 @@ class UsersController extends AppController
                 $this->Auth->login([
                     'id' => $user['User']['id'],
                     'username' => $user['User']['username'],
-                    'group_id' => $user['User']['group_id']
+                    'group_id' => $user['User']['group_id'],
+                    'nombre' => $user['User']['nombre_usuario']
                 ]);
 
                 // Nunca retornes la contraseña
@@ -76,6 +77,7 @@ class UsersController extends AppController
                 echo json_encode([
                     'status' => 'error',
                     'message' => 'Credenciales inválidas'
+
                 ]);
             }
         } else {
@@ -175,7 +177,7 @@ class UsersController extends AppController
                 'group' => ['User.id']
             ]);
 
-            $totalPages = ceil($total / 5);
+            $totalPages = ceil($total / 10);
 
             echo json_encode([
                 'users' => $users,
@@ -296,9 +298,17 @@ class UsersController extends AppController
         $this->autoRender = false;
         $this->response->type('json');
 
-        if ($this->request->is('post')) {
-            $data = json_decode(file_get_contents('php://input'), true);
+        try {
+            if (!$this->request->is('post')) {
+                $this->response->statusCode(405);
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Método no permitido'
+                ]);
+                return;
+            }
 
+            $data = $this->request->input('json_decode', true);
             if (!$data) {
                 $this->response->statusCode(400);
                 echo json_encode(['status' => 'error', 'message' => 'Datos JSON inválidos']);
@@ -314,6 +324,26 @@ class UsersController extends AppController
                 return;
             }
 
+            if (empty($data['username'])) {
+                $this->response->statusCode(400);
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'El campo "username" es obligatorio'
+                ]);
+                return;
+            }
+
+            if (empty($data['group_id'])) {
+                $this->response->statusCode(400);
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'El campo "group_id" es obligatorio'
+                ]);
+                return;
+            }
+
+
+
             // Validar si ya existe el usuario con el mismo nombre
             $existingUser = $this->User->find('first', [
                 'conditions' => ['User.username' => $data['username']]
@@ -328,53 +358,56 @@ class UsersController extends AppController
                 return;
             }
 
+            // Preparar datos para guardar
             $this->User->create();
-            if ($this->User->save($data)) {
-                $role = [
-                    'numero' => $data['cedula'],
-                    'nombres' => $data['nombre_usuario'],
-                    'celular' => $data['celular'],
-                    'correo' => $data['username'],
-                    'fecha_nac' => $data['fecha_nacimiento'],
-                    'profesion' => $data['profesion'],
-                    'cargo' => $data['cargo'],
-                    'telefono' => $data['telefono'],
-                    'tipodoc' => "CC",
-                ];
-                // Preparar datos para guardar
-                if ($data['group_id'] === "2") {
-                    $result = $this->validateUserData($role, $this->Referente, 'referente_id', 'id', 'Errores de validación en el referente');
-                } else if ($data['group_id'] === "3") {
-                    $result = $this->validateUserData($role, $this->Responsable, 'responsable_id', 'id', 'Errores de validación en el responsable');
-                }
-
-                if (!$result) {
-                    return; // Si hubo error, ya se manejó en la función
-                }
-
-                $this->response->statusCode(201);
-                $user = $this->User->read(null, $this->User->id);
-                if (isset($user['User']['password'])) {
-                    unset($user['User']['password']);
-                }
-                echo json_encode([
-                    'status' => 'success',
-                    'message' => 'Usuario guardado exitosamente',
-                    'user' => $user
-                ]);
-            } else {
+            if (!$this->User->save($data)) {
                 $this->response->statusCode(400);
                 echo json_encode([
                     'status' => 'error',
-                    'message' => 'Errores de validación',
+                    'message' => 'Errores de validación en el usuario',
                     'errors' => $this->User->validationErrors
                 ]);
+                return;
             }
-        } else {
-            $this->response->statusCode(405);
+
+            $role = [
+                'numero' => isset($data['cedula']) ? $data['cedula'] : null,
+                'nombres' => $data['nombre_usuario'],
+                'celular' => isset($data['celular']) ? $data['celular'] : null,
+                'correo' => $data['username'],
+                'fecha_nac' => isset($data['fecha_nacimiento']) ? $data['fecha_nacimiento'] : null,
+                'profesion' => isset($data['profesion']) ? $data['profesion'] : null,
+                'cargo' => isset($data['cargo']) ? $data['cargo'] : null,
+                'telefono' => isset($data['telefono']) ? $data['telefono'] : null,
+                'tipodoc' => "CC",
+            ];
+
+            $result = true;
+            if ($data['group_id'] == "2") {
+                $result = $this->validateUserData($role, $this->Referente, 'referente_id', 'id', 'Errores de validación en el referente');
+            } elseif ($data['group_id'] == "3") {
+                $result = $this->validateUserData($role, $this->Responsable, 'responsable_id', 'id', 'Errores de validación en el responsable');
+            }
+
+            if ($result === false) {
+                return; // Si hubo error, ya se manejó en la función
+            }
+
+            $this->response->statusCode(201);
+            $user = $this->User->read(null, $this->User->id);
+            if (isset($user['User']['password'])) {
+                unset($user['User']['password']);
+            }
+            echo json_encode([
+                'status' => 'success',
+                'message' => 'Usuario guardado exitosamente',
+                'user' => $user
+            ]);
+        } catch (Exception $e) {
+            $this->response->statusCode(500);
             echo json_encode([
                 'status' => 'error',
-                'message' => 'Método no permitido'
+                'message' => 'Error inesperado: ' . $e->getMessage()
             ]);
         }
     }
@@ -477,7 +510,7 @@ class UsersController extends AppController
         $userUpdate = ['User' => array_merge($oldUser['User'], $data)];
 
         // Manejar password
-        if ( $userUpdate['User']['password'] === $oldUser['User']['password']) {
+        if ($userUpdate['User']['password'] === $oldUser['User']['password']) {
             unset($userUpdate['User']['password']);
         }
 

@@ -79,7 +79,7 @@ class AppController extends Controller
                 'Form' => array(
                     'userModel' => 'User',
                     'fields' => array('username' => 'email', 'password' => 'password')
-                )
+                ),
             ),
             'storage' => 'Session',
             'authorize' => array('Controller')

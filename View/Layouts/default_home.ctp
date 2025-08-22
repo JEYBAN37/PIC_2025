@@ -57,62 +57,8 @@ $cakeDescription = 'Ciudad Bienestar: Sistema de Información';
 <!--body class="bs-docs-home"-->
 
 <body>
-    <div id="wrapper">
-        <?php echo $this->element('nav'); ?>
-        <?php echo $this->element('nav_vertical'); ?>
-        <?php echo $this->Session->flash(); ?>
-        <?php echo $this->fetch('content'); ?>
-    </div>
-    <!-- /#wrapper -->
+
 
 </body>
 
 
-<footer class="footer" style="
-    background-color: #e2e1e1;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7">
-                <div class="widget">
-                    <div class="footer-text text-left">
-                        <a href="https://www.ciudadbienestar.gov.co/"><img src="../img/logo.png" alt="" class="img-fluid"></a>
-                        <p>Plan de salud publica de intervenciones colectivas</br> Estrategia de Movilización Social Ciudad Bienestar</p>
-                        <div class="social"><ul >
-                            <a href="https://www.facebook.com/ciudadbienestarpasto" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i> <img src="../img/facebook.png" alt="" width="25px" height="25px"></i></a>
-                            <a href="https://twitter.com/cuidadbienestar" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i><img src="../img/twitter.png" alt="" width="25px" height="25px"></i></a>
-                            <a href="https://www.youtube.com/channel/UCkpnph2Lyb9DusMnwDkC9OQ" data-toggle="tooltip" data-placement="bottom" title="youtube"><i><img src="../img/youtube.png" alt="" width="25px" height="25px"></i></a>
-                            </ul>
-                        </div>
-
-                        <hr class="invis">
-
-
-                    </div><!-- end footer-text -->
-                </div><!-- end widget -->
-            </div><!-- end col -->
-
-
-            <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
-                <div class="widget">
-                    <h2 class="widget-title">Salud Publica</h2>
-                    <div class="link-widget">
-                        <ul>
-<!--li><a href="https://www.ciudadbienestar.gov.co/">Ciudad bienestar</a></li-->
-                            <li><a href="http://185.240.215.107:8012/moodle/?redirect=0">Aula Virtual</a></li>
-                            <li><a href="https://www.youtube.com/channel/UCkpnph2Lyb9DusMnwDkC9OQ">Canal ciudad bienestar</a></li>
-                            <li><a href="https://www.saludpasto.gov.co/">Secretaría de Salud</a></li>
-                            <li><a href="https://www.pasto.gov.co/">Alclida de Pasto</a></li>
-                        </ul>
-                    </div><!-- end link-widget -->
-                </div><!-- end widget -->
-            </div><!-- end col -->
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <br>
-                <div class="copyright">&copy; Gestión de la Salud Publica. Versión 6.0 - 2023 <a href="https://www.saludpasto.gov.co/">Secretaria Municipal de Salud</a>.</div>
-            </div>
-        </div>
-    </div><!-- end container -->
-</footer><!-- end footer -->

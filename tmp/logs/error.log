@@ -216206,3 +216206,4080 @@ Request URL: /PIC/login
 Stack Trace:
 #0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2025-08-21 04:49:46 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:50:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/js/build-svgs.js
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:29 Error: [MissingActionException] Action UsersController::logo.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'logo.png',
+)
+Request URL: /PIC/users/logo.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-21 04:54:29 Error: [MissingActionException] Action UsersController::admin-icon.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin-icon.png',
+)
+Request URL: /PIC/users/admin-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-21 04:54:29 Error: [MissingActionException] Action UsersController::perfil-icon.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'perfil-icon.png',
+)
+Request URL: /PIC/users/perfil-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-21 04:54:29 Error: [MissingActionException] Action UsersController::config-icon.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'config-icon.png',
+)
+Request URL: /PIC/users/config-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-21 04:54:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/css/bootstrap-theme.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/js/jquery.min.map
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:56 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:56 Error: [MissingControllerException] Controller class Logo.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Logo.pngController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/logo.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:56 Error: [MissingControllerException] Controller class Admin-icon.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Admin-icon.pngController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/admin-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:56 Error: [MissingControllerException] Controller class Config-icon.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Config-icon.pngController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/config-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:56 Error: [MissingControllerException] Controller class Perfil-icon.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Perfil-icon.pngController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/perfil-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:57 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:57 Error: [MissingControllerException] Controller class Logo.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Logo.pngController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/logo.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:57 Error: [MissingControllerException] Controller class Admin-icon.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Admin-icon.pngController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/admin-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:57 Error: [MissingControllerException] Controller class Config-icon.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Config-icon.pngController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/config-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:54:57 Error: [MissingControllerException] Controller class Perfil-icon.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Perfil-icon.pngController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/perfil-icon.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:58:08 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:19 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:19 Error: [MissingControllerException] Controller class {DataHome.img}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.img}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.img%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:19 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:19 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:26 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:26 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:26 Error: [MissingControllerException] Controller class {DataHome.img}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.img}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.img%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:26 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:27 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:27 Error: [MissingControllerException] Controller class {DataHome.img}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.img}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.img%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:27 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:27 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:37 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:37 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:37 Error: [MissingControllerException] Controller class {DataHome.img}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.img}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.img%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:37 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:50 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:50 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:50 Error: [MissingControllerException] Controller class {DataHome.img}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.img}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.img%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 04:59:50 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:00:03 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:00:03 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:00:03 Error: [MissingControllerException] Controller class {DataHome.img}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.img}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.img%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:00:03 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:00:52 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:00:52 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:00:52 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:18 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:18 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+Request), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:19 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:19 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:19 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:28 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:28 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:28 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:28 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:28 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:28 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:29 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:29 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:29 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/css/bootstrap-theme.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/js/jquery.min.map
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:41 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:41 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:41 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:42 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:43 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:43 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:43 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:43 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:43 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:43 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {icon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{icon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7Bicon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:01:44 Error: [MissingControllerException] Controller class {DataHome.adminIcon.default}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.adminIcon.default}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.adminIcon.default%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:05 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:15 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:17 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:43 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:44 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:44 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:44 Error: [MissingControllerException] Controller class {DataHome.href}Controller could not be found.
+Exception Attributes: array (
+  'class' => '{DataHome.href}Controller',
+  'plugin' => NULL,
+)
+Request URL: /PIC/%7BDataHome.href%7D
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:47 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:47 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:02:50 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:03:16 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:03:17 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:03:17 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:03:17 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:35:59 Error: [NotFoundException] Invalid plsesion
+Request URL: /PIC/plsesiones/view
+Stack Trace:
+#0 [internal function]: PlsesionesController->view()
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PlsesionesController), Array)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-08-21 05:35:59 Error: [MissingActionException] Action PlsesionesController::sticky-footer.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PlsesionesController',
+  'action' => 'sticky-footer.css',
+)
+Request URL: /PIC/plsesiones/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-21 05:39:35 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:39:41 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:10 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:32 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:34 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:38 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:40 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:41 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:51 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:51 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:55 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:55 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:40:56 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:03 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:04 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:04 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:27 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:40 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:42 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/js/jquery.min.map
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:43 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/js/jquery.min.map
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:43 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:44 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/js/jquery.min.map
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:46 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:56 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:41:57 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:42:06 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:42:10 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:42:30 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:42:40 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:42:45 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:42:56 Error: [MissingControllerException] Controller class RController could not be found.
+Exception Attributes: array (
+  'class' => 'RController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/r
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:42:59 Error: Fatal Error (1): Call to a member function paginate() on null in [C:\xampp\htdocs\PIC\Controller\PagesController.php, line 66]
+2025-08-21 05:42:59 Error: [FatalErrorException] Call to a member function paginate() on null
+Request URL: /PIC/
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-08-21 05:43:26 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:47:12 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:50:56 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:50:57 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:51:03 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:53:02 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:53:02 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:53:14 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:53:14 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/salir.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:56:23 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:56:24 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:56:29 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:56:45 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:57:10 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:59:29 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 05:59:46 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:00:04 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:00:08 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:00:12 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:01:25 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:03:08 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:03:10 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:03:14 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:05:44 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:05:44 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:07:33 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:07:33 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:11:05 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:11:05 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:45:26 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:45:26 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:50:46 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 06:50:46 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:03 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:09 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:12 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:30 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:31 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:31 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:37 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:44 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:45 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:42:53 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:05 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:05 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:14 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:15 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:15 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:16 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:16 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:18 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:18 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:19 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:19 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:23 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:25 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:30 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:37 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:43:59 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:01 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:02 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:03 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:06 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:08 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:09 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:09 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:10 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:11 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:11 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:11 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:12 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 07:44:14 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:00:49 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\PIC\View\Layouts\default.ctp, line 335]
+2025-08-21 08:00:49 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /PIC/users/home
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 335)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 335, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 335, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-08-21 08:00:50 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\PIC\View\Layouts\default.ctp, line 335]
+2025-08-21 08:00:50 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /PIC/users/home
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 335)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 335, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 335, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-08-21 08:08:27 Error: [CakeException] Authentication adapter "userModel" was not found.
+Request URL: /PIC/users/salir
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Controller\Component\AuthComponent.php(625): AuthComponent->constructAuthenticate()
+#1 C:\xampp\htdocs\PIC\Controller\UsersController.php(94): AuthComponent->logout()
+#2 [internal function]: UsersController->salir()
+#3 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#4 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#5 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#6 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2025-08-21 08:08:27 Error: [MissingActionException] Action UsersController::sticky-footer.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'sticky-footer.css',
+)
+Request URL: /PIC/users/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-21 08:21:34 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:21:40 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:21:50 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:22:13 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:22:15 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:22:21 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:22:22 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:22:40 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:22:40 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:23:43 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:24:46 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:24:55 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:33:51 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:33:51 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:34:21 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:34:21 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:35:06 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:35:06 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:28 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:51 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:51 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:52 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:53 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:53 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:55 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:56 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:56 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:57 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 08:36:57 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 18:31:57 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 18:33:29 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 18:33:29 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 18:52:58 Error: Fatal Error (1): Call to a member function paginate() on null in [C:\xampp\htdocs\PIC\Controller\PagesController.php, line 66]
+2025-08-21 18:52:58 Error: [FatalErrorException] Call to a member function paginate() on null
+Request URL: /PIC/
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-08-21 21:46:17 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 21:46:18 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 21:46:19 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 21:53:47 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 21:53:58 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 21:53:58 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 23:16:14 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-21 23:16:14 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 00:19:39 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 00:19:39 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 00:19:43 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 00:19:43 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:18:00 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'correo' cannot be null
+Request URL: /PIC/users/add
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `ca...', Array)
+#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `ca...')
+#3 C:\xampp\htdocs\lib\Cake\Model\Model.php(1834): DboSource->create(Object(Responsable), Array, Array)
+#4 C:\xampp\htdocs\PIC\Controller\UsersController.php(280): Model->save(Array)
+#5 C:\xampp\htdocs\PIC\Controller\UsersController.php(349): UsersController->validateUserData(Array, Object(Responsable), 'responsable_id', 'id', 'Errores de vali...')
+#6 [internal function]: UsersController->add()
+#7 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2025-08-22 02:21:49 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'correo' cannot be null
+Request URL: /PIC/users/add
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `ca...', Array)
+#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `ca...')
+#3 C:\xampp\htdocs\lib\Cake\Model\Model.php(1834): DboSource->create(Object(Responsable), Array, Array)
+#4 C:\xampp\htdocs\PIC\Controller\UsersController.php(281): Model->save(Array)
+#5 C:\xampp\htdocs\PIC\Controller\UsersController.php(350): UsersController->validateUserData(Array, Object(Responsable), 'responsable_id', 'id', 'Errores de vali...')
+#6 [internal function]: UsersController->add()
+#7 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2025-08-22 02:23:11 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'nombres' cannot be null
+Request URL: /PIC/users/add
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `ca...', Array)
+#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `ca...')
+#3 C:\xampp\htdocs\lib\Cake\Model\Model.php(1834): DboSource->create(Object(Responsable), Array, Array)
+#4 C:\xampp\htdocs\PIC\Controller\UsersController.php(281): Model->save(Array)
+#5 C:\xampp\htdocs\PIC\Controller\UsersController.php(359): UsersController->validateUserData(Array, Object(Responsable), 'responsable_id', 'id', 'Errores de vali...')
+#6 [internal function]: UsersController->add()
+#7 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2025-08-22 02:33:17 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:33:23 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:33:23 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:33:48 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:40:36 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:40:36 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:40:48 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC//react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:40:54 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:41:00 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:41:02 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:41:05 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:41:12 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:42:19 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:42:21 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:42:22 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:42:44 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:42:45 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:42:47 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:42:49 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:43:00 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:43:24 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:43:46 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:43:47 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:43:59 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:44:00 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:44:09 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:44:10 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:44:23 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:44:35 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:46:12 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:46:14 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:46:14 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:46:15 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:46:17 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 02:47:30 Error: [MissingControllerException] Controller class ReactController could not be found.
+Exception Attributes: array (
+  'class' => 'ReactController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/react/
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 06:45:53 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/index
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:45:53 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:46:37 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/index
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:46:37 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:46:57 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/index
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:46:57 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:47:40 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/index
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:47:40 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:48:16 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/index
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:48:16 Error: [MissingActionException] Action UsersController::undefined() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'undefined',
+)
+Request URL: /PIC/users/undefined/proactividades/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:48:40 Error: [MissingHelperException] Helper class ProactidadesHelper could not be found.
+Exception Attributes: array (
+  'class' => 'ProactidadesHelper',
+  'plugin' => false,
+)
+Request URL: /PIC/proactividades/index
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('Proactidades')
+#1 C:\xampp\htdocs\lib\Cake\View\View.php(837): HelperCollection->__isset('Proactidades')
+#2 C:\xampp\htdocs\PIC\View\Layouts\default.ctp(209): View->__get('Proactidades')
+#3 C:\xampp\htdocs\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\lib\Cake\View\View.php(479): View->renderLayout('', 'default')
+#7 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#10 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2025-08-22 06:48:40 Error: [MissingActionException] Action ProactividadesController::sticky-footer.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'sticky-footer.css',
+)
+Request URL: /PIC/proactividades/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:48:59 Error: [MissingHelperException] Helper class proactividadesHelper could not be found.
+Exception Attributes: array (
+  'class' => 'proactividadesHelper',
+  'plugin' => false,
+)
+Request URL: /PIC/users/home
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('proactividades')
+#1 C:\xampp\htdocs\lib\Cake\View\View.php(837): HelperCollection->__isset('proactividades')
+#2 C:\xampp\htdocs\PIC\View\Layouts\default.ctp(209): View->__get('proactividades')
+#3 C:\xampp\htdocs\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\lib\Cake\View\View.php(479): View->renderLayout('', 'default')
+#7 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2025-08-22 06:48:59 Error: [MissingActionException] Action UsersController::sticky-footer.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'sticky-footer.css',
+)
+Request URL: /PIC/users/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:49:01 Error: [MissingHelperException] Helper class proactividadesHelper could not be found.
+Exception Attributes: array (
+  'class' => 'proactividadesHelper',
+  'plugin' => false,
+)
+Request URL: /PIC/users/home
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('proactividades')
+#1 C:\xampp\htdocs\lib\Cake\View\View.php(837): HelperCollection->__isset('proactividades')
+#2 C:\xampp\htdocs\PIC\View\Layouts\default.ctp(209): View->__get('proactividades')
+#3 C:\xampp\htdocs\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\lib\Cake\View\View.php(479): View->renderLayout('', 'default')
+#7 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2025-08-22 06:49:01 Error: [MissingActionException] Action UsersController::sticky-footer.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'sticky-footer.css',
+)
+Request URL: /PIC/users/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:51:31 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:51:31 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:51:31 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:52:28 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:52:28 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:52:28 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:53:01 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:53:01 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:53:15 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:53:15 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:53:15 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:54:05 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:54:05 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:54:05 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:54:10 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:54:11 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:54:42 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:54:42 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 06:55:36 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 06:55:36 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 06:55:57 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 06:55:57 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 06:57:15 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 06:57:15 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 06:57:22 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 06:57:22 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:01:21 Error: [MissingControllerException] Controller class EventosController could not be found.
+Exception Attributes: array (
+  'class' => 'EventosController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/eventos/add
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:21 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC//SICB/pic2024/users/home
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:21 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC//SICB/pic2024/img/update/logoPic.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:21 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC//SICB/pic2024/img/update/adminHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:21 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC//SICB/pic2024/img/update/hogar.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:21 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC//SICB/pic2024/img/update/cerrarSesion.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:21 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC//SICB/pic2024/img/update/logoPic.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:21 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC//SICB/pic2024/img/update/ayuda.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:30 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/SICB/pic2024/users/home
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:30 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/SICB/pic2024/img/update/logoPic.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:30 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/SICB/pic2024/img/update/hogar.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:30 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/SICB/pic2024/img/update/adminHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:30 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/SICB/pic2024/img/update/cerrarSesion.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:30 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/SICB/pic2024/img/update/ayuda.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:05:30 Error: [MissingControllerException] Controller class SICBController could not be found.
+Exception Attributes: array (
+  'class' => 'SICBController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/SICB/pic2024/img/update/logoPic.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:10 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:10 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:11 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:11 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:11 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:48 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:48 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:49 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:49 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:49 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:15:50 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:16:54 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:16:54 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:16:55 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:16:55 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:16:55 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:28 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:28 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:29 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:29 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:30 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:30 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:30 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:30 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:31 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:31 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:36 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:36 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:36 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:36 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:37 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:37 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:45 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:17:45 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/documentoHover.svg
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:25:58 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/historicoHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:25:58 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/historicoHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:25:59 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/img/update/historicoHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:26:45 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:26:45 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:26:55 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:26:55 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:31:54 Error: Fatal Error (1): Call to undefined method View::layouts() in [C:\xampp\htdocs\PIC\View\Layouts\default.ctp, line 89]
+2025-08-22 07:31:54 Error: [FatalErrorException] Call to undefined method View::layouts()
+Request URL: /PIC/users/home
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-08-22 07:31:55 Error: Fatal Error (1): Call to undefined method View::layouts() in [C:\xampp\htdocs\PIC\View\Layouts\default.ctp, line 89]
+2025-08-22 07:31:55 Error: [FatalErrorException] Call to undefined method View::layouts()
+Request URL: /PIC/users/home
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-08-22 07:36:35 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:36:35 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:38:27 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:38:27 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:39:49 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 07:39:49 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 07:39:49 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 07:39:57 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:39:57 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:41:52 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:41:52 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:42:05 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 07:42:05 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 07:42:05 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-22 07:45:09 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:45:11 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:45:12 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:45:15 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:45:16 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:45:17 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 07:45:17 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 08:04:10 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 08:04:12 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 08:04:12 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 15:52:47 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 15:52:47 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 15:52:47 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 15:52:48 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 15:52:48 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 16:04:29 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 16:04:29 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 16:04:35 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 16:04:35 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 16:09:18 Error: [MissingControllerException] Controller class DashboardController could not be found.
+Exception Attributes: array (
+  'class' => 'DashboardController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/dashboard
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-22 16:10:13 Error: [MissingControllerException] Controller class DashboardController could not be found.
+Exception Attributes: array (
+  'class' => 'DashboardController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/dashboard
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
