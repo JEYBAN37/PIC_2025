@@ -1,253 +1,432 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading" class="page-header">
+<?php $this->layout = 'default' ?>
+<?php
+$option = array(
+    'label' => 'Fecha',
+    'dateFormat' => 'DMY',
+    'minYear' => date('Y') - 0,
+    'maxYear' => date('Y') + 0,
+    'empty' => array(
+        'day' => 'Día',
+        'month' => 'Mes',
+        'year' => 'Año'
+    )
+);
+?>
 
-                    <?php $this->layout = 'formulario' ?>
-                    <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
+
+
+<div class="max-w-5xl mx-auto text-center mb-8">
+    <h1 class="text-5xl font-bold mb-4 text-blue-600">
+        Asociar sesión a proceso formativo - educativo
+    </h1>
+    <p class="text-gray-500 mb-4 text-lg">
+        Registre los datos de la sesión que desea asociar al proceso formativo o educativo.
+    </p>
+</div>
+
+<?php
+echo $this->Form->create('Procesoregistro', [
+    'type' => 'file',
+    'novalidate' => 'novalidate',
+    'class' => 'space-y-6',
+]);
+?>
+<div class="max-w-6xl mx-auto p-18">
+    <div class="bg-white shadow-2xl rounded-xl p-12">
+        <!-- Header -->
+        <div class="flex items-center mb-4">
+            <img src="../img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
+            <div class="ml-4">
+                <h1 class="text-xl font-semibold">Información de la Sesión</h1>
+                <p class="text-gray-500">Complete los datos basicos de la sesión.</p>
+            </div>
+
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+
+
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
+                    <label for="proactividad_id" class="font-semibold">Sistematizacion relacionada</label>
+                    <p class="text-red-600">*</p>
 
                 </div>
-                <?php echo $this->Form->create('Procesoregistro', array('type' => 'file', 'novalidate' => 'novalidate')); ?>
-                <fieldset>
-                    <h1 class="page-header">Asociar sesión a proceso formativo - educativo</h1>
-
-                    <?php
-                    $option = array(
-                        'label' => 'Fecha',
-                        'dateFormat' => 'DMY',
-                        'minYear' => date('Y') - 0,
-                        'maxYear' => date('Y') + 0,
-                        'empty' => array(
-                            'day' => 'Día',
-                            'month' => 'Mes',
-                            'year' => 'Año'
-                        )
-                    );
-                    ?>
-
-                    <div class="row">
-
-                        <div class="form-group col-md-12">
-
-
-                            <?php
-                            echo $this->Form->input('proactividad_id', array('label' => 'sistematizacion relacionada', 'type' => 'select',  'class' => 'form-control select-search')); ?>
-                        </div>
-
-                        <div class="panel panel-default form-group col-md-12">
-                            <p class="help-block">Regristo de fecha se sesion realizada</p>
-                            <div class="row ">
-
-
-                                <div class="form-group col-md-4">
-                                    <?php echo $this->Form->input('fecha', array('label' => 'Fecha de actvidad', 'option' => '$option')); ?>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <?php echo $this->Form->input('hora_inicio'); ?>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <?php echo $this->Form->input('hora_fin'); ?>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group col-md-12">
-                            <p class="help-block">Ingrese aquí exclusivamente el título de la temática tratada. No incluya poblaciones, lugares de realización de la actividad o ningún otro dato.</p>
-
-                            <?php
-
-                            echo $this->Form->input('tema', array('label' => 'Temática tratada', 'class' => 'form-control'));
-                            ?>
-                        </div>
-                        <!--div class="form-group col-md-12">
-                                    <?php
-
-                                    echo 'Por ejemplo: Grupo surprisecity';
-                                    echo $this->Form->input('grupo', array('label' => 'Nombre de organización o grupo'));
-                                    ?>
-                                </div-->
-                             
-
-                         <div class="form-group col-md-12">
-                             <p> <?php echo 'Copie de esta lista a la casilla siguiente las poblaciones participantes o escriba otras que no esten categorizadas.' ?></p>
-                             <?php echo '1. Población en general 2. Hombres	 3. Mujeres	4. Niños y niñas 5. Adolescentes 6. Adultos	7. Afrocolombianos 	8. Campesinos	 9. Habitantes de Calle		10. Indígenas  11. Líderes y lideresas  12. Madres gestantes  13. Madres Lactantes  14. Población con situación de discapacidad 15. Población LGBTI 16. Población privada de la libertad 17. Población desmovilizada 18. Población víctima de conflicto armado 19. Población víctima de violencia 20. Trabajadores(as) sexuales	21. Instituciones 22. trabajadores informales' ?>
-                             <?php echo $this->Form->input('tipopoblacion', array('label' => 'Tipo de poblacion participante.')); ?>
-                         </div>
-
-                        
-                         <div class="form-group col-md-6">
-                             <?php
-                                $optiontime =  array(' ' => 'Elegir', 'No aplica' => 'No aplica', 'Comunitario' => 'Comunitario', 'Hogar' => 'Hogar', 'Institucional' => 'Institucional', 'Educativo' => 'Educativo', 'Laboral informal' => 'Laboral informal');
-                                echo $this->Form->input('entorno', array('label' => 'Entorno', 'type' => 'select', 'class' => 'form-control', 'options' => $optiontime));
-                                ?>
-                         </div>
-
-
-
-                         <div class="form-group col-md-6">
-                             <p> <?php echo 'Copie de esta lista a la casilla siguiente el curso de vida' ?></p>
-                             <?php echo 'Primera infancia, Infancia, adolescencia, jueventud, adultez, vejez' ?>
-                             <?php
-                                echo $this->Form->input('cursovida', array('label' => 'Curso de Vida', 'class' => 'form-control'));
-                                ?>
-                         </div>
-
-                         <div class="form-group col-md-6">
-                             <?php
-                                $optiontime =  array(' ' => 'Elegir', 'No aplica' => 'No aplica', 'Hogar' => 'Pólvora', 'PAI' => 'PAI', 'Tuberculosis' => 'Tuberculosis', 'Hasen Lepra' => 'Hasen/Lepra', 'Ley 1335' => 'Ley 1335');
-                                echo $this->Form->input('accioninformativa', array('label' => 'Acción informativa', 'type' => 'select', 'class' => 'form-control', 'options' => $optiontime));
-                                ?>
-                         </div>
-
-
-
-                         <div class="form-group col-md-6">
-
-                             <p class="help-block">'Si la actividad fue virtual selecciona la opcion correspondiente.'</p>
-
-
-                             <?php
-
-                                echo $this->Form->input('ubicacion_id', array('label' => 'Barrio', 'class' => 'form-control select-search', 'onchange' => 'mostrarBarrio(this.value);'));
-
-
-                                ?>
-                         </div>
-
-
-                         <div id="divActualizarBarrio" class="form-group col-md-6" style="display: none;">
-
-                             <p class="help-block">Agregue el nombre barrio/lugar</p>
-                             <?php
-
-
-                                echo $this->Form->input('barrio', array('label' => 'Barrio/Vereda', 'class' => 'form-control'));
-                                ?>
-                         </div>
-
-                        <div class="panel panel-default form-group col-md-12">
-                            <p class="help-block">Apoyo externo en el desarrollo de la actividad</p>
-                            <div class="row ">
-                                <div class="form-group col-md-2">
-                                    <!-- <form method="post"> -->
-
-                                        <select id="status" name="status" required onChange="mostrar(this.value);">
-                                            <option value="no">NO</option>
-                                            <option value="si">SI</option>
-                                            
-                                        </select>
-
-
-                                        <!--?php
-                                                echo $this->Form->input('externo', array('label' => 'Apoyo externo', 'options' => array('' => 'Elegir', 'Estudiante' => 'Estudiante', '2 No' => '2 No'), 'class' => 'form-control', 'id'=>'status', 'name'=>'status', 'onChange'=>'mostrar(this.value);'));
-                                                ?-->
-                                    <!-- </form> -->
-
-                                </div>
-
-
-                                <div id="si" class="panel panel-default form-group col-md-8" style="display: none;">
-                                    <p class="help-block">Por favor agregue informacion de la organización</p>
-
-
-
-
-                                    <div class="form-group col-md-8">
-                                        <?php
-
-                                        echo $this->Form->input('cargo', array('label' => ' Cargo en la institución u organización', 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-
-                                    <div class="form-group col-md-8">
-
-                                        <?php
-                                        echo $this->Form->input('organizacion', array('label' => ' Nombre de la Organización o Institución', 'class' => 'form-control'));
-                                        ?>
-
-                                    </div>
-
-                                    <div class="form-group col-md-8">
-
-                                        <?php
-                                        echo $this->Form->input('tipoorganizacion', array(
-                                            'label' => 'Tipo de organización ',
-                                            'options' => array('' => 'Elegir', 'No Aplica ' => 'No aplica', 'Organizacion Comunitaria ' => '1 Organización Comunitaria ', 'Organizacion Social ' => '2 Organización Social ', 'Institucion Publica' => '3 Institución Publica', 'Institucion Privada ' => '4 Institución Privada '), 'class' => 'form-control'
-                                        ));
-                                        ?>
-
-                                    </div>
-
-                                </div>
-
-
-
-
-
-                                <div class="form-group col-md-12">
-                                    <p class="help-block">NOTA: Hacer uso de los instrumentos de caracterización de organizaciones o instituciones para registrar más información.</p>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default form-group col-md-12">
-                            <p class="help-block">Soportes requeridos</p>
-                            <div class="row ">
-
-
-                                <div class="form-group col-md-8">
-                                    <?php
-                                    echo $this->Form->input('plsesion_id', array('label' => 'Plan de sesion', 'class' => 'form-control select-search'));
-                                    ?>
-                                </div>
-                                <div class="form-group col-md-4">
-
-                                    <?php
-
-
-                                    echo $this->Form->input('anexo', array('label' => 'Soportes', 'type' => 'file', 'class' => 'form-control', 'onchange' => 'validarTamanioSoporte()', 'class' => 'form-control'));
-
-
-
-                                    echo ('NOTA: Cargar en archivo comprimido extensión ".zip" o ".rar" * listado asistencia.pdf(meet o fisico), registro excel participantes  * tres(3) pantallazos o fotos reslucion 600px * 600px, ');
-                                    echo $this->Form->input('sisproceso_dir', array('type' => 'hidden'));
-                                    echo ('El nombre del archivo no tiene que tener tildes o diéresis');
-
-                                    //echo $this->Form->input('fecha_registro', array('label' => ' Fecha de registro', 'type' => 'hidden', 'class' => 'form-control'));
-                                    ?>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--cierra row-->
-
-
-                    <div class="form-group col-md-6">
-                        <?php //echo $this->Form->end(__('Guardar y Listar')); 
-                        ?>
-                        <?php echo $this->Form->submit('Guardar y asociar Otra sesion', array('name' => 'btn')); ?>
-
-                    </div>
-                    <div class="form-group col-md-6">
-                        <?php echo $this->Form->submit('Finalizar', array('name' => 'btn')); ?>
-                    </div>
-
-                </fieldset>
-
-
-
-
-                <?php //echo $this->Form->end(__('Enviar')); 
+                <?php
+
+                echo $this->Form->input(
+                    'proactividad_id',
+                    [
+                        'type' => 'select',
+                        'id' => 'proactividad_id',
+                        'class' => 'w-full',
+                        'label' => '',
+                        'empty' => 'Seleccione la sistematización relacionada',
+                        'error' => false // No mostrar error aquí
+                    ]
+                );
+                if (!empty($this->Form->error('proactividad_id'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('proactividad_id') . '</div>';
+                }
                 ?>
+            </div>
 
 
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
+                    <label for="plsesion_id" class="font-semibold">Plan de sesión</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+
+                echo $this->Form->input(
+                    'plsesion_id',
+                    [
+                        'type' => 'select',
+                        'id' => 'plsesion_id',
+                        'class' => 'w-full',
+                        'label' => '',
+                        'empty' => 'Seleccione la sistematización relacionada',
+                        'error' => false // No mostrar error aquí
+                    ]
+                );
+                if (!empty($this->Form->error('plsesion_id'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('plsesion_id') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- Fecha de sesión realizada -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center ">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">3</span>
+                    <label for="producto_id" class="font-semibold">Registro de fecha de sesión realizada</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <div class="col-span-2 text-md font-semibold my-6">
+                    <div class="flex flex-col w-full">
+                        <?php echo $this->Form->label('datetime_range', 'Seleccione Rango de Fecha y Hora', [
+                            'class' => 'text-gray-700 font-semibold text-sm mb-2'
+                        ]); ?>
+                        <input
+                            type="text"
+                            name="datetime_range"
+                            id="datetime_range"
+                            class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
+                            placeholder="Selecciona rango de fecha y hora" />
+                        <span class="text-sm text-red-600 mt-1">
+                            <?= $this->Form->error('datetime_range') ?>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Temática tratada -->
+            <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
+                    <label for="objactividad" class="font-semibold">Temática tratada</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Ingrese aquí exclusivamente el título de la temática tratada. No incluya poblaciones, lugares de realización de la actividad ni ningún otro dato.</p>
+
+                <?php
+                echo $this->Form->input('tema', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false
+                ]);
+
+                if (!empty($this->Form->error('tema'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('tema') . '</div>';
+                }
+                ?>
+            </div>
+
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">5</span>
+                    <label for="tipopoblacion" class="font-semibold">Tipo de poblacion participante</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                $options = [
+                    '1. Población en general' => '1 - Población en general',
+                    '2. Hombres' => '2 - Hombres',
+                    '3. Mujeres' => '3 - Mujeres',
+                    '4. Niños y niñas' => '4 - Niños y niñas',
+                    '5. Adolescentes' => '5 - Adolescentes',
+                    '6. Adultos' => '6 - Adultos',
+                    '7. Afrocolombianos' => '7 - Afrocolombianos',
+                    '8. Campesinos' => '8 - Campesinos',
+                    '9. Habitantes de Calle' => '9 - Habitantes de Calle',
+                    '10. Indígenas' => '10 - Indígenas',
+                    '11. Líderes y lideresas' => '11 - Líderes y lideresas',
+                    '12. Madres gestantes' => '12 - Madres gestantes',
+                    '13. Madres Lactantes' => '13 - Madres Lactantes',
+                    '14. Población con situación de discapacidad' => '14 - Población con situación de discapacidad',
+                    '15. Población LGBTI' => '15 - Población LGBTI',
+                    '16. Población privada de la libertad' => '16 - Población privada de la libertad',
+                    '17. Población desmovilizada' => '17 - Población desmovilizada',
+                    '18. Población víctima de conflicto armado' => '18 - Población víctima de conflicto armado',
+                    '19. Población víctima de violencia' => '19 - Población víctima de violencia',
+                    '20. Trabajadores(as) sexuales' => '20 - Trabajadores(as) sexuales',
+                    '21. Instituciones' => '21 - Instituciones',
+                    '22. Trabajadores informales' => '22 - Trabajadores informales'
+                ];
+
+                echo $this->Form->input(
+                    'tipopoblacion',
+                    [
+                        'type' => 'select',
+                        'label' => false,
+                        'multiple' => true,
+                        'id' => 'tipopoblacion',
+                        'class' => 'w-full',
+                        'empty' => false,
+                        'options' => $options,
+                        'error' => false // No mostrar error aquí
+                    ]
+                );
+                if (!empty($this->Form->error('tipopoblacion'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('tipopoblacion') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- Entorno -->
+            <div class="col-span-2 md:col-span-1  text-md font-semibold my-6 mr-4">
+
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">6</span>
+                    <label for="proactividad_id" class="font-semibold">Entorno</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                $optiontime = [
+                    '' => 'Elegir',
+                    'No aplica' => 'No aplica',
+                    'Comunitario' => 'Comunitario',
+                    'Hogar' => 'Hogar',
+                    'Institucional' => 'Institucional',
+                    'Educativo' => 'Educativo',
+                    'Laboral informal' => 'Laboral informal'
+                ];
+                echo $this->Form->input('entorno', [
+                    'type' => 'select',
+                    'options' => $optiontime,
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                    'error' => false
+                ]);
+                if (!empty($this->Form->error('entorno'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('entorno') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- Curso de vida -->
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6">
+
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">7</span>
+                    <label for="proactividad_id" class="font-semibold">Curso de Vida</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                echo $this->Form->input('cursovida', [
+                    'type' => 'select',
+                    'label' => false,
+                    'multiple' => true,
+                    'empty' => false,
+                    'id' => 'cursovida',
+                    'options' => [
+                        'Primera infancia' => 'Primera infancia',
+                        'Infancia' => 'Infancia',
+                        'Adolescencia' => 'Adolescencia',
+                        'Juventud' => 'Juventud',
+                        'Adultez' => 'Adultez',
+                        'Vejez' => 'Vejez'
+                    ],
+                    'class' => 'w-full',
+                    'error' => false
+                ]);
+                if (!empty($this->Form->error('cursovida'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('cursovida') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- Acción informativa -->
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">8</span>
+                    <label for="proactividad_id" class="font-semibold">Acción informativa</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                $optiontime = [
+                    '' => 'Elegir',
+                    'No aplica' => 'No aplica',
+                    'Hogar' => 'Pólvora',
+                    'PAI' => 'PAI',
+                    'Tuberculosis' => 'Tuberculosis',
+                    'Hasen Lepra' => 'Hasen/Lepra',
+                    'Ley 1335' => 'Ley 1335'
+                ];
+                echo $this->Form->input('accioninformativa', [
+                    'type' => 'select',
+                    'options' => $optiontime,
+                    'label' => false,
+                    'error' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                ]);
+                if (!empty($this->Form->error('accioninformativa'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('accioninformativa') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- Ubicación (Barrio) -->
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">9</span>
+                    <label for="proactividad_id" class="font-semibold">Lugar</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                echo $this->Form->input('ubicacion_id', [
+                    'type' => 'select',
+                    'id' => 'ubicacion_id',
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                    'onchange' => 'mostrarBarrio(this.value);',
+                    'error' => false,
+                    'label' => '',
+                    'empty' => 'Seleccione una lugar'
+                ]);
+                if (!empty($this->Form->error('ubicacion_id'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('ubicacion_id') . '</div>';
+                }
+                ?>
+                <p class="text-gray-500 text-xs mt-2">
+                    Si la actividad fue virtual selecciona la opción correspondiente.
+                </p>
+            </div>
+
+            <!-- Campo barrio (oculto al inicio) -->
+            <div id="divActualizarBarrio" class="col-span-2 md:col-span-1 text-md font-semibold my-6 hidden mr-4">
+                <p class="text-gray-500 text-xs mb-1">Agregue el nombre del barrio o vereda</p>
+                <?php echo $this->Form->label('barrio', 'Barrio/Vereda', [
+                    'class' => 'text-gray-700 font-semibold text-sm mb-2'
+                ]); ?>
+                <?php
+                echo $this->Form->input('barrio', [
+                    'label' => false,
+                    'error' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                ]);
+                if (!empty($this->Form->error('barrio'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('barrio') . '</div>';
+                }
+                ?>
             </div>
         </div>
     </div>
+</div>
+
+
+<div class="max-w-6xl mx-auto p-18 mt-4">
+    <div class="bg-white shadow-2xl rounded-xl p-12">
+        <!-- Header -->
+        <div class="flex items-center mb-4">
+            <img src="../img/update/historicoHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg w-[60px]">
+            <div class="ml-4">
+                <h1 class="text-xl font-semibold">Soportes requeridos</h1>
+                <p class="text-gray-500">Anexe los documentos requeridos para la sesión.</p>
+            </div>
+
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
+                    <label for="proactividad_id" class="font-semibold">Soportes</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="ProcesoregistroAnexo" class="block text-gray-700 font-semibold text-sm mb-2">
+                        Adjuntar archivo comprimido (.zip o .rar)
+                    </label>
+                    <div class="relative w-full">
+                        <?php
+                        echo $this->Form->input('anexo', [
+                            'label' => false,
+                            'type' => 'file',
+                            'class' => 'block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
+                            'onchange' => 'validarTamanioSoporte()',
+                            'id' => 'ProcesoregistroAnexo',
+                            'error' => false
+                        ]);
+                        if (!empty($this->Form->error('anexo'))) {
+                            echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('anexo') . '</div>';
+                        }
+
+                        echo $this->Form->input('sisproceso_dir', array('type' => 'hidden'));
+                        ?>
+                    </div>
+                    <span class="text-xs text-gray-500 mt-1">
+                        NOTA:
+                        * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
+                        * listado asistencia.pdf (meet o físico), registro excel participantes <br>
+                        * tres (3) pantallazos o fotos resolución 600px * 600px <br>
+                        El nombre del archivo no debe tener tildes o diéresis.
+                    </span>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="pt-2 flex gap-4">
+                <button type="submit" name="btn" value="Guardar y asociar otra sesion" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                            <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                            <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
+                            <path d="M7 3v4a1 1 0 0 0 1 1h7" />
+                        </svg>
+                    </span>
+                    Guardar y asociar otra sesión
+                </button>
+                <button type="submit" name="btn" value="Finalizar" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                            <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                            <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
+                            <path d="M7 3v4a1 1 0 0 0 1 1h7" />
+                        </svg>
+                    </span>
+                    Finalizar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </div>
 
@@ -335,4 +514,120 @@ $this->Html->script([
 
         return todo_correcto;
     }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const choices = new Choices("#proactividad_id", { // Botón para eliminar seleccionados
+            searchEnabled: true, // 🔎 activa búsqueda
+            searchChoices: true, // 🔎 filtra opciones
+            removeItemButton: false, // ❌ no mostrar botón de eliminar
+            itemSelectText: '', // 🚫 quita el "Press to select"
+            shouldSort: false, // 📌 mantiene el orden original
+            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
+        });
+
+        const choices_plsesion = new Choices("#plsesion_id", {
+            searchEnabled: true, // 🔎 activa búsqueda
+            searchChoices: true, // 🔎 filtra opciones
+            removeItemButton: false, // ❌ no mostrar botón de eliminar
+            itemSelectText: '', // 🚫 quita el "Press to select"
+            shouldSort: false, // 📌 mantiene el orden original
+            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
+        });
+
+        const choices_ubicacion = new Choices("#ubicacion_id", {
+            searchEnabled: true, // 🔎 activa búsqueda
+            searchChoices: true, // 🔎 filtra opciones
+            removeItemButton: false, // ❌ no mostrar botón de eliminar
+            itemSelectText: '', // 🚫 quita el "Press to select"
+            shouldSort: false, // 📌 mantiene el orden original
+            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
+        });
+
+        const choices_tipopoblacion = new Choices("#tipopoblacion", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: true, // Permite eliminar seleccionados
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            maxItemCount: -1, // Sin límite
+            removeItems: true, // Permite quitar seleccionados
+            duplicateItemsAllowed: false,
+            placeholder: true,
+            placeholderValue: "Seleccione la(s) población(es)",
+        });
+
+        const choices_cursovida = new Choices("#cursovida", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: true, // Permite eliminar seleccionados
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            maxItemCount: -1, // Sin límite
+            removeItems: true, // Permite quitar seleccionados
+            duplicateItemsAllowed: false,
+            placeholder: true,
+            placeholderValue: "Seleccione la(s) población(es)",
+        });
+
+        // Aplicar estilos con Tailwind
+        const inner = document.querySelector('.choices__inner');
+        if (inner) {
+            inner.classList.add(
+                'bg-white', 'border', 'border-gray-300', 'rounded-lg',
+                'px-3', 'py-2', 'focus:ring', 'focus:ring-blue-200', 'text-gray-700'
+            );
+        }
+
+        const dropdown = document.querySelector('.choices__list--dropdown');
+        if (dropdown) {
+            dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
+        }
+
+    });
+
+    $(function() {
+        $('#datetime_range').daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            timePickerIncrement: 1,
+            autoApply: true,
+            locale: {
+                format: 'YYYY-MM-DD HH:mm',
+                separator: ' a ',
+                applyLabel: "Aplicar",
+                cancelLabel: "Cancelar",
+                fromLabel: "Desde",
+                toLabel: "Hasta",
+                daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+                monthNames: [
+                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+                ],
+                firstDay: 1
+            }
+        }, function(start, end) {
+            // 👇 Extraer fecha y horas
+            let fecha = start.format('YYYY-MM-DD');
+            let hora_inicio = start.format('HH:mm');
+            let hora_fin = end.format('HH:mm');
+
+            console.log("Fecha:", fecha);
+            console.log("Hora inicio:", hora_inicio);
+            console.log("Hora fin:", hora_fin);
+
+            // Si necesitas guardarlos en campos ocultos para enviarlos al backend:
+            if (!$("#fecha").length) {
+                $("form").append('<?php echo $this->Form->hidden('fecha', ['id' => 'fecha']); ?>');
+                $("form").append('<?php echo $this->Form->hidden('hora_inicio', ['id' => 'hora_inicio']); ?>');
+                $("form").append('<?php echo $this->Form->hidden('hora_fin', ['id' => 'hora_fin']); ?>');
+            }
+            $("#fecha").val(fecha);
+            $("#hora_inicio").val(hora_inicio);
+            $("#hora_fin").val(hora_fin);
+        });
+    });
 </script>

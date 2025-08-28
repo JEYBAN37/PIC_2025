@@ -13,6 +13,12 @@ class Acta extends AppModel
 {
 
 	public $validate = array(
+		'id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				'autoIncrement' => true,
+			),
+		),
 
 		'fecha' => array(
 			'date' => array(

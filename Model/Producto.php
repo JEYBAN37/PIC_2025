@@ -19,7 +19,7 @@ class Producto extends AppModel
 {
 
 	public $virtualFields = array(
-		'nombreproducto' => 'CONCAT(Producto.numproductos," - ",Producto.tarea)'
+		'nombreproducto' => 'CONCAT(Producto.numproductos," | ",Producto.tarea)'
 	);
 
 

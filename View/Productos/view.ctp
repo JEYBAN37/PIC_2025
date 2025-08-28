@@ -3,10 +3,10 @@
 <?php 
 // IMPORTANTE: Cambiar la informacion de datos de conexion
 $serv = 'localhost';
-$port = '3307';
+$port = '3306';
 $userS = 'root';
-$passS = '20166';
-$bd = 'cake_Pic_2024';
+$passS = '';
+$bd = 'cake_Pic_2025';
 ?>
 
 <div class="row">

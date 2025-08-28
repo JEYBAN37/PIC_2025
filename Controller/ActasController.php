@@ -10,9 +10,7 @@ App::uses('Sanitize', 'Utility');
  *
 
  * @property Acta $Acta
-
  * @property PaginatorComponent $Paginator
-
  * @property SessionComponent $Session
  * 
  * 
@@ -20,7 +18,7 @@ App::uses('Sanitize', 'Utility');
 
  */
 
- Router::connect(
+Router::connect(
     '/:controller/:year/:month/:day',
     array('action' => 'index'),
     array(
@@ -31,7 +29,7 @@ App::uses('Sanitize', 'Utility');
 );
 class ActasController extends AppController
 {
-   
+
     /**
 
      * Components
@@ -44,22 +42,22 @@ class ActasController extends AppController
     public $helpers = array('Html', 'Form');
     public $components = array('Paginator', 'Session', 'RequestHandler');
 
-   
+
 
 
     /**
      * index method
      * @return void
      */
-    public function index() {
-		$this->Acta->recursive = 0;
-        
+    public function index()
+    {
+        $this->Acta->recursive = 0;
+
         $count = $this->Acta->find('count');
         $this->Paginator->settings['limit'] = $count;
-		
+
         $this->set("actas", $this->paginate());
-		
-	}
+    }
 
     /**
      * view method
@@ -67,7 +65,8 @@ class ActasController extends AppController
      * @param string $id
      * @return void
      */
-    public function view($id = null) {
+    public function view($id = null)
+    {
 
         if (!$this->Acta->exists($id)) {
 
@@ -78,7 +77,8 @@ class ActasController extends AppController
 
         $this->pdfConfig = array(
             'download' => true,
-            'filename' => 'acta_' . $id . '.pdf');
+            'filename' => 'acta_' . $id . '.pdf'
+        );
 
         $this->set('acta', $this->Acta->find('first', $options));
     }
@@ -87,7 +87,8 @@ class ActasController extends AppController
      * add method
      * @return void
      */
-    public function add() {
+    public function add()
+    {
 
         if ($this->request->is('post')) {
 
@@ -95,25 +96,27 @@ class ActasController extends AppController
 
             if ($this->Acta->save($this->request->data)) {
 
-               // $this->Session->setFlash(__('The acta has been saved.'));
+                // $this->Session->setFlash(__('The acta has been saved.'));
                 //return $this->redirect(array('action' => 'nuebus'));
-                                
-                $id = $this->Acta->id; 
+
+                $id = $this->Acta->id;
                 $aux = "view/$id";
                 return $this->redirect(array('action' => $aux));
             } else {
 
-                $this->Session->setFlash('El acta no se ha guardado.  por favor verificar el formulario. Revise nuevamente todos los campos de selección.','default',array('class'=>'alert alert-danger'));
+                $this->Session->setFlash('El acta no se ha guardado.  por favor verificar el formulario. Revise nuevamente todos los campos de selección.', 'default', array('class' => 'alert alert-danger'));
             }
+            // Obtener el producto más recientemente modificado
+            $productos = $this->Acta->Producto->find('first', array(
+                'order' => array('Producto.modified' => 'DESC')
+            ));
+
+            $ubicaciones = $this->Acta->Ubicacion->find('list');
+            $responsables = $this->Acta->Responsable->find('list');
+
+            $this->set(compact('productos', 'ubicaciones', 'responsables'));
         }
-        $productos = $this->Acta->Producto->find('list');
-        $ubicaciones = $this->Acta->Ubicacion->find('list');
-
-        $responsables = $this->Acta->Responsable->find('list');
-
-        $this->set(compact('productos','ubicaciones', 'responsables'));
     }
-
     /**
 
      * edit method
@@ -127,7 +130,8 @@ class ActasController extends AppController
      * @return void
 
      */
-    public function edit($id = null) {
+    public function edit($id = null)
+    {
 
         if (!$this->Acta->exists($id)) {
 
@@ -135,6 +139,17 @@ class ActasController extends AppController
         }
 
         if ($this->request->is(array('post', 'put'))) {
+
+            if (empty($this->request->data['Acta']['anexo']['name'])) {
+                unset($this->request->data['Acta']['anexo']); // CakePHP no reemplaza
+            } else {
+                // Aquí procesar la subida de archivo
+                $archivo = $this->request->data['Acta']['anexo'];
+                $nombreArchivo = time() . '_' . $archivo['name'];
+                move_uploaded_file($archivo['tmp_name'], WWW_ROOT . 'uploads' . DS . $nombreArchivo);
+                $this->request->data['Acta']['anexo'] = $nombreArchivo;
+            }
+
 
             if ($this->Acta->save($this->request->data)) {
 
@@ -145,7 +160,7 @@ class ActasController extends AppController
                 return $this->redirect(array('action' => $aux));
             } else {
 
-                $this->Session->setFlash(__('El acta no se ha guardado. Por favor, revise el formulario.', 'defalut', array('class'=>'alert alert-success')));
+                $this->Session->setFlash(__('El acta no se ha guardado. Por favor, revise el formulario.', 'defalut', array('class' => 'alert alert-success')));
             }
         } else {
 
@@ -154,14 +169,16 @@ class ActasController extends AppController
             $this->request->data = $this->Acta->find('first', $options);
         }
 
-        $productos = $this->Acta->Producto->find('list');
+        $productos = $this->Acta->Producto->find('list', array(
+            'order' => array('Producto.modified' => 'DESC')
+        ));
         $ubicaciones = $this->Acta->Ubicacion->find('list');
         $responsables = $this->Acta->Responsable->find('list');
-        $this->set(compact('productos','ubicaciones', 'responsables'));
-
+        $this->set(compact('productos', 'ubicaciones', 'responsables'));
     }
 
-    public function editanexo($id = null) {
+    public function editanexo($id = null)
+    {
 
         if (!$this->Acta->exists($id)) {
 
@@ -178,12 +195,12 @@ class ActasController extends AppController
 
                 //return $this->redirect(array('action' => 'nuebus'));
 
-               $id = $this->Acta->id; 
+                $id = $this->Acta->id;
                 $aux = "view/$id";
                 return $this->redirect(array('action' => $aux));
             } else {
 
-                $this->Session->setFlash('El soporte del acta no se ha guardado. Por favor, revise el formulario.', 'default',array('class'=>'alert alert-danger'));
+                $this->Session->setFlash('El soporte del acta no se ha guardado. Por favor, revise el formulario.', 'default', array('class' => 'alert alert-danger'));
             }
         } else {
 
@@ -199,23 +216,25 @@ class ActasController extends AppController
         $this->set(compact('ubicaciones', 'responsables'));
     }
 
-    function nuebus() {        
+    function nuebus()
+    {
         $this->Acta->recursive = 0;
-        
-        $paginate = array("fields" => array("id","producto_id", "tema", "fecha"));
+
+        $paginate = array("fields" => array("id", "producto_id", "tema", "fecha"));
         $this->Paginator->settings = $paginate;
-        
+
         $count = $this->Acta->find('count');
         $this->Paginator->settings['limit'] = $count;
-        
+
         $this->set("l", $this->paginate());
     }
 
 
-    public function delete($id) {
+    public function delete($id)
+    {
 
-    //$this->Acta->id = $id;
-    /*if (!$this->Acta->exists()) {
+        //$this->Acta->id = $id;
+        /*if (!$this->Acta->exists()) {
       throw new NotFoundException(__('El acta no es válida.'));
     }
     $this->request->allowMethod('post', 'delete');
@@ -229,7 +248,7 @@ class ActasController extends AppController
         $this->Acta->delete($id);
 
         $this->redirect("nuebus");
-  }
+    }
 
     /*function check() {
 

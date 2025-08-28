@@ -359,7 +359,7 @@ class Proactividad extends AppModel {
 			'foreignKey' => 'producto_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => 'Producto.created DESC, Producto.modified DESC'
 		),
 		'Responsable' => array(
 			'className' => 'Responsable',

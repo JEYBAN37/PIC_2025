@@ -48,11 +48,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     // jQuery y DataTables
     echo $this->Html->script("https://code.jquery.com/jquery-3.6.0.min.js");
     echo $this->Html->script("https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js");
+    echo $this->Html->script('ckeditor/ckeditor');
     ?>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Choices.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
+
+
     <style>
         /* transición suave para submenús */
         .submenu {
@@ -82,7 +94,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 <!--body class="bs-docs-home"-->
 
-<body id="app" class="bg-gray-100">
+<body id="app" class="bg-white">
 
     <!-- Navbar -->
 
@@ -91,7 +103,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
             <!-- Logo + Title -->
             <div class="flex items-center gap-2">
-                <img class="w-8 h-[50px] object-cover" alt="dataHome.alt" src="../img/update/logoPic.png">
+                <img class="w-8 h-[50px] object-cover" alt="dataHome.alt" src="<?php echo $this->webroot; ?>/img/update/logoPic.png">
                 <a href="/react/#/homePage">
                     <h2 class="text-[#155dfc] text-2xl md:text-[28px] font-bold whitespace-nowrap hover:text-green-600 transition-colors">
                         {{ dataHome.title }}
@@ -163,15 +175,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     <div class="menu-item" data-id="dashboard">
                         <button
                             type="button"
-                            data-href="<?php echo $this->Html->url($URL); ?>"
+                            data-href="/react/#/homePage"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Dashboard icon"
-                                    src="../img/update/resultados.png"
-                                    data-src-default="../img/update/resultados.png"
-                                    data-src-hover="../img/update/resultadosHover.png" />
+                                    src="<?php echo $this->webroot; ?>/img/update/resultados.png"
+                                    data-src-default="<?php echo $this->webroot; ?>/img/update/resultados.png"
+                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/resultadosHover.png" />
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Resultados
                                 </span>
@@ -188,9 +200,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Reportes icon"
-                                    src="../img/update/documento.png"
-                                    data-src-default="../img/update/documento.png"
-                                    data-src-hover="../img/update/docHover.png" />
+                                    src="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                    data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Sistematizaciones
                                 </span>
@@ -233,9 +245,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
-                                    src="../img/update/documento.png"
-                                    data-src-default="../img/update/documento.png"
-                                    data-src-hover="../img/update/docHover.png" />
+                                    src="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                    data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Actas
                                 </span>
@@ -266,9 +278,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
-                                    src="../img/update/documento.png"
-                                    data-src-default="../img/update/anexo.png"
-                                    data-src-hover="../img/update/anexoHover.png" />
+                                    src="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                    data-src-default="<?php echo $this->webroot; ?>/img/update/anexo.png"
+                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/anexoHover.png" />
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Anexo Tecnico
                                 </span>
@@ -296,9 +308,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
-                                    src="../img/update/portaPapeles.png"
-                                    data-src-default="../img/update/portaPapeles.png"
-                                    data-src-hover="../img/update/portaPapelesHover.png" />
+                                    src="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
+                                    data-src-default="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
+                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/portaPapelesHover.png" />
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Planes de Sesion
                                 </span>
@@ -330,9 +342,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
-                                    src="../img/update/documento.png"
-                                    data-src-default="../img/update/documento.png"
-                                    data-src-hover="../img/update/docHover.png" />
+                                    src="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                    data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Informes Eventos
                                 </span>
@@ -364,9 +376,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
-                                    src="../img/update/historico.png"
-                                    data-src-default="../img/update/historico.png"
-                                    data-src-hover="../img/update/historicoHover.png" />
+                                    src="<?php echo $this->webroot; ?>/img/update/historico.png"
+                                    data-src-default="<?php echo $this->webroot; ?>/img/update/historico.png"
+                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/historicoHover.png" />
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Historico PIC
                                 </span>
@@ -408,19 +420,19 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </aside>
 
         <div class="flex items-start">
-        <button id="toggleSidebar" onclick="toggleSidebar()" class="px-1 py-2 rounded-r-lg   bg-white shadow text-gray-700 hover:bg-gray-300">
-            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-to-line-icon lucide-arrow-left-to-line">
-                <path d="M3 19V5" />
-                <path d="m13 6-6 6 6 6" />
-                <path d="M7 12h14" />
-            </svg>
-        </button>
+            <button id="toggleSidebar" onclick="toggleSidebar()" class="px-1 py-2 rounded-r-lg   bg-white shadow text-gray-700 hover:bg-gray-300">
+                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-to-line-icon lucide-arrow-left-to-line">
+                    <path d="M3 19V5" />
+                    <path d="m13 6-6 6 6 6" />
+                    <path d="M7 12h14" />
+                </svg>
+            </button>
         </div>
 
 
 
         <!-- Contenido principal -->
-        <main class="flex-1 ml-0 md:ml-[268px] p-6 overflow-y-auto">
+        <main class="flex-1 ml-0 p-8 overflow-y-auto">
             <?php echo $this->Session->flash(); ?>
             <div class="relative z-10">
                 <?php echo $this->fetch('content'); ?>
@@ -448,25 +460,25 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         href: "/",
                         title: "SICB",
                         adminIcon: {
-                            default: "../img/update/adminHover.png",
+                            default: "<?php echo $this->webroot; ?>/img/update/adminHover.png",
                         },
                         icons: [{
                                 key: "Home",
-                                default: "../img/update/hogar.png",
+                                default: "<?php echo $this->webroot; ?>/img/update/hogar.png",
                                 action: () => {
                                     window.location.href = `/react/#/homePage`;
                                 }
                             },
                             {
                                 key: "Ayuda",
-                                default: "../img/update/ayuda.png",
+                                default: "<?php echo $this->webroot; ?>/img/update/ayuda.png",
                                 action: () => {
                                     window.location.href = `${URLCAKE}/users/home`;
                                 }
                             },
                             {
                                 key: "Salir",
-                                default: "../img/update/cerrarSesion.png",
+                                default: "<?php echo $this->webroot; ?>/img/update/cerrarSesion.png",
                                 action: () => {
                                     window.location.href = `${URLCAKE}/users/salir`;
                                 }
@@ -539,11 +551,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             const isSubitem = btn.classList.contains('subitem');
 
             if (isSubitem) {
-            const href = btn.getAttribute('data-href');
-            if (href) {
-                window.location.href = href;
-                return;
-            }
+                const href = btn.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
+                    return;
+                }
             }
 
             if (!container) return;
@@ -555,30 +567,30 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
             // Si no tiene submenú, redirige directamente
             if (!hasArrow) {
-            const href = btn.getAttribute('data-href');
-            if (href) {
-                window.location.href = href;
-                return;
-            }
+                const href = btn.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
+                    return;
+                }
             }
 
             // Solo permitir un submenú abierto a la vez
             if (hasArrow) {
-            // Cerrar todos los submenús excepto el actual
-            document.querySelectorAll('.menu-item[data-has-arrow="true"]').forEach(mi => {
-                const submenu = mi.querySelector('.submenu');
-                const arrow = mi.querySelector('.arrow');
-                if (mi !== container) {
-                submenu?.classList.remove('open');
-                arrow?.classList.remove('open');
-                }
-            });
+                // Cerrar todos los submenús excepto el actual
+                document.querySelectorAll('.menu-item[data-has-arrow="true"]').forEach(mi => {
+                    const submenu = mi.querySelector('.submenu');
+                    const arrow = mi.querySelector('.arrow');
+                    if (mi !== container) {
+                        submenu?.classList.remove('open');
+                        arrow?.classList.remove('open');
+                    }
+                });
 
-            const submenu = container.querySelector('.submenu');
-            const arrow = container.querySelector('.arrow');
-            const isOpen = submenu.classList.contains('open');
-            submenu.classList.toggle('open', !isOpen);
-            arrow.classList.toggle('open', !isOpen);
+                const submenu = container.querySelector('.submenu');
+                const arrow = container.querySelector('.arrow');
+                const isOpen = submenu.classList.contains('open');
+                submenu.classList.toggle('open', !isOpen);
+                arrow.classList.toggle('open', !isOpen);
             }
         });
 

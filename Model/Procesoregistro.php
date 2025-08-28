@@ -77,9 +77,9 @@ class Procesoregistro extends AppModel
 			),
 		),
 		'cursovida' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Por favor verifique campo',
+			'multiple' => array(
+				'rule' => array('multiple', array('min' => 1)),
+				'message' => 'Por favor seleccione al menos una opción',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -87,9 +87,9 @@ class Procesoregistro extends AppModel
 			),
 		),
 		'tipopoblacion' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Por favor verifique campo',
+			'multiple' => array(
+				'rule' => array('multiple', array('min' => 1)),
+				'message' => 'Por favor seleccione al menos una opción',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -126,7 +126,7 @@ class Procesoregistro extends AppModel
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		
+
 		'plsesion_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -138,34 +138,34 @@ class Procesoregistro extends AppModel
 			),
 		),
 		'anexo' => array(
-        	'uploadError' => array(
+			'uploadError' => array(
 				'rule' => 'uploadError',
 				'message' => 'Por favor verifique campo, intente nuevamente',
 				'on' => 'create'
 			),
-	    	'isUnderPhpSizeLimit' => array(
-	    		'rule' => 'isUnderPhpSizeLimit',
-	        	'message' => 'Archivo excede el límite de tamaño de archivo de subida'
-	        ),
-		    'isValidMimeType' => array(
-	    		
-				'rule' => array('isValidExtension', array('rar','zip','pdf')),
-             'message' => 'File does not have a pdf, zip, or rar'
-	    	),
-		    'isBelowMaxSize' => array(
-	    		'rule' => array('isBelowMaxSize', 5000000),
-        		'message' => 'El tamaño delarchivo es demasiado grande. Maximo 5mb'
-	    	),
-		   /* 'isValidExtension' => array(
+			'isUnderPhpSizeLimit' => array(
+				'rule' => 'isUnderPhpSizeLimit',
+				'message' => 'Archivo excede el límite de tamaño de archivo de subida'
+			),
+			'isValidMimeType' => array(
+
+				'rule' => array('isValidExtension', array('rar', 'zip', 'pdf')),
+				'message' => 'File does not have a pdf, zip, or rar'
+			),
+			'isBelowMaxSize' => array(
+				'rule' => array('isBelowMaxSize', 5000000),
+				'message' => 'El tamaño delarchivo es demasiado grande. Maximo 5mb'
+			),
+			/* 'isValidExtension' => array(
 	    		'rule' => array('isValidExtension', array('jpg', 'png'), false),
         		'message' => 'La imagen no tiene la extension jpg o png'
 	    	),*/
-		    'checkUniqueName' => array(
-                'rule' => array('checkUniqueName'),
-                'message' => 'Ya existe un archivo con el mismo nombre',
-                'on' => 'update'
-        	),		
-			),	
+			'checkUniqueName' => array(
+				'rule' => array('checkUniqueName'),
+				'message' => 'Ya existe un archivo con el mismo nombre',
+				'on' => 'update'
+			),
+		),
 
 
 	);
@@ -179,7 +179,7 @@ class Procesoregistro extends AppModel
 					'dir' => 'sisproceso_dir'
 				),
 				'thumbnailMethod' => 'php',
-				
+
 				'deleteOnUpdate' => false,
 				'deleteFolderOndelete' => true
 			),
@@ -188,8 +188,8 @@ class Procesoregistro extends AppModel
 				'rule' => array('checkUniqueName'),
 				'message' => 'Existe un archivo almacenado con el mismo nombre',
 				'on' => 'update'
-			),	
-			
+			),
+
 		),
 
 	);
@@ -325,16 +325,26 @@ class Procesoregistro extends AppModel
 
 	function checkUniqueName($data)
 	{
-	    $isUnique = $this->find('first', array('fields' => array('Procesoregistro.anexo'), 'conditions' => array('Procesoregistro.anexo' => $data['anexo'])));
+		$isUnique = $this->find('first', array('fields' => array('Procesoregistro.anexo'), 'conditions' => array('Procesoregistro.anexo' => $data['anexo'])));
 
-	    if(!empty($isUnique))
-	    {
-	        return false;
-	    }
-	    else
-	    {
-	        return true;
-	    }
+		if (!empty($isUnique)) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
+	public function beforeSave($options = array())
+	{
+		if (isset($this->data[$this->alias]['cursovida']) && is_array($this->data[$this->alias]['cursovida'])) {
+			$this->data[$this->alias]['cursovida'] = implode(',', $this->data[$this->alias]['cursovida']);
+		}
+
+
+		if (isset($this->data[$this->alias]['tipopoblacion']) && is_array($this->data[$this->alias]['tipopoblacion'])) {
+			$this->data[$this->alias]['tipopoblacion'] = implode(',', $this->data[$this->alias]['tipopoblacion']);
+		}
+
+		return true;
+	}
 }

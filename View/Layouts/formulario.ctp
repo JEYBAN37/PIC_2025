@@ -34,8 +34,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <?php
     echo $this->Html->meta('icon');
 
-    echo $this->Html->css(array('cake.generic.css', 'bootstrap.min.css',  'sb-admin-2.css'));
-    echo $this->Html->script(array('jquery-1.11.0', 'metisMenu.min', 'sb-admin-2', 'bootstrap.min'));
+
    
     echo $this->fetch('meta');
     echo $this->fetch('css');
@@ -48,7 +47,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 <body>
 
-    <?php echo $this->element('nav'); ?> 
+
     
 
     <?php echo $this->Session->flash(); ?>

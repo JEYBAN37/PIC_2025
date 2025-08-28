@@ -1,370 +1,147 @@
+<?php $this->layout = 'default' ?>
 
- 
-<div class="container">
-  <div class="row">
+<div class="max-w-5xl mx-auto text-center mb-8">
+    <h1 class="text-5xl font-bold mb-4 text-blue-600">
+        Editar Sistematización
+    </h1>
+    <p class="text-gray-500 mb-4 text-lg">
+        Registre preliminarmente los campos relacionados con la sistematización.
+        Tenga en cuenta que podrá editar y complementar los demás campos posteriormente.
+    </p>
+</div>
 
-    <div class="col-lg-12" >
-        <div class="panel panel-default">
-            <div class="panel-heading" class="page-header">
 
-             <?php $this->layout = 'formulario' ?>
-            <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
-
+<div class="max-w-6xl mx-auto p-18">
+    <div class="bg-white shadow-2xl rounded-xl p-12">
+        <!-- Header -->
+        <div class="flex items-center mb-4">
+            <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
+            <div class="ml-4">
+                <h1 class="text-xl font-semibold">Información del proceso</h1>
+                <p class="text-gray-500">Complete los datos basicos del proceso de sistematización.</p>
             </div>
 
-                <?php echo $this->Form->create('Proactividad', array('type' => 'file', 'novalidate' => 'novalidate')); ?>
-                <fieldset>
-
-                      <h1 class="page-header">Actualizar Sistemtización proceso formativo - educativo</h1>
-                     
-                     <?php echo $this->Form->input('id');?>
-      
-                   
-                    <?php
-                    $option = array(
-                        'label' => 'Fecha',
-                        'dateFormat' => 'DMY',
-                        'minYear' => date('Y') - 0,
-                        'maxYear' => date('Y') + 0,
-                        'empty' => array(
-                            'day' => 'Día',
-                            'month' => 'Mes',
-                            'year' => 'Año'
-                        )
-                    );
-                    ?>
-
-             <div class="row">
-                       
-                       
-                        
-                     
-                                   
-                        <div class="form-group col-md-12">
-                            <?php
-                            echo $this->Form->input('producto_id', array('label' => 'Producto/tarea relacionada', 'type' => 'select',  'class' => 'form-control select-search'));?>
-                        </div>
-
-                        <div class="form-group col-md-12">
-                            <?php
-                            echo $this->Form->input('producto1', array('label' => 'Escriba brevemente los productos o procesos relacionados(opcional)','class'=>'form-control'));
-                        ?>
-                        </div>
-                                    
-
-                         <div class="form-group col-md-12">
-                    
-                       <label>Poblaciones</label> 
-
-                       <p class="help-block">Copie de esta lista a la casilla siguiente las poblaciones participantes o escriba otras que no esten categorizadas.</p>
-
-                         <p class="help-block">1. Población en general 2. Hombres  3. Mujeres 4. Niños y niñas 5. Adolescentes 6. Adultos 7. Afrocolombianos  8. Campesinos    9. Habitantes de Calle     10. Indígenas  11. Líderes y lideresas  12. Madres gestantes  13. Madres Lactantes  14. Población con situación de discapacidad 15. Población LGBTI 16. Población privada de la libertad 17. Población desmovilizada 18. Población víctima de conflicto armado 19. Población víctima de violencia 20. Trabajadores(as) sexuales 21. Instituciones</p>
-                     </div> 
-                        <div class="form-group col-md-12">
-                             <p class="help-block">Registre aquí las poblaciones participantes, con el código y nombre respectivo</p>
-                            <?php               
-                            echo $this->Form->input('poblaciones', array('label' => 'Poblaciones participantes', 'class' => 'form-control','fa fa-times-circle-o', 'control-label' ,'for'=>'inputError'));        
-                            ?>
-                        </div>
-
-                        <div class="panel panel-default form-group col-md-12">
-                            <p class="help-block">Caracteristicas de participantes y tipo de actividad</p>
-                            <div class="row ">
-
-                                <div class="form-group col-md-6">
-                                    <p class="help-block">Por ejemplo: Grupo surprisecity</p>
-                                    <?php
-
-                                    echo $this->Form->input('grupo', array('label' => 'Nombre de organización o grupo', 'class' => 'form-control'));
-                                    ?>
-                                </div>
+        </div>
 
 
-                                <div class="form-group col-md-3">
-                                    <p class="help-block">Elija el timpo de actividad desarrollada</p>
-                                    <?php
-                                    echo $this->Form->input('caracteristicasesion', array(
-                                        'label' => 'Caracteristica de la sesión', 'options' =>
-                                        array('' => 'Elegir', '1. Taller ' => '1. Taller ', '2. Minga' => '2. Minga', '3. Encuentro' => '3. Encuentro  ', '5. Otro' => '5. Otro '),
-                                        'class' => 'form-control', 'onchange' => 'mostrarOtrosesion(this.value);'
-                                    ));
-                                    ?>
+        <!-- Formulario -->
+        <?php
+        echo $this->Form->create('Proactividad', [
+            'type' => 'file',
+            'novalidate' => 'novalidate',
+            'class' => 'space-y-6',
+        ]);
+        ?>
+
+        <?php echo $this->Form->input('id', ['type' => 'hidden']); ?>
+
+        <div class="grid grid-cols-1 md:grid-cols-2">
+
+            <!-- Producto/tarea relacionada -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
+                    <label for="producto_id" class="font-semibold">Producto | Actividad relacionada</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <?php
+                echo $this->Form->input('producto_id', [
+                    'type' => 'select',
+                    'id' => 'producto_id',
+                    'class' => 'w-full',
+                    'label' => '',
+                    'empty' => 'Seleccione el producto | actividad',
+                    'error' => false // No mostrar error aquí
+                ]);
+                ?>
+                <?php
+                if (!empty($this->Form->error('producto_id'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('producto_id') . '</div>';
+                }
+                ?>
+            </div>
 
 
-                                </div>
-                                <div id="divOtroSesion" class="form-group col-md-3" style="display: none;">
+            <!-- Objetivo General -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
+                    <label for="objactividad" class="font-semibold">Objetivo General del proceso</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <?php
+                echo $this->Form->input('objactividad', [
+                    'label' => '',
+                    'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
+                    'error' => false // No mostrar error aquí
+                ]);
+                if (!empty($this->Form->error('objactividad'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('objactividad') . '</div>';
+                }
+                ?>
+            </div>
 
-                                    <p class="help-block">Si selecciono la opción ‘otro’ especifique aqui el tipo de caracteristica</p>
-                                    <?php
+            <!-- Objetivos específicos -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">3</span>
+                    <label for="producto_id" class="font-semibold">Objetivos Específicos del proceso</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <?php
+                echo $this->Form->input('objetivoespecifico', [
+                    'label' => '',
+                    'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200',
+                    'error' => false // No mostrar error aquí
+                ]);
+                if (!empty($this->Form->error('objetivoespecifico'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('objetivoespecifico') . '</div>';
+                }
+                ?>
+            </div>
 
-                                    echo $this->Form->input('otrocual', array('label' => 'Otra caracteristica', 'class' => 'form-control'));
-                                    ?>
-                                </div>
-                            </div>
-                        </div>
+        </div>
 
-                        <div class="panel panel-default form-group col-md-12">
-                              <p class="help-block">Relación de la actividad a sistematizar con los objetivos de la estrategia Ciudad Bienestar</p>
-                             <div class="row ">
-                                    <div class="form-group col-md-4">
-                                      
-                                        <?php              
-                                        echo $this->Form->input('objetivouno', array('label' => 'Objetivo 1 ',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte'), 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <?php
-                                        echo $this->Form->input('objetivodos', array('label' => 'Objetivo 2',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte'), 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <?php
-                                        echo $this->Form->input('objetivotres', array('label' => 'Objetivo 3 ',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte'), 'class' => 'form-control'));
-                                        ?>
-                                    </div>
+        <!-- Botón -->
+        <div class="pt-2">
+            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                        <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                        <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
+                        <path d="M7 3v4a1 1 0 0 0 1 1h7" />
+                    </svg>
+                </span>
+                Editar sistematización
+            </button>
+            <?php echo $this->Form->end(); ?>
+        </div>
+    </div>
+</div>
 
-                                    <div class="form-group col-md-12">
-                            <?php
-                            echo $this->Form->input('contobjetivo', array('label' => 'Describa de qué forma  la actividad contribuye con el o los objetivos de la estrategia CB segun la puntuacion asignada', 'class' => 'form-control'));
-                            ?>
-                        </div>
-
-                             </div>
-                          </div>  
-                        
-                        <div class="form-group col-md-12">
-                            <?php
-                            echo $this->Form->input('objactividad', array('label' => 'Objetivo General del proceso', 'class' => 'form-control'));
-                            ?>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <?php
-                            echo $this->Form->input('objetivoespecifico', array('label' => 'Objetivos Específicos del proceso', 'class' => 'form-control'));
-                            ?>
-                        </div>
-
-
-                         
-                          <div class="panel panel-default form-group col-md-12">
-                            <p class="help-block">Relación de la actividad con las premisas de la estrategia Ciudad Bienestar</p>
-                             <div class="row ">
-
-
-                                <div class="form-group col-md-4">
-                                   
-                                    <?php
-                                    
-                                    echo $this->Form->input('premisauno', array('label' => 'Participación significativa',
-                                        'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte' ), 'class' => 'form-control'));
-                                    ?>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <?php
-                                    echo $this->Form->input('premisados', array('label' => 'Cuerpo territorio ',
-                                        'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte' ), 'class' => 'form-control'));
-                                    ?>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <?php
-                                    echo $this->Form->input('premisatres', array('label' => 'Ciudadanía Activa ',
-                                        'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte' ), 'class' => 'form-control'));
-                                    ?>
-                                </div>
-
-                                        <div class="form-group col-md-12">
-                                    <?php
-                                    echo $this->Form->input('contpremisa', array('label' => 'Describa de qué forma  la actividad contribuye con las premisas de la estrategia CB, segun la puntuacion asignada', 'class' => 'form-control'));
-                                    
-                                    ?>
-                                    </div>
-                               
-                            </div>
-                          </div>
-
-
-                           <div class="panel panel-default form-group col-md-12">
-                            <p class="help-block">Relación de la actividad con las Perspectivas de la estrategia Ciudad Bienestar</p>
-                             <div class="row ">
-
-                                    <div class="form-group col-md-6">
-                                         
-                                        <?php
-                                             echo $this->Form->input('perspectivados', array('label' => 'Derechos',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte') , 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <?php
-                                        echo $this->Form->input('perspectivauno', array('label' => 'Determinación social ',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte') , 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <?php
-                                        echo $this->Form->input('contperspectiva', array('label' => 'Describa de qué forma  la actividad contribuye con las pesrpectivas de la estrategia CB, segun la puntuacion asignada', 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-
-                          </div>
-                        </div>
-
-
-                         <div class="panel panel-default form-group col-md-12">
-                            <p class="help-block">Relación de la actividad con los enfoques de la estrategia Ciudad Bienestar</p>
-                             <div class="row ">
-                                    <div class="form-group col-md-6">
-                                          
-                                        <?php
-                                            echo $this->Form->input('enfoqueuno', array('label' => 'Territorial ',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte' ) , 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <?php
-                                        echo $this->Form->input('enfoquedos', array('label' => 'Población ',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte' ) , 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <?php
-                                        echo $this->Form->input('enfoquetres', array('label' => 'Intercultural ',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte' ) , 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <?php
-                                        echo $this->Form->input('enfoquecuatro', array('label' => ' Diferencial ',
-                                            'options' => array('' => 'Elegir', '1 No tiene' => '1 No tiene', '2 Poca' => '2 Poca', '3 Moderada' => '3 Moderada', '4 Fuerte' => '4 Fuerte', '5 Muy Fuerte' => '5 Muy Fuerte' ) , 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <?php
-                                        echo $this->Form->input('contribucionenfoque', array('label' => 'Describa de qué forma  la actividad contribuye con el o  los enfoques de la estrategia CB,segun la puntuacion asignada', 'class' => 'form-control'));
-                                        ?>
-                                    </div>
-
-                                 </div> 
-                              </div>    
-                              
-                              <div class="form-group col-md-12">
-                                    <?php
-                                    echo $this->Form->input('contribucionppsc', array('label' => 'Analice y explique de qué manera se aplicaron las líneas y sublíneas de la Política Publica en Salud Colectiva al proceso pedagógico', 'class' => 'form-control'));
-                                    ?>
-                                </div>
-                                
-                        <div class="form-group col-md-12">
-                            <?php
-                            echo $this->Form->input('compromiso', array('label' => 'Compromisos  de la actividad', 'class' => 'form-control'));
-                            ?>
-                        </div>
-                        <div class="form-group col-md-12">
-                             <p class="help-block">NOTA: En los campos de aportes y conclusiones maximo 500 caracteres.</p>
-                            <?php
-                        
-
-                            echo$this->Form->input('aportes', array('label' => 'Aportes de la comunidad', 'class' => 'form-control'));
-                            ?>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <?php
-                            echo$this->Form->input('conclusiones', array('label' => 'Conclusiones', 'class' => 'form-control'));
-                            ?>
-                        </div>
-
-                         <div class="form-group col-md-12">
-                            <?php
-                            echo$this->Form->input('relatoria', array('label' => 'Realice un breve relatoria del proceso realizado', 'class' => 'form-control'));
-                            ?>
-                        </div>
-
-
-
-                           <div class="form-group col-md-6">
-                            <?php
-                            echo 'Ingresar nombre completo';
-                            echo $this->Form->input('responsable_id', array('label' => 'Responsable de registro', 'class' => 'form-control select-search'));
-                            ?>
-                        </div>
-                        
-                   </div>      
-                </fieldset>
-
-                  <p>
-                                        <?php echo $this->Form->end(array('label' => 'Actualizar sistematización', 'class' =>'btn btn-success')); ?>
-                                        </p>
-
-               </div>
-
-
-               </div> 
-              
-           
-           
-      </div>
-</div>            
-
-<?php
-$this->Html->css([
-    'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
-        ], ['block' => 'css']
-);
-$this->Html->script([
-    'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
-        ], ['block' => 'script']
-);
-?>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.select-search').select2();
-        $('.select-search-multi').select2({
-            closeOnSelect:false
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const choices = new Choices("#producto_id", { // Botón para eliminar seleccionados
+            searchEnabled: true, // 🔎 activa búsqueda
+            searchChoices: true, // 🔎 filtra opciones
+            removeItemButton: false, // ❌ no mostrar botón de eliminar
+            itemSelectText: '', // 🚫 quita el "Press to select"
+            shouldSort: false, // 📌 mantiene el orden original
+            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
         });
-        agregarOpcionSeleccion();
 
-        /*
-        $('#poblaciones').val('');
-         var data = $('#poblaciones_aux').select2('data').map(function(elem){ 
-                return elem.text 
-           });
-         $('#poblaciones').val(data);
-         $('#poblaciones_aux').on('select2:unselecting', function (e) {
-            $('#poblaciones').val('');
-        });
-        */
-
-    });
-
-     
-    function validarTamanioSoporte(){
-        var auxFile = document.getElementById('ActividadAnexo');
-        var sizeF = auxFile.files[0].size;
-        
-        if(sizeF > 5000000)
-        {
-            alert('El archivo debe ser menor a 5 Mb');
-            auxFile.value = '';
+        // Aplicar estilos con Tailwind
+        const inner = document.querySelector('.choices__inner');
+        if (inner) {
+            inner.classList.add(
+                'bg-white', 'border', 'border-gray-300', 'rounded-lg',
+                'px-3', 'py-2', 'focus:ring', 'focus:ring-blue-200', 'text-gray-700'
+            );
         }
-    }
 
-     function agregarOpcionSeleccion(){
-        $("#ProactividadUbicacionId").prepend();
-        $("#ProactividadProductoId").prepend();
-        $("#ProactividadResponsableId").prepend();
-    }
-
-    function mostrarOtrosesion(id) {
-        if (id == "5. Otro")
-            $("#divOtroSesion").show();
-        else
-            $("#divOtroSesion").hide();
-    }
-
+        const dropdown = document.querySelector('.choices__list--dropdown');
+        if (dropdown) {
+            dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
+        }
+    });
 </script>
-
-

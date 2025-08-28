@@ -47,15 +47,34 @@ class UsersController extends AppController
                 // Guardar datos en sesión
                 $this->Session->write("usr", $user["User"]["nombre_usuario"]);
                 $this->Session->write("nvl", $user["User"]["nivel"]);
+                $id_responsable = null;
+
+                if ($user["User"]["group_id"] === "3") {
+
+                    $id_responsable = $this->Responsable->find('first', [
+                        'conditions' => ['Responsable.correo' => $user['User']['username']]
+                    ])['Responsable']['id'];
 
 
-                // Autenticar con AuthComponent
+                    // Autenticar con AuthComponent
+                    $this->Auth->login([
+                        'id' => $user['User']['id'],
+                        'username' => $user['User']['username'],
+                        'group_id' => $user['User']['group_id'],
+                        'nombre' => $user['User']['nombre_usuario'],
+                        'id_responsable' => $id_responsable
+
+                    ]);
+                } else {
+                       // Autenticar con AuthComponent
                 $this->Auth->login([
                     'id' => $user['User']['id'],
                     'username' => $user['User']['username'],
                     'group_id' => $user['User']['group_id'],
                     'nombre' => $user['User']['nombre_usuario']
                 ]);
+                }
+
 
                 // Nunca retornes la contraseña
                 unset($user['User']['password']);
@@ -65,7 +84,8 @@ class UsersController extends AppController
                     'username' => $user['User']['username'],
                     'nivel' => $user['User']['nivel'],
                     'nombre' => $user['User']['nombre_usuario'],
-                    'group_id' => $user['User']['group_id']
+                    'group_id' => $user['User']['group_id'],
+                    'id_responsable' => $id_responsable
                 ];
 
                 echo json_encode([
