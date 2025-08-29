@@ -7,20 +7,22 @@ App::uses('AppModel', 'Model');
  * @property Responsable $Responsable
  * @property Prosesion $Prosesion
  */
-class Proactividad extends AppModel {
+class Proactividad extends AppModel
+{
 
 
-	public $virtualFields=array(
-	'nombreact'=>'CONCAT(Proactividad.id," ",Proactividad.objactividad)');
+	public $virtualFields = array(
+		'nombreact' => 'CONCAT(Proactividad.id," ",Proactividad.objactividad)'
+	);
 
 
 	public $displayField = 'nombreact';
 
-/**
- * Validation rules
- *
- * @var array
- */
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
 	public $validate = array(
 		/*'poblaciones' => array(
 			'notEmpty' => array(
@@ -42,7 +44,7 @@ class Proactividad extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		
+
 		'producto_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -63,7 +65,7 @@ class Proactividad extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		
+
 		'objetivouno' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -284,7 +286,7 @@ class Proactividad extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-			'relatoria' => array(
+		'relatoria' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				'message' => 'Ingrese dato requerido',
@@ -348,11 +350,11 @@ class Proactividad extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-/**
- * belongsTo associations
- *
- * @var array
- */
+	/**
+	 * belongsTo associations
+	 *
+	 * @var array
+	 */
 	public $belongsTo = array(
 		'Producto' => array(
 			'className' => 'Producto',
@@ -370,11 +372,11 @@ class Proactividad extends AppModel {
 		)
 	);
 
-/**
- * hasMany associations
- *
- * @var array
- */
+	/**
+	 * hasMany associations
+	 *
+	 * @var array
+	 */
 	/*public $hasMany = array(
 		'Procesoregistro' => array(
 			'className' => 'Procesoregistro',
@@ -390,11 +392,11 @@ class Proactividad extends AppModel {
 			'counterQuery' => ''
 		)
 	);*/
-		public $hasMany = array(
+	public $hasMany = array(
 		'Procesoregistro' => array(
 			'className' => 'Procesoregistro',
 			'foreignKey' => 'proactividad_id',
-			'dependent' => false,
+			'dependent' =>  true, // Cambia esto a true para habilitar la eliminación en cascada
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -405,6 +407,4 @@ class Proactividad extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
-
 }

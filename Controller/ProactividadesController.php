@@ -8,14 +8,15 @@ App::uses('AppController', 'Controller');
  */
 class ProactividadesController extends AppController
 {
+
 	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
 	const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
+
 	/**
 	 * Components
 	 *
 	 * @var array
 	 */
-	public $helpers = array('Html', 'Form');
 	public $components = array('Paginator');
 
 	/**
@@ -78,11 +79,7 @@ class ProactividadesController extends AppController
 				$this->Session->setFlash('La sistematizacion del proceso formativo educativo fue gurdada, asocie las fechas, tematicas relaciondas a la sistematizacion.', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
 				return $this->redirect(array('controller' => 'procesoregistros', 'action' => 'add'));
 			} else {
-				$this->Session->setFlash(
-					'No se ha podido guardar, por favor verifique el formulario',
-					'default',
-					array('class' => 'text-red-600 bg-red-100 border border-red-400 p-2 rounded-md')
-				);
+				$this->Session->setFlash('No se ha podido guardar, por favor verifique el formulario', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
 		}
 		$productos = $this->Proactividad->Producto->find('list', [
@@ -109,9 +106,9 @@ class ProactividadesController extends AppController
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Proactividad->save($this->request->data)) {
 				$this->Session->setFlash('La sistematización se ha guardado correctamente', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
-				return $this->redirect(array('action' => 'view', $id));
+				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash('La sistematización no se ha guardado.  por favor verificar el formulario. Revise nuevamente todos los campos de selección.', 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash('La sistematización no se ha guardado.  por favor verificar el formulario. Revise nuevamente todos los campos de selección.', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
 		} else {
 			$options = array('conditions' => array('Proactividad.' . $this->Proactividad->primaryKey => $id));
@@ -137,9 +134,17 @@ class ProactividadesController extends AppController
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Proactividad->delete()) {
-			$this->Session->setFlash(__('The proactividad has been deleted.'));
+			$this->Session->setFlash(
+				__('La sistematización ha sido borrado exitosamente.'),
+				'default',
+				array('class' => self::ALERT_SUCCESS_CLASS, 'escape' => false)
+			);
 		} else {
-			$this->Session->setFlash(__('The proactividad could not be deleted. Please, try again.'));
+			$this->Session->setFlash(
+				__('No se pudo borrar la sistematización. Por favor, inténtelo de nuevo.'),
+				'default',
+				array('class' => self::ALERT_ERROR_CLASS)
+			);
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

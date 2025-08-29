@@ -105,7 +105,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             <div class="flex items-center gap-2">
                 <img class="w-8 h-[50px] object-cover" alt="dataHome.alt" src="<?php echo $this->webroot; ?>/img/update/logoPic.png">
                 <a href="/react/#/homePage">
-                    <h2 class="text-[#155dfc] text-2xl md:text-[28px] font-bold whitespace-nowrap hover:text-green-600 transition-colors">
+                    <h2
+                        class="text-[#155dfc] text-2xl md:text-[28px] font-bold whitespace-nowrap hover:text-green-600 transition-colors">
                         {{ dataHome.title }}
                     </h2>
                 </a>
@@ -114,9 +115,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             <!-- Mobile button -->
             <button class="md:hidden p-2" @click="isSidebarOpen = !isSidebarOpen">
                 <div class="w-6 h-6 flex flex-col justify-center items-center">
-                    <span :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm', isSidebarOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5']"></span>
-                    <span :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5', isSidebarOpen ? 'opacity-0' : 'opacity-100']"></span>
-                    <span :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm', isSidebarOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5']"></span>
+                    <span
+                        :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm', isSidebarOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5']"></span>
+                    <span
+                        :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5', isSidebarOpen ? 'opacity-0' : 'opacity-100']"></span>
+                    <span
+                        :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm', isSidebarOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5']"></span>
                 </div>
             </button>
 
@@ -124,23 +128,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             <div class="hidden p-6 md:flex items-center gap-8">
 
                 <!-- Botón admin solo si grupoUsuario == 1 -->
-                <button v-if="grupoUsuario === '1'" type="button"
-                    class="p-0 bg-transparent border-none"
-                    @click="goTo('/homePage/userAdmin')"
-                    aria-label="Ir a Administrador">
-                    <img class="w-4 h-4 object-cover cursor-pointer"
-                        :alt="dataHome.alt"
+                <button v-if="grupoUsuario === '1'" type="button" class="p-0 bg-transparent border-none"
+                    @click="goTo('/homePage/userAdmin')" aria-label="Ir a Administrador">
+                    <img class="w-4 h-4 object-cover cursor-pointer" :alt="dataHome.alt"
                         :src="dataHome.adminIcon.default">
                 </button>
 
                 <!-- Icons dinámicos -->
                 <button v-for="icon in dataHome.icons" :key="icon.key" type="button"
-                    class="p-0 bg-transparent border-none"
-                    @click="icon.action"
-                    aria-label="Ir a {{ icon.key }}">
-                    <img class="w-4 h-4 object-cover cursor-pointer"
-                        :alt="dataHome.alt"
-                        :src="icon.default">
+                    class="p-0 bg-transparent border-none" @click="icon.action" aria-label="Ir a {{ icon.key }}">
+                    <img class="w-4 h-4 object-cover cursor-pointer" :alt="dataHome.alt" :src="icon.default">
                 </button>
             </div>
         </div>
@@ -150,14 +147,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <div class="flex pt-[65px] h-screen">
         <!-- Botón para abrir/cerrar en mobile (ejemplo) -->
         <div class="md:hidden fixed top-3 left-3 z-50">
-            <button id="toggleSidebar"
-                class="px-3 py-2 rounded-lg border bg-white shadow text-gray-700">
+            <button id="toggleSidebar" class="px-3 py-2 rounded-lg border bg-white shadow text-gray-700">
                 Menú
             </button>
         </div>
 
-        <aside id="sidebar"
-            class="fixed md:relative top-[65px] md:top-0 left-0 z-40
+        <aside id="sidebar" class="fixed md:relative top-[65px] md:top-0 left-0 z-40
              w-[268px] h-[calc(100vh-65px)]
              bg-white border-r shadow p-2 border-gray-200
              transform transition-transform duration-300 ease-in-out
@@ -173,6 +168,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <nav id="menu" class="space-y-1">
                     <!-- Item 1 (sin submenú) -->
                     <div class="menu-item" data-id="dashboard">
+<<<<<<< HEAD
                         <button
                             type="button"
                             data-href="/react/#/homePage"
@@ -184,6 +180,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                     src="<?php echo $this->webroot; ?>/img/update/resultados.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/resultados.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/resultadosHover.png" />
+=======
+                        <button type="button" data-href="<?php echo $this->Html->url(); ?>"
+                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
+                            <div class="flex items-center gap-3">
+                                <img class="icon w-4 h-4 object-cover" alt="Dashboard icon"
+                                    src="../img/update/resultados.png" data-src-default="../img/update/resultados.png"
+                                    data-src-hover="../img/update/resultadosHover.png" />
+>>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Resultados
                                 </span>
@@ -193,44 +197,51 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
                     <!-- Item 2 (con submenú) -->
                     <div class="menu-item" data-id="reportes" data-has-arrow="true">
-                        <button type="button"
-                            data-href="/react/#/homePage/reportes"
+                        <button type="button" data-href="/react/#/homePage/reportes"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
+<<<<<<< HEAD
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Reportes icon"
                                     src="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
+=======
+                                <img class="icon w-4 h-4 object-cover" alt="Reportes icon"
+                                    src="../img/update/documento.png" data-src-default="../img/update/documento.png"
+                                    data-src-hover="../img/update/docHover.png" />
+>>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Sistematizaciones
                                 </span>
 
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
 
                         <!-- Submenú -->
                         <div class="submenu ml-8 mt-1 space-y-1">
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => '/index']); ?>">
                                 Registros Sistematizaciones
                             </button>
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => 'add']); ?>">
                                 Nueva Sistematización
                             </button>
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus']); ?>">
                                 Registros Sesiones
                             </button>
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'add']); ?>">
                                 Agregar Sesion
                             </button>
@@ -242,29 +253,35 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
+<<<<<<< HEAD
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
+=======
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
+                                    src="../img/update/documento.png" data-src-default="../img/update/documento.png"
+                                    data-src-hover="../img/update/docHover.png" />
+>>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Actas
                                 </span>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
                         <div class="submenu ml-8 mt-1 space-y-1">
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'index']); ?>">
                                 Registros Actas
                             </button>
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'add']); ?>">
                                 Agregar Acta
                             </button>
@@ -275,25 +292,30 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
+<<<<<<< HEAD
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/anexo.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/anexoHover.png" />
+=======
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
+                                    src="../img/update/documento.png" data-src-default="../img/update/anexo.png"
+                                    data-src-hover="../img/update/anexoHover.png" />
+>>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Anexo Tecnico
                                 </span>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
                         <div class="submenu ml-8 mt-1 space-y-1">
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'productos', 'action' => 'index']); ?>">
                                 Productos
                             </button>
@@ -305,29 +327,36 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
+<<<<<<< HEAD
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/portaPapelesHover.png" />
+=======
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
+                                    src="../img/update/portaPapeles.png"
+                                    data-src-default="../img/update/portaPapeles.png"
+                                    data-src-hover="../img/update/portaPapelesHover.png" />
+>>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Planes de Sesion
                                 </span>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
                         <div class="submenu ml-8 mt-1 space-y-1">
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'nuebus']); ?>">
                                 Registros Planes de Sesion
                             </button>
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'add']); ?>">
                                 Agregar Plan de Sesion
                             </button>
@@ -339,29 +368,35 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
+<<<<<<< HEAD
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
+=======
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
+                                    src="../img/update/documento.png" data-src-default="../img/update/documento.png"
+                                    data-src-hover="../img/update/docHover.png" />
+>>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Informes Eventos
                                 </span>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
                         <div class="submenu ml-8 mt-1 space-y-1">
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'index']); ?>">
                                 Registros Eventos
                             </button>
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                 data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'add']); ?>">
                                 Agregar Evento
                             </button>
@@ -373,31 +408,38 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
+<<<<<<< HEAD
                                 <img
                                     class="icon w-4 h-4 object-cover"
                                     alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/historico.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/historico.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/historicoHover.png" />
+=======
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
+                                    src="../img/update/historico.png" data-src-default="../img/update/historico.png"
+                                    data-src-hover="../img/update/historicoHover.png" />
+>>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Historico PIC
                                 </span>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
                         <div class="submenu ml-8 mt-1 space-y-1">
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
                                 PIC 2024
                             </button>
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
                                 PIC 2023
                             </button>
-                            <button class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
+                            <button
+                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
                                 PIC 2022
                             </button>
                         </div>
@@ -407,21 +449,25 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
                 <!-- Footer Logos -->
                 <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                    <img
-                        class="w-[121px] h-[68px] object-contain"
-                        alt="WhatsApp logo"
+                    <img class="w-[121px] h-[68px] object-contain" alt="WhatsApp logo"
                         src="https://c.animaapp.com/DhO0cdaV/img/whatsapp-image-2025-07-03-at-9-34-32-am-removebg-preview-2.svg" />
-                    <img
-                        class="w-[98px] h-[55px] object-contain"
-                        alt="Ciudad Bienestar logo"
+                    <img class="w-[98px] h-[55px] object-contain" alt="Ciudad Bienestar logo"
                         src="https://c.animaapp.com/DhO0cdaV/img/logo-ciudad-bienestar-mesa-de-trabajo-1-removebg-preview-1.svg" />
                 </div>
             </div>
         </aside>
 
         <div class="flex items-start">
+<<<<<<< HEAD
             <button id="toggleSidebar" onclick="toggleSidebar()" class="px-1 py-2 rounded-r-lg   bg-white shadow text-gray-700 hover:bg-gray-300">
                 <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-to-line-icon lucide-arrow-left-to-line">
+=======
+            <button id="toggleSidebar" onclick="toggleSidebar()"
+                class="px-1 py-2 rounded-r-lg   bg-white shadow text-gray-700 hover:bg-gray-300">
+                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-arrow-left-to-line-icon lucide-arrow-left-to-line">
+>>>>>>> feature/reload-index-sistematizaciones
                     <path d="M3 19V5" />
                     <path d="m13 6-6 6 6 6" />
                     <path d="M7 12h14" />
@@ -432,7 +478,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
         <!-- Contenido principal -->
+<<<<<<< HEAD
         <main class="flex-1 ml-0 p-8 overflow-y-auto">
+=======
+        <main class="flex-1 ml-0 p-6 overflow-y-auto">
+>>>>>>> feature/reload-index-sistematizaciones
             <?php echo $this->Session->flash(); ?>
             <div class="relative z-10">
                 <?php echo $this->fetch('content'); ?>
