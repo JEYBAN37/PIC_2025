@@ -6,8 +6,8 @@
 $serv = 'localhost';
 $port = '3307';
 $userS = 'root';
-$passS = '20166';
-$bd = 'cake_Pic_2023';
+$passS = '';
+$bd = 'cake_Pic_2025';
 ?>
 
 
@@ -20,12 +20,18 @@ $bd = 'cake_Pic_2023';
                 <?php echo __('Acciones'); ?> <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><?php echo $this->Html->link(__('Home'), array('controller' => 'users', 'action' => 'home')); ?></li>
-                <li><?php echo $this->Html->link(__('Regresar'),  array('controller' => 'proactividades', 'action' => 'index')); ?></li>
-                <li><?php echo $this->Html->link(__('Editar Sistematización'), array('action' => 'edit', $proactividad['Proactividad']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__('Nueva sistematización de proceso'), array('controller' => 'proactividades', 'action' => 'add')); ?></li>
-                <li><?php echo $this->Html->link(__('Registro de sesiones'), array('controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus')); ?> </li>
-                <li><?php echo $this->Html->link(__('Agregar sesión'), array('controller' => 'procesoregistros', 'action' => 'add')); ?> </li>
+                <li><?php echo $this->Html->link(__('Home'), array('controller' => 'users', 'action' => 'home')); ?>
+                </li>
+                <li><?php echo $this->Html->link(__('Regresar'),  array('controller' => 'proactividades', 'action' => 'index')); ?>
+                </li>
+                <li><?php echo $this->Html->link(__('Editar Sistematización'), array('action' => 'edit', $proactividad['Proactividad']['id'])); ?>
+                </li>
+                <li><?php echo $this->Html->link(__('Nueva sistematización de proceso'), array('controller' => 'proactividades', 'action' => 'add')); ?>
+                </li>
+                <li><?php echo $this->Html->link(__('Registro de sesiones'), array('controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus')); ?>
+                </li>
+                <li><?php echo $this->Html->link(__('Agregar sesión'), array('controller' => 'procesoregistros', 'action' => 'add')); ?>
+                </li>
             </ul>
         </div>
     </div>
@@ -61,7 +67,9 @@ $bd = 'cake_Pic_2023';
 
                         <tr>
 
-                            <td colspan="5"><?php echo __('Ficha de sistematización de procesos, se diligencia y complementa durante y hasta finalizar el proceso formativo o educativo'); ?></td>
+                            <td colspan="5">
+                                <?php echo __('Ficha de sistematización de procesos, se diligencia y complementa durante y hasta finalizar el proceso formativo o educativo'); ?>
+                            </td>
                             <td><?php echo __('Id sistematización:'); ?></td>
                             <td><?php echo h($proactividad['Proactividad']['id']); ?></td>
                         </tr>
@@ -78,7 +86,9 @@ $bd = 'cake_Pic_2023';
                         </tr>
                         <tr>
                             <td><?php echo __('Tarea:'); ?></td>
-                            <td colspan="3"><?php echo $this->Html->link($proactividad['Producto']['tarea'], array('controller' => 'productos', 'action' => 'view', $proactividad['Producto']['id'])); ?></td>
+                            <td colspan="3">
+                                <?php echo $this->Html->link($proactividad['Producto']['tarea'], array('controller' => 'productos', 'action' => 'view', $proactividad['Producto']['id'])); ?>
+                            </td>
 
                             <td><?php echo __('Producto relacionado:'); ?></td>
                             <td colspan="3"><?php echo h($proactividad['Proactividad']['producto1']); ?></td>
@@ -267,7 +277,7 @@ $bd = 'cake_Pic_2023';
                                 $auxComp = strrpos(h($proactividad['Proactividad']['compromiso']), '/');
                                 if ($auxComp === false) {
                                 ?>
-                                   <?php echo h($proactividad['Proactividad']['compromiso']); ?>
+                                    <?php echo h($proactividad['Proactividad']['compromiso']); ?>
                                 <?php
                                 } else {
                                     print($proactividad['Proactividad']['compromiso']);
@@ -287,7 +297,7 @@ $bd = 'cake_Pic_2023';
                                 $auxApor = strrpos(h($proactividad['Proactividad']['aportes']), '/');
                                 if ($auxApor === false) {
                                 ?>
-                                   <?php echo h($proactividad['Proactividad']['aportes']); ?>
+                                    <?php echo h($proactividad['Proactividad']['aportes']); ?>
                                 <?php
                                 } else {
                                     print($proactividad['Proactividad']['aportes']);
@@ -307,7 +317,7 @@ $bd = 'cake_Pic_2023';
                                 $auxConcl = strrpos(($proactividad['Proactividad']['conclusiones']), '/');
                                 if ($auxConcl === false) {
                                 ?>
-                                   <?php echo h($proactividad['Proactividad']['conclusiones']); ?>
+                                    <?php echo h($proactividad['Proactividad']['conclusiones']); ?>
                                 <?php
                                 } else {
                                     print($proactividad['Proactividad']['conclusiones']);
@@ -327,7 +337,7 @@ $bd = 'cake_Pic_2023';
                                 $auxConcl = strrpos(h($proactividad['Proactividad']['relatoria']), '/');
                                 if ($auxConcl === false) {
                                 ?>
-                                  <?php echo h($proactividad['Proactividad']['relatoria']); ?>
+                                    <?php echo h($proactividad['Proactividad']['relatoria']); ?>
                                 <?php
                                 } else {
                                     print($proactividad['Proactividad']['relatoria']);
@@ -355,8 +365,10 @@ $bd = 'cake_Pic_2023';
 
                     <table width="100%" class="table table-striped table-bordered table-hover">
                         <tr>
-                            <td><?php echo __('Fecha_ingreso: '); ?><?php echo h($proactividad['Proactividad']['created']); ?></td>
-                            <td><?php echo __('Fecha_actualización: '); ?><?php echo h($proactividad['Proactividad']['modified']); ?></td>
+                            <td><?php echo __('Fecha_ingreso: '); ?><?php echo h($proactividad['Proactividad']['created']); ?>
+                            </td>
+                            <td><?php echo __('Fecha_actualización: '); ?><?php echo h($proactividad['Proactividad']['modified']); ?>
+                            </td>
                         </tr>
                     </table>
 
@@ -402,12 +414,15 @@ $bd = 'cake_Pic_2023';
 
 
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown">
                                                     <?php echo __('Acciones'); ?> <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <li><?php echo $this->Html->link(__('Ver'), array('controller' => 'procesoregistros', 'action' => 'view', $procesoregistro['id'])); ?></li>
-                                                    <li><?php echo $this->Html->link(__('Editar'), array('controller' => 'procesoregistros', 'action' => 'edit', $procesoregistro['id'])); ?> </li>
+                                                    <li><?php echo $this->Html->link(__('Ver'), array('controller' => 'procesoregistros', 'action' => 'view', $procesoregistro['id'])); ?>
+                                                    </li>
+                                                    <li><?php echo $this->Html->link(__('Editar'), array('controller' => 'procesoregistros', 'action' => 'edit', $procesoregistro['id'])); ?>
+                                                    </li>
 
 
 

@@ -20,7 +20,7 @@
             <tr>
                 <th class="px-4 py2">id_sist</th>
                 <th class="px-4 py-2">N.Producto</th>
-                <th class=".px-4 py-2">N.Actividad</th>
+                <th class=".px-4 py-2">Actividad</th>
                 <th class=".px-4 py-2">Objetivo</th>
                 <th class=".px-4 py-2">Responsable</th>
                 <th class=".px-4 py-2">Fecha</th>
@@ -30,122 +30,133 @@
         </thead>
         <tbody>
             <?php foreach ($proactividades as $proactividad) : ?>
-            <tr class="hover:bg-gray-50">
-                <td class="px-4 py-2"><?= $proactividad['Proactividad']['id'] ?></td>
-                <td class="px-4 py-2">Producto <?= $proactividad['Producto']['numproductos'] ?></td>
-                <td class="px-4 py-2">Actividad <?= $proactividad['Proactividad']['producto_id'] ?>
-                </td>
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2"><?= $proactividad['Proactividad']['id'] ?></td>
+                    <td class="px-4 py-2">Producto <?= $proactividad['Producto']['numproductos'] ?></td>
+                    <td class="px-4 py-2">
+                        Actividad <?= $proactividad['Producto']['id'] ?>_<?= $proactividad['Producto']['tarea'] ?>
+                    </td>
 
-                <td class="px-4 py-2"><?php echo $this->Text->truncate(
-												$proactividad['Proactividad']['objactividad'],
-												100,
-												array(
-													'ellipsis' => '...',
-													'exact' => false,
-													'html' => true
-												)
-											);
-											?></td>
-                <td class="px-4 py-2"><?= $proactividad['Responsable']['nombres'] ?></td>
-                <td class="px-4 py-2"><?= $proactividad['Proactividad']['created'] ?></td>
-                <td class="px-4 py-2">
-                    <div class="relative inline-block text-left">
-                        <button type="button" class="... " id="menu-button-{{id}}">
-                            Acciones
-                        </button>
+                    <td class="px-4 py-2"><?php echo $this->Text->truncate(
+                                                $proactividad['Proactividad']['objactividad'],
+                                                100,
+                                                array(
+                                                    'ellipsis' => '...',
+                                                    'exact' => false,
+                                                    'html' => true
+                                                )
+                                            );
+                                            ?></td>
+                    <td class="px-4 py-2"><?= $proactividad['Responsable']['nombres'] ?></td>
+                    <td class="px-4 py-2"><?= $proactividad['Proactividad']['created'] ?></td>
+                    <td class="px-4 py-2">
+                        <div class="relative inline-block text-left">
+                            <button type="button" class="... "
+                                id="menu-button-{{<?= $proactividad['Proactividad']['id'] ?>}}">
+                                Acciones
+                            </button>
 
-                        <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-10"
-                            role="menu" id="menu-options-{{id}}">
-                            <div class="py-1" role="none">
-                                <a href="<?php echo $this->Html->url(array('action' => 'view', $proactividad['Proactividad']['id'])); ?>"
-                                    class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
-                                <a href="<?php echo $this->Html->url(array('action' => 'edit', $proactividad['Proactividad']['id'])); ?>"
-                                    class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>
-                                <hr class="my-1 border-gray-200">
-                                <button type="button" onclick="confirmarBorrado({{id}})"
-                                    class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Borrar</button>
+                            <div class="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-10"
+                                role="menu" id="menu-options-{{<?= $proactividad['Proactividad']['id'] ?>}}">
+                                <div class="py-1" role="none">
+                                    <a href="<?php echo $this->Html->url(array('action' => 'view', $proactividad['Proactividad']['id'])); ?>"
+                                        class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
+                                    <a href="<?php echo $this->Html->url(array('action' => 'edit', $proactividad['Proactividad']['id'])); ?>"
+                                        class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>
+                                    <hr class="my-1 border-gray-200">
+
+                                    <?php echo $this->Form->postLink(
+                                        __('Borrar'),
+                                        array('action' => 'delete', $proactividad['Proactividad']['id']),
+                                        array(
+                                            'confirm' => __('Are you sure you want to delete # %s?', $proactividad['Proactividad']['id']),
+                                            'class' => 'block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100'
+                                        )
+                                    ); ?>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </td>
-            </tr>
+                    </td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 </div>
 
 <script>
-$(document).ready(function() {
-    $('#miTabla').DataTable({
-        responsive: true,
-        dom: '<"flex items-center justify-between mb-4"<"w-2/3 flex "<"flex flex-row w-full"f>><"w-1/3 flex items-center justify-center font-semibold "p>>rt',
-        lengthMenu: [
-            [10],
-            [10]
-        ],
-        pageLength: 10,
-        buttons: [
+    $(document).ready(function() {
+        const $miTabla = $('#miTabla');
+        const $filterInput = $('.dataTables_filter input[type="search"]');
+        const $lengthSelect = $('select[name="miTabla_length"]');
 
+        $miTabla.DataTable({
+            responsive: true,
+            dom: '<"flex items-center justify-between mb-4"<"w-2/3 flex "<"flex flex-row w-full"f>><"w-1/3 flex items-center justify-center font-semibold "p>>rt',
+            lengthMenu: [
+                [10],
+                [10]
+            ],
+            pageLength: 10,
+            buttons: []
+        });
 
-        ],
-    });
+        // Estilizar el campo de búsqueda
+        $filterInput.addClass(
+            'px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+        );
 
-    $('.dataTables_filter input[type="search"]').addClass(
-        'px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
-    );
-
-
-    // 🎨 Estilizar el selector de filas (lengthMenu)
-    setTimeout(() => {
-        $('select[name="miTabla_length"]').addClass(
+        // Estilizar el selector de filas (lengthMenu)
+        $lengthSelect.addClass(
             'border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none'
         );
-    }, 100);
-});
+    });
 
-// Función para manejar el despliegue de los menús
-function setupDropdowns() {
-    const buttons = document.querySelectorAll('[id^="menu-button-"]');
+    // Función para manejar el despliegue de los menús
+    function setupDropdowns() {
+        const buttons = document.querySelectorAll('[id^="menu-button-"]');
 
-    buttons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const buttonId = event.currentTarget.id;
-            const recordId = buttonId.split('-')[2];
-            const menu = document.getElementById(`menu-options-${recordId}`);
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const buttonId = event.currentTarget.id;
 
-            // Oculta todos los menús desplegables
-            document.querySelectorAll('[id^="menu-options-"]').forEach(m => {
-                if (m.id !== menu.id) {
-                    m.classList.add('hidden');
-                }
+                const recordId = buttonId.split('-')[2];
+                console.log(buttonId);
+                const menu = document.getElementById(`menu-options-${recordId}`);
+
+                // Oculta todos los menús desplegables
+                document.querySelectorAll('[id^="menu-options-"]').forEach(m => {
+                    if (m.id !== menu.id) {
+                        m.classList.add('hidden');
+                    }
+                });
+
+                // Muestra o esconde el menú actual
+                menu.classList.toggle('hidden');
             });
-
-            // Muestra o esconde el menú actual
-            menu.classList.toggle('hidden');
         });
-    });
 
-    // Oculta los menús si se hace clic fuera de ellos
-    window.addEventListener('click', function(event) {
-        if (!event.target.matches('[id^="menu-button-"]')) {
-            document.querySelectorAll('[id^="menu-options-"]').forEach(menu => {
-                if (!menu.classList.contains('hidden')) {
-                    menu.classList.add('hidden');
-                }
-            });
-        }
-    });
-}
-
-// Función para la confirmación de borrado
-function confirmarBorrado(id) {
-    if (confirm('¿Estás seguro de que quieres eliminar este registro?')) {
-        // Si el usuario confirma, redirige o envía una solicitud a la ruta de borrado.
-        // Aquí debes reemplazar '/ruta/borrar/' con tu URL real.
-        window.location.href = '/ruta/borrar/' + id;
+        // Oculta los menús si se hace clic fuera de ellos
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('[id^="menu-button-"]')) {
+                document.querySelectorAll('[id^="menu-options-"]').forEach(menu => {
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+        });
     }
-}
 
-// Llama a la función de configuración cuando el DOM esté cargado
-document.addEventListener('DOMContentLoaded', setupDropdowns);
+    // Función para la confirmación de borrado
+    function confirmarBorrado(id) {
+        if (confirm('¿Estás seguro de que quieres eliminar este registro?')) {
+            // Si el usuario confirma, redirige o envía una solicitud a la ruta de borrado.
+            // Aquí debes reemplazar '/ruta/borrar/' con tu URL real.
+            window.location.href = '/ruta/borrar/' + id;
+        }
+    }
+
+    // Llama a la función de configuración cuando el DOM esté cargado
+    document.addEventListener('DOMContentLoaded', setupDropdowns);
 </script>

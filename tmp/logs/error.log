@@ -222026,3 +222026,475 @@ Stack Trace:
 #1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
 #2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2025-08-27 13:47:00 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 13:51:14 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 13:51:23 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 13:51:37 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 13:54:00 Error: Fatal Error (1): Call to a member function query() on boolean in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\View\Proactividades\view.ctp, line 388]
+2025-08-27 13:54:00 Error: [FatalErrorException] Call to a member function query() on boolean
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/view/16
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 388)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 388, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 388, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/resultados.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/portaPapeles.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/documento.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/logoPic.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/historico.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/documento.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/ayuda.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/hogar.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/logoPic.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/cerrarSesion.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/resultados.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:00 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/adminHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:01 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/portaPapeles.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:54:01 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/historico.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: Fatal Error (1): Call to a member function query() on boolean in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\View\Proactividades\view.ctp, line 400]
+2025-08-27 13:57:06 Error: [FatalErrorException] Call to a member function query() on boolean
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/view/16
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 400)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 400, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 400, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/resultados.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/logoPic.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/documento.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/portaPapeles.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/historico.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/documento.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/logoPic.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/hogar.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/cerrarSesion.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/ayuda.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/resultados.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:06 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/adminHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:07 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/portaPapeles.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 13:57:07 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProactividadesController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/img/update/historico.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-08-27 14:14:00 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 14:14:13 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 14:15:17 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 14:15:23 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 14:17:04 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 14:17:22 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 16:41:48 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 18:13:36 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 18:40:13 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 18:41:07 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 18:41:07 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-08-27 19:05:08 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
