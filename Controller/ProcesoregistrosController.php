@@ -26,8 +26,22 @@ class ProcesoregistrosController extends AppController
 	 */
 	public function index()
 	{
-		$this->Procesoregistro->recursive = 0;
-		$this->set('procesoregistros', $this->Paginator->paginate());
+		$this->Procesoregistro->Behaviors->load('Containable');
+		$data = $this->Procesoregistro->find(
+			'all',
+			array(
+				'recursive' => -1,
+				'fields' => array('Procesoregistro.id, Procesoregistro.fecha'),
+				'contain' => array(
+					'Proactividad' => array('fields' => array('id')),
+					'Ubicacion' => array('fields' => array('comuna')),
+					'Plsesion' => array('fields' => array('tema')),
+					'Proactividad.Responsable' => array('fields' => array('nombres'))
+				),
+			)
+		);
+		debug($data);
+		$this->set('procesoregistros', $data);
 	}
 
 	/**
@@ -116,7 +130,7 @@ class ProcesoregistrosController extends AppController
 			}
 
 			if ($this->Procesoregistro->save($this->request->data)) {
-				
+
 				$this->Session->setFlash('El registro fue almacenado correctamente', 'default', array('class' =>  self::ALERT_SUCCESS_CLASS));
 				$aux = "view/$id";
 

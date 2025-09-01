@@ -103,7 +103,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
             <!-- Logo + Title -->
             <div class="flex items-center gap-2">
-                <img class="w-8 h-[50px] object-cover" alt="dataHome.alt" src="<?php echo $this->webroot; ?>/img/update/logoPic.png">
+                <img class="w-8 h-[50px] object-cover" alt="dataHome.alt"
+                    src="<?php echo $this->webroot; ?>/img/update/logoPic.png">
                 <a href="/react/#/homePage">
                     <h2
                         class="text-[#155dfc] text-2xl md:text-[28px] font-bold whitespace-nowrap hover:text-green-600 transition-colors">
@@ -168,26 +169,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <nav id="menu" class="space-y-1">
                     <!-- Item 1 (sin submenú) -->
                     <div class="menu-item" data-id="dashboard">
-<<<<<<< HEAD
-                        <button
-                            type="button"
-                            data-href="/react/#/homePage"
-                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
-                            <div class="flex items-center gap-3">
-                                <img
-                                    class="icon w-4 h-4 object-cover"
-                                    alt="Dashboard icon"
-                                    src="<?php echo $this->webroot; ?>/img/update/resultados.png"
-                                    data-src-default="<?php echo $this->webroot; ?>/img/update/resultados.png"
-                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/resultadosHover.png" />
-=======
-                        <button type="button" data-href="<?php echo $this->Html->url(); ?>"
+                        <button type="button" data-href="/react/#/homePage"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
                                 <img class="icon w-4 h-4 object-cover" alt="Dashboard icon"
-                                    src="../img/update/resultados.png" data-src-default="../img/update/resultados.png"
-                                    data-src-hover="../img/update/resultadosHover.png" />
->>>>>>> feature/reload-index-sistematizaciones
+                                    src="<?php echo $this->webroot; ?>/img/update/resultados.png"
+                                    data-src-default="<?php echo $this->webroot; ?>/img/update/resultados.png"
+                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/resultadosHover.png" />
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Resultados
                                 </span>
@@ -200,18 +188,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button" data-href="/react/#/homePage/reportes"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
-<<<<<<< HEAD
-                                <img
-                                    class="icon w-4 h-4 object-cover"
-                                    alt="Reportes icon"
+                                <img class="icon w-4 h-4 object-cover" alt="Reportes icon"
                                     src="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
-=======
-                                <img class="icon w-4 h-4 object-cover" alt="Reportes icon"
-                                    src="../img/update/documento.png" data-src-default="../img/update/documento.png"
-                                    data-src-hover="../img/update/docHover.png" />
->>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Sistematizaciones
                                 </span>
@@ -237,7 +217,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             </button>
                             <button
                                 class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus']); ?>">
+                                data-href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'index']); ?>">
                                 Registros Sesiones
                             </button>
                             <button
@@ -253,18 +233,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
-<<<<<<< HEAD
-                                <img
-                                    class="icon w-4 h-4 object-cover"
-                                    alt="Config icon"
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
-=======
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="../img/update/documento.png" data-src-default="../img/update/documento.png"
-                                    data-src-hover="../img/update/docHover.png" />
->>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Actas
                                 </span>
@@ -292,18 +264,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
-<<<<<<< HEAD
-                                <img
-                                    class="icon w-4 h-4 object-cover"
-                                    alt="Config icon"
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/anexo.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/anexoHover.png" />
-=======
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="../img/update/documento.png" data-src-default="../img/update/anexo.png"
-                                    data-src-hover="../img/update/anexoHover.png" />
->>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Anexo Tecnico
                                 </span>
@@ -327,19 +291,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
-<<<<<<< HEAD
-                                <img
-                                    class="icon w-4 h-4 object-cover"
-                                    alt="Config icon"
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/portaPapelesHover.png" />
-=======
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="../img/update/portaPapeles.png"
-                                    data-src-default="../img/update/portaPapeles.png"
-                                    data-src-hover="../img/update/portaPapelesHover.png" />
->>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Planes de Sesion
                                 </span>
@@ -368,18 +323,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
-<<<<<<< HEAD
-                                <img
-                                    class="icon w-4 h-4 object-cover"
-                                    alt="Config icon"
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
-=======
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="../img/update/documento.png" data-src-default="../img/update/documento.png"
-                                    data-src-hover="../img/update/docHover.png" />
->>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Informes Eventos
                                 </span>
@@ -408,18 +355,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <button type="button"
                             class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
-<<<<<<< HEAD
-                                <img
-                                    class="icon w-4 h-4 object-cover"
-                                    alt="Config icon"
+                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
                                     src="<?php echo $this->webroot; ?>/img/update/historico.png"
                                     data-src-default="<?php echo $this->webroot; ?>/img/update/historico.png"
                                     data-src-hover="<?php echo $this->webroot; ?>/img/update/historicoHover.png" />
-=======
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="../img/update/historico.png" data-src-default="../img/update/historico.png"
-                                    data-src-hover="../img/update/historicoHover.png" />
->>>>>>> feature/reload-index-sistematizaciones
                                 <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                     Historico PIC
                                 </span>
@@ -458,16 +397,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </aside>
 
         <div class="flex items-start">
-<<<<<<< HEAD
-            <button id="toggleSidebar" onclick="toggleSidebar()" class="px-1 py-2 rounded-r-lg   bg-white shadow text-gray-700 hover:bg-gray-300">
-                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-to-line-icon lucide-arrow-left-to-line">
-=======
             <button id="toggleSidebar" onclick="toggleSidebar()"
                 class="px-1 py-2 rounded-r-lg   bg-white shadow text-gray-700 hover:bg-gray-300">
                 <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-arrow-left-to-line-icon lucide-arrow-left-to-line">
->>>>>>> feature/reload-index-sistematizaciones
                     <path d="M3 19V5" />
                     <path d="m13 6-6 6 6 6" />
                     <path d="M7 12h14" />
@@ -478,11 +412,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
         <!-- Contenido principal -->
-<<<<<<< HEAD
         <main class="flex-1 ml-0 p-8 overflow-y-auto">
-=======
-        <main class="flex-1 ml-0 p-6 overflow-y-auto">
->>>>>>> feature/reload-index-sistematizaciones
             <?php echo $this->Session->flash(); ?>
             <div class="relative z-10">
                 <?php echo $this->fetch('content'); ?>
