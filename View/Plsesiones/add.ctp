@@ -1,11 +1,209 @@
+<?php $this->layout = 'default' ?>
+<?php echo $this->Html->script('ckeditor/ckeditor'); ?>
+<!-- Choices.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
+
+<div class="max-w-5xl mx-auto text-center mb-8">
+    <h1 class="text-5xl font-bold mb-4 text-blue-600">
+        Registrar Nuevo Plan de Sesión
+    </h1>
+    <p class="text-gray-500 mb-4 text-lg">
+        Registre los datos del nuevo plan de sesión.
+    </p>
+</div>
+
+<?php
+
+echo $this->Form->create('Plsesion',  [
+    'type' => 'file',
+    'novalidate' => 'novalidate',
+    'class' => 'space-y-6',
+]);
+
+// se utiliza para llamar el id responsable donde sea necesario
+$nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION['Auth']['User']['id_responsable'] : '';
+echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type' => 'hidden'));
+?>
+
+
+
+<div class="max-w-6xl mx-auto p-18">
+    <div class="bg-white shadow-2xl rounded-xl p-12">
+        <!-- Header -->
+        <div class="flex items-center mb-4">
+            <img src="../img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
+            <div class="ml-4">
+                <h1 class="text-xl font-semibold">Información General</h1>
+                <p class="text-gray-500">Complete los datos generales del plan de sesión.</p>
+            </div>
+
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+
+            <!-- Fecha de sesión realizada -->
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
+                <div class="flex items-center ">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
+                    <label for="producto_id" class="font-semibold">Fecha de registro</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <div class="col-span-2 text-md font-semibold my-6">
+                    <div class="flex flex-col w-full">
+                        <?php echo $this->Form->label('fecha', 'Seleccione Rango de Fecha', [
+                            'class' => 'text-gray-700 font-semibold text-sm mb-2'
+                        ]); ?>
+                        <input
+                            type="text"
+                            name="fecha"
+                            id="fecha"
+                            class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
+                            placeholder="Selecciona rango de fecha" />
+                        <span class="text-sm text-red-600 mt-1">
+                            <?= $this->Form->error('fecha') ?>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Duración total de la actividad -->
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
+                    <label for="objactividad" class="font-semibold">Duración total de la actividad</label>
+                    <p class="text-red-600">*</p>
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2 md:mb-5">PENDIENTE.</p>
+
+                <?php
+                $optiontime =  array(
+                    '5 minutos' => '5 minutos',
+                    '10 minutos' => '10 minutos',
+                    '15 minutos' => '15 minutos',
+                    '20 minutos' => '20 minutos',
+                    '25 minutos' => '25 minutos',
+                    '30 minutos' => '30 minutos',
+                    '35 minutos' => '35 minutos',
+                    '40 minutos' => '40 minutos',
+                    '45 minutos' => '45 minutos',
+                    '50 minutos' => '50 minutos',
+                    '55 minutos' => '55 minutos',
+                    '1 Hora' => '1 Hora',
+                    '1 Hora y media' => '1 Hora y 30 minutos',
+                    '2 Horas' => '2 Horas',
+                    '3 Horas' => '3 Horas',
+                    '4 Horas' => '4 Horas',
+                    '6 Horas' => '6 Horas',
+                    '8 Horas' => '8 Horas'
+                );
+
+                echo $this->Form->input('hora_fin', [
+                    'type' => 'select',
+                    'id' => 'hora_fin',
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                    'onchange' => 'mostrarBarrio(this.value);',
+                    'error' => false,
+                    'label' => '',
+                    'options' => $optiontime,
+                    'empty' => 'Seleccione la duracion de la actividad'
+                ]);
+
+                if (!empty($this->Form->error('hora_fin'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('hora_fin') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- N° de sesión a desarrollar -->
+            <div class="col-span-2 text-md font-semibold mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">3</span>
+                    <label for="proactividad_id" class="font-semibold">Numero de sesiones a desarrollar</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                echo $this->Form->input('sesion', [
+                    'type' => 'number',
+                    'id' => 'sesion',
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                    'onchange' => 'mostrarBarrio(this.value);',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 20,
+                    'label' => '',
+                    'empty' => 'Seleccione una lugar'
+                ]);
+                if (!empty($this->Form->error('sesion'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('sesion') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- Producto/tarea relacionada -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
+                    <label for="producto_id" class="font-semibold">Producto | Actividad relacionada</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <?php
+                echo $this->Form->input('producto_id', [
+                    'type' => 'select',
+                    'id' => 'producto_id',
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                    'label' => '',
+                    'empty' => 'Seleccione el producto | actividad',
+                    'error' => false // No mostrar error aquí
+                ]);
+                ?>
+                <?php
+                if (!empty($this->Form->error('producto_id'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('producto_id') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- Tema -->
+            <!-- Objetivo General -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">6</span>
+                    <label for="tema" class="font-semibold">Tema</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <?php
+                echo $this->Form->input('tema', [
+                    'label' => '',
+                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
+                    'error' => false // No mostrar error aquí
+                ]);
+                if (!empty($this->Form->error('tema'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('tema') . '</div>';
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="container">
     <div class="row">
 
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading" class="page-header">
-                  
-                    <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
+
                 </div>
                 <?php echo $this->Form->create('Plsesion', array('type' => 'file', 'novalidate' => 'novalidate')); ?>
                 <fieldset>
@@ -130,10 +328,21 @@
                         </div>
                         <div class="form-group col-md-6">
                             <?php
-                            
-                            $optiondim = array(''=>'Elegir','1.MalNutricion-HEVS'=>'1.MalNutricion-HEVS','2.Les.Autoinflingidas'=>'2.Les.Autoinflingidas','3.DebilidadEyD'=>'3.DebilidadEyD','4.MM.Materna SSR'=>'4.MM.Materna SSR', '5.DeterAmbiental'=>'5.DeterAmbiental',
-                             '6.DefResolutividadGDPE'=>'6.DefResolutividadGDPE', '7.Mm Enf Trasmisible'=>'7.Mm Enf Trasmisible', '8.9.LaboralDebilVigilancia'=>'8.9.LaboralDebilVigilancia', '10.DebilGrantiaDerechoSalud'=>'10.DebilGrantiaDerechoSalud', 'Dispositivos Comunitarios'=>'Dispositivos Comunitarios');
-                            echo $this->Form->input('dimension', array('label'=>'Problematica asociada','type' => 'select', 'class' => 'form-control select-search', 'options' => $optiondim));
+
+                            $optiondim = array(
+                                '' => 'Elegir',
+                                '1.MalNutricion-HEVS' => '1.MalNutricion-HEVS',
+                                '2.Les.Autoinflingidas' => '2.Les.Autoinflingidas',
+                                '3.DebilidadEyD' => '3.DebilidadEyD',
+                                '4.MM.Materna SSR' => '4.MM.Materna SSR',
+                                '5.DeterAmbiental' => '5.DeterAmbiental',
+                                '6.DefResolutividadGDPE' => '6.DefResolutividadGDPE',
+                                '7.Mm Enf Trasmisible' => '7.Mm Enf Trasmisible',
+                                '8.9.LaboralDebilVigilancia' => '8.9.LaboralDebilVigilancia',
+                                '10.DebilGrantiaDerechoSalud' => '10.DebilGrantiaDerechoSalud',
+                                'Dispositivos Comunitarios' => 'Dispositivos Comunitarios'
+                            );
+                            echo $this->Form->input('dimension', array('label' => 'Problematica asociada', 'type' => 'select', 'class' => 'form-control select-search', 'options' => $optiondim));
                             ?>
                         </div>
                         <!--div class="form-group col-md-12">
@@ -226,25 +435,138 @@
     </div>
 </div>
 
-<?php
-$this->Html->css([
-    'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
-], ['block' => 'css']);
-$this->Html->script([
-    'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
-], ['block' => 'script']);
-?>
-
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.select-search').select2();
-        agregarOpcionSeleccion();
+    function mostrar(isChecked) {
+        if (isChecked) {
+            $("#si").show();
+            $("#no").hide();
+        } else {
+            $("#si").hide();
+            $("#no").show();
+        }
+    }
+
+    function mostrarBarrio(id) {
+        if (id == "2")
+            $("#divActualizarBarrio").show();
+        else
+            $("#divActualizarBarrio").hide();
+    }
+
+    function validar() {
+        var todo_correcto = true;
+
+        if (document.getElementById('status').value == '') {
+            todo_correcto = false;
+        }
+
+        if (!todo_correcto) {
+            alert('Algunos campos no están correctos, vuelva a revisarlos');
+        }
+
+        return todo_correcto;
+    }
+
+    function agregarOpcionSeleccion() {
+        $("#ProcesoregistroUbicacionId").prepend("<option value='' selected='selected'>Seleccione</option>");
+        $("#ProcesoregistroProactividadId").prepend("<option value='' selected='selected'>Seleccione</option>");
+        $("#ProcesoregistroPlsesionId").prepend("<option value='' selected='selected'>Seleccione</option>");
+        // $("#status").prepend("<option value='' selected='selected'>Seleccione</option>");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const options = {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: false,
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+        };
+
+        const choices_ubicacion = new Choices("#ubicacion_id", options);
+        const choices_producto = new Choices("#producto_id", options);
+
+
     });
 
 
-    
+    $(function() {
+        $('#fecha').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            autoApply: true,
+            locale: {
+                format: 'YYYY-MM-DD',
+                applyLabel: "Aplicar",
+                cancelLabel: "Cancelar",
+                daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+                monthNames: [
+                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+                ],
+                firstDay: 1
+            }
+        }, function(start) {
+            let fecha = start.format('YYYY-MM-DD');
+            console.log("Fecha seleccionada:", fecha);
+        });
+    });
+
+
+    CKEDITOR.on('instanceReady', function(ev) {
+        var editor = ev.editor;
+        var textarea = editor.element.$;
+        var maxChars = textarea.getAttribute("data-maxlength"); // Lee el límite de cada campo
+        maxChars = maxChars ? parseInt(maxChars) : 300; // Default 300 si no se define
+
+        // Crear un contador debajo del campo
+        var counter = document.createElement("div");
+        counter.className = "text-gray-600 mt-1 text-sm";
+        counter.id = "charCount_" + textarea.id;
+        textarea.parentNode.appendChild(counter);
+
+        function updateCount() {
+            var text = editor.getData().replace(/<[^>]*>/g, '');
+            var length = text.length;
+            var remaining = maxChars - length;
+
+            counter.innerHTML = "Caracteres usados: " + length + " / " + maxChars;
+
+            if (remaining < 0) {
+                counter.style.color = "red";
+                editor.setData(text.substring(0, maxChars));
+            } else {
+                counter.style.color = "gray";
+            }
+        }
+
+        // Bloquear si excede
+        editor.on('key', function(evt) {
+            var text = editor.getData().replace(/<[^>]*>/g, '');
+            if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
+                evt.cancel();
+                alert("Máximo permitido: " + maxChars + " caracteres.");
+            }
+        });
+
+        // Bloquear pegar excedido
+        editor.on('paste', function(evt) {
+            var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
+            if (text.length > maxChars) {
+                evt.cancel();
+                alert("No puedes pegar más de " + maxChars + " caracteres.");
+            }
+        });
+
+        editor.on('key', updateCount);
+        editor.on('paste', updateCount);
+        editor.on('change', updateCount);
+
+        updateCount(); // inicializar contador
+    });
+
 
     function agregarOpcionSeleccion() {
         $("#PlsesionProductoId").prepend("<option value='' selected='selected'>Seleccione</option>");

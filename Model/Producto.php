@@ -18,11 +18,30 @@ App::uses('AppModel', 'Model');
 class Producto extends AppModel
 {
 
+	
+	public $actsAs = array(
+		'Containable',
+		'Upload.Upload' => array(
+			'anexo' => array(
+				'fields' => array(
+					'dir' => 'dirproduc'
+				),
+				'thumbnailMethod' => 'php',
+				/*'thumbnailSizes'=> array(
+			   			'thumb'=>'150x150'
+			   		     ),*/
+				'deleteOnUpdate' => false,
+				'deleteFolderOndelete' => false,
+				'maxSize' => 2097152
+			),
+		)
+
+	);
+
+	
 	public $virtualFields = array(
 		'nombreproducto' => 'CONCAT(Producto.numproductos," | ",Producto.tarea)'
 	);
-
-
 	public $displayField = 'nombreproducto';
 
 
@@ -383,33 +402,6 @@ class Producto extends AppModel
 	);
 
 
-
-	public $actsAs = array(
-		'Upload.Upload' => array(
-			'anexo' => array(
-				'fields' => array(
-					'dir' => 'dirproduc'
-				),
-				'thumbnailMethod' => 'php',
-				/*'thumbnailSizes'=> array(
-			   			'thumb'=>'150x150'
-			   		     ),*/
-				'deleteOnUpdate' => false,
-				'deleteFolderOndelete' => false,
-				'maxSize' => 2097152
-			),
-			/*  'anexo1' => array(
-                'fields' => array(
-                    'dir'=>'dir1'),
-			   		'thumbnailMethod'=>'php',
-			   		/*'thumbnailSizes'=> array(
-			   			'thumb'=>'150x150'
-			   		     ),
-                'deleteOnUpdate'=> true,
-			   		'deleteFolderOndelete'=>true*/
-		),
-
-	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

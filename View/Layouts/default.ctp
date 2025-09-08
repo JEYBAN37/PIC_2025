@@ -63,6 +63,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
+    <!-- Incluye DataTables y Buttons -->
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script> <!-- 👈 necesario -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <!-- JS -->
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 
 
     <style>
@@ -145,7 +162,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     </nav>
 
 
-    <div class="flex pt-[65px] h-screen">
+    <div class="flex pt-[65px]">
         <!-- Botón para abrir/cerrar en mobile (ejemplo) -->
         <div class="md:hidden fixed top-3 left-3 z-50">
             <button id="toggleSidebar" class="px-3 py-2 rounded-lg border bg-white shadow text-gray-700">
@@ -153,266 +170,282 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             </button>
         </div>
 
-        <aside id="sidebar" class="fixed md:relative top-[65px] md:top-0 left-0 z-40
-             w-[268px] h-[calc(100vh-65px)]
-             bg-white border-r shadow p-2 border-gray-200
-             transform transition-transform duration-300 ease-in-out
-             -translate-x-full md:translate-x-0">
-            <div class="p-6 h-full relative">
-                <!-- Header / Usuario -->
-                <div class="mb-6 pl-2">
-                    <h1 id="nombreUsuario" class="text-lg font-semibold">{{ nombreUsuario }}</h1>
-                    <p id="rolUsuario" class="text-sm text-green-600">{{ rolUsuario }}</p>
+        <div id="sidebarContainer" class="flex fixed top-[65px] left-0 z-40
+         w-[300px] h-[calc(100vh-65px)]  overflow-y-auto p-2 ">
+
+            <aside id="sidebar" class="w-full
+         bg-white border-r shadow border-gray-200
+         transform transition-transform duration-300 ease-in-out
+         -translate-x-full md:translate-x-0">
+                <div class="p-6 h-full relative">
+                    <!-- Header / Usuario -->
+                    <div class="mb-6 pl-2">
+                        <h1 id="nombreUsuario" class="text-lg font-semibold">{{ nombreUsuario }}</h1>
+                        <p id="rolUsuario" class="text-sm text-green-600">{{ rolUsuario }}</p>
+                    </div>
+
+                    <!-- Menú -->
+                    <nav id="menu" class="space-y-1">
+                        <!-- Item 1 (sin submenú) -->
+                        <div class="menu-item" data-id="dashboard">
+                            <button
+                                type="button"
+                                data-href="/react/#/homePage"
+                                class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
+                                <div class="flex items-center gap-3">
+                                    <img
+                                        class="icon w-4 h-4 object-cover"
+                                        alt="Dashboard icon"
+                                        src="<?php echo $this->webroot; ?>/img/update/resultados.png"
+                                        data-src-default="<?php echo $this->webroot; ?>/img/update/resultados.png"
+                                        data-src-hover="<?php echo $this->webroot; ?>/img/update/resultadosHover.png" />
+                                    <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
+                                        Resultados
+                                    </span>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Item 2 (con submenú) -->
+                        <div class="menu-item" data-id="reportes" data-has-arrow="true">
+                            <button type="button" data-href="/react/#/homePage/reportes"
+                                class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
+                                <div class="flex items-center gap-3">
+                                    <img
+                                        class="icon w-4 h-4 object-cover"
+                                        alt="Reportes icon"
+                                        src="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                        data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                        data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
+                                    <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
+                                        Sistematizaciones
+                                    </span>
+
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+
+                            <!-- Submenú -->
+                            <div class="submenu ml-8 mt-1 space-y-1">
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => '/index']); ?>">
+                                    Registros Sistematizaciones
+                                </button>
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => 'add']); ?>">
+                                    Nueva Sistematización
+                                </button>
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus']); ?>">
+                                    Registros Encuentros
+                                </button>
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'add']); ?>">
+                                    Nuevo Encuentro
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 (con submenú) -->
+                        <div class="menu-item" data-id="config" data-has-arrow="true">
+                            <button type="button"
+                                class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
+                                <div class="flex items-center gap-3">
+                                    <img
+                                        class="icon w-4 h-4 object-cover"
+                                        alt="Config icon"
+                                        src="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                        data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                        data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
+                                    <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
+                                        Actas
+                                    </span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div class="submenu ml-8 mt-1 space-y-1">
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'index']); ?>">
+                                    Registros Actas
+                                </button>
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'add']); ?>">
+                                    Agregar Acta
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="menu-item" data-id="config" data-has-arrow="true">
+                            <button type="button"
+                                class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
+                                <div class="flex items-center gap-3">
+                                    <img
+                                        class="icon w-4 h-4 object-cover"
+                                        alt="Config icon"
+                                        src="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                        data-src-default="<?php echo $this->webroot; ?>/img/update/anexo.png"
+                                        data-src-hover="<?php echo $this->webroot; ?>/img/update/anexoHover.png" />
+                                    <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
+                                        Anexo Tecnico
+                                    </span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div class="submenu ml-8 mt-1 space-y-1">
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'productos', 'action' => 'index']); ?>">
+                                    Productos
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="menu-item" data-id="config" data-has-arrow="true">
+                            <button type="button"
+                                class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
+                                <div class="flex items-center gap-3">
+                                    <img
+                                        class="icon w-4 h-4 object-cover"
+                                        alt="Config icon"
+                                        src="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
+                                        data-src-default="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
+                                        data-src-hover="<?php echo $this->webroot; ?>/img/update/portaPapelesHover.png" />
+                                    <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
+                                        Planes de Sesion
+                                    </span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div class="submenu ml-8 mt-1 space-y-1">
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'nuebus']); ?>">
+                                    Registros Planes de Sesion
+                                </button>
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'add']); ?>">
+                                    Agregar Plan de Sesion
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="menu-item" data-id="config" data-has-arrow="true">
+                            <button type="button"
+                                class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
+                                <div class="flex items-center gap-3">
+                                    <img
+                                        class="icon w-4 h-4 object-cover"
+                                        alt="Config icon"
+                                        src="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                        data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
+                                        data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
+                                    <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
+                                        Informes Eventos
+                                    </span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div class="submenu ml-8 mt-1 space-y-1">
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'index']); ?>">
+                                    Registros Eventos
+                                </button>
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                    data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'add']); ?>">
+                                    Agregar Evento
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="menu-item" data-id="config" data-has-arrow="true">
+                            <button type="button"
+                                class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
+                                <div class="flex items-center gap-3">
+                                    <img
+                                        class="icon w-4 h-4 object-cover"
+                                        alt="Config icon"
+                                        src="<?php echo $this->webroot; ?>/img/update/historico.png"
+                                        data-src-default="<?php echo $this->webroot; ?>/img/update/historico.png"
+                                        data-src-hover="<?php echo $this->webroot; ?>/img/update/historicoHover.png" />
+                                    <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
+                                        Historico PIC
+                                    </span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div class="submenu ml-8 mt-1 space-y-1">
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
+                                    PIC 2024
+                                </button>
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
+                                    PIC 2023
+                                </button>
+                                <button
+                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
+                                    PIC 2022
+                                </button>
+                            </div>
+                        </div>
+
+                    </nav>
+
+                    <!-- Footer Logos -->
+                    <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                        <img class="w-[121px] h-[68px] object-contain" alt="WhatsApp logo"
+                            src="https://c.animaapp.com/DhO0cdaV/img/whatsapp-image-2025-07-03-at-9-34-32-am-removebg-preview-2.svg" />
+                        <img class="w-[98px] h-[55px] object-contain" alt="Ciudad Bienestar logo"
+                            src="https://c.animaapp.com/DhO0cdaV/img/logo-ciudad-bienestar-mesa-de-trabajo-1-removebg-preview-1.svg" />
+                    </div>
                 </div>
+            </aside>
 
-                <!-- Menú -->
-                <nav id="menu" class="space-y-1">
-                    <!-- Item 1 (sin submenú) -->
-                    <div class="menu-item" data-id="dashboard">
-                        <button type="button" data-href="/react/#/homePage"
-                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
-                            <div class="flex items-center gap-3">
-                                <img class="icon w-4 h-4 object-cover" alt="Dashboard icon"
-                                    src="<?php echo $this->webroot; ?>/img/update/resultados.png"
-                                    data-src-default="<?php echo $this->webroot; ?>/img/update/resultados.png"
-                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/resultadosHover.png" />
-                                <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                    Resultados
-                                </span>
-                            </div>
-                        </button>
-                    </div>
-
-                    <!-- Item 2 (con submenú) -->
-                    <div class="menu-item" data-id="reportes" data-has-arrow="true">
-                        <button type="button" data-href="/react/#/homePage/reportes"
-                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
-                            <div class="flex items-center gap-3">
-                                <img class="icon w-4 h-4 object-cover" alt="Reportes icon"
-                                    src="<?php echo $this->webroot; ?>/img/update/documento.png"
-                                    data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
-                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
-                                <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                    Sistematizaciones
-                                </span>
-
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-
-                        <!-- Submenú -->
-                        <div class="submenu ml-8 mt-1 space-y-1">
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => '/index']); ?>">
-                                Registros Sistematizaciones
-                            </button>
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => 'add']); ?>">
-                                Nueva Sistematización
-                            </button>
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'index']); ?>">
-                                Registros Sesiones
-                            </button>
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'add']); ?>">
-                                Agregar Sesion
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 (con submenú) -->
-                    <div class="menu-item" data-id="config" data-has-arrow="true">
-                        <button type="button"
-                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
-                            <div class="flex items-center gap-3">
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="<?php echo $this->webroot; ?>/img/update/documento.png"
-                                    data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
-                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
-                                <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                    Actas
-                                </span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-                        <div class="submenu ml-8 mt-1 space-y-1">
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'index']); ?>">
-                                Registros Actas
-                            </button>
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'add']); ?>">
-                                Agregar Acta
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="menu-item" data-id="config" data-has-arrow="true">
-                        <button type="button"
-                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
-                            <div class="flex items-center gap-3">
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="<?php echo $this->webroot; ?>/img/update/documento.png"
-                                    data-src-default="<?php echo $this->webroot; ?>/img/update/anexo.png"
-                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/anexoHover.png" />
-                                <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                    Anexo Tecnico
-                                </span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-                        <div class="submenu ml-8 mt-1 space-y-1">
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'productos', 'action' => 'index']); ?>">
-                                Productos
-                            </button>
-                        </div>
-                    </div>
-
-
-                    <div class="menu-item" data-id="config" data-has-arrow="true">
-                        <button type="button"
-                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
-                            <div class="flex items-center gap-3">
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
-                                    data-src-default="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
-                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/portaPapelesHover.png" />
-                                <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                    Planes de Sesion
-                                </span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-                        <div class="submenu ml-8 mt-1 space-y-1">
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'nuebus']); ?>">
-                                Registros Planes de Sesion
-                            </button>
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'add']); ?>">
-                                Agregar Plan de Sesion
-                            </button>
-                        </div>
-                    </div>
-
-
-                    <div class="menu-item" data-id="config" data-has-arrow="true">
-                        <button type="button"
-                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
-                            <div class="flex items-center gap-3">
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="<?php echo $this->webroot; ?>/img/update/documento.png"
-                                    data-src-default="<?php echo $this->webroot; ?>/img/update/documento.png"
-                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/docHover.png" />
-                                <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                    Informes Eventos
-                                </span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-                        <div class="submenu ml-8 mt-1 space-y-1">
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'index']); ?>">
-                                Registros Eventos
-                            </button>
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'add']); ?>">
-                                Agregar Evento
-                            </button>
-                        </div>
-                    </div>
-
-
-                    <div class="menu-item" data-id="config" data-has-arrow="true">
-                        <button type="button"
-                            class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
-                            <div class="flex items-center gap-3">
-                                <img class="icon w-4 h-4 object-cover" alt="Config icon"
-                                    src="<?php echo $this->webroot; ?>/img/update/historico.png"
-                                    data-src-default="<?php echo $this->webroot; ?>/img/update/historico.png"
-                                    data-src-hover="<?php echo $this->webroot; ?>/img/update/historicoHover.png" />
-                                <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                    Historico PIC
-                                </span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="arrow size-3.5 text-gray-400 group-hover:text-[#155dfc]">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-                        <div class="submenu ml-8 mt-1 space-y-1">
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
-                                PIC 2024
-                            </button>
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
-                                PIC 2023
-                            </button>
-                            <button
-                                class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer">
-                                PIC 2022
-                            </button>
-                        </div>
-                    </div>
-
-                </nav>
-
-                <!-- Footer Logos -->
-                <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                    <img class="w-[121px] h-[68px] object-contain" alt="WhatsApp logo"
-                        src="https://c.animaapp.com/DhO0cdaV/img/whatsapp-image-2025-07-03-at-9-34-32-am-removebg-preview-2.svg" />
-                    <img class="w-[98px] h-[55px] object-contain" alt="Ciudad Bienestar logo"
-                        src="https://c.animaapp.com/DhO0cdaV/img/logo-ciudad-bienestar-mesa-de-trabajo-1-removebg-preview-1.svg" />
-                </div>
+            <div class="flex items-start">
+                <button id="toggleSidebar" onclick="toggleSidebar()" class="px-1 py-2 rounded-r-lg   bg-white shadow text-gray-700 hover:bg-gray-300">
+                    <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-to-line-icon lucide-arrow-left-to-line">
+                        <path d="M3 19V5" />
+                        <path d="m13 6-6 6 6 6" />
+                        <path d="M7 12h14" />
+                    </svg>
+                </button>
             </div>
-        </aside>
-
-        <div class="flex items-start">
-            <button id="toggleSidebar" onclick="toggleSidebar()"
-                class="px-1 py-2 rounded-r-lg   bg-white shadow text-gray-700 hover:bg-gray-300">
-                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-arrow-left-to-line-icon lucide-arrow-left-to-line">
-                    <path d="M3 19V5" />
-                    <path d="m13 6-6 6 6 6" />
-                    <path d="M7 12h14" />
-                </svg>
-            </button>
         </div>
 
 
 
         <!-- Contenido principal -->
-        <main class="flex-1 ml-0 p-8 overflow-y-auto">
+        <main id="mainContent" class="flex-1 p-6 md:ml-[280px] transition-all duration-300 ">
             <?php echo $this->Session->flash(); ?>
             <div class="relative z-10">
                 <?php echo $this->fetch('content'); ?>
@@ -474,7 +507,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             },
             mounted() {
                 <?php
-                $grupoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
+                $grupoUsuario = $_SESSION['Auth']['User']['group_id'];
                 $nombreUsuario = isset($_SESSION['Auth']['User']['nombre']) ? $_SESSION['Auth']['User']['nombre'] : '';
                 ?>
                 this.grupoUsuario = "<?php echo $grupoUsuario; ?>";
@@ -500,10 +533,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         // ----- Estado de sidebar (mobile) -----
         const sidebar = document.getElementById('sidebar');
         const toggleBtn = document.getElementById('toggleSidebar');
+        const mainContent = document.getElementById('mainContent');
         let isSidebarOpen = false;
 
         const applySidebarTransform = () => {
-            if (window.matchMedia('(min-width: 768px)').matches) {
+            if (window.matchMedia('(min-width: 888px)').matches) {
                 sidebar.classList.remove('-translate-x-full');
                 sidebar.classList.add('md:translate-x-0');
             } else {
@@ -615,12 +649,25 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 if (hov) icon.src = hov;
             }
         }
-
+        // ...existing code...
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const arrow = document.getElementById('arrow');
+            const sidebarContainer = document.getElementById('sidebarContainer');
+            const mainContent = document.getElementById('mainContent');
+
             sidebar.classList.toggle('hidden');
             arrow.classList.toggle('rotate-180');
+
+            // Quita o pone el margen izquierdo al main
+            if (sidebar.classList.contains('hidden')) {
+                mainContent.classList.remove('md:ml-[280px]');
+                sidebarContainer.classList.remove('w-[300px]');
+            } else {
+                mainContent.classList.add('md:ml-[280px]');
+                sidebarContainer.classList.add('w-[300px]');
+            }
         }
+        // ...existing code...
     </script>
 </body>

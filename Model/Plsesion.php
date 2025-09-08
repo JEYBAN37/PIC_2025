@@ -15,6 +15,14 @@ class Plsesion extends AppModel
         'nombreplan' => 'CONCAT(Plsesion.id," ",Plsesion.tema)'
     );
 
+    	// En Model/Proactividad.php
+	public function countSesionesPorPosicion($proactividadId)
+	{
+		return $this->find('count', array(
+			'conditions' => array('producto_id' => $proactividadId)
+		));
+	}
+
 
     public $displayField = 'nombreplan';
 

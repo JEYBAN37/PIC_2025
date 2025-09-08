@@ -6,34 +6,116 @@ App::uses('AppModel', 'Model');
  * @property Producto $Producto
  * @property Responsable $Responsable
  * @property Prosesion $Prosesion
+ * @property Plsesion $Plsesion
  */
 class Proactividad extends AppModel
 {
 
 
 	public $virtualFields = array(
-		'nombreact' => 'CONCAT(Proactividad.id," ",Proactividad.objactividad)'
+		'nombreact' => 'CONCAT(Proactividad.id," | ",Proactividad.objactividad)'
 	);
+
+	public $actsAs = array('Containable');
+
 
 
 	public $displayField = 'nombreact';
+
+	public function beforeSave($options = array())
+	{
+		if (isset($this->data[$this->alias]['poblaciones']) && is_array($this->data[$this->alias]['poblaciones'])) {
+			$this->data[$this->alias]['poblaciones'] = implode(',', $this->data[$this->alias]['poblaciones']);
+		}
+		return true;
+	}
+
+	public function getProactividadCompleto($id = null)
+	{
+		return $this->find('first', array(
+			'conditions' => array(
+				'Proactividad.' . $this->primaryKey => $id
+			), //  campos específicos de Proactividad
+			'contain' => array(
+				'Procesoregistro' => array(
+					'fields' => array(
+						'Procesoregistro.fecha',
+						'Procesoregistro.id',
+						'Procesoregistro.tema',
+						'Procesoregistro.anexo',
+						'Procesoregistro.sisproceso_dir'
+					),
+					'order' => array('Procesoregistro.fecha' => 'DESC'),
+					'Ubicacion' => array(
+						'fields' => array('Ubicacion.sitio') //  virtual incluido
+					),
+					'Plsesion' => array(
+						'fields' => array('Plsesion.id', 'Plsesion.tema')
+					)
+				),
+				'Producto' => array(
+					'fields' => array('Producto.dimensiones', 'Producto.entorno', 'Producto.activity', 'Producto.tarea', 'Producto.id')
+				),
+				'Responsable' => array(
+					'fields' => array('Responsable.nombres', 'Responsable.profesion')
+				)
+			)
+		));
+	}
 
 	/**
 	 * Validation rules
 	 *
 	 * @var array
 	 */
+
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+	/**
+	 * belongsTo associations
+	 *
+	 * @var array
+	 */
+	public $belongsTo = array(
+		'Producto' => array(
+			'className' => 'Producto',
+			'foreignKey' => 'producto_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => 'Producto.created DESC, Producto.modified DESC'
+		),
+		'Responsable' => array(
+			'className' => 'Responsable',
+			'foreignKey' => 'responsable_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+
+	public $hasMany = array(
+		'Procesoregistro' => array(
+			'className' => 'Procesoregistro',
+			'foreignKey' => 'proactividad_id',
+			'dependent' =>  true, // Cambia esto a true para habilitar la eliminación en cascada
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
+
 	public $validate = array(
-		/*'poblaciones' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Ingrese dato requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),*/
+		'poblaciones' => array(
+			'rule' => array('multiple', array('min' => 1)),
+			'message' => 'Por favor seleccione al menos una opción',
+		),
 		'grupo' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -55,6 +137,14 @@ class Proactividad extends AppModel
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+
+		'totalsesiones' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Ingrese dato requerido',
+			),
+		),
+
 		'caracteristicasesion' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -346,65 +436,5 @@ class Proactividad extends AppModel
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-	);
-
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-	/**
-	 * belongsTo associations
-	 *
-	 * @var array
-	 */
-	public $belongsTo = array(
-		'Producto' => array(
-			'className' => 'Producto',
-			'foreignKey' => 'producto_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => 'Producto.created DESC, Producto.modified DESC'
-		),
-		'Responsable' => array(
-			'className' => 'Responsable',
-			'foreignKey' => 'responsable_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
-	/**
-	 * hasMany associations
-	 *
-	 * @var array
-	 */
-	/*public $hasMany = array(
-		'Procesoregistro' => array(
-			'className' => 'Procesoregistro',
-			'foreignKey' => 'procesoregistro_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);*/
-	public $hasMany = array(
-		'Procesoregistro' => array(
-			'className' => 'Procesoregistro',
-			'foreignKey' => 'proactividad_id',
-			'dependent' =>  true, // Cambia esto a true para habilitar la eliminación en cascada
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
 	);
 }

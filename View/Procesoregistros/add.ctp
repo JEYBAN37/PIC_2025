@@ -518,13 +518,13 @@ $this->Html->script([
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const choices = new Choices("#proactividad_id", { // Botón para eliminar seleccionados
-            searchEnabled: true, // 🔎 activa búsqueda
-            searchChoices: true, // 🔎 filtra opciones
-            removeItemButton: false, // ❌ no mostrar botón de eliminar
-            itemSelectText: '', // 🚫 quita el "Press to select"
-            shouldSort: false, // 📌 mantiene el orden original
-            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
+        const choices = new Choices("#proactividad_id", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: false,
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
         });
 
         const choices_plsesion = new Choices("#plsesion_id", {
