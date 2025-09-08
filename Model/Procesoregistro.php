@@ -10,6 +10,31 @@ App::uses('AppModel', 'Model');
 class Procesoregistro extends AppModel
 {
 
+	public function cargarProactividad()
+	{
+		$proactividades = $this->Proactividad->find('list', [
+			'fields' => ['Proactividad.id', 'Proactividad.nombreact'],
+			'order' => ['Proactividad.created' => 'DESC']
+		]);
+
+		// Elimina etiquetas HTML y convierte a mayúsculas
+		foreach ($proactividades as $key => $value) {
+			$proactividades[$key] = strip_tags($value);
+		}
+
+		return $proactividades;
+	}
+
+	// En Model/Proactividad.php
+	public function countSesionesPorPosicion($proactividadId)
+	{
+		$countproceso = $this->find('count', array(
+			'conditions' => array('proactividad_id' => $proactividadId),
+			'recursive' => -1
+		));
+		return $countproceso;
+	}
+
 	/**
 	 * Validation rules
 	 *

@@ -1,6 +1,13 @@
 <?php $this->layout = 'default' ?>
 <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
+<!-- Choices.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
 
 <div class="max-w-5xl mx-auto text-center mb-8">
     <h1 class="text-5xl font-bold mb-4 text-blue-600">
@@ -41,7 +48,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center ">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
-                    <label for="producto_id" class="font-semibold">Registro de fecha</label>
+                    <label for="producto_id" class="font-semibold">Fecha de registro</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <div class="col-span-2 text-md font-semibold my-6">

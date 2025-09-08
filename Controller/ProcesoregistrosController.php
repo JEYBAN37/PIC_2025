@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::import('Vendor', 'pclzip', array('file' => 'pclzip/pclzip.lib.php'));
+
 /**
  * Procesoregistros Controller
  *
@@ -25,10 +27,7 @@ class ProcesoregistrosController extends AppController
 	 * @return void
 	 */
 	public function index()
-	{
-		$this->Procesoregistro->recursive = 0;
-		$this->set('procesoregistros', $this->Paginator->paginate());
-	}
+	{}
 
 	/**
 	 * view method
@@ -43,8 +42,112 @@ class ProcesoregistrosController extends AppController
 			throw new NotFoundException(__('Invalid procesoregistro'));
 		}
 		$options = array('conditions' => array('Procesoregistro.' . $this->Procesoregistro->primaryKey => $id));
-		$this->set('procesoregistro', $this->Procesoregistro->find('first', $options));
+
+		$procesoregistro = $this->Procesoregistro->find('first', $options);
+		$files = $this->viewZip($procesoregistro['Procesoregistro']['anexo'], $id);
+		$this->set(compact('procesoregistro', 'files'));
 	}
+
+	public function viewZip($file = null, $id = null)
+	{
+		if (!$file) {
+			return [];
+		}
+
+		$filePath = WWW_ROOT . 'files' . DS . 'procesoregistro' . DS . 'anexo' . DS . $id . DS . $file;
+
+		if (!file_exists($filePath)) {
+			return [];
+		}
+
+		$sessionId = $this->Session->id();
+		$extractPath = WWW_ROOT . 'files' . DS . 'tmp' . DS . $sessionId . DS;
+
+		if (!is_dir($extractPath)) {
+			mkdir($extractPath, 0777, true);
+		}
+		// Extraer todos los archivos
+		$zip = new PclZip($filePath);
+		$list = $zip->extract(
+			PCLZIP_OPT_PATH,
+			$extractPath
+		);
+
+		// Extraer archivos que no sean jpg/jpeg/png/gif y guardar sus rutas
+		$otherFiles = [];
+		if (is_array($list)) {
+			foreach ($list as $entry) {
+				$ext = strtolower(pathinfo($entry['filename'], PATHINFO_EXTENSION));
+				if (!in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+					$webPath = '/' . $entry['filename'];
+					$webPath = str_replace(DIRECTORY_SEPARATOR, '/', $webPath);
+					$otherFiles[] = $webPath;
+				}
+			}
+		}
+
+		if ($list == 0) {
+			return [];
+		}
+
+		$images = [];
+		$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($extractPath));
+		foreach ($rii as $f) {
+			if ($f->isDir()) continue;
+			$ext = strtolower($f->getExtension());
+
+			if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+				$path = $f->getPathname();
+
+				// ⚡ Reducir calidad (solo JPG/PNG, GIF lo dejamos igual)
+				if (in_array($ext, ['jpg', 'jpeg'])) {
+					$img = imagecreatefromjpeg($path);
+					imagejpeg($img, $path, 30); // calidad 30% (ajústalo: 30 = muy baja, 90 = casi original)
+					imagedestroy($img);
+				} elseif ($ext === 'png') {
+					$img = imagecreatefrompng($path);
+					imagepng($img, $path, 6); // compresión 0 (mejor calidad) a 9 (peor)
+					imagedestroy($img);
+				}
+
+				$relativePath = str_replace(WWW_ROOT, '/', $path); // quita C:/xampp/htdocs/PIC/webroot
+				$relativePath = str_replace(DIRECTORY_SEPARATOR, '/', $relativePath);
+				$webPath = Router::url($relativePath, true); // 🔥 genera http://localhost/PIC/files/tmp/...
+
+
+				$images[] = $webPath;
+			}
+
+			//normalizar las rutas para los otros documentos
+		}
+		return compact('images', 'otherFiles');
+	}
+
+
+	public function cleanupTmp()
+	{
+		$this->autoRender = false;
+
+		$sessionId = $this->Session->id();
+		$extractPath = WWW_ROOT . 'files' . DS . 'tmp' . DS . $sessionId . DS;
+
+		if (is_dir($extractPath)) {
+			$it = new RecursiveIteratorIterator(
+				new RecursiveDirectoryIterator($extractPath, RecursiveDirectoryIterator::SKIP_DOTS),
+				RecursiveIteratorIterator::CHILD_FIRST
+			);
+			foreach ($it as $file) {
+				$file->isDir() ? rmdir($file->getPathname()) : unlink($file->getPathname());
+			}
+			@rmdir($extractPath);
+		}
+
+		echo json_encode(['status' => 'ok']);
+	}
+
+
+
+
 
 	/**
 	 * add method
@@ -53,12 +156,8 @@ class ProcesoregistrosController extends AppController
 	 */
 	public function add()
 	{
-		if ($this->request->is('post')) /*{
-			$this->Procesoregistro->create();
-			if ($this->Procesoregistro->save($this->request->data)) {
-				$this->Session->setFlash(__('El registro fue almacenado, asocie una nueva sistematizacion de proceso formativo o educativo con la fecha y tematica relacionada.'));
-				return $this->redirect(array('controller' => 'procesoregistros', 'action' => 'index'));
-			} */
+		if ($this->request->is('post'))
+
 
 			if ($this->Procesoregistro->save($this->request->data)) {
 
@@ -80,10 +179,7 @@ class ProcesoregistrosController extends AppController
 			}
 
 		$ubicaciones = $this->Procesoregistro->Ubicacion->find('list');
-		$proactividades = $this->Procesoregistro->Proactividad->find('list', [
-			'order' => ['Proactividad.created' => 'DESC']
-		]);
-
+		$proactividades = $this->Procesoregistro->cargarProactividad();
 		$plsesiones = $this->Procesoregistro->Plsesion->find('list', [
 			'order' => ['Plsesion.modified' => 'DESC']
 		]);
@@ -116,7 +212,7 @@ class ProcesoregistrosController extends AppController
 			}
 
 			if ($this->Procesoregistro->save($this->request->data)) {
-				
+
 				$this->Session->setFlash('El registro fue almacenado correctamente', 'default', array('class' =>  self::ALERT_SUCCESS_CLASS));
 				$aux = "view/$id";
 
@@ -129,9 +225,11 @@ class ProcesoregistrosController extends AppController
 			$this->request->data = $this->Procesoregistro->find('first', $options);
 			$this->request->data = $this->tranformData($this->request->data);
 		}
-		$proactividades = $this->Procesoregistro->Proactividad->find('list');
+		$proactividades = $this->Procesoregistro->cargarProactividad();
 		$ubicaciones = $this->Procesoregistro->Ubicacion->find('list');
-		$plsesiones = $this->Procesoregistro->Plsesion->find('list');
+		$plsesiones = $this->Procesoregistro->Plsesion->find('list', [
+			'order' => ['Plsesion.modified' => 'DESC']
+		]);
 		$this->set(compact('proactividades', 'ubicaciones', 'plsesiones'));
 	}
 
@@ -198,10 +296,25 @@ class ProcesoregistrosController extends AppController
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Procesoregistro->delete()) {
-			$this->Session->setFlash(__('The procesoregistro has been deleted.'));
+			$this->Session->setFlash(__('The procesoregistro has been deleted.'), 'default', array('class' => self::ALERT_SUCCESS_CLASS));
 		} else {
-			$this->Session->setFlash(__('The procesoregistro could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('The procesoregistro could not be deleted. Please, try again.'), 'default', array('class' => self::ALERT_ERROR_CLASS));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+	public function deleteInProactividades($id = null, $idProactividades = null)
+	{
+		$this->Procesoregistro->id = $id;
+		if (!$this->Procesoregistro->exists()) {
+			throw new NotFoundException(__('Invalid procesoregistro'));
+		}
+		$this->request->allowMethod('post', 'delete');
+		if ($this->Procesoregistro->delete()) {
+			$this->Session->setFlash(__('The procesoregistro has been deleted.'), 'default', array('class' => self::ALERT_SUCCESS_CLASS));
+		} else {
+			$this->Session->setFlash(__('The procesoregistro could not be deleted. Please, try again.'), 'default', array('class' => self::ALERT_ERROR_CLASS));
+		}
+		return $this->redirect(array('controller' => 'proactividades', 'action' => 'view', $idProactividades));
 	}
 }
