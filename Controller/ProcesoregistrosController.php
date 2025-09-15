@@ -26,8 +26,7 @@ class ProcesoregistrosController extends AppController
 	 *
 	 * @return void
 	 */
-	public function index()
-	{}
+	public function index() {}
 
 	/**
 	 * view method
@@ -180,9 +179,7 @@ class ProcesoregistrosController extends AppController
 
 		$ubicaciones = $this->Procesoregistro->Ubicacion->find('list');
 		$proactividades = $this->Procesoregistro->cargarProactividad();
-		$plsesiones = $this->Procesoregistro->Plsesion->find('list', [
-			'order' => ['Plsesion.modified' => 'DESC']
-		]);
+		$plsesiones = $this->Procesoregistro->cargarPlanSesion();
 
 		$this->set(compact('proactividades', 'ubicaciones', 'plsesiones'));
 	}
@@ -225,11 +222,9 @@ class ProcesoregistrosController extends AppController
 			$this->request->data = $this->Procesoregistro->find('first', $options);
 			$this->request->data = $this->tranformData($this->request->data);
 		}
-		$proactividades = $this->Procesoregistro->cargarProactividad();
 		$ubicaciones = $this->Procesoregistro->Ubicacion->find('list');
-		$plsesiones = $this->Procesoregistro->Plsesion->find('list', [
-			'order' => ['Plsesion.modified' => 'DESC']
-		]);
+		$proactividades = $this->Procesoregistro->cargarProactividad();
+		$plsesiones = $this->Procesoregistro->cargarPlanSesion();
 		$this->set(compact('proactividades', 'ubicaciones', 'plsesiones'));
 	}
 

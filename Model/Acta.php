@@ -7,10 +7,21 @@ App::uses('AppModel', 'Model');
  * Acta Model *
  * @property Ubicacion $Ubicacion
  * @property Responsable $Responsable
+ * @property Producto $Producto
  */
 
 class Acta extends AppModel
 {
+
+	public function cargarProductos()
+	{
+		$productos = $this->Producto->find('list', [
+			'fields' => ['Producto.id', 'Producto.nombreproducto'],
+			'order' => ['Producto.modified' => 'DESC']
+		]);
+
+		return $productos;
+	}
 
 	public $validate = array(
 		'id' => array(
@@ -68,8 +79,8 @@ class Acta extends AppModel
 		),
 
 		'ubicacion_id' => array(
-				'numeric' => array(
-					'rule' => array('numeric'),
+			'numeric' => array(
+				'rule' => array('numeric'),
 				'message' => 'Registre el Barrio/comuna de actividad',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -89,7 +100,7 @@ class Acta extends AppModel
 
 			),
 
-		),		*/	
+		),		*/
 
 		'responsable_id' => array(
 			'numeric' => array(
@@ -101,7 +112,7 @@ class Acta extends AppModel
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 
-		),	
+		),
 
 		'producto_id' => array(
 			'notEmpty' => array(
@@ -197,34 +208,34 @@ class Acta extends AppModel
 
 
 		'anexo' => array(
-        	'uploadError' => array(
+			'uploadError' => array(
 				'rule' => 'uploadError',
 				'message' => 'Por favor verifique campo, intente nuevamente',
 				'on' => 'create'
 			),
-	    	'isUnderPhpSizeLimit' => array(
-	    		'rule' => 'isUnderPhpSizeLimit',
-	        	'message' => 'Archivo excede el límite de tamaño de archivo de subida'
-	        ),
-		    'isValidMimeType' => array(
-	    		
-				'rule' => array('isValidExtension', array('rar','zip','pdf')),
-             'message' => 'El archivo debe ser de tipo pdf, zip, or rar'
-	    	),
-		    'isBelowMaxSize' => array(
-	    		'rule' => array('isBelowMaxSize', 5000000),
-        		'message' => 'El tamaño delarchivo es demasiado grande. Maximo 5mb'
-	    	),
-		   /* 'isValidExtension' => array(
+			'isUnderPhpSizeLimit' => array(
+				'rule' => 'isUnderPhpSizeLimit',
+				'message' => 'Archivo excede el límite de tamaño de archivo de subida'
+			),
+			'isValidMimeType' => array(
+
+				'rule' => array('isValidExtension', array('rar', 'zip', 'pdf')),
+				'message' => 'El archivo debe ser de tipo pdf, zip, or rar'
+			),
+			'isBelowMaxSize' => array(
+				'rule' => array('isBelowMaxSize', 5000000),
+				'message' => 'El tamaño delarchivo es demasiado grande. Maximo 5mb'
+			),
+			/* 'isValidExtension' => array(
 	    		'rule' => array('isValidExtension', array('jpg', 'png'), false),
         		'message' => 'La imagen no tiene la extension jpg o png'
 	    	),*/
-		    'checkUniqueName' => array(
-                'rule' => array('checkUniqueName'),
-                'message' => 'Ya existe un archivo con el mismo nombre',
-                'on' => 'update'
-        	),		
-			),	
+			'checkUniqueName' => array(
+				'rule' => array('checkUniqueName'),
+				'message' => 'Ya existe un archivo con el mismo nombre',
+				'on' => 'update'
+			),
+		),
 
 	);
 
@@ -237,7 +248,7 @@ class Acta extends AppModel
 					'dir' => 'dir'
 				),
 				'thumbnailMethod' => 'php',
-				
+
 				'deleteOnUpdate' => false,
 				'deleteFolderOndelete' => true
 			),
@@ -246,8 +257,8 @@ class Acta extends AppModel
 				'rule' => array('checkUniqueName'),
 				'message' => 'Existe un archivo almacenado con el mismo nombre',
 				'on' => 'update'
-			),	
-			
+			),
+
 		),
 
 	);
@@ -297,19 +308,17 @@ class Acta extends AppModel
 			'counterQuery' => ''
 		)
 
-	
+
 	);
 
 
-	function checkUniqueName($data)	{
-	    $isUnique = $this->find('first', array('fields' => array('Acta.anexo'), 'conditions' => array('Acta.anexo' => $data['anexo'])));
-	    if(!empty($isUnique))
-	    {
-	        return false;
-	    }
-	    else
-	    {
-	        return true;
-	    }
+	function checkUniqueName($data)
+	{
+		$isUnique = $this->find('first', array('fields' => array('Acta.anexo'), 'conditions' => array('Acta.anexo' => $data['anexo'])));
+		if (!empty($isUnique)) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 }

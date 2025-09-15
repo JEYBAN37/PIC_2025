@@ -610,4 +610,16 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
 
         updateCount(); // inicializar contador
     });
+
+        // Detectar si el usuario intenta retroceder con la flecha del navegador
+    window.addEventListener('popstate', function(event) {
+        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            window.location.href = 'index'; // Redirigir a la página deseada
+        } else {
+            history.pushState(null, null, location.href); // Mantener en la página actual
+        }
+    });
+
+    // Prevenir retroceso con la flecha del navegador (mejor experiencia)
+    history.pushState(null, null, location.href);
 </script>

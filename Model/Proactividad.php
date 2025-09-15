@@ -18,7 +18,20 @@ class Proactividad extends AppModel
 
 	public $actsAs = array('Containable');
 
+	public function countEncuentros($idProducto)
+	{
+		// Cuenta el número de encuentros (Procesoregistro) asociados al producto
+		$data = $this->find('first', array(
+			'conditions' => array('Proactividad.producto_id' => $idProducto),
+			'fields' => array(
+				'Proactividad.totalsesiones',
+				'(SELECT COUNT(*) FROM procesoregistros pr WHERE pr.proactividad_id = Proactividad.id) AS numSesiones'
+			),
+			'recursive' => -1,
+		));
 
+		return $data;
+	}
 
 	public $displayField = 'nombreact';
 
