@@ -15948,3 +15948,415 @@ Stack Trace:
 #0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 >>>>>>> origin/feature/view-proactividades
+2025-09-08 17:37:52 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.totalsesiones' in 'field list'
+Request URL: /aplicacioncakephp/PIC_2025/proactividades/getProactividades
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProactividadesController.php(233): Model->find('all', Array)
+#7 [internal function]: ProactividadesController->getProactividades()
+#8 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
+#9 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
+#11 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2025-09-08 17:40:11 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:40:16 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:40:24 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:48:01 Error: [MissingActionException] Action FilesController::procesoregistro() could not be found.
+Exception Attributes: array (
+  'controller' => 'FilesController',
+  'action' => 'procesoregistro',
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/procesoregistro/anexo/128/13-06-2025_MN-HEVS_P13_T3_PrevEnfBucodentales.rar
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(FilesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 17:48:02 Error: [MissingActionException] Action FilesController::procesoregistro() could not be found.
+Exception Attributes: array (
+  'controller' => 'FilesController',
+  'action' => 'procesoregistro',
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/procesoregistro/anexo/128/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(FilesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 17:50:03 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:50:03 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:50:07 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:50:32 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:50:43 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:50:43 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:50:49 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:51:47 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:51:49 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:51:49 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:52:01 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:52:01 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:59:19 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:59:19 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:59:21 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:59:30 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:59:30 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:59:50 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 17:59:50 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-08 18:01:00 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:00 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:00 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:00 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:00 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:06 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:06 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:07 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:07 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:07 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:01:07 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:02:56 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:02:56 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:02:56 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:02:56 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-08 18:02:56 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
