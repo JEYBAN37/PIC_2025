@@ -76,36 +76,10 @@ echo $this->Form->create('Procesoregistro', [
             </div>
 
 
-            <div class="col-span-2 text-md font-semibold my-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
-                    <label for="plsesion_id" class="font-semibold">Plan de sesión</label>
-                    <p class="text-red-600">*</p>
-
-                </div>
-                <?php
-
-                echo $this->Form->input(
-                    'plsesion_id',
-                    [
-                        'type' => 'select',
-                        'id' => 'plsesion_id',
-                        'class' => 'w-full',
-                        'label' => '',
-                        'empty' => 'Seleccione la sistematización relacionada',
-                        'error' => false // No mostrar error aquí
-                    ]
-                );
-                if (!empty($this->Form->error('plsesion_id'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('plsesion_id') . '</div>';
-                }
-                ?>
-            </div>
-
             <!-- Fecha de sesión realizada -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center ">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">3</span>
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
                     <label for="producto_id" class="font-semibold">Registro de fecha de sesión realizada</label>
                     <p class="text-red-600">*</p>
 
@@ -128,6 +102,30 @@ echo $this->Form->create('Procesoregistro', [
 
                 </div>
             </div>
+
+
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">3</span>
+                    <label for="plsesion_id" class="font-semibold">Plan de sesión</label>
+                    <p class="text-red-600">*</p>
+                </div>
+
+                <?php
+                echo $this->Form->input('plsesion_id', [
+                    'type' => 'select',
+                    'id' => 'plsesion_id',
+                    'class' => 'w-full',
+                    'label' => false,
+                    'empty' => 'Seleccione la sistematización relacionada',
+                ]);
+
+                if (!empty($this->Form->error('plsesion_id'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('plsesion_id') . '</div>';
+                }
+                ?>
+            </div>
+
 
             <!-- Temática tratada -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
@@ -538,6 +536,8 @@ $this->Html->script([
             removeItemButton: false, // ❌ no mostrar botón de eliminar
             itemSelectText: '', // 🚫 quita el "Press to select"
             shouldSort: false, // 📌 mantiene el orden original
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
             searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
         });
 
@@ -547,6 +547,8 @@ $this->Html->script([
             removeItemButton: false, // ❌ no mostrar botón de eliminar
             itemSelectText: '', // 🚫 quita el "Press to select"
             shouldSort: false, // 📌 mantiene el orden original
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
             searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
         });
 
@@ -600,6 +602,37 @@ $this->Html->script([
         if (dropdown) {
             dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
         }
+
+        
+        const select = document.getElementById("plsesion_id");
+        const temaHidden = document.getElementById("tema_hidden");
+        const temaVisible = document.getElementById("tema_visible");
+
+        select.addEventListener("change", function() {
+            const valor = this.value;
+            if (!valor) {
+                temaHidden.value = "";
+                temaVisible.value = "";
+                return;
+            }
+
+            fetch("<?php echo $this->Html->url(['controller' => 'Procesoregistros', 'action' => 'getPlsesion']); ?>/" + valor)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        temaHidden.value = data.data.nombre; // guardar el ID
+                        temaVisible.value = data.data.nombre; // mostrar el nombre
+                    } else {
+                        temaHidden.value = "";
+                        temaVisible.value = "No encontrado";
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    temaHidden.value = "";
+                    temaVisible.value = "Error en la consulta";
+                });
+        });
 
     });
 

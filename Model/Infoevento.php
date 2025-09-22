@@ -66,8 +66,9 @@ class Infoevento extends AppModel {
 			),
 		),
 		'poblaciones' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+            'multiple' => array(
+                'rule' => array('multiple', array('min' => 1)),
+                'message' => 'Por favor seleccione al menos una opción',
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -171,6 +172,7 @@ class Infoevento extends AppModel {
   	
 
 	public $actsAs = array(
+		'Containable',
 		'Upload.Upload' => array(
 			'anexo' => array(
 				'fields' => array(
@@ -237,4 +239,12 @@ class Infoevento extends AppModel {
 	        return true;
 	    }
 	}
+
+	    public function beforeSave($options = array())
+    {
+        if (isset($this->data[$this->alias]['poblaciones']) && is_array($this->data[$this->alias]['poblaciones'])) {
+            $this->data[$this->alias]['poblaciones'] = implode(',', $this->data[$this->alias]['poblaciones']);
+        }
+        return true;
+    }
 }

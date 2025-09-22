@@ -109,6 +109,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     </style>
 </head>
 
+<?php $tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : ''; ?>
+
 <!--body class="bs-docs-home"-->
 
 <body id="app" class="bg-white">

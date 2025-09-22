@@ -51,6 +51,7 @@
                     'id' => 'producto_id',
                     'class' => 'w-full',
                     'label' => '',
+                    'options' => $productos,
                     'empty' => 'Seleccione el producto | actividad',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -159,13 +160,20 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const choices = new Choices("#producto_id", { // Botón para eliminar seleccionados
-            searchEnabled: true, // 🔎 activa búsqueda
-            searchChoices: true, // 🔎 filtra opciones
-            removeItemButton: false, // ❌ no mostrar botón de eliminar
-            itemSelectText: '', // 🚫 quita el "Press to select"
-            shouldSort: false, // 📌 mantiene el orden original
-            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
+        const choices = new Choices("#producto_id", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: false,
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            fuseOptions: {
+            includeScore: true,
+            threshold: 0.3,
+            keys: ['label', 'value']
+            },
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
         });
 
         // Aplicar estilos con Tailwind

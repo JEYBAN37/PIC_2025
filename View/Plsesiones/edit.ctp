@@ -735,63 +735,6 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                     ?>
                 </div>
             </div>
-            <!-- Premisas: Enfoque intercultural -->
-            <div class="flex justify-between col-span-2 text-md font-semibold mb-6 mx-6">
-                <div class="flex items-center w-64">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">5</span>
-                    <label for="ciudadaniaactiva" class="font-semibold">Enfoque de género</label>
-                    <p class="text-red-600">*</p>
-                </div>
-                <div class="flex space-x-4 items-center">
-                    <!-- Botón NO -->
-                    <div>
-                        <input type="radio"
-                            name="data[Plsesion][genero]"
-                            id="genero-no"
-                            value="0"
-                            data-target="genero"
-                            data-show="false"
-                            class="hidden peer"
-                            <?php echo (isset($this->request->data['Plsesion']['genero']) && $this->request->data['Plsesion']['genero'] == 0) ? 'checked' : ''; ?> /> <!-- 👈 Por defecto NO -->
-                        <label for="genero-no"
-                            class="px-12 py-2 rounded-lg border cursor-pointer hover:text-white hover:bg-blue-600
-                       peer-checked:bg-blue-600 peer-checked:text-white">
-                            -
-                        </label>
-                    </div>
-
-                    <!-- Botón SÍ -->
-                    <div>
-                        <input type="radio"
-                            name="data[Plsesion][genero]"
-                            id="genero-si"
-                            value="1"
-                            data-target="genero"
-                            data-show="true"
-                            class="hidden peer cursor-pointer"
-                            <?php echo (isset($this->request->data['Plsesion']['genero']) && $this->request->data['Plsesion']['genero'] == '1') ? 'checked' : ''; ?> />
-                        <label for="genero-si"
-                            class="px-12 py-2 rounded-lg border hover:bg-blue-600 cursor-pointer hover:text-white
-                       peer-checked:bg-blue-600 peer-checked:text-white">
-                            X
-                        </label>
-                    </div>
-                </div>
-
-                <div class="w-64 text-md font-semibold ">
-                    <?php
-                    echo $this->Form->input('califi_enfo_genero', [
-                        'type' => 'select',
-                        'id' => 'genero',
-                        'options' => $optionpuntaje,
-                        'label' => false,
-                        'style' => 'display: none;', // Oculto por defecto
-                        'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
-                        'error' => false
-                    ]);
-                    ?>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -1367,36 +1310,36 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
 
 
             </div>
- <div class="flex gap-4">
+            <div class="flex gap-4">
 
-            <div class="pt-2 flex gap-4">
-                <button type="submit" name="btn" value="Guardar y asociar otra sesion" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                            <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
-                            <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
-                            <path d="M7 3v4a1 1 0 0 0 1 1h7" />
-                        </svg>
-                    </span>
-                    Guardar
-                </button>
+                <div class="pt-2 flex gap-4">
+                    <button type="submit" name="btn" value="Guardar y asociar otra sesion" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                                <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                                <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
+                                <path d="M7 3v4a1 1 0 0 0 1 1h7" />
+                            </svg>
+                        </span>
+                        Guardar
+                    </button>
+                </div>
+
+                <div class="pt-2">
+                    <button type="button" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2" onclick="preventBackNavigation()">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                                <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
+                                <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
+                                <circle cx="12" cy="12" r="1" />
+                                <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
+                            </svg>
+
+                        </span>
+                        Ver plan
+                    </button>
+                </div>
             </div>
-
-            <div class="pt-2">
-                <button type="button" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2" onclick="preventBackNavigation()">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                            <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
-                            <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
-                            <circle cx="12" cy="12" r="1" />
-                            <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-                        </svg>
-
-                    </span>
-                    Ver plan
-                </button>
-            </div>
- </div>
         </div>
     </div>
 </div>
@@ -1520,6 +1463,8 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
             removeItemButton: false,
             itemSelectText: '',
             shouldSort: false,
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
             searchPlaceholderValue: "Escriba para filtrar...",
         };
         const choices_producto = new Choices("#producto_id", options);

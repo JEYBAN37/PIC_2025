@@ -6,6 +6,8 @@ App::uses('AppModel', 'Model');
  * @property Proactividad $Proactividad
  * @property Ubicacion $Ubicacion
  * @property Plsesion $Plsesion
+ * @property Producto $Producto
+ * 
  */
 class Procesoregistro extends AppModel
 {
@@ -25,9 +27,10 @@ class Procesoregistro extends AppModel
 		return $proactividades;
 	}
 
-	public function cargarPlanSesion()
+	public function cargarPlanSesion( $productos = null )
 	{
 		$plsesiones = $this->Plsesion->find('list', [
+			'conditions' => ['Plsesion.producto_id' => $productos],
 			'fields' => ['Plsesion.id', 'Plsesion.nombreplan'],
 			'order' => ['Plsesion.modified' => 'DESC']
 		]);
@@ -38,6 +41,26 @@ class Procesoregistro extends AppModel
 		}
 
 		return $plsesiones;
+	}
+
+
+	public function loadTematica($id = null)
+	{
+		if (!$id) {
+			return null;
+		}
+
+		$plsesion = $this->Plsesion->find('first', [
+			'conditions' => ['Plsesion.id' => $id],
+			'fields' => ['Plsesion.id', 'Plsesion.tema'],
+			'recursive' => -1
+		]);
+
+		if ($plsesion) {
+			return $plsesion;
+		} else {
+			return null;
+		}
 	}
 
 	// En Model/Proactividad.php
@@ -213,6 +236,7 @@ class Procesoregistro extends AppModel
 
 
 	public $actsAs = array(
+		'Containable',
 		'Upload.Upload' => array(
 			'anexo' => array(
 				'fields' => array(

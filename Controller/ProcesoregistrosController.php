@@ -7,12 +7,16 @@ App::import('Vendor', 'pclzip', array('file' => 'pclzip/pclzip.lib.php'));
  *
  * @property Procesoregistro $Procesoregistro
  * @property PaginatorComponent $Paginator
+ * @property Plsesion $Plsesion
+ * @property Producto $Producto
+ * @property Ubicacion $Ubicacion
  */
 class ProcesoregistrosController extends AppController
 {
 
 	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
 	const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
+	var $uses = array("Ubicacion", "Producto", "Procesoregistro", "Proactividad", "Plsesion");
 
 	/**
 	 * Components
@@ -145,9 +149,6 @@ class ProcesoregistrosController extends AppController
 	}
 
 
-
-
-
 	/**
 	 * add method
 	 *
@@ -156,8 +157,6 @@ class ProcesoregistrosController extends AppController
 	public function add()
 	{
 		if ($this->request->is('post'))
-
-
 			if ($this->Procesoregistro->save($this->request->data)) {
 
 				if ($this->request->data['btn'] == 'Guardar y asociar otra sesion') {
@@ -177,9 +176,23 @@ class ProcesoregistrosController extends AppController
 				$this->Session->setFlash('El registro no fue almacenado, Por favor trate nuevamente.', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
 
-		$ubicaciones = $this->Procesoregistro->Ubicacion->find('list');
+		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+
+		$conditions = [];
+		if (!empty($rol)) {
+			$conditions['Producto.nombredim'] = $rol;
+		}
+
+		$productos = $this->Producto->find('list', [
+			'conditions' => $conditions,
+			'fields' => ['Producto.id'],
+			'order' => ['Producto.modified' => 'DESC'],
+			'recursive' => -1
+		]);
+
+		$ubicaciones = $this->Ubicacion->find('list');
 		$proactividades = $this->Procesoregistro->cargarProactividad();
-		$plsesiones = $this->Procesoregistro->cargarPlanSesion();
+		$plsesiones = $this->Procesoregistro->cargarPlanSesion($productos);
 
 		$this->set(compact('proactividades', 'ubicaciones', 'plsesiones'));
 	}
@@ -222,9 +235,25 @@ class ProcesoregistrosController extends AppController
 			$this->request->data = $this->Procesoregistro->find('first', $options);
 			$this->request->data = $this->tranformData($this->request->data);
 		}
-		$ubicaciones = $this->Procesoregistro->Ubicacion->find('list');
+
+		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+
+		$conditions = [];
+		if (!empty($rol)) {
+			$conditions['Producto.nombredim'] = $rol;
+		}
+
+		$productos = $this->Producto->find('list', [
+			'conditions' => $conditions,
+			'fields' => ['Producto.id'],
+			'order' => ['Producto.modified' => 'DESC'],
+			'recursive' => -1
+		]);
+
+		$ubicaciones = $this->Ubicacion->find('list');
 		$proactividades = $this->Procesoregistro->cargarProactividad();
-		$plsesiones = $this->Procesoregistro->cargarPlanSesion();
+		$plsesiones = $this->Procesoregistro->cargarPlanSesion($productos);
+		
 		$this->set(compact('proactividades', 'ubicaciones', 'plsesiones'));
 	}
 
@@ -311,5 +340,29 @@ class ProcesoregistrosController extends AppController
 			$this->Session->setFlash(__('The procesoregistro could not be deleted. Please, try again.'), 'default', array('class' => self::ALERT_ERROR_CLASS));
 		}
 		return $this->redirect(array('controller' => 'proactividades', 'action' => 'view', $idProactividades));
+	}
+
+	public function getPlsesion($id = null)
+	{
+		$this->autoRender = false;
+		$this->response->type('json');
+
+		if (!$id) {
+			return json_encode(['success' => false, 'message' => 'ID no válido']);
+		}
+
+		$plsesion = $this->Procesoregistro->loadTematica($id);
+
+		if ($plsesion) {
+			return json_encode([
+				'success' => true,
+				'data' => [
+					'id' => $plsesion['Plsesion']['id'],
+					'nombre' => $plsesion['Plsesion']['tema'],
+				]
+			]);
+		}
+
+		return json_encode(['success' => false, 'message' => 'No encontrado']);
 	}
 }

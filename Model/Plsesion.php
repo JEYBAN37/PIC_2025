@@ -9,6 +9,7 @@ App::import('Model', 'Proactividad');
  * @property Responsable $Responsable
  * @property Plsmomento $Plsmomento
  * @property Proactividad $Proactividad
+ * @property Procesoregistro $Procesoregistro
  */
 class Plsesion extends AppModel
 {
@@ -183,16 +184,6 @@ class Plsesion extends AppModel
             ),
         ),
         'diferencial' => array(
-            'notEmpty' => array(
-                'rule' => array('notEmpty'),
-                'message' => 'Complete los campos requeridos',
-                //'allowEmpty' => false,
-                //'required' => false,
-                //'last' => false, // Stop validation after this rule
-                //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
-        'genero' => array(
             'notEmpty' => array(
                 'rule' => array('notEmpty'),
                 'message' => 'Complete los campos requeridos',
@@ -444,16 +435,6 @@ class Plsesion extends AppModel
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             //),
         ),
-        'califi_enfo_genero' => array(
-            //'notEmpty' => array(
-            //'rule' => array('notEmpty'),
-            //'message' => 'Complete los campos requeridos',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            //),
-        ),
 
         'anexo' => array(
             'uploadError' => array(
@@ -487,7 +468,6 @@ class Plsesion extends AppModel
 
 
     public $actsAs = array(
-
         'Containable',
         'Upload.Upload' => array(
             'anexo' => array(
@@ -552,7 +532,21 @@ class Plsesion extends AppModel
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
-        )
+        ),
+        'Procesoregistro' => array(
+            'className' => 'Procesoregistro',
+            'foreignKey' => 'plsesion_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+
+    )
     );
     function checkUniqueName($data)
     {

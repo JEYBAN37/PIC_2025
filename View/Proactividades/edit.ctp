@@ -911,6 +911,8 @@ echo $this->Form->create('Proactividad', [
             itemSelectText: '', // 🚫 quita el "Press to select"
             shouldSort: false, // 📌 mantiene el orden original
             searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
         });
 
         const choices_tipopoblacion = new Choices("#tipopoblacion", {

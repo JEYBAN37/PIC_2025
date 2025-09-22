@@ -15,12 +15,21 @@ class Acta extends AppModel
 
 	public function cargarProductos()
 	{
-		$productos = $this->Producto->find('list', [
+		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+
+		$conditions = [];
+		if (!empty($rol)) {
+			$conditions['Producto.nombredim'] = $rol;
+		}
+
+		return $this->Producto->find('list', [
+			'conditions' => $conditions,
 			'fields' => ['Producto.id', 'Producto.nombreproducto'],
-			'order' => ['Producto.modified' => 'DESC']
+			'order' => ['Producto.modified' => 'DESC'],
+			'recursive' => -1
 		]);
 
-		return $productos;
+
 	}
 
 	public $validate = array(

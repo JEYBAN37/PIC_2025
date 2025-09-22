@@ -5,28 +5,32 @@ App::uses('AppController', 'Controller');
  *
  * @property Infoevento $Infoevento
  * @property PaginatorComponent $Paginator
+ *  @property Acta $Acta
  */
 class InfoeventosController extends AppController
 {
+	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
+	const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
+	var $uses = array("Acta", "Ubicacion", "Infoevento", "Responsable", "Producto");
 	/**
 	 * Components
 	 *
 	 * @var array
 	 */
 	public $components = array('Paginator');
+
+
 	/**
 	 * index method
 	 *
 	 * @return void
 	 */
-	public function index($id = null)
+	public function index()
 	{
+		$this->Infoevento->recursive = 0;
+		$this->set('infoeventos', $this->Paginator->paginate());
 	}
 
-
-	public function nuebus($id = null)
-	{
-	}
 
 	public function editanexo($id = null)
 	{
@@ -49,7 +53,7 @@ class InfoeventosController extends AppController
 			$options = array('conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id));
 			$this->request->data = $this->Infoevento->find('first', $options);
 		}
-		$ubicaciones = $this->Infoevento->Ubicacion->find('list');
+		$ubicaciones = $this->Ubicacion->find('list');
 		$productos = $this->Infoevento->Producto->find('list');
 		$responsables = $this->Infoevento->Responsable->find('list');
 		$this->set(compact('ubicaciones', 'productos', 'responsables'));
@@ -66,8 +70,18 @@ class InfoeventosController extends AppController
 		if (!$this->Infoevento->exists($id)) {
 			throw new NotFoundException(__('Invalid infoevento'));
 		}
-		$options = array('conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id));
-		$this->set('infoevento', $this->Infoevento->find('first', $options));
+		$infoevento = $this->Infoevento->find(
+			'first',
+			array(
+				'conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id),
+				'contain' => array(
+					'Ubicacion' => array('fields' => array('Ubicacion.id', 'Ubicacion.sitio')),
+					'Producto' => array('fields' => array('Producto.id', 'Producto.dimensiones', 'Producto.entorno', 'Producto.activity', 'Producto.tarea')),
+					'Responsable' => array('fields' => array('Responsable.id', 'Responsable.nombres'))
+				)
+			)
+		);
+		$this->set('infoevento', $infoevento);
 	}
 
 	/**
@@ -90,10 +104,9 @@ class InfoeventosController extends AppController
 				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-		$ubicaciones = $this->Infoevento->Ubicacion->find('list');
-		$productos = $this->Infoevento->Producto->find('list');
-		$responsables = $this->Infoevento->Responsable->find('list');
-		$this->set(compact('ubicaciones', 'productos', 'responsables'));
+		$ubicaciones = $this->Ubicacion->find('list');
+		$productos = $this->Acta->cargarProductos();
+		$this->set(compact('ubicaciones', 'productos'));
 	}
 
 	/**
@@ -109,8 +122,22 @@ class InfoeventosController extends AppController
 			throw new NotFoundException(__('Invalid infoevento'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+
+
+			if (empty($this->request->data['Infoevento']['anexo']['name'])) {
+				unset($this->request->data['Infoevento']['anexo']); // CakePHP no reemplaza
+			} else {
+				// Aquí procesar la subida de archivo
+				$archivo = $this->request->data['Infoevento']['anexo'];
+				$nombreArchivo = time() . '_' . $archivo['name'];
+				move_uploaded_file($archivo['tmp_name'], WWW_ROOT . 'uploads' . DS . $nombreArchivo);
+				$this->request->data['Infoevento']['anexo'] = $nombreArchivo;
+			}
+
+
+
 			if ($this->Infoevento->save($this->request->data)) {
-				//$this->Session->setFlash(__('The infoevento has been saved.'));
+				$this->Session->setFlash(__('The infoevento has been saved.', 'default', array('class' => self::ALERT_SUCCESS_CLASS)));
 				//return $this->redirect(array('action' => 'index'));
 
 
@@ -118,16 +145,33 @@ class InfoeventosController extends AppController
 				$aux = "view/$id";
 				return $this->redirect(array('action' => $aux));
 			} else {
-				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('alert alert-danger'));
+				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
 		} else {
 			$options = array('conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id));
 			$this->request->data = $this->Infoevento->find('first', $options);
+			$this->request->data = $this->tranformData($this->request->data);
 		}
-		$ubicaciones = $this->Infoevento->Ubicacion->find('list');
-		$productos = $this->Infoevento->Producto->find('list');
-		$responsables = $this->Infoevento->Responsable->find('list');
+		$ubicaciones = $this->Ubicacion->find('list');
+		$productos = $this->Acta->cargarProductos();
+		$responsables = $this->Responsable->find('list');
+
+
 		$this->set(compact('ubicaciones', 'productos', 'responsables'));
+	}
+
+
+	private function tranformData($data)
+	{
+		// Ejemplo: viene "2. Hombres,4. Niños y niñas"
+		if (!empty($data['Infoevento']['poblaciones'])) {
+			$poblacionStr = $data['Infoevento']['poblaciones'];
+			// Extraer cada palabra/frase hasta la coma
+			$tipos = array_map('trim', explode(',', $poblacionStr));
+			$data['Infoevento']['poblaciones'] = $tipos;
+		}
+
+		return $data;
 	}
 
 	/**

@@ -47,14 +47,14 @@ class UsersController extends AppController
                 // Guardar datos en sesión
                 $this->Session->write("usr", $user["User"]["nombre_usuario"]);
                 $this->Session->write("nvl", $user["User"]["nivel"]);
-                $id_responsable = null;
+                $rolUsuario = null;
 
                 if ($user["User"]["group_id"] === "3") {
 
-                    $id_responsable = $this->Responsable->find('first', [
-                        'conditions' => ['Responsable.correo' => $user['User']['username']]
-                    ])['Responsable']['id'];
-
+                    $rolUsuario = $this->Responsable->find('first', [
+                        'conditions' => ['Responsable.correo' => $user['User']['username']],
+                        'fields' => ['Responsable.id, Responsable.proyecto']
+                    ]);
 
                     // Autenticar con AuthComponent
                     $this->Auth->login([
@@ -62,18 +62,40 @@ class UsersController extends AppController
                         'username' => $user['User']['username'],
                         'group_id' => $user['User']['group_id'],
                         'nombre' => $user['User']['nombre_usuario'],
-                        'id_responsable' => $id_responsable
+                        'id_responsable' => isset($rolUsuario['Responsable']['id']) ? $rolUsuario['Responsable']['id'] : null,
+                        'proyecto' => isset($rolUsuario['Responsable']['proyecto']) ? $rolUsuario['Responsable']['proyecto'] : null
 
                     ]);
-                } else {
-                       // Autenticar con AuthComponent
-                $this->Auth->login([
-                    'id' => $user['User']['id'],
-                    'username' => $user['User']['username'],
-                    'group_id' => $user['User']['group_id'],
-                    'nombre' => $user['User']['nombre_usuario']
-                ]);
+                } elseif ($user["User"]["group_id"] === "2") {
+
+                    $rolUsuario = $this->Referente->find('first', [
+                        'conditions' => ['Referente.correo' => $user['User']['username']],
+                        'fields' => ['Referente.id, Referente.proyecto']
+                    ]);
+
+                    // Autenticar con AuthComponent
+                    $this->Auth->login([
+                        'id' => $user['User']['id'],
+                        'username' => $user['User']['username'],
+                        'group_id' => $user['User']['group_id'],
+                        'nombre' => $user['User']['nombre_usuario'],
+                        'id_responsable' => isset($rolUsuario['Referente']['id']) ? $rolUsuario['Responsable']['id'] : null,
+                        'proyecto' => isset($rolUsuario['Referente']['proyecto']) ? $rolUsuario['Referente']['proyecto'] : null
+
+                    ]);
+                } elseif ($user["User"]["group_id"] === "1") {
+                    // Autenticar con AuthComponent
+                    $this->Auth->login([
+                        'id' => $user['User']['id'],
+                        'username' => $user['User']['username'],
+                        'group_id' => $user['User']['group_id'],
+                        'nombre' => $user['User']['nombre_usuario']
+
+                    ]);
                 }
+
+
+
 
 
                 // Nunca retornes la contraseña
@@ -85,7 +107,8 @@ class UsersController extends AppController
                     'nivel' => $user['User']['nivel'],
                     'nombre' => $user['User']['nombre_usuario'],
                     'group_id' => $user['User']['group_id'],
-                    'id_responsable' => $id_responsable
+                    'id_responsable' => isset($responsable['Responsable']['id']) ? $responsable['Responsable']['id'] : null,
+                    'proyecto' => isset($responsable['Responsable']['proyecto']) ? $responsable['Responsable']['proyecto'] : null
                 ];
 
                 echo json_encode([
@@ -399,6 +422,7 @@ class UsersController extends AppController
                 'profesion' => isset($data['profesion']) ? $data['profesion'] : null,
                 'cargo' => isset($data['cargo']) ? $data['cargo'] : null,
                 'telefono' => isset($data['telefono']) ? $data['telefono'] : null,
+                'proyecto' => isset($data['proyecto']) ? $data['proyecto'] : null,
                 'tipodoc' => "CC",
             ];
 

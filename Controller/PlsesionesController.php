@@ -21,7 +21,7 @@ class PlsesionesController extends AppController
      * @var array
      */
     public $components = array('Paginator', 'Session', 'RequestHandler');
-    var $uses = array("Plsesion", "Responsable");
+    var $uses = array("Plsesion", "Responsable", "Producto", "Acta");
 
     /**
      * index method
@@ -76,7 +76,7 @@ class PlsesionesController extends AppController
             'contain' => array(
                 'Producto' => array('fields' => array('id', 'activity', 'resultado')),
                 'Responsable' => array('fields' => array('id', 'nombres', 'profesion')),
-                'Plsmomento' => array('fields' => array('id', 'momento', 'duracion', 'resultado', 'insumo','metodologia')),
+                'Plsmomento' => array('fields' => array('id', 'momento', 'duracion', 'resultado', 'insumo', 'metodologia')),
             )
         ));
 
@@ -92,7 +92,7 @@ class PlsesionesController extends AppController
         $this->set(compact('plsesion', 'totalDuracion', 'totalEnSesion'));
     }
 
-     private function convertirDuracionAMinutos($duracion)
+    private function convertirDuracionAMinutos($duracion)
     {
         $mapa = array(
             '5 minutos' => 5,
@@ -133,7 +133,7 @@ class PlsesionesController extends AppController
     {
 
 
-        $productos = $this->Plsesion->Producto->find('list');
+        $productos = $this->Acta->cargarProductos();
         $this->set(compact('productos'));
 
         if ($this->request->is('post')) {
@@ -189,7 +189,7 @@ class PlsesionesController extends AppController
             'conditions' => ['Responsable.id' => $idResponsable],
             'fields' => ['id', 'nombres']
         ]) : null;
-        $productos = $this->Plsesion->Producto->find('list');
+        $productos = $this->Acta->cargarProductos();
         $idredirect = $id;
         $this->set(compact('responsable', 'productos', 'idredirect'));
     }

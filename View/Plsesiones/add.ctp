@@ -19,7 +19,6 @@ $option = array(
 
 $optionpuntaje = [
     '' => 'Elegir',
-    '1 No tiene' => '1 No tiene',
     '2 Poca' => '2 Poca',
     '3 Moderada' => '3 Moderada',
     '4 Fuerte' => '4 Fuerte',
@@ -714,62 +713,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     ?>
                 </div>
             </div>
-            <!-- Premisas: Enfoque intercultural -->
-            <div class="flex justify-between col-span-2 text-md font-semibold mb-6 mx-6">
-                <div class="flex items-center w-64">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">5</span>
-                    <label for="ciudadaniaactiva" class="font-semibold">Enfoque de género</label>
-                    <p class="text-red-600">*</p>
-                </div>
-                <div class="flex space-x-4 items-center">
-                    <!-- Botón NO -->
-                    <div>
-                        <input type="radio"
-                            name="data[Plsesion][genero]"
-                            id="genero-no"
-                            value="0"
-                            data-target="genero"
-                            data-show="false"
-                            class="hidden peer"
-                            checked /> <!-- 👈 Por defecto NO -->
-                        <label for="genero-no"
-                            class="px-12 py-2 rounded-lg border cursor-pointer hover:text-white hover:bg-blue-600
-                       peer-checked:bg-blue-600 peer-checked:text-white">
-                            -
-                        </label>
-                    </div>
 
-                    <!-- Botón SÍ -->
-                    <div>
-                        <input type="radio"
-                            name="data[Plsesion][genero]"
-                            id="genero-si"
-                            value="1"
-                            data-target="genero"
-                            data-show="true"
-                            class="hidden peer cursor-pointer" />
-                        <label for="genero-si"
-                            class="px-12 py-2 rounded-lg border hover:bg-blue-600 cursor-pointer hover:text-white
-                       peer-checked:bg-blue-600 peer-checked:text-white">
-                            X
-                        </label>
-                    </div>
-                </div>
-
-                <div class="w-64 text-md font-semibold ">
-                    <?php
-                    echo $this->Form->input('califi_enfo_genero', [
-                        'type' => 'select',
-                        'id' => 'genero',
-                        'options' => $optionpuntaje,
-                        'label' => false,
-                        'style' => 'display: none;', // Oculto por defecto
-                        'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
-                        'error' => false
-                    ]);
-                    ?>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -1437,6 +1381,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             removeItemButton: false,
             itemSelectText: '',
             shouldSort: false,
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
             searchPlaceholderValue: "Escriba para filtrar...",
         };
         const choices_producto = new Choices("#producto_id", options);
@@ -1453,6 +1399,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             duplicateItemsAllowed: false,
             placeholder: true,
             placeholderValue: "Seleccione la(s) población(es)",
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
         });
 
         const choices_cursovida = new Choices("#cursovida", {

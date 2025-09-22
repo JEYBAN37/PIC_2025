@@ -10,8 +10,6 @@ App::uses('AppModel', 'Model');
  */
 class Proactividad extends AppModel
 {
-
-
 	public $virtualFields = array(
 		'nombreact' => 'CONCAT(Proactividad.id," | ",Proactividad.objactividad)'
 	);

@@ -363,9 +363,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 $alcancereunion = array(
                     '' => 'Elegir',
                     'planeacion operativa administrativa' => 'Planenación operativa/administrativa',
-                    'ejcucion operativa administrativa' => 'Ejecución operativa/administrativa',
                     'planeacion pedagogica' => 'Planeación pedagógica',
-                    'articulacion interinstitucional' => 'Apoyo interinstitucional',
+                    'articulacion interinstitucional' => 'Articulacion interinstitucional',
                     'acompañamiento a organizaciones' => 'Acompañamiento a organizaciones',
                     'Ejecucion de eventos o actividades' => 'Ejecución de eventos o actividades',
                     'participacion escenarios externos' => 'participación escenarios externos'
@@ -507,6 +506,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             itemSelectText: '',
             shouldSort: false,
             searchPlaceholderValue: "Escriba para filtrar...",
+                renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
         };
 
         const choices_ubicacion = new Choices("#ubicacion_id", options);

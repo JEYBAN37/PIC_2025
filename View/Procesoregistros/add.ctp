@@ -1,5 +1,8 @@
 <?php $this->layout = 'default' ?>
-
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
 <?php
 $option = array(
     'label' => 'Fecha',
@@ -72,37 +75,10 @@ echo $this->Form->create('Procesoregistro', [
                 ?>
             </div>
 
-
-            <div class="col-span-2 text-md font-semibold my-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
-                    <label for="plsesion_id" class="font-semibold">Plan de sesión</label>
-                    <p class="text-red-600">*</p>
-
-                </div>
-                <?php
-
-                echo $this->Form->input(
-                    'plsesion_id',
-                    [
-                        'type' => 'select',
-                        'id' => 'plsesion_id',
-                        'class' => 'w-full',
-                        'label' => '',
-                        'empty' => 'Seleccione la sistematización relacionada',
-                        'error' => false // No mostrar error aquí
-                    ]
-                );
-                if (!empty($this->Form->error('plsesion_id'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('plsesion_id') . '</div>';
-                }
-                ?>
-            </div>
-
             <!-- Fecha de sesión realizada -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center ">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">3</span>
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
                     <label for="producto_id" class="font-semibold">Registro de fecha de sesión realizada</label>
                     <p class="text-red-600">*</p>
 
@@ -126,29 +102,55 @@ echo $this->Form->create('Procesoregistro', [
                 </div>
             </div>
 
+
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">3</span>
+                    <label for="plsesion_id" class="font-semibold">Plan de sesión</label>
+                    <p class="text-red-600">*</p>
+                </div>
+
+                <?php
+                echo $this->Form->input('plsesion_id', [
+                    'type' => 'select',
+                    'id' => 'plsesion_id',
+                    'class' => 'w-full',
+                    'label' => false,
+                    'empty' => 'Seleccione la sistematización relacionada',
+                ]);
+
+                if (!empty($this->Form->error('plsesion_id'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('plsesion_id') . '</div>';
+                }
+                ?>
+            </div>
+
+
             <!-- Temática tratada -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
-                    <label for="objactividad" class="font-semibold">Temática tratada</label>
+                    <label for="tema" class="font-semibold">Temática tratada</label>
                     <p class="text-red-600">*</p>
-
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Ingrese aquí exclusivamente el título de la temática tratada. No incluya poblaciones, lugares de realización de la actividad ni ningún otro dato.</p>
+                <p class="help-block text-gray-500 text-xs mb-2">
+                    Ingrese aquí exclusivamente el título de la temática tratada.
+                </p>
 
-                <?php
-                echo $this->Form->input('tema', [
-                    'label' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
-                    'error' => false
-                ]);
+                <!-- Input oculto: guarda el ID -->
+                <?php echo $this->Form->hidden('tema', ['id' => 'tema_hidden']); ?>
 
-                if (!empty($this->Form->error('tema'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('tema') . '</div>';
-                }
-                ?>
+                <!-- Input visible: solo muestra el nombre -->
+                <input type="text"
+                    id="tema_visible"
+                    class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none
+                  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 mt-2 font-semibold
+                  text-gray-700 text-sm focus:text-gray-900"
+                    placeholder="Seleccione un plan de sesión"
+                    readonly />
             </div>
+
 
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
@@ -516,12 +518,13 @@ $this->Html->script([
         return todo_correcto;
     }
 
-        // Detectar si el usuario intenta retroceder con la flecha del navegador
+    // Detectar si el usuario intenta retroceder con la flecha del navegador
     window.addEventListener('popstate', function(event) {
         if (!confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
             history.pushState(null, null, location.href);
         }
     });
+
     function preventBackNavigation() {
         if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
             window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
@@ -603,6 +606,36 @@ $this->Html->script([
             dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
         }
 
+        const select = document.getElementById("plsesion_id");
+        const temaHidden = document.getElementById("tema_hidden");
+        const temaVisible = document.getElementById("tema_visible");
+
+        select.addEventListener("change", function() {
+            const valor = this.value;
+            if (!valor) {
+                temaHidden.value = "";
+                temaVisible.value = "";
+                return;
+            }
+
+            fetch("<?php echo $this->Html->url(['controller' => 'Procesoregistros', 'action' => 'getPlsesion']); ?>/" + valor)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        temaHidden.value = data.data.nombre; // guardar el ID
+                        temaVisible.value = data.data.nombre; // mostrar el nombre
+                    } else {
+                        temaHidden.value = "";
+                        temaVisible.value = "No encontrado";
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    temaHidden.value = "";
+                    temaVisible.value = "Error en la consulta";
+                });
+        });
+
     });
 
     $(function() {
@@ -646,7 +679,7 @@ $this->Html->script([
             $("#hora_fin").val(hora_fin);
         });
 
-        
+
     });
 
     window.addEventListener('popstate', function(event) {
@@ -660,5 +693,4 @@ $this->Html->script([
 
     // Prevenir retroceso con la flecha del navegador (mejor experiencia)
     history.pushState(null, null, location.href);
-    
 </script>

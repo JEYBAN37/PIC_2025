@@ -11,7 +11,7 @@ class ProactividadesController extends AppController
 
 	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
 	const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
-	var $uses = array("Proactividad", "Procesoregistro", "Responsable");
+	var $uses = array("Proactividad", "Procesoregistro", "Responsable", "Acta", "Producto");
 	/**
 	 * Components
 	 *
@@ -25,9 +25,7 @@ class ProactividadesController extends AppController
 	 * @return void
 	 */
 
-	public function index() {
-
-	}
+	public function index() {}
 
 	function nuebus()
 	{
@@ -88,10 +86,7 @@ class ProactividadesController extends AppController
 				$this->Session->setFlash('No se ha podido guardar, por favor verifique el formulario', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
 		}
-		$productos = $this->Proactividad->Producto->find('list', [
-			'fields' => ['Producto.id', 'Producto.nombreproducto'],
-			'order' => ['Producto.modified DESC']
-		]);
+		$productos = $this->Acta->cargarProductos();
 		$this->set(compact('productos'));
 	}
 
@@ -121,7 +116,7 @@ class ProactividadesController extends AppController
 		}
 
 
-		$productos = $this->Proactividad->Producto->find('list');
+		$productos = $this->Acta->cargarProductos();
 		$idResponsable = isset($this->request->data['Proactividad']['responsable_id']) ? $this->request->data['Proactividad']['responsable_id'] : null;
 		$responsable = $idResponsable ? $this->Responsable->find('first', [
 			'conditions' => ['Responsable.id' => $idResponsable],
@@ -190,17 +185,34 @@ class ProactividadesController extends AppController
 				}
 			}
 		}
-
-
 		$conditions = [];
+		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+
+
 		if (!empty($search)) {
-			$conditions['OR'] = [
-				'Proactividad.id LIKE' => "%$search%",
-				'Producto.tarea LIKE' => "%$search%",
-				'Producto.id LIKE' => "%$search%",
-				'Proactividad.objactividad LIKE' => "%$search%",
-				'Responsable.nombres LIKE' => "%$search%"
-			];
+			if (!empty($rol)) {
+				// nombredim es obligatoria (AND), el resto es OR
+				$conditions['AND'] = [
+					'Producto.nombredim LIKE' => "%$rol%",
+					'OR' => [
+						'Proactividad.id LIKE' => "%$search%",
+						'Producto.tarea LIKE' => "%$search%",
+						'Proactividad.objactividad LIKE' => "%$search%",
+						'Responsable.nombres LIKE' => "%$search%"
+					]
+				];
+			} else {
+				$conditions['OR'] = [
+					'Proactividad.id LIKE' => "%$search%",
+					'Producto.tarea LIKE' => "%$search%",
+					'Producto.id LIKE' => "%$search%",
+					'Proactividad.objactividad LIKE' => "%$search%",
+					'Responsable.nombres LIKE' => "%$search%"
+				];
+			}
+		} elseif (!empty($rol)) {
+			// Si no hay búsqueda pero sí rol, filtrar por nombredim igual
+			$conditions['Producto.nombredim LIKE'] = "%$rol%";
 		}
 
 		$total = $this->Proactividad->find('count');
@@ -218,8 +230,10 @@ class ProactividadesController extends AppController
 			'contain' => array(
 				'Producto' => array(
 					'fields' => array(
-						'Producto.id',
-						'Producto.tarea'
+						'Producto.numproductos',
+						'Producto.tarea',
+						'Producto.nombredim',
+						'Producto.id'
 					)
 				),
 				'Responsable' => array(
@@ -231,7 +245,6 @@ class ProactividadesController extends AppController
 			'order' => $orderBy,
 			'recursive' => -1,
 		));
-
 
 		$result = [
 			"draw" => intval($this->request->query('draw')),
@@ -254,6 +267,4 @@ class ProactividadesController extends AppController
 
 		echo json_encode($result);
 	}
-
-	
 }
