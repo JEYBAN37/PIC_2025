@@ -1,4 +1,5 @@
 <?php $this->layout = 'default' ?>
+
 <?php
 $option = array(
     'label' => 'Fecha',
@@ -514,6 +515,21 @@ $this->Html->script([
 
         return todo_correcto;
     }
+
+        // Detectar si el usuario intenta retroceder con la flecha del navegador
+    window.addEventListener('popstate', function(event) {
+        if (!confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            history.pushState(null, null, location.href);
+        }
+    });
+    function preventBackNavigation() {
+        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+        }
+    }
+
+    // Prevenir retroceso con la flecha del navegador (mejor experiencia)
+    history.pushState(null, null, location.href);
 </script>
 
 <script>
@@ -629,5 +645,20 @@ $this->Html->script([
             $("#hora_inicio").val(hora_inicio);
             $("#hora_fin").val(hora_fin);
         });
+
+        
     });
+
+    window.addEventListener('popstate', function(event) {
+        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            window.location.href = 'index'; // Redirigir a la página deseada
+        } else {
+            history.pushState(null, null, location.href); // Mantener en la página actual
+        }
+    });
+
+
+    // Prevenir retroceso con la flecha del navegador (mejor experiencia)
+    history.pushState(null, null, location.href);
+    
 </script>

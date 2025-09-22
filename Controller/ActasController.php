@@ -30,6 +30,10 @@ Router::connect(
 class ActasController extends AppController
 {
 
+    const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
+    const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
+
+
     /**
 
      * Components
@@ -83,38 +87,32 @@ class ActasController extends AppController
         $this->set('acta', $this->Acta->find('first', $options));
     }
 
+
     /**
      * add method
      * @return void
      */
     public function add()
     {
+        // Obtener el producto más recientemente modificado
+        $productos = $this->Acta->cargarProductos();
+        $ubicaciones = $this->Acta->Ubicacion->find('list');
+        $this->set(compact('productos', 'ubicaciones', 'responsables'));
 
         if ($this->request->is('post')) {
-
             $this->Acta->create();
 
             if ($this->Acta->save($this->request->data)) {
-
-                // $this->Session->setFlash(__('The acta has been saved.'));
-                //return $this->redirect(array('action' => 'nuebus'));
-
                 $id = $this->Acta->id;
                 $aux = "view/$id";
                 return $this->redirect(array('action' => $aux));
             } else {
-
-                $this->Session->setFlash('El acta no se ha guardado.  por favor verificar el formulario. Revise nuevamente todos los campos de selección.', 'default', array('class' => 'alert alert-danger'));
+                $this->Session->setFlash(
+                    'El acta no se ha guardado.  por favor verificar el formulario. Revise nuevamente todos los campos de selección.',
+                    'default',
+                    array('class' => self::ALERT_ERROR_CLASS)
+                );
             }
-            // Obtener el producto más recientemente modificado
-            $productos = $this->Acta->Producto->find('first', array(
-                'order' => array('Producto.modified' => 'DESC')
-            ));
-
-            $ubicaciones = $this->Acta->Ubicacion->find('list');
-            $responsables = $this->Acta->Responsable->find('list');
-
-            $this->set(compact('productos', 'ubicaciones', 'responsables'));
         }
     }
     /**
@@ -160,7 +158,7 @@ class ActasController extends AppController
                 return $this->redirect(array('action' => $aux));
             } else {
 
-                $this->Session->setFlash(__('El acta no se ha guardado. Por favor, revise el formulario.', 'defalut', array('class' => 'alert alert-success')));
+                $this->Session->setFlash(__('El acta no se ha guardado. Por favor, revise el formulario.', 'defalut', array('class' => self::ALERT_SUCCESS_CLASS)));
             }
         } else {
 
@@ -200,7 +198,7 @@ class ActasController extends AppController
                 return $this->redirect(array('action' => $aux));
             } else {
 
-                $this->Session->setFlash('El soporte del acta no se ha guardado. Por favor, revise el formulario.', 'default', array('class' => 'alert alert-danger'));
+                $this->Session->setFlash('El soporte del acta no se ha guardado. Por favor, revise el formulario.', 'default', array('class' => self::ALERT_ERROR_CLASS));
             }
         } else {
 

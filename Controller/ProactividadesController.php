@@ -254,4 +254,6 @@ class ProactividadesController extends AppController
 
 		echo json_encode($result);
 	}
+
+	
 }

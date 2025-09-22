@@ -25,6 +25,21 @@ class Procesoregistro extends AppModel
 		return $proactividades;
 	}
 
+	public function cargarPlanSesion()
+	{
+		$plsesiones = $this->Plsesion->find('list', [
+			'fields' => ['Plsesion.id', 'Plsesion.nombreplan'],
+			'order' => ['Plsesion.modified' => 'DESC']
+		]);
+
+		// Elimina etiquetas HTML y convierte a mayúsculas
+		foreach ($plsesiones as $key => $value) {
+			$plsesiones[$key] = strip_tags($value);
+		}
+
+		return $plsesiones;
+	}
+
 	// En Model/Proactividad.php
 	public function countSesionesPorPosicion($proactividadId)
 	{

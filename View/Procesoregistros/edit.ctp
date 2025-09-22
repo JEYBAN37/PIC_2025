@@ -1,4 +1,8 @@
 <?php $this->layout = 'default' ?>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
 <?php
 $option = array(
     'label' => 'Fecha',
@@ -409,14 +413,7 @@ echo $this->Form->create('Procesoregistro', [
                         </div>
                     <?php endif; ?>
                 </div>
-
-
-
-
             </div>
-
-
-
 
 
             <div class="pt-2 flex gap-4">
@@ -647,4 +644,16 @@ $this->Html->script([
             $("#hora_fin").val(hora_fin);
         });
     });
+
+    // Detectar si el usuario intenta retroceder con la flecha del navegador
+    window.addEventListener('popstate', function(event) {
+        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            window.location.href = 'index'; // Redirigir a la página deseada
+        } else {
+            history.pushState(null, null, location.href); // Mantener en la página actual
+        }
+    });
+
+    // Prevenir retroceso con la flecha del navegador (mejor experiencia)
+    history.pushState(null, null, location.href);
 </script>
