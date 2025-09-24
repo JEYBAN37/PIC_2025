@@ -1,38 +1,50 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('Sanitize', 'Utility');
 /**
  * Productos Controller
  *
  * @property Producto $Producto
  * @property PaginatorComponent $Paginator
+ * @property SessionComponent $Session
+ * 
  */
+
+Router::connect(
+    '/:controller/:year/:month/:day',
+    array('action' => 'index'),
+    array(
+        'year' => '[12][0-9]{3}',
+        'month' => '0[1-9]|1[012]',
+        'day' => '0[1-9]|[12][0-9]|3[01]'
+    )
+);
 class ProductosController extends AppController {
 
-/**
+	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
+    const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
+    var $uses = array("Acta", "Producto", "Responsable", "Ubicacion");
+
+
+ /**
  * Components
  *
  * @var array
  */
 	//public $components = array('Paginator');
+	public $helpers = array('Html', 'Form');
 	public $components = array('Paginator', 'Session', 'RequestHandler');
 
-/**
+ /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Producto->recursive = 0;
-        
-        $count = $this->Producto->find('count');
-        $this->Paginator->settings['limit'] = $count;
 		
-        $this->set("productos", $this->paginate());
-
-		//$this->set('productos', $this->Paginator->paginate());
 	}
 
-/**
+ /**
  * view method
  *
  * @throws NotFoundException
@@ -47,7 +59,7 @@ class ProductosController extends AppController {
 		$this->set('producto', $this->Producto->find('first', $options));
 	}
 
-/**
+ /**
  * add method
  *
  * @return void
@@ -70,7 +82,7 @@ class ProductosController extends AppController {
 		$this->set(compact('actividades', 'actas', 'responsables', 'referentes', 'actividades'));
 	}
 
-/**
+ /**
  * edit method
  *
  * @throws NotFoundException
@@ -163,7 +175,7 @@ class ProductosController extends AppController {
 		$this->set(compact('responsables', 'referentes'));
 	}
 
-public function smsedit($id = null) {
+ public function smsedit($id = null) {
 		if (!$this->Producto->exists($id)) {
 			throw new NotFoundException(__('Invalid producto'));
 		}
@@ -200,7 +212,7 @@ public function smsedit($id = null) {
 
 	}
 
-/**
+	/**
  * delete method
  *
  * @throws NotFoundException
@@ -221,4 +233,121 @@ public function smsedit($id = null) {
 		return $this->redirect(array('action' => 'index'));
 	}
 
+	public function getProductos(){
+		 $this->autoRender = false;
+		 $this->response->type('json');
+
+		 $colums =['Producto.id'];
+		
+		 $start =$this->request->query('start');
+		 $length =$this->request->query('length');
+		$search = $this->request->query('search')['value'];
+		 $order =$this->request->query('order');
+		 $colums = $this->request->query('columns');
+
+		 $orderBy = array();
+		 if(!empty($order)){
+			foreach($order as $o){
+				$colIndex = intval($o['column']);
+				$colName = $colums[$colIndex]['data'];
+				$dir = strtoupper($o['dir']) === 'DESC' ? 'DESC' : 'ASC';	
+
+				//MAPEO DE COLUMNAS
+				switch($colName){
+					case 'id':
+						$orderBy['Producto.id'] = $dir;	
+						break;
+					case 'numproductos':
+						$orderBy['Producto.numproductos'] = $dir;	
+						break;
+					case 'prioridad':
+						$orderBy['Producto.nombredim'] = $dir;	
+						break;				
+					case 'actividad':
+						$orderBy['Producto.activity'] = $dir;	
+						break;
+					case 'tarea':
+						$orderBy['Producto.tarea'] = $dir;	
+						break;		
+					case 'evidencia':
+						$orderBy['Producto.evidencia'] = $dir;
+						break;
+					case 'estado':	
+						$orderBy['Producto.estado'] = $dir;	
+						break;
+					case 'modified':
+						$orderBy['Producto.modified'] = $dir;
+					
+					
+				}
+			}
+	}
+
+	//BUSQUEDA
+	$conditions =[];
+	if(!empty($search)){
+		$conditions ['OR'] = [
+				'Producto.numproductos LIKE' => "%$search%",
+				'Producto.nombredim LIKE' => "%$search%",
+				'Producto.activity LIKE' => "%$search%",
+				'Producto.tarea LIKE' => "%$search%",
+				'Producto.evidencia LIKE' => "%$search%",
+				'Producto.estado LIKE' =>"%$search%",
+				'Producto.modified LIKE' => "%$search%",
+				];
+
+				}
+				
+		
+
+		//CUENTA TOTAL DE REGISTROS
+		$total = $this->Producto->find('count');
+		$filtered = $this->Producto->find('count', ['conditions' => $conditions]);
+
+		//OBTENER REGISTROS
+		$data = $this->Producto->find('all',array(
+			'conditions' => $conditions,			
+			'fields' => array(
+			'Producto.id',
+			'Producto.numproductos',
+			'Producto.nombredim',
+			'Producto.activity',
+			'Producto.tarea',
+			'Producto.evidencia',
+			'Producto.estado','Producto.modified'
+		), 
+			'limit' => $length,
+			'offset' => $start,
+			'order' => $orderBy,
+			'recursive' => -1,
+		));
+		//debug($data);
+		//RESPUESTA
+		$result =[
+			"draw" => intval($this->request->query('draw')),
+			"recordsTotal" => $total,
+			"recordsFiltered" => $filtered,
+			"data" => []
+		];
+
+		
+
+		foreach($data as $row){
+			$result['data'][] = [
+				'id' => $row['Producto']['id'],
+				'numproducto' => $row['Producto']['numproductos'],
+				'prioridad' => $row['Producto']['nombredim'],
+				'activity' => $row['Producto']['activity'],
+				'tarea' => $row['Producto']['tarea'],
+				'evidencia' => $row['Producto']['evidencia'],
+				'estado' => $row['Producto']['estado'],
+				'modified' => $row['Producto']['modified'],
+			];
+		}
+
+		echo json_encode($result);
+		exit;	
+
+		}
+		
 }
