@@ -19207,3 +19207,77 @@ Stack Trace:
 #1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
 #2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2025-09-25 15:50:02 Error: [MissingActionException] Action InfoeventosController::infoeventosget() could not be found.
+Exception Attributes: array (
+  'controller' => 'InfoeventosController',
+  'action' => 'infoeventosget',
+)
+Request URL: /aplicacioncakephp/PIC_2025/infoeventos/infoeventosget
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(InfoeventosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-25 15:50:02 Error: [MissingActionException] Action InfoeventosController::sticky-footer.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'InfoeventosController',
+  'action' => 'sticky-footer.css',
+)
+Request URL: /aplicacioncakephp/PIC_2025/infoeventos/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(InfoeventosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-25 15:50:08 Error: [MissingActionException] Action InfoeventosController::infoeventoGet() could not be found.
+Exception Attributes: array (
+  'controller' => 'InfoeventosController',
+  'action' => 'infoeventoGet',
+)
+Request URL: /aplicacioncakephp/PIC_2025/infoeventos/infoeventoGet
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(InfoeventosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-25 15:50:09 Error: [MissingActionException] Action InfoeventosController::sticky-footer.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'InfoeventosController',
+  'action' => 'sticky-footer.css',
+)
+Request URL: /aplicacioncakephp/PIC_2025/infoeventos/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(InfoeventosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-25 15:50:30 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\InfoeventosController.php, line 220]
+2025-09-25 15:50:30 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /aplicacioncakephp/PIC_2025/infoeventos/getInfoeventos
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 220)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 220, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 220, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-09-25 15:58:13 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\InfoeventosController.php, line 223]
+2025-09-25 15:58:13 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /aplicacioncakephp/PIC_2025/infoeventos/getInfoeventos
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 223)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 223, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 223, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-09-25 15:58:17 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\InfoeventosController.php, line 223]
+2025-09-25 15:58:17 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /aplicacioncakephp/PIC_2025/infoeventos/getInfoeventos
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 223)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 223, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 223, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

@@ -14,6 +14,34 @@ class Infoevento extends AppModel {
  *
  * @var array
  */
+
+public function getInfoeventoCompleto($id = null){
+		return $this->find('first', array(
+			'conditions' => array('Infoevento.id'. $this-> primaryKey => $id),
+			'fields' => array(
+				'Infoevento.id',
+				'Infoevento.fecha',
+				'Infoevento.tema',
+				'Infoevento.tipo',	
+				'Infoevento.nombregrupo',				
+			),
+			'order' => array('Infoevento.modified' => 'DESC'),
+			
+			'contain' => array(				
+				'Producto' => array(
+					'fields' => array('Producto.nombredim', 'Producto.tarea', 'Producto.numproductos', 'Producto.id')
+				),
+				'Responsable' => array(
+					'fields' => array('Responsable.nombres', 'Responsable.profesion')
+				)
+			)
+
+		
+		));
+
+
+	}
+
 	public $validate = array(
 		'fecha' => array(
 			'date' => array(
@@ -171,6 +199,7 @@ class Infoevento extends AppModel {
   	
 
 	public $actsAs = array(
+		'Containable',
 		'Upload.Upload' => array(
 			'anexo' => array(
 				'fields' => array(
