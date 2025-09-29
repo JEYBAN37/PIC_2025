@@ -17,12 +17,20 @@
             <rect x="6" y="14" width="12" height="8" rx="1" />
         </svg>
     </button>
-    <button title="Editar Sistematizacion" class="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" onclick="window.location.href='<?php echo $this->Html->url(array('action' => 'edit', $proactividad['Proactividad']['id'])); ?>'">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen">
-            <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-            <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
-        </svg>
-    </button>
+
+    <?php
+    if ($tipoUsuario === 2 || $tipoUsuario === 1) :
+    ?>
+        <button title="Editar Sistematizacion" class="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" onclick="window.location.href='<?php echo $this->Html->url(array('action' => 'edit', $proactividad['Proactividad']['id'])); ?>'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen">
+                <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
+            </svg>
+        </button>
+    <?php
+    endif;
+    ?>
+
 
     <button title="Ver Encuentros" type="button" id="btn-hide"
         class="flex items-center w-38 space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
@@ -510,13 +518,13 @@
                     Encuentros Completados
                     <p class="pl-4
                         <?php
-                            if ($conCatNumSesiones <= 3) {
-                                echo 'text-red-600 font-bold';
-                            } elseif ($conCatNumSesiones > 3 && $conCatNumSesiones < 6) {
-                                echo 'text-yellow-600 font-bold';
-                            } else {
-                                echo 'text-green-600 font-bold';
-                            }
+                        if ($conCatNumSesiones <= 3) {
+                            echo 'text-red-600 font-bold';
+                        } elseif ($conCatNumSesiones > 3 && $conCatNumSesiones < 6) {
+                            echo 'text-yellow-600 font-bold';
+                        } else {
+                            echo 'text-green-600 font-bold';
+                        }
                         ?>">
                         <?php echo $conCatNumSesiones; ?>
                     </p>

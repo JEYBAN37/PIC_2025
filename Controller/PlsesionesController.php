@@ -265,4 +265,149 @@ class PlsesionesController extends AppController
         echo json_encode(['numSesiones' => $numberSesion]);
         exit;
     }
+
+    public function getPlsesiones($idResponsable = null)
+    {
+        $this->autoRender = false;
+        $this->response->type('json');
+        $columns = ['Plsesion.id'];
+
+        $start = $this->request->query('start');
+        $length = $this->request->query('length');
+        $search = $this->request->query('search')['value'];
+        $order = $this->request->query('order');
+        $columns = $this->request->query('columns');
+
+        $orderBy = array();
+        if (!empty($order)) {
+            foreach ($order as $o) {
+                $colIndex = intval($o['column']); // índice de la columna
+                $colName = $columns[$colIndex]['data']; // nombre definido en JS (columns: [])
+                $dir = strtoupper($o['dir']) === 'DESC' ? 'DESC' : 'ASC';
+
+                // Mapear a las columnas reales de la BD
+                switch ($colName) {
+                    case 'id':
+                        $orderBy['Plsesion.id'] = $dir;
+                        break;
+                    case 'fecha':
+                        // si es virtual o concatenado
+                        $orderBy['Plsesion.fecha'] = $dir;
+                        break;
+                    case 'tema':
+                        $orderBy['Plsesion.tema'] = $dir;
+                        break;
+                    case 'intension':
+                        $orderBy['Plsesion.intension'] = $dir;
+                        break;
+                    case 'objetivog':
+                        $orderBy['Plsesion.objetivog'] = $dir;
+                        break;
+                    case 'tipoblacion':
+                        $orderBy['Plsesion.tipoblacion'] = $dir;
+                        break;
+                    case 'dimension':
+                        $orderBy['Plsesion.dimension'] = $dir;
+                        break;
+                    case 'proceso':
+                        $orderBy['Plsesion.proceso'] = $dir;
+                        break;
+                    case 'created':
+                        $orderBy['Plsesion.created'] = $dir;
+                        break;
+                }
+            }
+        }
+        $conditions = [];
+        $rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+
+
+        if (!empty($search)) {
+            if (!empty($rol)) {
+                // nombredim es obligatoria (AND), el resto es OR
+                $conditions['AND'] = [
+                    'Producto.nombredim LIKE' => "%$rol%",
+                    'OR' => [
+                        'Plsesion.id LIKE' => "%$search%",
+                        'Plsesion.fecha LIKE' => "%$search%",
+                        'Plsesion.intension LIKE' => "%$search%",
+                        'Plsesion.tema LIKE' => "%$search%",
+                        'Plsesion.objetivog LIKE' => "%$search%",
+                        'Plsesion.tipoblacion LIKE' => "%$search%",
+                        'Plsesion.dimension LIKE' => "%$search%",
+                        'Plsesion.proceso LIKE' => "%$search%",
+                        'Plsesion.created LIKE' => "%$search%",
+                    ]
+                ];
+            } else {
+                $conditions['OR'] = [
+                    'Plsesion.id LIKE' => "%$search%",
+                    'Plsesion.fecha LIKE' => "%$search%",
+                    'Plsesion.intension LIKE' => "%$search%",
+                    'Plsesion.tema LIKE' => "%$search%",
+                    'Plsesion.objetivog LIKE' => "%$search%",
+                    'Plsesion.tipoblacion LIKE' => "%$search%",
+                    'Plsesion.dimension LIKE' => "%$search%",
+                    'Plsesion.proceso LIKE' => "%$search%",
+                    'Plsesion.created LIKE' => "%$search%",
+                ];
+            }
+        } elseif (!empty($rol)) {
+            // Si no hay búsqueda pero sí rol, filtrar por nombredim igual
+            $conditions['Producto.nombredim LIKE'] = "%$rol%";
+        }
+
+        $total = $this->Plsesion->find('count');
+        $filtered = $this->Plsesion->find('count', ['conditions' => $conditions]);
+
+        $data = $this->Plsesion->find('all', array(
+            'conditions' => $conditions,
+            'fields' => array(
+                'Plsesion.id',
+                'Plsesion.fecha',
+                'Plsesion.intension',
+                'Plsesion.tema',
+                'Plsesion.objetivog',
+                'Plsesion.tipoblacion',
+                'Plsesion.dimension',
+                'Plsesion.proceso',
+                'Plsesion.created'
+            ),
+            'contain' => array(
+                'Producto' => array(
+                    'fields' => array(
+                        'Producto.id'
+                    )
+                )
+            ),
+            'limit' => $length,
+            'offset' => $start,
+            'order' => $orderBy,
+            'recursive' => -1,
+        ));
+
+        $result = [
+            "draw" => intval($this->request->query('draw')),
+            "recordsTotal" => $total,
+            "recordsFiltered" => $filtered,
+            "data" => []
+        ];
+
+
+
+        foreach ($data as $row) {
+            $result['data'][] = [
+                'id' => $row['Plsesion']['id'],
+                'fecha' => $row['Plsesion']['fecha'],
+                'intension' => $row['Plsesion']['intension'],
+                'tema' => $row['Plsesion']['tema'],
+                'objetivog' => $row['Plsesion']['objetivog'],
+                'tipoblacion' => $row['Plsesion']['tipoblacion'],
+                'dimension' => $row['Plsesion']['dimension'],
+                'proceso' => $row['Plsesion']['proceso'],
+                'created' => $row['Plsesion']['created']
+            ];
+        }
+        echo json_encode($result);
+    }
 }

@@ -285,4 +285,16 @@ class ProductosController extends AppController
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+
+	public function states(){
+		$this->autoRender = false;
+		$this->response->type('json');
+		$data = $this->Producto->find('all', array(
+			'fields' => array('Producto.estado', 'COUNT(Producto.id) as count'),
+			'group' => array('Producto.estado'),
+			'recursive' => -1
+		));
+		$this->response->body(json_encode($data));
+	}
 }

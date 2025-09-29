@@ -236,21 +236,30 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                     data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => '/index']); ?>">
                                     Registros Sistematizaciones
                                 </button>
-                                <button
-                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                    data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => 'add']); ?>">
-                                    Nueva Sistematización
-                                </button>
-                                <button
-                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                    data-href="<?php echo $this->Html->url(['controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus']); ?>">
-                                    Registros Encuentros
-                                </button>
-                                <button
-                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                    data-href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'add']); ?>">
-                                    Nuevo Encuentro
-                                </button>
+
+                                <?php
+                                if ($tipoUsuario === '1' || $tipoUsuario === '3') :
+                                ?>
+
+                                    <button
+                                        class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                        data-href="<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => 'add']); ?>">
+                                        Nueva Sistematización
+                                    </button>
+                                    <button
+                                        class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                        data-href="<?php echo $this->Html->url(['controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus']); ?>">
+                                        Registros Encuentros
+                                    </button>
+                                    <button
+                                        class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                        data-href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'add']); ?>">
+                                        Nuevo Encuentro
+                                    </button>
+                                <?php
+                                endif;
+                                ?>
+
                             </div>
                         </div>
 
@@ -280,11 +289,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                     data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'index']); ?>">
                                     Registros Actas
                                 </button>
-                                <button
-                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                    data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'add']); ?>">
-                                    Agregar Acta
-                                </button>
+
+                                <?php
+                                if ($tipoUsuario === '3' || $tipoUsuario === '1') :
+                                ?>
+                                    <button
+                                        class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                        data-href="<?php echo $this->Html->url(['controller' => 'actas', 'action' => 'add']); ?>">
+                                        Agregar Acta
+                                    </button>
+                                <?php
+                                endif;
+                                ?>
                             </div>
                         </div>
 
@@ -342,11 +358,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                     data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'nuebus']); ?>">
                                     Registros Planes de Sesion
                                 </button>
-                                <button
-                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                    data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'add']); ?>">
-                                    Agregar Plan de Sesion
-                                </button>
+
+                                <?php
+                                if ($tipoUsuario === '3' || $tipoUsuario === '1') :
+                                ?>
+                                    <button
+                                        class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                        data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'add']); ?>">
+                                        Agregar Plan de Sesion
+                                    </button>
+                                <?php
+                                endif;
+                                ?>
                             </div>
                         </div>
 
@@ -376,11 +399,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                     data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'index']); ?>">
                                     Registros Eventos
                                 </button>
-                                <button
-                                    class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                    data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'add']); ?>">
-                                    Agregar Evento
-                                </button>
+                                <?php
+                                if ($tipoUsuario === '3' || $tipoUsuario === '1') :
+                                ?>
+                                    <button
+                                        class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
+                                        data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'add']); ?>">
+                                        Agregar Evento
+                                    </button>
+                                <?php
+                                endif;
+                                ?>
+
                             </div>
                         </div>
 

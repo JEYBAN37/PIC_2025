@@ -25,7 +25,11 @@ class ProactividadesController extends AppController
 	 * @return void
 	 */
 
-	public function index() {}
+	public function index()
+	{
+		$tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
+		$this->set('tipoUsuario', $tipoUsuario);
+	}
 
 	function nuebus()
 	{
@@ -51,6 +55,7 @@ class ProactividadesController extends AppController
 	 */
 	public function view($id = null)
 	{
+		$tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
 		if (!$this->Proactividad->exists($id)) {
 			throw new NotFoundException(__('Invalid proactividad'));
 		}
@@ -67,6 +72,7 @@ class ProactividadesController extends AppController
 
 		$this->set('conCatNumSesiones', $conCatNumSesiones);
 		$this->set('proactividad', $proactividad);
+		$this->set('tipoUsuario', $tipoUsuario);
 	}
 
 	/**
@@ -148,7 +154,7 @@ class ProactividadesController extends AppController
 		$columns = ['Proactividad.id'];
 
 		$start = $this->request->query('start');
-		$length = $this->request->query('length');
+		$length = $this->request->query('length') ? $this->request->query('length') : 10;
 		$search = $this->request->query('search')['value'];
 		$order = $this->request->query('order');
 		$columns = $this->request->query('columns');

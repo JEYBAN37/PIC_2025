@@ -20274,3 +20274,625 @@ Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
 Stack Trace:
 #0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2025-09-22 19:44:54 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:44:54 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:45:01 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:49:47 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:51:27 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:51:27 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:53:23 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:53:23 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:56:42 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:56:42 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 19:57:31 Error: Fatal Error (4): syntax error, unexpected 'isset' (T_ISSET) in [C:\xampp\htdocs\PIC\Controller\ProactividadesController.php, line 11]
+2025-09-22 19:57:31 Error: [FatalErrorException] syntax error, unexpected 'isset' (T_ISSET)
+Request URL: /PIC/proactividades/index
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 11, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 11, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-09-22 21:19:30 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:19:30 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:26:16 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:26:16 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:27:39 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:27:39 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:27:49 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:27:54 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:27:56 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:27:56 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:30:01 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:30:04 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:31:14 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:33:54 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
+Exception Attributes: array (
+  'class' => 'BienvenidaController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/bienvenida
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:34:10 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-22 21:34:10 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-25 22:02:44 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-25 22:32:44 Error: Fatal Error (4): syntax error, unexpected ''recursive'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\xampp\htdocs\PIC\Controller\ProductosController.php, line 296]
+2025-09-25 22:32:44 Error: [FatalErrorException] syntax error, unexpected ''recursive'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /PIC/productos/states
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 296)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 296, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 296, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2025-09-26 16:08:22 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-26 16:08:23 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-26 16:08:23 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-29 15:53:09 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-29 17:56:25 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 17:56:35 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:04:21 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:04:23 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:04:24 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:04:25 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:04:30 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:04:47 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:02 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:06 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:07 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:08 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:09 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:53 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:55 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:56 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:58 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:09:59 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:10:00 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:10:02 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:10:05 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:10:08 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:10:23 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-29 18:10:26 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-09-29 18:10:35 Error: [MissingActionException] Action ProductosController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProductosController',
+  'action' => 'login',
+)
+Request URL: /PIC/productos/login
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-09-29 18:11:13 Error: [MissingViewException] View file "C:\xampp\htdocs\PIC\View\Plsesiones\get_plsesiones.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\PIC\\View\\Plsesiones\\get_plsesiones.ctp',
+)
+Request URL: /PIC/plsesiones/getPlsesiones
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:38:20 Error: [NotFoundException] Invalid plsesion
+Request URL: /PIC/plsesiones/edit/index
+Stack Trace:
+#0 [internal function]: PlsesionesController->edit('index')
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PlsesionesController), Array)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2025-09-29 18:38:20 Error: [NotFoundException] Invalid plsesion
+Request URL: /PIC/plsesiones/edit/sticky-footer.css
+Stack Trace:
+#0 [internal function]: PlsesionesController->edit('sticky-footer.c...')
+#1 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PlsesionesController), Array)
+#2 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PlsesionesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

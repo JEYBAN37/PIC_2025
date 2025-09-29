@@ -31,7 +31,14 @@
 
     <script>
         const URL_view = "<?php echo $this->Html->url(['action' => 'view', '__ID__']); ?>";
-        const URL_edit = "<?php echo $this->Html->url(['action' => 'edit', '__ID__']); ?>";
+        <?php if (!isset($tipoUsuario)) {
+            $tipoUsuario = null;
+        } ?>
+        const URL_edit = "<?php if ($tipoUsuario === '1' || $tipoUsuario === '3') {
+                                echo $this->Html->url(['action' => 'edit', '__ID__']);
+                            } else {
+                                echo '#';
+                            } ?>";
         const URL_delete = "<?php echo $this->Html->url(['action' => 'delete', '__ID__']); ?>";
 
 
@@ -44,15 +51,15 @@
                     // Aplica clases a cada celda del body
                     $('td', row).each(function(index) {
                         $(this).addClass('px-4 py-3 align-center-left');
-                        if(index === 1) $(this).addClass('text-center text-black font-bold'); // ID
+                        if (index === 1) $(this).addClass('text-center text-black font-bold'); // ID
 
-                        if(index === 2) $(this).addClass('text-center'); // idproducto
+                        if (index === 2) $(this).addClass('text-center'); // idproducto
 
                         // Para columnas de texto largo (por ejemplo, nombreproducto, objactividad)
-                        if( index === 3 || index === 4) {
-                            const maxLength =200;
+                        if (index === 3 || index === 4) {
+                            const maxLength = 200;
                             const cellText = $(this).text();
-                            if(cellText.length > maxLength) {
+                            if (cellText.length > maxLength) {
                                 const truncated = cellText.substring(0, maxLength) + '...';
                                 $(this).html(
                                     `<span class="texto-truncado">${truncated}</span>
@@ -63,8 +70,8 @@
                             }
                         }
 
-                        if(index === 5) $(this).addClass('text-center font-bold text-black text-xs'); // responsable
-                        if(index === 6) $(this).addClass('text-center'); // conCat
+                        if (index === 5) $(this).addClass('text-center font-bold text-black text-xs'); // responsable
+                        if (index === 6) $(this).addClass('text-center'); // conCat
                     });
                     // Aplica clase a la fila completa si quieres
                     $(row).addClass('hover:bg-gray-50 transition ');
@@ -124,13 +131,13 @@
                             const editUrl = URL_edit.replace('__ID__', data);
                             const deleteUrl = URL_delete.replace('__ID__', data);
                             return `
-          <div class="relative inline-block text-left">
-            <a href="${viewUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
-            <a href="${editUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>
-            <hr class="my-1 border-gray-200">
-            <a href="${deleteUrl}" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-               onclick="return confirm('¿Seguro que quieres borrar #${data}?');">Borrar</a>
-          </div>`;
+                                <div class="relative inline-block text-left">
+                                    <a href="${viewUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
+                                    ${editUrl !== '#' ? `<a href="${editUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>` : ''}
+                                    <hr class="my-1 border-gray-200">
+                                    <a href="${deleteUrl}" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                                    onclick="return confirm('¿Seguro que quieres borrar #${data}?');">Borrar</a>
+                                </div>`;
                         }
                     }
                 ],
@@ -298,11 +305,11 @@
             });
 
 
-             const menu = document.getElementById('miTabla_processing');
-             if (menu) {
+            const menu = document.getElementById('miTabla_processing');
+            if (menu) {
                 menu.classList.remove('dataTables_processing');
                 menu.classList.add('hidden');
-             }
+            }
 
 
         }
