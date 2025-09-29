@@ -122,7 +122,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
             <!-- Logo + Title -->
             <div class="flex items-center gap-2">
-                <img class="w-8 h-[50px] object-cover" alt="dataHome.alt" src="<?php echo $this->webroot; ?>/img/update/logoPic.png">
+                <img class="w-8 h-[50px] object-cover" alt="dataHome.alt"
+                    src="<?php echo $this->webroot; ?>/img/update/logoPic.png">
                 <a href="/react/#/homePage">
                     <h2
                         class="text-[#155dfc] text-2xl md:text-[28px] font-bold whitespace-nowrap hover:text-green-600 transition-colors">

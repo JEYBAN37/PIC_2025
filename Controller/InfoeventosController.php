@@ -1,17 +1,14 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('Sanitize', 'Utility');
 /**
  * Infoeventos Controller
  *
  * @property Infoevento $Infoevento
  * @property PaginatorComponent $Paginator
- *  @property Acta $Acta
  */
 class InfoeventosController extends AppController
 {
-	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
-	const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
-	var $uses = array("Acta", "Ubicacion", "Infoevento", "Responsable", "Producto");
 	/**
 	 * Components
 	 *
@@ -158,20 +155,6 @@ class InfoeventosController extends AppController
 
 
 		$this->set(compact('ubicaciones', 'productos', 'responsables'));
-	}
-
-
-	private function tranformData($data)
-	{
-		// Ejemplo: viene "2. Hombres,4. Niños y niñas"
-		if (!empty($data['Infoevento']['poblaciones'])) {
-			$poblacionStr = $data['Infoevento']['poblaciones'];
-			// Extraer cada palabra/frase hasta la coma
-			$tipos = array_map('trim', explode(',', $poblacionStr));
-			$data['Infoevento']['poblaciones'] = $tipos;
-		}
-
-		return $data;
 	}
 
 	/**

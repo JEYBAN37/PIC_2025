@@ -38,6 +38,27 @@ class Producto extends AppModel
 
 	);
 
+	public function getProductoCompleto($id = null){
+		return $this->find('first', array(
+			'conditions' => array('Producto.id'. $this-> primaryKey => $id),
+			'fields' => array(
+				'Producto.id',
+				'Producto.numproductos',
+				'Producto.nombredim',	
+				'Producto.activity',	
+				'Producto.tarea',				
+				'Producto.evidencia',				
+				'Producto.porcentajeavancetotal',				
+				'Producto.estado',
+			),
+			'order' => array('Producto.modified' => 'DESC'),
+
+		
+		));
+
+
+	}
+
 	
 	public $virtualFields = array(
 		'nombreproducto' => 'CONCAT(Producto.numproductos," | ",Producto.tarea)'

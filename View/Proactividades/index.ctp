@@ -8,8 +8,10 @@
     </p>
 </div>
 
-<div class="w-full max-w-lg sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto border border-gray-200 rounded-lg h-full px-12 pb-12 shadow-lg">
-    <table id="miTabla" style="width:100%;" class="stripe hover text-sm text-left text-gray-600 border border-gray-200 rounded-lg overflow-hidden">
+<div
+    class="w-full max-w-lg sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto border border-gray-200 rounded-lg h-full px-12 pb-12 shadow-lg">
+    <table id="miTabla" style="width:100%;"
+        class="stripe hover text-sm text-left text-gray-600 border border-gray-200 rounded-lg overflow-hidden">
         <thead class="bg-gray-200 font-medium border-b border-gray-300">
             <tr class=" text-gray-900 font-light">
                 <th class="px-2 w-6"></th> <!-- control (+) -->
@@ -51,7 +53,8 @@
                     // Aplica clases a cada celda del body
                     $('td', row).each(function(index) {
                         $(this).addClass('px-4 py-3 align-center-left');
-                        if (index === 1) $(this).addClass('text-center text-black font-bold'); // ID
+                        if (index === 1) $(this).addClass(
+                            'text-center text-black font-bold'); // ID
 
                         if (index === 2) $(this).addClass('text-center'); // idproducto
 
@@ -70,7 +73,8 @@
                             }
                         }
 
-                        if (index === 5) $(this).addClass('text-center font-bold text-black text-xs'); // responsable
+                        if (index === 5) $(this).addClass(
+                            'text-center font-bold text-black text-xs'); // responsable
                         if (index === 6) $(this).addClass('text-center'); // conCat
                     });
                     // Aplica clase a la fila completa si quieres
@@ -86,7 +90,7 @@
                 pageLength: 7,
                 processing: true,
                 serverSide: true,
-                ajax: "/PIC/proactividades/getProactividades",
+                ajax: "/aplicacioncakephp/PIC_2025/proactividades/getProactividades",
                 columns: [
                     // Columna control (+)
                     {

@@ -32,6 +32,8 @@ class ActasController extends AppController
 
     const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
     const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
+    var $uses = array("Acta", "Producto", "Responsable", "Ubicacion");
+
 
 
     /**
@@ -55,12 +57,7 @@ class ActasController extends AppController
      */
     public function index()
     {
-        $this->Acta->recursive = 0;
-
-        $count = $this->Acta->find('count');
-        $this->Paginator->settings['limit'] = $count;
-
-        $this->set("actas", $this->paginate());
+       
     }
 
     /**
@@ -227,127 +224,140 @@ class ActasController extends AppController
         $this->set("l", $this->paginate());
     }
 
+    public function getActas()
+	{
+		$this->autoRender = false;
+		$this->response->type('json');
+
+		$columns = ['Acta.id'];
+
+		$start = $this->request->query('start');
+		$length = $this->request->query('length');
+		$search = $this->request->query('search')['value'];
+		$order = $this->request->query('order');
+		$columns = $this->request->query('columns');
+
+		$orderBy = array();
+		if (!empty($order)) {
+			foreach ($order as $o) {
+				$colIndex = intval($o['column']); // índice de la columna
+				$colName = $columns[$colIndex]['data']; // nombre definido en JS (columns: [])
+				$dir = strtoupper($o['dir']) === 'DESC' ? 'DESC' : 'ASC';
+
+				// Mapear a las columnas reales de la BD
+				switch ($colName) {
+					case 'id':
+						$orderBy['Acta.id'] = $dir;
+						break;                                          
+					case 'numproducto':
+						// si es virtual o concatenado
+						$orderBy['Producto.numproductos'] = $dir;
+						break;
+                    case 'prioridad':
+						// si es virtual o concatenado
+						$orderBy['Producto.nombredim'] = $dir;
+						break;                       
+					case 'tarea':
+						$orderBy['Producto.tarea'] = $dir;
+						break;
+                    case 'fecha':
+						$orderBy['Acta.fecha'] = $dir;
+						break;
+                    case 'tema':
+						$orderBy['Acta.tema'] = $dir;
+						break;
+                     case 'alcancereunion':
+						$orderBy['Acta.alcancereunion'] = $dir;
+						break;
+					case 'responsable':
+						$orderBy['Responsable.nombres'] = $dir;
+						break;
+					
+				}
+			}
+		}
+
+
+		$conditions = [];
+		if (!empty($search)) {
+			$conditions['OR'] = [
+				'Acta.id LIKE' => "%$search%",
+				'Producto.tarea LIKE' => "%$search%",
+				'Producto.id LIKE' => "%$search%",
+				'Acta.tema LIKE' => "%$search%",
+				'Responsable.nombres LIKE' => "%$search%"
+			];
+		}
+
+		$total = $this->Acta->find('count');
+		$filtered = $this->Acta->find('count', ['conditions' => $conditions]);
+
+		$data = $this->Acta->find('all', array(
+			'conditions' => $conditions,
+			'fields' => array(
+				'Acta.id',
+				//'Acta.totalsesiones',
+				'Acta.tema',
+				'Acta.fecha',
+                'acta.alcancereunion',
+				//'(SELECT COUNT(*) FROM actas pr WHERE pr.acta_id = Acta.id) AS numSesiones'
+			),
+			
+            'contain' => array(
+                'Producto' => array(
+                    'fields' => array(
+                        'Producto.id',
+                        'Producto.tarea',
+                        'Producto.nombredim',
+                        'Producto.numproductos'
+                    )
+                ),
+                'Responsable' => array(
+                    'fields' => array('Responsable.id', 'Responsable.nombres')
+               )
+            ),
+			'limit' => $length,
+			'offset' => $start,
+			'order' => $orderBy,
+			'recursive' => -1,
+		));
+        // debug($data);
+
+		$result = [
+			"draw" => intval($this->request->query('draw')),
+			"recordsTotal" => $total,
+			"recordsFiltered" => $filtered,
+			"data" => []
+		];
+
+		foreach ($data as $row) {
+			$result['data'][] = [
+				'id' => $row['Acta']['id'],	
+                'numproducto' => $row['Producto']['numproductos'],			
+				'nombreproducto' => $row['Producto']['tarea'],
+                'prioridad' => $row['Producto']['nombredim'],
+                'tarea' => $row['Producto']['tarea'],
+                'fecha' => $row['Acta']['fecha'],
+                'tema' => $row['Acta']['tema'],
+                'alcancereunion' => $row['Acta']['alcancereunion'],
+                'responsables' => $row['Responsable']['nombres'],
+
+				
+				
+			];
+		}
+       
+		echo json_encode($result);
+	}
+
 
     public function delete($id)
     {
-
-        //$this->Acta->id = $id;
-        /*if (!$this->Acta->exists()) {
-      throw new NotFoundException(__('El acta no es válida.'));
-    }
-    $this->request->allowMethod('post', 'delete');
-    if ($this->Acta->delete()) {
-      $this->Session->setFlash(__('El acta se ha eliminado.'));
-    } else {
-      $this->Session->setFlash(__('El acta no se pudo eliminar. Por favor, inténtelo de nuevo.'));
-    }
-    return $this->redirect(array('action' => 'nuebus'));*/
-
+       
         $this->Acta->delete($id);
 
         $this->redirect("nuebus");
     }
 
-    /*function check() {
-
-        $campos = array("Tema", "Comunas", "Poblaciones", "Dimension", "Pro_asociado");
-
-        if (isset($this->data) && !empty($this->data)) {
-
-            $con = array(strtolower($campos[$this->data["Acta"]["Campo"]]) . " like" => "%" . $this->data["Acta"]["Busqueda"] . "%"); //array("or" => array("tema like" => "%".$this->data["Actividad"]["Busqueda"]."%", "poblacion like " => "%".$this->data["Actividad"]["Busqueda"]."%","eje like " => "%".$this->data["Actividad"]["Busqueda"]."%","prioridad like " => "%".$this->data["Actividad"]["Busqueda"]."%","comuna_id like " => "%".$this->data["Actividad"]["Busqueda"]."%"));
-        } else {
-
-            $con = null;
-        }
-
-        $this->Acta->recursive = 0;
-
-        $paginate = array("fields" => array("id", "tema", "fecha", "lugar", "comunas", "dimension", "pro_asociado", "grupo", "anexo"), "conditions" => $con, "limit" => 30);
-
-        $this->Paginator->settings = $paginate;
-
-        $this->set("Campos", $campos);
-
-        $this->set("l", $this->paginate());
-    }*/
-
-    /*function nuebus() {
-        $campos = array("Dimension");
-        if(isset($this->data) && !empty($this->data)){
-
-        $campoFiltro = $this->data["Acta"]["Campo"];
-        $textoFiltro = $this->data["Acta"]["Dimension"];
-
-        $filtroPro = $this->data["Acta"]["Pro_asociado"];
-        $filtroGrupo = $this->data["Acta"]["grupo"];
-        $filtroTema = $this->data["Acta"]["tema"];
-        $filtroComunas = $this->data["Acta"]["comunas"];
-        $filtroCorregimiento = $this->data["Acta"]["corregimiento"];
-
-      $con = array(strtolower($campos[$campoFiltro])." like" => "%".$textoFiltro."%");//array("or" => array("tema like" => "%".$this->data["Actividad"]["Busqueda"]."%", "poblacion like " => "%".$this->data["Actividad"]["Busqueda"]."%","eje like " => "%".$this->data["Actividad"]["Busqueda"]."%","prioridad like " => "%".$this->data["Actividad"]["Busqueda"]."%","comuna_id like " => "%".$this->data["Actividad"]["Busqueda"]."%"));
-      $pro = "UPPER(pro_asociado) like '%" . $filtroPro . "%'";
-      $grupo = "UPPER(grupo) like '%" . $filtroGrupo . "%'";
-      $tema = "UPPER(tema) like '%" . $filtroTema . "%'";
-      $comunas = "UPPER(comunas) like '%" . $filtroComunas . "%'";
-      $corregimiento = "UPPER(corregimiento) like '%" . $filtroCorregimiento . "%'";
-      
-
-      array_push($con, $pro);
-      array_push($con, $grupo);
-      array_push($con, $tema);
-      array_push($con, $comunas);
-      array_push($con, $corregimiento);
-      
-
-
-    } else {
-      $con = null;
-    }
-        $this->Acta->recursive = 0;
-    $paginate = array("fields" => array("id", "tema", "fecha", "comunas", "dimension", "pro_asociado", "grupo", "anexo"), "conditions" => $con, "limit" => 30);
-    $this->Paginator->settings = $paginate;
-    $this->set("Campos", $campos);
-    $this->set("l", $this->paginate());
-
-    
-  }*/
-
-    /**
-
-     * delete method
-
-     *
-
-     * @throws NotFoundException
-
-     * @param string $id
-
-     * @return void
-
-     */
-    /* public function ____________($id = null) {
-
-      $this->Acta->id = $id;
-
-      if (!$this->Acta->exists()) {
-
-      throw new NotFoundException(__('Invalid acta'));
-
-      }
-
-      $this->request->allowMethod('post', '_____');
-
-      if ($this->Acta->delete()) {
-
-      $this->Session->setFlash(__('The acta has been _____.'));
-
-      } else {
-
-      $this->Session->setFlash(__('The acta could not be _____. Please, try again.'));
-
-      }
-
-      return $this->redirect(array('action' => 'index'));
-
-      } */
+   
 }

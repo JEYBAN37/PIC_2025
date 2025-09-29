@@ -32,6 +32,35 @@ class Acta extends AppModel
 
 	}
 
+	public function getActaCompleto($id = null)
+	{
+		return $this->find('first', array(
+			'conditions' => array(
+				'Acta.' . $this->primaryKey => $id
+			), //  campos específicos de Acta
+
+					'fields' => array(
+						'Acta.id',
+						'Acta.fecha',
+						'Acta.tema',
+						'Acta.alcancereunion',
+						
+					),
+					'order' => array('Acta.fecha' => 'DESC'),
+					
+			
+			
+			'contain' => array(				
+				'Producto' => array(
+					'fields' => array('Producto.nombredim', 'Producto.tarea', 'Producto.numproductos')
+				),
+				'Responsable' => array(
+					'fields' => array('Responsable.nombres', 'Responsable.profesion')
+				)
+			)
+		));
+	}
+
 	public $validate = array(
 		'id' => array(
 			'numeric' => array(
@@ -248,9 +277,12 @@ class Acta extends AppModel
 
 	);
 
+	
+
 
 
 	public $actsAs = array(
+		'Containable',
 		'Upload.Upload' => array(
 			'anexo' => array(
 				'fields' => array(
@@ -289,7 +321,7 @@ class Acta extends AppModel
 			'foreignKey' => 'producto_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => 'Producto.created DESC, Producto.modified DESC'
 		),
 
 		'Responsable' => array(
