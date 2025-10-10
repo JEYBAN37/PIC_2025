@@ -68,6 +68,7 @@ class ActasController extends AppController
      */
     public function view($id = null)
     {
+		$tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
 
         if (!$this->Acta->exists($id)) {
 
@@ -82,6 +83,7 @@ class ActasController extends AppController
         );
 
         $this->set('acta', $this->Acta->find('first', $options));
+        $this->set('tipoUsuario', $tipoUsuario);
     }
 
 
@@ -167,9 +169,10 @@ class ActasController extends AppController
         $productos = $this->Acta->Producto->find('list', array(
             'order' => array('Producto.modified' => 'DESC')
         ));
+        $idredirect = $id;
         $ubicaciones = $this->Acta->Ubicacion->find('list');
         $responsables = $this->Acta->Responsable->find('list');
-        $this->set(compact('productos', 'ubicaciones', 'responsables'));
+        $this->set(compact('productos', 'ubicaciones', 'responsables' ,'idredirect'));
     }
 
     public function editanexo($id = null)

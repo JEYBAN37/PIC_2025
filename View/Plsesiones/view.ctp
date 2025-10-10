@@ -5,7 +5,7 @@
         Formato Plan de sesión PIC
     </h1>
     <p class="text-gray-500 mb-4 text-lg">
-        Visualice e imprima la información registrada en la sistematización de procesos.
+        Visualice e imprima la información registrada en los planes de sesión.
     </p>
 </div>
 
@@ -93,9 +93,9 @@
 
                     <tr>
 
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Creacion</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Creación</td>
                         <td colspan="4" class="border border-gray-300 p-2"><?php echo ($plsesion['Plsesion']['created']); ?> </td>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Modificacion</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Modificación</td>
                         <td colspan="3" class="border border-gray-300 p-2"><?php echo h($plsesion['Plsesion']['modified']); ?> </td>
                     </tr>
 
@@ -142,7 +142,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Intencion:</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Intención:</td>
                         <td colspan="8" class="border border-gray-300 p-2">
                             <?php echo $this->Html->div('intension', $plsesion['Plsesion']['intension'], ['escape' => false]); ?>
                         </td>
@@ -164,7 +164,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="3" class="border border-gray-300 font-semibold p-2 bg-gray-100">Parte Significativa:</td>
+                        <td colspan="3" class="border border-gray-300 font-semibold p-2 bg-gray-100">Participación Significativa:</td>
                         <td colspan="1" class="border border-gray-300 p-2">
                             <?php echo $plsesion['Plsesion']['part_significativa']  == 1 ? 'Sí' : 'No'; ?>
                         </td>
@@ -174,7 +174,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="3" class="border border-gray-300 font-semibold p-2 bg-gray-100">Ciudadania activa:</td>
+                        <td colspan="3" class="border border-gray-300 font-semibold p-2 bg-gray-100">Ciudadanía activa:</td>
                         <td colspan="1" class="border border-gray-300 p-2">
                             <?php echo $plsesion['Plsesion']['ciudadaniaactiva']  == 1 ? 'Sí' : 'No'; ?>
                         </td>
@@ -237,20 +237,6 @@
                         </td>
                     </tr>
 
-                    <tr>
-                        <td colspan="3" class="border border-gray-300 font-semibold p-2 bg-gray-100">Genero:</td>
-                        <td colspan="1" class="border border-gray-300 p-2">
-                            <?php echo $plsesion['Plsesion']['genero']  == 1 ? 'Sí' : 'No'; ?>
-                        </td>
-                        <td colspan="5" class="border border-gray-300 font-semibold p-2">
-                            <?php
-                            // Elimina los números usando expresiones regulares
-                            echo preg_replace('/\d+/', '', $plsesion['Plsesion']['califi_enfo_genero']);
-                            ?>
-                        </td>
-                    </tr>
-
-
                     <tr class="bg-gray-100">
                         <th colspan="9" class="text-center font-bold p-2 uppercase">Objetivos de la estrategia</th>
                     </tr>
@@ -302,7 +288,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Objetivo especificos:</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Objetivo específicos:</td>
                         <td colspan="8" class="border border-gray-300 p-2">
                             <?php echo $this->Html->div('objetivoe', $plsesion['Plsesion']['objetivoe'], ['escape' => false]); ?>
                         </td>
@@ -393,7 +379,7 @@
             </svg>
             <div class="ml-4">
                 <h1 class="text-xl font-semibold flex">
-                    Tiempo de sesion registrado:
+                    Tiempo de sesión registrado:
                     <p class="pl-4
                         <?php
                         if ($totalDuracion > $totalEnSesion) {
@@ -419,65 +405,65 @@
                 <?php foreach ($plsesion['Plsmomento'] as $plsmomento) : ?>
                     <div class="mb-6">
                         <table class="w-full">
-                                <tr>
-                                    <td colspan="9">
-                                        <!-- Botón de menú de opciones -->
-                                        <div class="relative inline-block text-left">
-                                            <button type="button" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200 hover:rounded-md focus:outline-none" onclick="toggleMenu(this)">
-                                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                                    <path d="M3 5h1" />
-                                                    <path d="M3 12h1" />
-                                                    <path d="M3 19h1" />
-                                                    <path d="M8 5h1" />
-                                                    <path d="M8 12h1" />
-                                                    <path d="M8 19h1" />
-                                                    <path d="M13 5h8" />
-                                                    <path d="M13 12h8" />
-                                                    <path d="M13 19h8" />
-                                                </svg>
-                                            </button>
-                                            <div class="hidden absolute left-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg z-50 menu-options">
-                                                <a href="<?php echo $this->Html->url(['controller' => 'plsmomentos', 'action' => 'edit', $plsmomento['id']]); ?>"
-                                                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">Editar</a>
-                                                <form method="post" action="<?php echo $this->Html->url(['controller' => 'plsmomentos', 'action' => 'delete', $plsmomento['id'], $plsesion['Plsesion']['id']]); ?>" onsubmit="return confirm('<?php echo __('¿Está seguro/a de eliminar el registro con ID# %s?', $plsmomento['id']); ?>');">
-                                                    <?php echo $this->Form->hidden('_method', ['value' => 'POST']); ?>
-                                                    <button type="submit" class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 text-sm">Borrar</button>
-                                                </form>
-                                            </div>
+                            <tr>
+                                <td colspan="9">
+                                    <!-- Botón de menú de opciones -->
+                                    <div class="relative inline-block text-left">
+                                        <button type="button" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200 hover:rounded-md focus:outline-none" onclick="toggleMenu(this)">
+                                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path d="M3 5h1" />
+                                                <path d="M3 12h1" />
+                                                <path d="M3 19h1" />
+                                                <path d="M8 5h1" />
+                                                <path d="M8 12h1" />
+                                                <path d="M8 19h1" />
+                                                <path d="M13 5h8" />
+                                                <path d="M13 12h8" />
+                                                <path d="M13 19h8" />
+                                            </svg>
+                                        </button>
+                                        <div class="hidden absolute left-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg z-50 menu-options">
+                                            <a href="<?php echo $this->Html->url(['controller' => 'Plsmomentos', 'action' => 'edit', $plsmomento['id']]); ?>"
+                                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">Editar</a>
+                                            <form method="post" action="<?php echo $this->Html->url(['controller' => 'Plsmomentos', 'action' => 'delete', $plsmomento['id'], $plsesion['Plsesion']['id']]); ?>" onsubmit="return confirm('<?php echo __('¿Está seguro/a de eliminar el registro con ID# %s?', $plsmomento['id']); ?>');">
+                                                <?php echo $this->Form->hidden('_method', ['value' => 'POST']); ?>
+                                                <button type="submit" class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 text-sm">Borrar</button>
+                                            </form>
                                         </div>
-                                    </td>
-                                </tr>
+                                    </div>
+                                </td>
+                            </tr>
 
-                                <tr class="mt-4 bg-gray-100 ">
-                                    <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700"> Momento </td>
-                                    <td colspan="5" class="border border-gray-300 p-2 font-semibold text-blue-600 text-sm hover:underline">
-                                        <?php echo $this->Html->link(strtoupper($plsmomento['momento']), array('controller' => 'plmomentos', 'action' => 'view', $plsmomento['id'])); ?>
-                                    </td>
-                                    <td colspan="1" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Duracion</td>
-                                    <td colspan="3" class="border border-gray-300 p-2 font-bold text-sm"><?php echo $plsmomento['duracion']; ?></td>
-                                </tr>
+                            <tr class="mt-4 bg-gray-100 ">
+                                <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700"> Momento </td>
+                                <td colspan="5" class="border border-gray-300 p-2 font-semibold text-blue-600 text-sm hover:underline">
+                                    <?php echo $this->Html->link(strtoupper($plsmomento['momento']), array('controller' => 'Plsmomentos', 'action' => 'view', $plsmomento['id'])); ?>
+                                </td>
+                                <td colspan="1" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Duración</td>
+                                <td colspan="3" class="border border-gray-300 p-2 font-bold text-sm"><?php echo $plsmomento['duracion']; ?></td>
+                            </tr>
 
-                                <tr>
-                                    <td colspan="9" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Metodologia</td>
+                            <tr>
+                                <td colspan="9" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Metodología</td>
 
-                                </tr>
+                            </tr>
 
-                                <tr>
-                                    <td colspan="9" class="border border-gray-300 p-2 text-sm text-gray-700"><?php echo $plsmomento['metodologia']; ?></td>
-                                </tr>
-                                <tr class="bg-gray-100">
-                                    <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Resultado</td>
-                                    <td colspan="8" class="border border-gray-300 p-2 hover:underline text-sm text-gray-700">
-                                        <?php echo $plsmomento['resultado']; ?>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td colspan="9" class="border border-gray-300 p-2 text-sm text-gray-700"><?php echo $plsmomento['metodologia']; ?></td>
+                            </tr>
+                            <tr class="bg-gray-100">
+                                <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Resultado</td>
+                                <td colspan="8" class="border border-gray-300 p-2 hover:underline text-sm text-gray-700">
+                                    <?php echo $plsmomento['resultado']; ?>
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <td colspan="1" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Insumos</td>
-                                    <td colspan="8" class="border border-gray-300 p-2 hover:underline text-sm">
-                                        <?php echo $plsmomento['insumo']; ?>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td colspan="1" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Insumos</td>
+                                <td colspan="8" class="border border-gray-300 p-2 hover:underline text-sm">
+                                    <?php echo $plsmomento['insumo']; ?>
+                                </td>
+                            </tr>
                         </table>
 
                     </div>

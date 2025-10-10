@@ -80,7 +80,7 @@
                     <tr>
                         <td colspan="2" class="border border-gray-300 font-semibold p-2 text-center">Fecha de Ingreso</td>
                         <td colspan="3" class="border border-gray-300 p-2"><?php echo h($proactividad['Proactividad']['created']); ?></td>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Fecha_actualización</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Fecha actualización</td>
                         <td colspan="3" class="border border-gray-300 p-2"><?php echo h($proactividad['Proactividad']['modified']); ?></td>
                     </tr>
 
@@ -471,7 +471,7 @@
                 <tbody>
                     <tr>
                         <td colspan="8" class="border border-gray-300 bg-gray-200 font-bold p-2 text-center">
-                            RELATORIA
+                            RELATORÍA
                         </td>
                     </tr>
 
@@ -583,7 +583,7 @@
                                     <td colspan="3" class="border border-gray-300 p-2 text-sm text-gray-700"><?php echo $procesoregistro['Ubicacion']['sitio']; ?></td>
                                 </tr>
                                 <tr class="bg-gray-100">
-                                    <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Plan de Sesion</td>
+                                    <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Plan de Sesión</td>
                                     <td colspan="4" class="border border-gray-300 p-2 hover:underline text-sm text-gray-700">
                                         <?php echo $this->Html->link($procesoregistro['Plsesion']['tema'], array('controller' => 'plsesiones', 'action' => 'view', $procesoregistro['Plsesion']['id'])); ?>
                                     </td>

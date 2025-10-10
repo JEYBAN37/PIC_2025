@@ -42,7 +42,7 @@ echo $this->Form->create('Procesoregistro', [
             <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Información de la Sesión</h1>
-                <p class="text-gray-500">Complete los datos basicos de la sesión.</p>
+                <p class="text-gray-500">Complete los datos básicos de la sesión.</p>
             </div>
 
         </div>

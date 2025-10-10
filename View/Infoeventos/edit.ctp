@@ -12,10 +12,10 @@
 
 <div class="max-w-5xl mx-auto text-center mb-8">
     <h1 class="text-5xl font-bold mb-4 text-blue-600">
-        Registrar Nuevo Evento
+        Editar Acción Informativa
     </h1>
     <p class="text-gray-500 mb-4 text-lg">
-        Registre los datos de la nuevo evento.
+        Registre los datos de la nueva acción informativa.
     </p>
 </div>
 <?php
@@ -82,7 +82,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     'error' => false,
                     'options' =>  array('' => 'Elegir', 'Informe accion informativa' => 'Informe acción informativa', 'Informe evento ' => 'Informe evento', 'Informe acompanamiento' => 'Informe acompañamiento'),
                     'label' => '',
-                    'empty' => 'Seleccione el evento'
+                    'empty' => 'Seleccione'
                 ]);
                 if (!empty($this->Form->error('tipo'))) {
                     echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('tipo') . '</div>';
@@ -251,7 +251,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <div class="col-span-2 text-md font-semibold my-6">
                     <div class="flex items-center mb-4">
                         <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
-                        <label for="tipopoblacion" class="font-semibold">Tipo de poblacion participante</label>
+                        <label for="tipopoblacion" class="font-semibold">Tipo de poblaciónparticipante</label>
                         <p class="text-red-600">*</p>
 
                     </div>
@@ -379,6 +379,18 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                         </svg>
                     </span>
                     Guardar Acta
+                </button>
+                <button type="button" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2" onclick="preventBackNavigation()">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                            <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
+                            <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
+                            <circle cx="12" cy="12" r="1" />
+                            <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
+                        </svg>
+
+                    </span>
+                    Ver Momento
                 </button>
             </div>
         </div>
@@ -554,6 +566,12 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 history.pushState(null, null, location.href); // Mantener en la página actual
             }
         });
+
+        function preventBackNavigation() {
+            if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+                window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+            }
+        }
 
         // Prevenir retroceso con la flecha del navegador (mejor experiencia)
         history.pushState(null, null, location.href);

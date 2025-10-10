@@ -66,6 +66,7 @@ class UsersController extends AppController
                         'proyecto' => isset($rolUsuario['Responsable']['proyecto']) ? $rolUsuario['Responsable']['proyecto'] : null
 
                     ]);
+
                 } elseif ($user["User"]["group_id"] === "2") {
 
                     $rolUsuario = $this->Referente->find('first', [

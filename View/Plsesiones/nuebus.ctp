@@ -43,11 +43,6 @@
                                 echo '#';
                             } ?>";
         const URL_delete = "<?php echo $this->Html->url(['action' => 'delete', '__ID__']); ?>";
-        const URL_add_momento = "<?php if ($tipoUsuario === '1' || $tipoUsuario === '3') {
-                                    echo $this->Html->url(['controller' => 'Plsmomento', 'action' => 'add', '__ID__']);
-                                } else {
-                                    echo '#';
-                                } ?>";
 
 
         $(document).ready(function() {
@@ -140,12 +135,10 @@
                             const viewUrl = URL_view.replace('__ID__', data);
                             const editUrl = URL_edit.replace('__ID__', data);
                             const deleteUrl = URL_delete.replace('__ID__', data);
-                            const addMomento = URL_add_momento.replace('__ID__', data);
                             return `
                                 <div class="relative inline-block text-left">
                                     <a href="${viewUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
                                     ${editUrl !== '#' ? `<a href="${editUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>` : ''}
-                                    ${addMomento !== '#' ? `<a href="${addMomento}" class="block px-4 py-2 text-sm hover:bg-gray-100">Agregar Momento</a>` : ''}
                                     <a href="${deleteUrl}" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                                     onclick="return confirm('¿Seguro que quieres borrar #${data}?');">Borrar</a>
                                 </div>`;

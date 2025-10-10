@@ -386,7 +386,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             <div class="col-span-2 md:col-span-1 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
-                    <label for="ordendia" class="font-semibold">Proxima convocatoria</label>
+                    <label for="ordendia" class="font-semibold">Próxima convocatoria</label>
                     <p class="text-red-600">*</p>
                 </div>
 
@@ -402,7 +402,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('convocatoria') . '</div>';
                 }
                 ?>
-                <p class="help-block text-gray-500 text-xs mt-2">Favor registrar fecha y lugar de la proxima convocatoria</p>
+                <p class="help-block text-gray-500 text-xs mt-2">Favor registrar fecha y lugar de la Próxima convocatoria</p>
 
             </div>
         </div>
@@ -454,6 +454,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 </span>
                 Guardar Acta
             </button>
+            
         </div>
     </div>
 </div>

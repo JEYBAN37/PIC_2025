@@ -42,7 +42,7 @@ echo $this->Form->create('Procesoregistro', [
             <img src="../img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Información de la Sesión</h1>
-                <p class="text-gray-500">Complete los datos basicos de la sesión.</p>
+                <p class="text-gray-500">Complete los datos básicos de la sesión.</p>
             </div>
 
         </div>
@@ -155,7 +155,7 @@ echo $this->Form->create('Procesoregistro', [
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">5</span>
-                    <label for="tipopoblacion" class="font-semibold">Tipo de poblacion participante</label>
+                    <label for="tipopoblacion" class="font-semibold">Tipo de población participante</label>
                     <p class="text-red-600">*</p>
 
                 </div>

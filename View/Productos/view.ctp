@@ -307,7 +307,7 @@
 						<td colspan="1" class="border border-gray-300 p-2">
 							<?php echo $producto['Producto']['entorno']; ?>
 						</td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">Tecnologia</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">Tecnología</td>
 						<td colspan="2" class="border border-gray-300 p-2">
 							<?php echo $producto['Producto']['tecnologias']; ?>
 						</td>
@@ -443,7 +443,7 @@
 								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Tipo población</th>
 								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Objetivo actividad</th>
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Responsable</th>
-								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Sesion</th>
+								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Sesión</th>
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Acciones</th>
 							</tr>
 						</thead>
@@ -461,9 +461,7 @@
 										<td><?php echo $proactividad['caracteristicasesion']; ?></td>
 										<td>
 											<div class="btn-group">
-												<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-													<?php echo ('Acciones'); ?> <span class="caret"></span>
-												</button>
+
 												<ul class="dropdown-menu" role="menu">
 													<li><?php echo $this->Html->link("Ver", "../proactividades/view/" . $proactividad['id'], array('target' => '_blank')); ?></li>
 													<li><?php echo $this->Html->link("Editar", "../proactividades/edit/" . $proactividad['id'], array('target' => '_blank')); ?></li>
@@ -495,8 +493,8 @@
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID</th>
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Fecha</th>
 								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Tema</th>
-								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Intencion</th>
-								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Dimension</th>
+								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Intención</th>
+								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Dimensión</th>
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Responsable</th>
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Acciones</th>
 							</tr>

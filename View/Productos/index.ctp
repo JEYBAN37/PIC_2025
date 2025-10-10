@@ -15,16 +15,13 @@
                 <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID-actividad</th>
 				<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">N. Producto</th>
 				 <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Prioridad</th>
-                <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Producto</th>
+                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Producto</th>
                 <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Actividad</th>
                 <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Evidencia</th>
                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Estado</th>
-                <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">modified</th>
+                <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Ultima Modificación</th>
                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Acciones</th>
-                
             </tr>
-
-			
         </thead>
         <tbody class="bg-white divide-y divide-gray-300">
             <!-- DataTables llenará esta sección -->
@@ -83,7 +80,7 @@
                 pageLength: 7,
                 processing: true,
                 serverSide: true,
-                ajax: "/aplicacioncakephp/PIC_2025/productos/getProductos", // Ajustar segun la Ruta para obtener datos
+                ajax: "/PIC/productos/getProductos", // Ajustar segun la Ruta para obtener datos
                 columns: [
                     // Columna control (+)
                     {

@@ -12,10 +12,10 @@
 
 <div class="max-w-5xl mx-auto text-center mb-8">
     <h1 class="text-5xl font-bold mb-4 text-blue-600">
-        Registrar Nuevo Evento
+        Registrar Nueva Acción Informativa
     </h1>
     <p class="text-gray-500 mb-4 text-lg">
-        Registre los datos de la nuevo evento.
+        Registre los datos de la nueva acción informativa.
     </p>
 </div>
 <?php
@@ -81,7 +81,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     'error' => false,
                     'options' =>  array('' => 'Elegir', 'Informe accion informativa' => 'Informe acción informativa', 'Informe evento ' => 'Informe evento', 'Informe acompanamiento' => 'Informe acompañamiento'),
                     'label' => '',
-                    'empty' => 'Seleccione el evento'
+                    'empty' => 'Seleccione'
                 ]);
                 if (!empty($this->Form->error('tipo'))) {
                     echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('tipo') . '</div>';
@@ -257,7 +257,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <div class="col-span-2 text-md font-semibold my-6">
                     <div class="flex items-center mb-4">
                         <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
-                        <label for="tipopoblacion" class="font-semibold">Tipo de poblacion participante</label>
+                        <label for="tipopoblacion" class="font-semibold">Tipo de poblaciónparticipante</label>
                         <p class="text-red-600">*</p>
 
                     </div>

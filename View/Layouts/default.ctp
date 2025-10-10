@@ -249,11 +249,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                     </button>
                                     <button
                                         class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                        data-href="<?php echo $this->Html->url(['controller' => 'sistematizacionprocesosviewtests', 'action' => 'nuebus']); ?>">
-                                        Registros Encuentros
-                                    </button>
-                                    <button
-                                        class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                         data-href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'add']); ?>">
                                         Nuevo Encuentro
                                     </button>
@@ -316,7 +311,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                         data-src-default="<?php echo $this->webroot; ?>/img/update/anexo.png"
                                         data-src-hover="<?php echo $this->webroot; ?>/img/update/anexoHover.png" />
                                     <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                        Anexo Tecnico
+                                        Anexo Técnico
                                     </span>
                                 </div>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -345,7 +340,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                         data-src-default="<?php echo $this->webroot; ?>/img/update/portaPapeles.png"
                                         data-src-hover="<?php echo $this->webroot; ?>/img/update/portaPapelesHover.png" />
                                     <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
-                                        Planes de Sesion
+                                        Planes de Sesión
                                     </span>
                                 </div>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -357,7 +352,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <button
                                     class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                     data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'nuebus']); ?>">
-                                    Registros Planes de Sesion
+                                    Registros Planes de Sesión
                                 </button>
 
                                 <?php
@@ -366,7 +361,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                     <button
                                         class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                         data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'add']); ?>">
-                                        Agregar Plan de Sesion
+                                        Agregar Plan de Sesión
                                     </button>
                                 <?php
                                 endif;
@@ -398,7 +393,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <button
                                     class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                     data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'index']); ?>">
-                                    Registros Eventos
+                                    Registros Aciones Informativas
                                 </button>
                                 <?php
                                 if ($tipoUsuario === '3' || $tipoUsuario === '1') :
@@ -406,7 +401,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                     <button
                                         class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
                                         data-href="<?php echo $this->Html->url(['controller' => 'infoeventos', 'action' => 'add']); ?>">
-                                        Agregar Evento
+                                        Agregar Acción Informativa
                                     </button>
                                 <?php
                                 endif;

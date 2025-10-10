@@ -1,3 +1,11 @@
+   
+   
+   
+   
+   
+   
+   
+   Reporte de avance tarea
    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
        <div class="modal-dialog">
            <div class="modal-content">
@@ -6,9 +14,6 @@
                        <span aria-hidden="true">&times;</span>
                    </button>
                    <h4 class="modal-title" id="myModalLabel">Formulario de reporte de avances PIC 2020</h4>
-
-
-
                </div>
                <div class="modal-body">
                    <div>
@@ -23,7 +28,7 @@
                    <p> <strong> Actualizado:</strong> Cuando los soportes relacionados a la tarea después de la revisión de Referente de SMS presentan observaciones de forma y no de fondo, deben ser ajustados, una vez realizado se elige el estado ACTUALIZADO para su nueva revisión.</p>
 
                    <p> <strong>Sin avance:</strong> Cuando no se tiene ningún soporte u observación asociado a la tarea aun cuando dentro de la planeación o cronograma dentro del mes reportado se debía realizar actividades en cumplimiento de la tarea.</p>
-                   <p> <strong>Avance limitado:</strong> Cuando se ha realizado las acciones pertinentes para el desarrollo de las tareas, <strong>se cuenta con soportes</strong>, pero situaciones externas <strong>(validación, concertación, autorizaciones, convenios, situaciones comunitarias y/o poblacionales, situaciones de emergencia)</strong> afectan los tiempos de despliegue o ejecución de las acciones.</p> 
+                   <p> <strong>Avance limitado:</strong> Cuando se ha realizado las acciones pertinentes para el desarrollo de las tareas, <strong>se cuenta con soportes</strong>, pero situaciones externas <strong>(validación, concertación, autorizaciones, convenios, situaciones comunitarias y/o poblacionales, situaciones de emergencia)</strong> afectan los tiempos de despliegue o ejecución de las acciones.</p>
                    <p> <strong> No aplica para el periodo:</strong> Cuando no se tiene acciones de avance programadas para la tarea durante el mes reportado</p>
                    <p> <strong> Reportar avance (mes)</strong> Cuando Referente de SMS realiza la programación de avance del mes correspondiente asigna este estado para notificar a Equipo operativo PIC </p>
                    <p> <strong> Cumple avance (mes)</strong> Cuando los soportes y observaciones en relación al avance de la tarea son aceptados por Referente de SMS</p>
@@ -91,14 +96,14 @@
                                </div>
 
                                <div class="form-group col-md-12">
-                                   <?php 
-                                   echo $this->Form->input('tarea', array('label' => 'Tarea', 'readonly')); 
-                                   ?>
+                                   <?php
+                                    echo $this->Form->input('tarea', array('label' => 'Tarea', 'readonly'));
+                                    ?>
                                </div>
 
                                <div class="form-group col-md-12">
                                    <?php
-                                    echo $this->Form->input('evidencia', array('label' => 'Soporte solicitado en anexo tecnico', 'readonly')); 
+                                    echo $this->Form->input('evidencia', array('label' => 'Soporte solicitado en anexo tecnico', 'readonly'));
                                     ?>
                                </div>
                            </div>
@@ -106,119 +111,121 @@
                            <!--div class="form-group col-md-6">
                               
                                <?php
-                                echo $this->Form->input('porcentajeavance', array('label' => 'Porcentaje total alcanzado', 'readonly' , 'class' => 'form-control')); ?>
+                                echo $this->Form->input('porcentajeavance', array('label' => 'Porcentaje total alcanzado', 'readonly', 'class' => 'form-control')); ?>
                            </div-->
                            <div class="form-group col-md-6">
                                <?php echo ('Calificar el avance logrado en una escala de 0 a 100 de la tarea que sume el 100% en relaicon al avance alcanzado'); ?>
-                               <?php $optionsporcentaje = array('0' => '0', 
-'1' => '1', 
-'2' => '2', 
-'3' => '3', 
-'4' => '4', 
-'5' => '5', 
-'6' => '6', 
-'7' => '7', 
-'8' => '8', 
-'9' => '9', 
-'10' => '10', 
-'11' => '11', 
-'12' => '12', 
-'13' => '13', 
-'14' => '14', 
-'15' => '15', 
-'16' => '16', 
-'17' => '17', 
-'18' => '18', 
-'19' => '19', 
-'20' => '20', 
-'21' => '21', 
-'22' => '22', 
-'23' => '23', 
-'24' => '24', 
-'25' => '25', 
-'26' => '26', 
-'27' => '27', 
-'28' => '28', 
-'29' => '29', 
-'30' => '30', 
-'31' => '31', 
-'32' => '32', 
-'33' => '33', 
-'34' => '34', 
-'35' => '35', 
-'36' => '36', 
-'37' => '37', 
-'38' => '38', 
-'39' => '39', 
-'40' => '40', 
-'41' => '41', 
-'42' => '42', 
-'43' => '43', 
-'44' => '44', 
-'45' => '45', 
-'46' => '46', 
-'47' => '47', 
-'48' => '48', 
-'49' => '49', 
-'50' => '50', 
-'51' => '51', 
-'52' => '52', 
-'53' => '53', 
-'54' => '54', 
-'55' => '55', 
-'56' => '56', 
-'57' => '57', 
-'58' => '58', 
-'59' => '59', 
-'60' => '60', 
-'61' => '61', 
-'62' => '62', 
-'63' => '63', 
-'64' => '64', 
-'65' => '65', 
-'66' => '66', 
-'67' => '67', 
-'68' => '68', 
-'69' => '69', 
-'70' => '70', 
-'71' => '71', 
-'72' => '72', 
-'73' => '73', 
-'74' => '74', 
-'75' => '75', 
-'76' => '76', 
-'77' => '77', 
-'78' => '78', 
-'79' => '79', 
-'80' => '80', 
-'81' => '81', 
-'82' => '82', 
-'83' => '83', 
-'84' => '84', 
-'85' => '85', 
-'86' => '86', 
-'87' => '87', 
-'88' => '88', 
-'89' => '89', 
-'90' => '90', 
-'91' => '91', 
-'92' => '92', 
-'93' => '93', 
-'94' => '94', 
-'95' => '95', 
-'96' => '96', 
-'97' => '97', 
-'98' => '98', 
-'99' => '99', 
-'100' => '100' ); ?>
-                               <?php echo $this->Form->input('porcentajeavance1', array('label' => 'Porcentaje de cumplimiento' , 'type' => 'select', 'options' => $optionsporcentaje, 'class' => 'form-control select-search')); ?>
+                               <?php $optionsporcentaje = array(
+                                    '0' => '0',
+                                    '1' => '1',
+                                    '2' => '2',
+                                    '3' => '3',
+                                    '4' => '4',
+                                    '5' => '5',
+                                    '6' => '6',
+                                    '7' => '7',
+                                    '8' => '8',
+                                    '9' => '9',
+                                    '10' => '10',
+                                    '11' => '11',
+                                    '12' => '12',
+                                    '13' => '13',
+                                    '14' => '14',
+                                    '15' => '15',
+                                    '16' => '16',
+                                    '17' => '17',
+                                    '18' => '18',
+                                    '19' => '19',
+                                    '20' => '20',
+                                    '21' => '21',
+                                    '22' => '22',
+                                    '23' => '23',
+                                    '24' => '24',
+                                    '25' => '25',
+                                    '26' => '26',
+                                    '27' => '27',
+                                    '28' => '28',
+                                    '29' => '29',
+                                    '30' => '30',
+                                    '31' => '31',
+                                    '32' => '32',
+                                    '33' => '33',
+                                    '34' => '34',
+                                    '35' => '35',
+                                    '36' => '36',
+                                    '37' => '37',
+                                    '38' => '38',
+                                    '39' => '39',
+                                    '40' => '40',
+                                    '41' => '41',
+                                    '42' => '42',
+                                    '43' => '43',
+                                    '44' => '44',
+                                    '45' => '45',
+                                    '46' => '46',
+                                    '47' => '47',
+                                    '48' => '48',
+                                    '49' => '49',
+                                    '50' => '50',
+                                    '51' => '51',
+                                    '52' => '52',
+                                    '53' => '53',
+                                    '54' => '54',
+                                    '55' => '55',
+                                    '56' => '56',
+                                    '57' => '57',
+                                    '58' => '58',
+                                    '59' => '59',
+                                    '60' => '60',
+                                    '61' => '61',
+                                    '62' => '62',
+                                    '63' => '63',
+                                    '64' => '64',
+                                    '65' => '65',
+                                    '66' => '66',
+                                    '67' => '67',
+                                    '68' => '68',
+                                    '69' => '69',
+                                    '70' => '70',
+                                    '71' => '71',
+                                    '72' => '72',
+                                    '73' => '73',
+                                    '74' => '74',
+                                    '75' => '75',
+                                    '76' => '76',
+                                    '77' => '77',
+                                    '78' => '78',
+                                    '79' => '79',
+                                    '80' => '80',
+                                    '81' => '81',
+                                    '82' => '82',
+                                    '83' => '83',
+                                    '84' => '84',
+                                    '85' => '85',
+                                    '86' => '86',
+                                    '87' => '87',
+                                    '88' => '88',
+                                    '89' => '89',
+                                    '90' => '90',
+                                    '91' => '91',
+                                    '92' => '92',
+                                    '93' => '93',
+                                    '94' => '94',
+                                    '95' => '95',
+                                    '96' => '96',
+                                    '97' => '97',
+                                    '98' => '98',
+                                    '99' => '99',
+                                    '100' => '100'
+                                ); ?>
+                               <?php echo $this->Form->input('porcentajeavance1', array('label' => 'Porcentaje de cumplimiento', 'type' => 'select', 'options' => $optionsporcentaje, 'class' => 'form-control select-search')); ?>
 
                            </div>
 
                            <!--div class="form-group col-md-6">
                                <?php echo ('Calificar el avance logrado en una escala de 0 a 100 de la tarea que sume el 100% en relaicon al avance alcanzado'); ?>
                                <?php $optionsporcentaje = array('' => 'Elegir', '0' => '0 %', '10' => '10%', '20' => '20%', '30' => '30%', '40' => '40%', '50' => '50%', '60' => '60%', '70' => '70%', '80' => '80%', '90' => '90%', '100' => '100%'); ?>
-                               <?php echo $this->Form->input('porcentajeavance2', array('label' => 'Porcentaje de cumplimiento 2do cohorte' , 'readonly', 'type' => 'select', 'options' => $optionsporcentaje, 'class' => 'form-control select-search')); ?>
+                               <?php echo $this->Form->input('porcentajeavance2', array('label' => 'Porcentaje de cumplimiento 2do cohorte', 'readonly', 'type' => 'select', 'options' => $optionsporcentaje, 'class' => 'form-control select-search')); ?>
 
                            </div-->
 
@@ -246,13 +253,15 @@
 
 
                            <div class="form-group col-md-6">
-                               <?php $options = array('' => 'Elegir',
-                                'Por revisar reporte SMS' => 'Reportar avance',                                                               
-                                 'Validar sin avance' => 'Sin avance',
-                                  'Validar No aplica para el periodo' => 'No aplica para el periodo',
-                                  'corregido' => 'Corregido',
-                                   'actualizado' => 'Actualizado');
-                                    ?>
+                               <?php $options = array(
+                                    '' => 'Elegir',
+                                    'Por revisar reporte SMS' => 'Reportar avance',
+                                    'Validar sin avance' => 'Sin avance',
+                                    'Validar No aplica para el periodo' => 'No aplica para el periodo',
+                                    'corregido' => 'Corregido',
+                                    'actualizado' => 'Actualizado'
+                                );
+                                ?>
                                <?php
                                 echo $this->Form->input('estado', array('label'  => 'Estado', 'type' => 'select', 'options' => $options, 'class' => 'form-control select-search')); ?>
                            </div>
@@ -285,7 +294,6 @@
     ?>
 
    <script type="text/javascript">
-       
        $(document).ready(function() {
            $('.select-search').select2();
            agregarOpcionSeleccion();
@@ -300,7 +308,7 @@
            }
        }
 
-       function agregarOpcionSeleccion() {          
+       function agregarOpcionSeleccion() {
            $("#ProductoResponsableId").prepend("<option value='' selected='selected'>Seleccione</option>");
        }
 
@@ -318,86 +326,82 @@
        $(document).ready(function() {
            $("#mostrarmodal").modal("show");
        });
-       
-
    </script>
 
 
-<script type="text/javascript">
-    $('document').ready(function() {
+   <script type="text/javascript">
+       $('document').ready(function() {
 
-        $val = 0;
-        $porcentajeavance1 = 0;
-        $porcentajeavance2 = 0;
-        $porcentajeavance3 = 0;
-        $valtotal = 0;
-        $porcentajetareas = 0;
-        $porcentajeavancetotal = 0;
+           $val = 0;
+           $porcentajeavance1 = 0;
+           $porcentajeavance2 = 0;
+           $porcentajeavance3 = 0;
+           $valtotal = 0;
+           $porcentajetareas = 0;
+           $porcentajeavancetotal = 0;
 
-        $('#ProductoPorcentajeavance1').on('change', function() {
+           $('#ProductoPorcentajeavance1').on('change', function() {
 
-            calcularAvancetotal();
-        });
-        $('#ProductoPorcentajeavance2').on('change', function() {
-            calcularAvancetotal();
-        });
-        $('#ProductoPorcentajeavance3').on('change', function() {
-            calcularAvancetotal();
-        });
+               calcularAvancetotal();
+           });
+           $('#ProductoPorcentajeavance2').on('change', function() {
+               calcularAvancetotal();
+           });
+           $('#ProductoPorcentajeavance3').on('change', function() {
+               calcularAvancetotal();
+           });
 
-        $('#ProductoPorctareas').on('change', function() {
+           $('#ProductoPorctareas').on('change', function() {
 
-            calcularAvancetotal();
-        });
-        $('#ProductoPorcentajeavancetotal').on('change', function() {
-            calcularAvancetotal();
-        });
+               calcularAvancetotal();
+           });
+           $('#ProductoPorcentajeavancetotal').on('change', function() {
+               calcularAvancetotal();
+           });
 
-    });
-
-
-
-    function calcularAvancetotal() {
-
-try {
-
-    $porcentajeavance1 = $('#ProductoPorcentajeavance1').val();
-             
-
-    $val = parseInt($porcentajeavance1);
-
-    if ($val > 100) {
-        if (confirm("El porcentaje acomulado no debe superar el 100%")) {
-            $val =  null;
-            $porcentajeavance1 =  $('#ProductoPorcentajeavance1').val(null);
-
-
-        }
-    }
-
-    $('#ProductoPorcentajeavancetotal').val(0);
-
-    $porcentajetareas = $('#ProductoPorctareas').val();
-    $porcentajeavance1 = $('#$porcentajeavance1').val();
-    
-
-    $valtotal = (parseFloat($porcentajetareas) * parseInt($porcentajeavance1) ) / 100;
-
-    if ($valtotal > 100) {
-        if (confirm("El porcentaje acomulado no debe superar el 100%")) {
-            
-            $valtotal =  $('#ProductoPorcentajecumplimiento').val();
-
-        }
-    }
-
-    $('#ProductoPorcentajecumplimiento').val($valtotal); 
-   
+       });
 
 
 
-} catch (err) {}
-}
+       function calcularAvancetotal() {
+
+           try {
+
+               $porcentajeavance1 = $('#ProductoPorcentajeavance1').val();
 
 
-</script>
+               $val = parseInt($porcentajeavance1);
+
+               if ($val > 100) {
+                   if (confirm("El porcentaje acomulado no debe superar el 100%")) {
+                       $val = null;
+                       $porcentajeavance1 = $('#ProductoPorcentajeavance1').val(null);
+
+
+                   }
+               }
+
+               $('#ProductoPorcentajeavancetotal').val(0);
+
+               $porcentajetareas = $('#ProductoPorctareas').val();
+               $porcentajeavance1 = $('#$porcentajeavance1').val();
+
+
+               $valtotal = (parseFloat($porcentajetareas) * parseInt($porcentajeavance1)) / 100;
+
+               if ($valtotal > 100) {
+                   if (confirm("El porcentaje acomulado no debe superar el 100%")) {
+
+                       $valtotal = $('#ProductoPorcentajecumplimiento').val();
+
+                   }
+               }
+
+               $('#ProductoPorcentajecumplimiento').val($valtotal);
+
+
+
+
+           } catch (err) {}
+       }
+   </script>

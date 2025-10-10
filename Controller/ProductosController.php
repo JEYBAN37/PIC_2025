@@ -11,49 +11,47 @@ App::uses('Sanitize', 'Utility');
  */
 
 Router::connect(
-    '/:controller/:year/:month/:day',
-    array('action' => 'index'),
-    array(
-        'year' => '[12][0-9]{3}',
-        'month' => '0[1-9]|1[012]',
-        'day' => '0[1-9]|[12][0-9]|3[01]'
-    )
+	'/:controller/:year/:month/:day',
+	array('action' => 'index'),
+	array(
+		'year' => '[12][0-9]{3}',
+		'month' => '0[1-9]|1[012]',
+		'day' => '0[1-9]|[12][0-9]|3[01]'
+	)
 );
 class ProductosController extends AppController
 {
 
 	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
-    const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
-    var $uses = array("Acta", "Producto", "Responsable", "Ubicacion");
+	const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
 
 
- /**
- * Components
- *
- * @var array
- */
+	/**
+	 * Components
+	 *
+	 * @var array
+	 */
 	//public $components = array('Paginator');
 	public $helpers = array('Html', 'Form');
 	public $components = array('Paginator', 'Session', 'RequestHandler');
 	var $uses = array("Proactividad", "Procesoregistro", "Responsable", "Acta", "Producto");
 
- /**
- * index method
- *
- * @return void
- */
-	public function index() {
-		
-	}
+	/**
+	 * index method
+	 *
+	 * @return void
+	 */
+	public function index() {}
 
- /**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
+	/**
+	 * view method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
+	public function view($id = null)
+	{
 		if (!$this->Producto->exists($id)) {
 			throw new NotFoundException(__('Invalid producto'));
 		}
@@ -105,12 +103,13 @@ class ProductosController extends AppController
 		$this->set(compact('tipoUsuario', 'producto'));
 	}
 
- /**
- * add method
- *
- * @return void
- */
-	public function add() {
+	/**
+	 * add method
+	 *
+	 * @return void
+	 */
+	public function add()
+	{
 		if ($this->request->is('post')) {
 			$this->Producto->create();
 			if ($this->Producto->save($this->request->data)) {
@@ -128,14 +127,15 @@ class ProductosController extends AppController
 		$this->set(compact('actividades', 'actas', 'responsables', 'referentes', 'actividades'));
 	}
 
- /**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id = null) {
+	/**
+	 * edit method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
+	public function edit($id = null)
+	{
 		if (!$this->Producto->exists($id)) {
 			throw new NotFoundException(__('Invalid producto'));
 		}
@@ -223,7 +223,8 @@ class ProductosController extends AppController
 		$this->set(compact('responsables', 'referentes'));
 	}
 
- public function smsedit($id = null) {
+	public function smsedit($id = null)
+	{
 		if (!$this->Producto->exists($id)) {
 			throw new NotFoundException(__('Invalid producto'));
 		}
@@ -257,13 +258,14 @@ class ProductosController extends AppController
 	}
 
 	/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function delete($id = null) {
+	 * delete method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
+	public function delete($id = null)
+	{
 		$this->Producto->id = $id;
 		if (!$this->Producto->exists()) {
 			throw new NotFoundException(__('Invalid producto'));
@@ -277,89 +279,101 @@ class ProductosController extends AppController
 		return $this->redirect(array('action' => 'index'));
 	}
 
-	public function getProductos(){
-		 $this->autoRender = false;
-		 $this->response->type('json');
+	public function getProductos()
+	{
+		$this->autoRender = false;
+		$this->response->type('json');
 
-		 $colums =['Producto.id'];
-		
-		 $start =$this->request->query('start');
-		 $length =$this->request->query('length');
+		$colums = ['Producto.id'];
+
+		$start = $this->request->query('start');
+		$length = $this->request->query('length') ? $this->request->query('length') : 10;
 		$search = $this->request->query('search')['value'];
-		 $order =$this->request->query('order');
-		 $colums = $this->request->query('columns');
+		$order = $this->request->query('order');
+		$colums = $this->request->query('columns');
 
-		 $orderBy = array();
-		 if(!empty($order)){
-			foreach($order as $o){
+		$orderBy = array();
+		if (!empty($order)) {
+			foreach ($order as $o) {
 				$colIndex = intval($o['column']);
 				$colName = $colums[$colIndex]['data'];
-				$dir = strtoupper($o['dir']) === 'DESC' ? 'DESC' : 'ASC';	
+				$dir = strtoupper($o['dir']) === 'DESC' ? 'DESC' : 'ASC';
 
 				//MAPEO DE COLUMNAS
-				switch($colName){
+				switch ($colName) {
 					case 'id':
-						$orderBy['Producto.id'] = $dir;	
+						$orderBy['Producto.id'] = $dir;
 						break;
 					case 'numproductos':
-						$orderBy['Producto.numproductos'] = $dir;	
+						$orderBy['Producto.numproductos'] = $dir;
 						break;
 					case 'prioridad':
-						$orderBy['Producto.nombredim'] = $dir;	
-						break;				
+						$orderBy['Producto.nombredim'] = $dir;
+						break;
 					case 'actividad':
-						$orderBy['Producto.activity'] = $dir;	
+						$orderBy['Producto.activity'] = $dir;
 						break;
 					case 'tarea':
-						$orderBy['Producto.tarea'] = $dir;	
-						break;		
+						$orderBy['Producto.tarea'] = $dir;
+						break;
 					case 'evidencia':
 						$orderBy['Producto.evidencia'] = $dir;
 						break;
-					case 'estado':	
-						$orderBy['Producto.estado'] = $dir;	
+					case 'estado':
+						$orderBy['Producto.estado'] = $dir;
 						break;
 					case 'modified':
 						$orderBy['Producto.modified'] = $dir;
-					
-					
 				}
 			}
-	}
+		}
 
-	//BUSQUEDA
-	$conditions =[];
-	if(!empty($search)){
-		$conditions ['OR'] = [
+		//BUSQUEDA
+		$conditions = [];
+		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+		if (!empty($rol)) {
+			// nombredim es obligatoria (AND), el resto es OR
+			$conditions['AND'] = [
+				'Producto.nombredim LIKE' => "%$rol%",
+				'OR' => [
+					'Producto.numproductos LIKE' => "%$search%",
+					'Producto.nombredim LIKE' => "%$search%",
+					'Producto.activity LIKE' => "%$search%",
+					'Producto.tarea LIKE' => "%$search%",
+					'Producto.evidencia LIKE' => "%$search%",
+					'Producto.estado LIKE' => "%$search%",
+					'Producto.modified LIKE' => "%$search%",
+				]
+			];
+		} else {
+			$conditions['OR'] = [
 				'Producto.numproductos LIKE' => "%$search%",
 				'Producto.nombredim LIKE' => "%$search%",
 				'Producto.activity LIKE' => "%$search%",
 				'Producto.tarea LIKE' => "%$search%",
 				'Producto.evidencia LIKE' => "%$search%",
-				'Producto.estado LIKE' =>"%$search%",
+				'Producto.estado LIKE' => "%$search%",
 				'Producto.modified LIKE' => "%$search%",
-				];
-
-				}
-				
-		
+			];
+		}
 
 		//CUENTA TOTAL DE REGISTROS
 		$total = $this->Producto->find('count');
 		$filtered = $this->Producto->find('count', ['conditions' => $conditions]);
 
 		//OBTENER REGISTROS
-		$data = $this->Producto->find('all',array(
-			'conditions' => $conditions,			
+		$data = $this->Producto->find('all', array(
+			'conditions' => $conditions,
 			'fields' => array(
-			'Producto.id',
-			'Producto.numproductos',
-			'Producto.nombredim',
-			'Producto.activity',
-			'Producto.tarea',
-			'Producto.evidencia',
-			'Producto.estado','Producto.modified'
-		), 
+				'Producto.id',
+				'Producto.numproductos',
+				'Producto.nombredim',
+				'Producto.activity',
+				'Producto.tarea',
+				'Producto.evidencia',
+				'Producto.estado',
+				'Producto.modified'
+			),
 			'limit' => $length,
 			'offset' => $start,
 			'order' => $orderBy,
@@ -367,16 +381,16 @@ class ProductosController extends AppController
 		));
 		//debug($data);
 		//RESPUESTA
-		$result =[
+		$result = [
 			"draw" => intval($this->request->query('draw')),
 			"recordsTotal" => $total,
 			"recordsFiltered" => $filtered,
 			"data" => []
 		];
 
-		
 
-		foreach($data as $row){
+
+		foreach ($data as $row) {
 			$result['data'][] = [
 				'id' => $row['Producto']['id'],
 				'numproducto' => $row['Producto']['numproductos'],
@@ -390,8 +404,6 @@ class ProductosController extends AppController
 		}
 
 		echo json_encode($result);
-		exit;	
-
-		}
-		
+		exit;
+	}
 }

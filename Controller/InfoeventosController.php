@@ -6,26 +6,39 @@ App::uses('Sanitize', 'Utility');
  *
  * @property Infoevento $Infoevento
  * @property PaginatorComponent $Paginator
+ * 
+ * 
+ * 
  */
+
+Router::connect(
+    '/:controller/:year/:month/:day',
+    array('action' => 'index'),
+    array(
+        'year' => '[12][0-9]{3}',
+        'month' => '0[1-9]|1[012]',
+        'day' => '0[1-9]|[12][0-9]|3[01]'
+    )
+);
 class InfoeventosController extends AppController
 {
+
+	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
+    const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
+    var $uses = array("Infoevento", "Producto", "Responsable");
 	/**
 	 * Components
 	 *
 	 * @var array
 	 */
 	public $components = array('Paginator');
-
-
 	/**
 	 * index method
 	 *
 	 * @return void
 	 */
-	public function index()
+	public function index($id = null)
 	{
-		$this->Infoevento->recursive = 0;
-		$this->set('infoeventos', $this->Paginator->paginate());
 	}
 
 
@@ -50,7 +63,7 @@ class InfoeventosController extends AppController
 			$options = array('conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id));
 			$this->request->data = $this->Infoevento->find('first', $options);
 		}
-		$ubicaciones = $this->Ubicacion->find('list');
+		$ubicaciones = $this->Infoevento->Ubicacion->find('list');
 		$productos = $this->Infoevento->Producto->find('list');
 		$responsables = $this->Infoevento->Responsable->find('list');
 		$this->set(compact('ubicaciones', 'productos', 'responsables'));
@@ -67,18 +80,8 @@ class InfoeventosController extends AppController
 		if (!$this->Infoevento->exists($id)) {
 			throw new NotFoundException(__('Invalid infoevento'));
 		}
-		$infoevento = $this->Infoevento->find(
-			'first',
-			array(
-				'conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id),
-				'contain' => array(
-					'Ubicacion' => array('fields' => array('Ubicacion.id', 'Ubicacion.sitio')),
-					'Producto' => array('fields' => array('Producto.id', 'Producto.dimensiones', 'Producto.entorno', 'Producto.activity', 'Producto.tarea')),
-					'Responsable' => array('fields' => array('Responsable.id', 'Responsable.nombres'))
-				)
-			)
-		);
-		$this->set('infoevento', $infoevento);
+		$options = array('conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id));
+		$this->set('infoevento', $this->Infoevento->find('first', $options));
 	}
 
 	/**
@@ -101,9 +104,10 @@ class InfoeventosController extends AppController
 				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-		$ubicaciones = $this->Ubicacion->find('list');
-		$productos = $this->Acta->cargarProductos();
-		$this->set(compact('ubicaciones', 'productos'));
+		$ubicaciones = $this->Infoevento->Ubicacion->find('list');
+		$productos = $this->Infoevento->Producto->find('list');
+		$responsables = $this->Infoevento->Responsable->find('list');
+		$this->set(compact('ubicaciones', 'productos', 'responsables'));
 	}
 
 	/**
@@ -119,22 +123,8 @@ class InfoeventosController extends AppController
 			throw new NotFoundException(__('Invalid infoevento'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-
-
-			if (empty($this->request->data['Infoevento']['anexo']['name'])) {
-				unset($this->request->data['Infoevento']['anexo']); // CakePHP no reemplaza
-			} else {
-				// Aquí procesar la subida de archivo
-				$archivo = $this->request->data['Infoevento']['anexo'];
-				$nombreArchivo = time() . '_' . $archivo['name'];
-				move_uploaded_file($archivo['tmp_name'], WWW_ROOT . 'uploads' . DS . $nombreArchivo);
-				$this->request->data['Infoevento']['anexo'] = $nombreArchivo;
-			}
-
-
-
 			if ($this->Infoevento->save($this->request->data)) {
-				$this->Session->setFlash(__('The infoevento has been saved.', 'default', array('class' => self::ALERT_SUCCESS_CLASS)));
+				//$this->Session->setFlash(__('The infoevento has been saved.'));
 				//return $this->redirect(array('action' => 'index'));
 
 
@@ -142,19 +132,161 @@ class InfoeventosController extends AppController
 				$aux = "view/$id";
 				return $this->redirect(array('action' => $aux));
 			} else {
-				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('class' => self::ALERT_ERROR_CLASS));
+				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id));
 			$this->request->data = $this->Infoevento->find('first', $options);
-			$this->request->data = $this->tranformData($this->request->data);
 		}
-		$ubicaciones = $this->Ubicacion->find('list');
-		$productos = $this->Acta->cargarProductos();
-		$responsables = $this->Responsable->find('list');
+		$idredirect = $id;
+		$ubicaciones = $this->Infoevento->Ubicacion->find('list');
+		$productos = $this->Infoevento->Producto->find('list');
+		$responsables = $this->Infoevento->Responsable->find('list');
+		$this->set(compact('ubicaciones', 'productos', 'responsables', 'idredirect'));
+	}
 
 
-		$this->set(compact('ubicaciones', 'productos', 'responsables'));
+	 public function getInfoeventos()
+	{
+		$this->autoRender = false;
+		$this->response->type('json');
+
+		$columns = ['Infoevento.id'];
+
+		$start = $this->request->query('start');
+		$length = $this->request->query('length') ? $this->request->query('length') : 10;
+		$search = $this->request->query('search')['value'];
+		$order = $this->request->query('order');
+		$columns = $this->request->query('columns');
+
+		$orderBy = array();
+		if (!empty($order)) {
+			foreach ($order as $o) {
+				$colIndex = intval($o['column']); // índice de la columna
+				$colName = $columns[$colIndex]['data']; // nombre definido en JS (columns: [])
+				$dir = strtoupper($o['dir']) === 'DESC' ? 'DESC' : 'ASC';
+
+				// Mapear a las columnas reales de la BD
+				switch ($colName) {
+					case 'id':
+						$orderBy['Infoevento.id'] = $dir;
+						break; 
+					case 'idactividad':
+						// si es virtual o concatenado
+						$orderBy['Producto.id'] = $dir;
+						break;                                         
+					case 'numproducto':
+						// si es virtual o concatenado
+						$orderBy['Producto.numproductos'] = $dir;
+						break;
+                    case 'prioridad':
+						// si es virtual o concatenado
+						$orderBy['Producto.nombredim'] = $dir;
+						break; 
+				                    
+					case 'tarea':
+						$orderBy['Producto.tarea'] = $dir;
+						break;
+                    case 'fecha':
+						$orderBy['Infoevento.fecha'] = $dir;
+						break;
+                    case 'tema':
+						$orderBy['Infoevento.tema'] = $dir;
+						break;
+                     case 'tipo':
+						$orderBy['Infoevento.tipo'] = $dir;
+						break;
+					case 'grupo':
+						$orderBy['Infoevento.nombregrupo'] = $dir;
+						break;
+					case 'responsable':
+						$orderBy['Responsable.nombres'] = $dir;
+						break;
+					
+				}
+			}
+		}
+
+
+		$conditions = [];
+		if (!empty($search)) {
+			$conditions['OR'] = [
+				'Infoevento.id LIKE' => "%$search%",
+				'Infoevento.fecha LIKE' => "%$search%",
+				'Infoevento.tema LIKE' => "%$search%",
+				'Infoevento.tipo LIKE' => "%$search%",
+				'Infoevento.nombregrupo LIKE' => "%$search%",
+				'Responsable.nombres LIKE' => "%$search%",
+				'Producto.numproductos LIKE' => "%$search%",
+				'Producto.nombredim LIKE' => "%$search%",				
+				'Producto.tarea LIKE' => "%$search%",
+				'Producto.id LIKE' => "%$search%",
+				
+			];
+		}
+
+		$total = $this->Infoevento->find('count');
+		$filtered = $this->Infoevento->find('count', ['conditions' => $conditions]);
+
+		$data = $this->Infoevento->find('all', array(
+			'conditions' => $conditions,
+			'fields' => array(
+				'Infoevento.id',
+				'Infoevento.fecha',
+				'Infoevento.tema',
+				'Infoevento.tipo',
+				'Infoevento.nombregrupo'
+			),
+			
+            'contain' => array(
+                'Producto' => array(
+                    'fields' => array(
+                        'Producto.id',
+                        'Producto.tarea',
+                        'Producto.nombredim',
+                        'Producto.numproductos',
+						
+                    )
+                ),
+                'Responsable' => array(
+                    'fields' => array('Responsable.id', 'Responsable.nombres')
+               )
+            ),
+			'limit' => $length,
+			'offset' => $start,
+			'order' => $orderBy,
+			'recursive' => -1,
+		));
+        // debug($data);
+
+		$result = [
+			"draw" => intval($this->request->query('draw')),
+			"recordsTotal" => $total,
+			"recordsFiltered" => $filtered,
+			"data" => []
+		];
+
+		foreach ($data as $row) {
+			$result['data'][] = [
+				'id' => $row['Infoevento']['id'],
+				'idactividad' => $row['Producto']['id'],
+                'numproducto' => $row['Producto']['numproductos'],	
+                'prioridad' => $row['Producto']['nombredim'],
+				
+                'tarea' => $row['Producto']['tarea'],
+                'fecha' => $row['Infoevento']['fecha'],
+                'tema' => $row['Infoevento']['tema'],
+                'tipo' => $row['Infoevento']['tipo'],
+				'grupo' => $row['Infoevento']['nombregrupo'],
+                'responsables' => $row['Responsable']['nombres'],
+
+				
+				
+			];
+		}
+		
+       
+		echo json_encode($result);
 	}
 
 	/**

@@ -3,10 +3,10 @@
 
 <div class="max-w-5xl mx-auto text-center mb-8">
 	<h1 class="text-5xl font-bold mb-4 text-blue-600">
-		Formato Enventos PIC
+		Registro de Acciones Informativas PIC
 	</h1>
 	<p class="text-gray-500 mb-4 text-lg">
-		Visualice e imprima la información registrada en el Formato Enventos.
+		Visualice e imprima la información de acciones informativas y eventos.
 	</p>
 </div>
 
@@ -44,18 +44,6 @@
 	</button>
 
 
-	<?php
-	echo $this->Form->postLink(
-		'<button title="Eliminar evento" class="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/>
-          <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-        </svg>
-    </button>',
-		['action' => 'delete', $infoevento['Infoevento']['id']],
-		['escape' => false, 'confirm' => '¿Está seguro de que desea borrar este encuentro?']
-	);
-	?>
 </div>
 
 <div class="max-w-6xl mx-auto p-18">

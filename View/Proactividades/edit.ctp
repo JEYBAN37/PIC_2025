@@ -31,7 +31,7 @@ echo $this->Form->create('Proactividad', [
             <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Información del proceso</h1>
-                <p class="text-gray-500">Complete los datos basicos del proceso de sistematización.</p>
+                <p class="text-gray-500">Complete los datos básicos del proceso de sistematización.</p>
             </div>
 
         </div>

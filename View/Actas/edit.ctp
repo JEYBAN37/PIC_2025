@@ -399,7 +399,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
             <div class="col-span-2 md:col-span-1 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
-                    <label for="ordendia" class="font-semibold">Proxima convocatoria</label>
+                    <label for="ordendia" class="font-semibold">Próxima convocatoria</label>
                     <p class="text-red-600">*</p>
                 </div>
 
@@ -415,7 +415,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                     echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('convocatoria') . '</div>';
                 }
                 ?>
-                <p class="help-block text-gray-500 text-xs mt-2">Favor registrar fecha y lugar de la proxima convocatoria</p>
+                <p class="help-block text-gray-500 text-xs mt-2">Favor registrar fecha y lugar de la Próxima convocatoria</p>
 
             </div>
         </div>
@@ -480,6 +480,18 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                 </span>
                 Guardar Acta
             </button>
+            <button type="button" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2" onclick="preventBackNavigation()">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                        <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
+                        <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
+                        <circle cx="12" cy="12" r="1" />
+                        <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
+                    </svg>
+
+                </span>
+                Ver Acta
+            </button>
         </div>
     </div>
 </div>
@@ -539,6 +551,13 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
 
 
     });
+
+
+    function preventBackNavigation() {
+        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+        }
+    }
 
 
     $(function() {
@@ -636,7 +655,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
         updateCount(); // inicializar contador
     });
 
-                // Detectar si el usuario intenta retroceder con la flecha del navegador
+    // Detectar si el usuario intenta retroceder con la flecha del navegador
     window.addEventListener('popstate', function(event) {
         if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
             window.location.href = '../index'; // Redirigir a la página deseada

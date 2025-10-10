@@ -14,13 +14,13 @@
         <thead class="bg-gray-200 font-medium border-b border-gray-300">
             <tr class=" text-gray-900 font-light">
                 <th class="px-2 w-6"></th> <!-- control (+) -->
-                <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID</th>
-				<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID-actividad</th>
-                 <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Número Producto</th>
-				 <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Prioridad</th>              
-                <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Actividad</th>
-                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Fecha</th>
-                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Temática</th>
+                <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID</th>
+				<th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID-actividad</th>
+                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Número Producto</th>
+				 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Prioridad</th>              
+                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Actividad</th>
+                <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Fecha</th>
+                <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Temática</th>
                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Tipo</th>
                  <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Grupo</th>
                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Responsables</th>
@@ -87,7 +87,7 @@
                 pageLength: 7,
                 processing: true,
                 serverSide: true,
-                ajax: "/aplicacioncakephp/PIC_2025/infoeventos/getInfoeventos", // Ajustar segun la Ruta para obtener datos
+                ajax: "/PIC/infoeventos/getInfoeventos", // Ajustar segun la Ruta para obtener datos
                 columns: [
                     // Columna control (+)
                     {

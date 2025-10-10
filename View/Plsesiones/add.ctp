@@ -924,7 +924,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
-                    <label for="objactividad" class="font-semibold">Objetivo general de la actividad pedagogica. El objetivo debe ser medible y alcanzable</label>
+                    <label for="objactividad" class="font-semibold">Objetivo general de la actividad pedagógica. El objetivo debe ser medible y alcanzable</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
@@ -980,11 +980,11 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2">
 
-            <!-- Tipo de poblacion participante -->
+            <!-- Tipo de poblaciónparticipante -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
-                    <label for="tipoblacion" class="font-semibold">Tipo de poblacion participante</label>
+                    <label for="tipoblacion" class="font-semibold">Tipo de poblaciónparticipante</label>
                     <p class="text-red-600">*</p>
 
                 </div>
