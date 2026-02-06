@@ -94,11 +94,6 @@ class UsersController extends AppController
 
                     ]);
                 }
-
-
-
-
-
                 // Nunca retornes la contraseña
                 unset($user['User']['password']);
 

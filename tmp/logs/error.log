@@ -23709,3 +23709,181 @@ Request URL: /PIC/login
 Stack Trace:
 #0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2025-10-10 22:09:32 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-10-18 01:02:42 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-10-18 01:13:11 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-10-18 01:13:17 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-10-18 23:36:40 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-10-18 23:36:48 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-10-24 06:40:35 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-10-25 01:59:01 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-10-27 21:25:11 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-11-24 04:09:24 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-11-28 15:17:46 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-12-03 03:10:41 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /PIC/login
+Stack Trace:
+#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-12-04 21:51:10 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+',
+  'enabled' => true,
+)
+Request URL: /PIC/procesoregistros/view/150
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\lib\Cake\Model\Model.php(3479): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(3501): Model->setSource('procesoregistro...')
+#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(3024): Model->getDataSource()
+#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2937): Model->_findCount('before', Array)
+#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2872): Model->buildQuery('count', Array)
+#8 C:\xampp\htdocs\lib\Cake\Model\Model.php(2787): Model->find('count', Array)
+#9 C:\xampp\htdocs\PIC\Controller\ProcesoregistrosController.php(44): Model->exists('150')
+#10 [internal function]: ProcesoregistrosController->view('150')
+#11 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#13 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#14 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2025-12-04 21:51:31 Error: [MissingActionException] Action AppController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'img',
+)
+Request URL: /PIC/app/img/copylink.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-12-05 03:59:44 Error: [MissingActionException] Action ProcesoregistrosController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcesoregistrosController',
+  'action' => 'img',
+)
+Request URL: /PIC/procesoregistros/img/update/docHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-12-05 03:59:44 Error: [MissingActionException] Action ProcesoregistrosController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcesoregistrosController',
+  'action' => 'img',
+)
+Request URL: /PIC/procesoregistros/img/update/historicoHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2025-12-05 03:59:44 Error: [MissingActionException] Action ProcesoregistrosController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcesoregistrosController',
+  'action' => 'img',
+)
+Request URL: /PIC/procesoregistros/img/update/docHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+main}

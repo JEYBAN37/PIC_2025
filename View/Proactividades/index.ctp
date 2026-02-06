@@ -29,7 +29,7 @@
             <!-- DataTables llenará esta sección -->
         </tbody>
     </table>
-
+</div>
 
     <script>
         const URL_view = "<?php echo $this->Html->url(['action' => 'view', '__ID__']); ?>";
@@ -330,3 +330,4 @@
         // Llama a la función de configuración cuando el DOM esté cargado
         document.addEventListener('DOMContentLoaded', setupDropdowns);
     </script>
+    

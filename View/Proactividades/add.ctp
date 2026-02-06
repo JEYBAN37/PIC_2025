@@ -33,7 +33,12 @@
         ]);
         ?>
 
-
+        <?php
+        echo $this->Form->input('fechaRegistro', [
+            'type' => 'hidden',
+            'value' => date('Y-m-d')
+        ]);
+        ?>
 
         <div class="grid grid-cols-1 md:grid-cols-2">
 
@@ -168,9 +173,9 @@
             shouldSort: false,
             searchPlaceholderValue: "Escriba para filtrar...",
             fuseOptions: {
-            includeScore: true,
-            threshold: 0.3,
-            keys: ['label', 'value']
+                includeScore: true,
+                threshold: 0.3,
+                keys: ['label', 'value']
             },
             renderChoiceLimit: -1, // Sin límite de renderizado
             searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
@@ -190,7 +195,7 @@
             dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
         }
     });
-    
+
 
     CKEDITOR.on('instanceReady', function(ev) {
         var editor = ev.editor;
@@ -244,7 +249,7 @@
         updateCount(); // inicializar contador
     });
 
-        // Detectar si el usuario intenta retroceder con la flecha del navegador
+    // Detectar si el usuario intenta retroceder con la flecha del navegador
     window.addEventListener('popstate', function(event) {
         if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
             window.location.href = 'index'; // Redirigir a la página deseada

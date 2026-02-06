@@ -431,7 +431,7 @@ echo $this->Form->create('Procesoregistro', [
     </div>
 </div>
 
-</div>
+
 
 
 <?php
