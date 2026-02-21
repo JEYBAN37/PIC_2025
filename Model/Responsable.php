@@ -46,37 +46,7 @@ class Responsable extends AppModel {
 
  */
 
-	public $hasMany = array(
-
-		'Actividad' => array(
-
-			'className' => 'Actividad',
-
-			'foreignKey' => 'responsable_id',
-
-			'dependent' => false,
-
-			'conditions' => '',
-
-			'fields' => '',
-
-			'order' => '',
-
-			'limit' => '',
-
-			'offset' => '',
-
-			'exclusive' => '',
-
-			'finderQuery' => '',
-
-			'counterQuery' => ''
-
-		),
-
-
-
-	);
+	
 
 
 

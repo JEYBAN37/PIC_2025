@@ -482,7 +482,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
     <script>
-        const URLCAKE = "http://localhost/PIC";
+        const URLCAKE = "http://localhost:5173/colectivaspasto/"; //CAMBIAR AL AJUSTAR SERVIDOR
         const {
             createApp
         } = Vue;

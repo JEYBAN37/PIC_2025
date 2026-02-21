@@ -214,18 +214,7 @@ class ActasController extends AppController
         $this->set(compact('ubicaciones', 'responsables'));
     }
 
-    function nuebus()
-    {
-        $this->Acta->recursive = 0;
-
-        $paginate = array("fields" => array("id", "producto_id", "tema", "fecha"));
-        $this->Paginator->settings = $paginate;
-
-        $count = $this->Acta->find('count');
-        $this->Paginator->settings['limit'] = $count;
-
-        $this->set("l", $this->paginate());
-    }
+  
 
     public function getActas()
 	{
@@ -256,12 +245,12 @@ class ActasController extends AppController
 						// si es virtual o concatenado
 						$orderBy['Producto.numproductos'] = $dir;
 						break;
-                    case 'prioridad':
+                    case 'nombredim':
 						// si es virtual o concatenado
 						$orderBy['Producto.nombredim'] = $dir;
 						break;                       
-					case 'tarea':
-						$orderBy['Producto.tarea'] = $dir;
+					case 'actividad':
+						$orderBy['Producto.actividad'] = $dir;
 						break;
                     case 'fecha':
 						$orderBy['Acta.fecha'] = $dir;
@@ -272,7 +261,7 @@ class ActasController extends AppController
                      case 'alcancereunion':
 						$orderBy['Acta.alcancereunion'] = $dir;
 						break;
-					case 'responsable':
+					case 'responsables':
 						$orderBy['Responsable.nombres'] = $dir;
 						break;
 					
@@ -285,7 +274,7 @@ class ActasController extends AppController
 		if (!empty($search)) {
 			$conditions['OR'] = [
 				'Acta.id LIKE' => "%$search%",
-				'Producto.tarea LIKE' => "%$search%",
+				'Producto.actividad LIKE' => "%$search%",
 				'Producto.id LIKE' => "%$search%",
 				'Acta.tema LIKE' => "%$search%",
 				'Responsable.nombres LIKE' => "%$search%"
@@ -310,7 +299,7 @@ class ActasController extends AppController
                 'Producto' => array(
                     'fields' => array(
                         'Producto.id',
-                        'Producto.tarea',
+                        'Producto.actividad',
                         'Producto.nombredim',
                         'Producto.numproductos'
                     )
@@ -337,9 +326,9 @@ class ActasController extends AppController
 			$result['data'][] = [
 				'id' => $row['Acta']['id'],	
                 'numproducto' => $row['Producto']['numproductos'],			
-				'nombreproducto' => $row['Producto']['tarea'],
-                'prioridad' => $row['Producto']['nombredim'],
-                'tarea' => $row['Producto']['tarea'],
+				//'nombreproducto' => $row['Producto']['producto'],
+                'nombredim' => $row['Producto']['nombredim'],
+                'actividad' => $row['Producto']['actividad'],
                 'fecha' => $row['Acta']['fecha'],
                 'tema' => $row['Acta']['tema'],
                 'alcancereunion' => $row['Acta']['alcancereunion'],

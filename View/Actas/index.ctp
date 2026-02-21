@@ -85,7 +85,7 @@
                 pageLength: 7,
                 processing: true,
                 serverSide: true,
-                ajax: "/PIC/actas/getActas", // Ajustar segun la Ruta para obtener datos
+                ajax: "/aplicacioncakephp/PIC_2025/actas/getActas", // Ajustar segun la Ruta para obtener datos
                 columns: [
                     // Columna control (+)
                     {
@@ -107,10 +107,10 @@
                         data: "numproducto"
                     },
                     {
-                        data: "prioridad"
+                        data: "nombredim"
                     },
                     {
-                        data: "tarea"
+                        data: "actividad"
                     },
                     {
                         data: "fecha"

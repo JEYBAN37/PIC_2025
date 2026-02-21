@@ -16,7 +16,8 @@
             <tr class=" text-gray-900 font-light">
                 <th class="px-2 w-6"></th> <!-- control (+) -->
                 <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID</th>
-                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Producto </th>
+                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Id_Tarea </th>
+                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Temática</th>
                 <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Actividad</th>
                 <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Objetivo</th>
                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Responsable</th>
@@ -108,10 +109,13 @@
                         data: "id"
                     },
                     {
-                        data: "idproducto"
+                        data: "numeroactividad"
                     },
                     {
-                        data: "nombreproducto"
+                        data: "nombredim"
+                    },                  
+                    {
+                        data: "actividad"
                     },
                     {
                         data: "objactividad"

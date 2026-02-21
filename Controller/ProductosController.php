@@ -311,13 +311,13 @@ class ProductosController extends AppController
 						$orderBy['Producto.nombredim'] = $dir;
 						break;
 					case 'actividad':
-						$orderBy['Producto.activity'] = $dir;
+						$orderBy['Producto.producto'] = $dir;
 						break;
 					case 'tarea':
-						$orderBy['Producto.tarea'] = $dir;
+						$orderBy['Producto.actividad'] = $dir;
 						break;
 					case 'evidencia':
-						$orderBy['Producto.evidencia'] = $dir;
+						$orderBy['Producto.soportes'] = $dir;
 						break;
 					case 'estado':
 						$orderBy['Producto.estado'] = $dir;
@@ -338,9 +338,9 @@ class ProductosController extends AppController
 				'OR' => [
 					'Producto.numproductos LIKE' => "%$search%",
 					'Producto.nombredim LIKE' => "%$search%",
-					'Producto.activity LIKE' => "%$search%",
-					'Producto.tarea LIKE' => "%$search%",
-					'Producto.evidencia LIKE' => "%$search%",
+					'Producto.producto LIKE' => "%$search%",
+					'Producto.actividad LIKE' => "%$search%",
+					'Producto.soportes LIKE' => "%$search%",
 					'Producto.estado LIKE' => "%$search%",
 					'Producto.modified LIKE' => "%$search%",
 				]
@@ -349,9 +349,9 @@ class ProductosController extends AppController
 			$conditions['OR'] = [
 				'Producto.numproductos LIKE' => "%$search%",
 				'Producto.nombredim LIKE' => "%$search%",
-				'Producto.activity LIKE' => "%$search%",
-				'Producto.tarea LIKE' => "%$search%",
-				'Producto.evidencia LIKE' => "%$search%",
+				'Producto.producto LIKE' => "%$search%",
+				'Producto.actividad LIKE' => "%$search%",
+				'Producto.soportes LIKE' => "%$search%",
 				'Producto.estado LIKE' => "%$search%",
 				'Producto.modified LIKE' => "%$search%",
 			];
@@ -368,9 +368,9 @@ class ProductosController extends AppController
 				'Producto.id',
 				'Producto.numproductos',
 				'Producto.nombredim',
-				'Producto.activity',
-				'Producto.tarea',
-				'Producto.evidencia',
+				'Producto.producto',
+				'Producto.actividad',
+				'Producto.soportes',
 				'Producto.estado',
 				'Producto.modified'
 			),
@@ -393,11 +393,11 @@ class ProductosController extends AppController
 		foreach ($data as $row) {
 			$result['data'][] = [
 				'id' => $row['Producto']['id'],
-				'numproducto' => $row['Producto']['numproductos'],
-				'prioridad' => $row['Producto']['nombredim'],
-				'activity' => $row['Producto']['activity'],
-				'tarea' => $row['Producto']['tarea'],
-				'evidencia' => $row['Producto']['evidencia'],
+				'numproductos' => $row['Producto']['numproductos'],
+				'nombredim' => $row['Producto']['nombredim'],
+				'producto' => $row['Producto']['producto'],
+				'actividad' => $row['Producto']['actividad'],
+				'soportes' => $row['Producto']['soportes'],
 				'estado' => $row['Producto']['estado'],
 				'modified' => $row['Producto']['modified'],
 			];

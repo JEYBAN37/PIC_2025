@@ -1101,23 +1101,23 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
-                    <label for="proactividad_id" class="font-semibold">Dimensión</label>
+                    <label for="proactividad_id" class="font-semibold">Temática</label>
                     <p class="text-red-600">*</p>
 
                 </div>
                 <?php
                 $optiontime = [
                     '' => 'Elegir',
-                    '1.MalNutricion-HEVS' => '1.MalNutricion-HEVS',
-                    '2.Les.Autoinflingidas' => '2.Les.Autoinflingidas',
-                    '3.DebilidadEyD' => '3.DebilidadEyD',
-                    '4.MM.Materna SSR' => '4.MM.Materna SSR',
-                    '5.DeterAmbiental' => '5.DeterAmbiental',
-                    '6.DefResolutividadGDPE' => '6.DefResolutividadGDPE',
-                    '7.Mm Enf Trasmisible' => '7.Mm Enf Trasmisible',
-                    '8.9.LaboralDebilVigilancia' => '8.9.LaboralDebilVigilancia',
-                    '10.DebilGrantiaDerechoSalud' => '10.DebilGrantiaDerechoSalud',
-                    'Dispositivos Comunitarios' => 'Dispositivos Comunitarios'
+                    '1.Seguridad Alimentaria Nutricional' => '1.Seguridad Alimentaria Nutricional',
+                    '2.Salud mental' => '2.Salud mental',
+                    '3.Vigilancia salud publica' => '3.Vigilancia salud publica',
+                    '4.Gestion Riesgo EMYD' => '4.Gestion Riesgo EMYD',
+                    '5.Salud Sexual y reproductiva' => '5.Salud Sexual y reproductiva',
+                    '6.HEVS' => '6.HEVS',
+                    '7.Salud ambiental' => '7.Salud ambiental',
+                    '8.Enfoque diferencial' => '8.9.Enfoque diferencial',
+                    '9.Garantia Derecho a la salud' => '10.Garantia Derecho a la salud',
+                    
                 ];
                 echo $this->Form->input('dimension', [
                     'type' => 'select',

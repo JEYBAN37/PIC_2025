@@ -149,6 +149,16 @@ class Procesoregistro extends AppModel
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'limitantes' => array(
+			'multiple' => array(
+				'rule' => array('multiple', array('min' => 1)),
+				'message' => 'Por favor seleccione al menos una opción',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'tipopoblacion' => array(
 			'multiple' => array(
 				'rule' => array('multiple', array('min' => 1)),
@@ -409,6 +419,10 @@ class Procesoregistro extends AppModel
 
 		if (isset($this->data[$this->alias]['tipopoblacion']) && is_array($this->data[$this->alias]['tipopoblacion'])) {
 			$this->data[$this->alias]['tipopoblacion'] = implode(',', $this->data[$this->alias]['tipopoblacion']);
+		}
+
+		if (isset($this->data[$this->alias]['limitantes']) && is_array($this->data[$this->alias]['limitantes'])) {
+			$this->data[$this->alias]['limitantes'] = implode(',', $this->data[$this->alias]['limitantes']);
 		}
 
 		return true;

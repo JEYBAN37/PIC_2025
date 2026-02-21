@@ -65,7 +65,7 @@ class Proactividad extends AppModel
 					)
 				),
 				'Producto' => array(
-					'fields' => array('Producto.dimensiones', 'Producto.entorno', 'Producto.activity', 'Producto.tarea', 'Producto.id')
+					'fields' => array('Producto.nombredim', 'Producto.entorno', 'Producto.producto', 'Producto.actividad', 'Producto.id')
 				),
 				'Responsable' => array(
 					'fields' => array('Responsable.nombres', 'Responsable.profesion')

@@ -32,7 +32,7 @@
 			<!-- Objetivo General -->
 			<div class="col-span-1 col-span-2 md:col-span-1 text-md font-semibold my-4 mr-4 rounded-lg border  border-gray-300 p-4">
 				<div class="w-full flex items-center justify-center mb-2">
-					<label for="objactividad" class="mr-2 font-semibold text-gray-800 text-center text-md">Avance de tarea</label>
+					<label for="objactividad" class="mr-2 font-semibold text-gray-800 text-center text-md">Avance de actividad</label>
 				</div>
 				<div class="w-full background-white flex items-center justify-center">
 					<!-- Barra circular de progreso -->
@@ -208,9 +208,9 @@
 						<td colspan="1" class="border border-gray-300 p-2">
 							<?php echo h($producto['Producto']['id']); ?>
 						</td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Creacion</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Creación</td>
 						<td colspan="2" class="border border-gray-300 p-2"><?php echo $this->Time->format('d-m-Y h:i A', ($producto['Producto']['created'])); ?> </td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Modificacion</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Modificación</td>
 						<td colspan="3" class="border border-gray-300 p-2"><?php echo $this->Time->format('d-m-Y h:i A', ($producto['Producto']['modified'])); ?></td>
 					</tr>
 
@@ -221,56 +221,51 @@
 						<td colspan="1" class="border border-gray-300 p-2">
 							<?php echo ($producto['Producto']['numproductos']); ?>
 						</td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">N° Tarea</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">N° Actividad</td>
 						<td colspan="1" class="border border-gray-300 p-2">
-							<?php echo ($producto['Producto']['numtarea']); ?>
+							<?php echo ($producto['Producto']['id']); ?>
 						</td>
 
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">Linea</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">Linea Operativa</td>
 						<td colspan="3" class="border border-gray-300 p-2">
-							<?php echo ($producto['Producto']['lineaoperativa']); ?>
+							<?php echo ($producto['Producto']['lineaOperativa']); ?>
 						</td>
 					</tr>
 
 					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Dimensión</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Proyecto relacionado</td>
 						<td colspan="3" class="border border-gray-300 p-2">
-							<?php echo ($producto['Producto']['nombredim']); ?>
-
-							-
-							<?php echo ($producto['Producto']['dimensiones']); ?>
+							<?php echo ($producto['Producto']['nombredim']); ?>							
 						</td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Presupuesto tarea</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Presupuesto actividad</td>
 
 						<td colspan="4" class="border border-gray-300 font-semibold p-2">
 							<?php
-							$valorTarea = $producto['Producto']['valortarea'];
-							if (is_numeric($valorTarea)) {
-								echo '$ ' . number_format($valorTarea, 0, '', '.');
+							$valoractividad = $producto['Producto']['valor total'];
+							if (is_numeric($valoractividad)) {
+								echo '$ ' . number_format($valoractividad, 0, '', '.');
 							} else {
-								echo h($valorTarea);
+								echo h($valoractividad);
 							}
 							?>
 						</td>
 					</tr>
 					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">Normas</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">Indicador PTS</td>
 						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['linormativas']; ?>
+							<?php echo $producto['Producto']['indicadorpts']; ?>
 						</td>
 					</tr>
 
 					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Linea PPSC</td>
-						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo ($producto['Producto']['lineappsc']); ?>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Eje Estratégico</td>
+						<td colspan="3" class="border border-gray-300 p-2">
+							<?php echo ($producto['Producto']['ejeEstrategico']); ?>
 						</td>
-					</tr>
-
-					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Sub linea PPSC</td>
-						<td colspan="8" class="border border-gray-300 font-semibold p-2">
-							<?php echo ($producto['Producto']['sublineappsc']); ?>
+					
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Linea Operativa</td>
+						<td colspan="4" class="border border-gray-300 font-semibold p-2">
+							<?php echo ($producto['Producto']['lineaOperativa']); ?>
 						</td>
 					</tr>
 
@@ -278,21 +273,50 @@
 					<tr>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Problemática</td>
 						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['resultado']; ?>
+							<?php echo $producto['Producto']['Evento']; ?>
 						</td>
 					</tr>
 
 					<tr>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Producto</td>
 						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['activity']; ?>
+							<?php echo $producto['Producto']['producto']; ?>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">Indicador de Producto</td>
+						<td colspan="8" class="border border-gray-300 p-2">
+							<?php echo $producto['Producto']['indicadorProducto']; ?>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">Resultado Esperado</td>
+						<td colspan="8" class="border border-gray-300 p-2">
+							<?php echo $producto['Producto']['resultadoEsperado']; ?>
+						</td>
+					</tr>
+						<tr>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">Linea Base</td>
+						<td colspan="8" class="border border-gray-300 p-2">
+							<?php echo $producto['Producto']['lineaBase']; ?>
 						</td>
 					</tr>
 
 					<tr>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Actividad</td>
 						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['tarea']; ?>
+							<?php echo $producto['Producto']['actividad']; ?>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Cantidad</td>
+						<td colspan="3" class="border border-gray-300 p-2">
+							<?php echo ($producto['Producto']['cantidad']); ?>
+						</td>
+					
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Unidad de Medida</td>
+						<td colspan="4" class="border border-gray-300 font-semibold p-2">
+							<?php echo ($producto['Producto']['unidadMedida']); ?>
 						</td>
 					</tr>
 
@@ -301,7 +325,7 @@
 					<tr class="bg-gray-100">
 						<td colspan="2" class="border border-gray-300 font-semibold p-2">Cursos de Vida</td>
 						<td colspan="2" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['vidacursos']; ?>
+							<?php echo $producto['Producto']['cursoVida']; ?>
 						</td>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2"> Entorno</td>
 						<td colspan="1" class="border border-gray-300 p-2">
@@ -309,36 +333,35 @@
 						</td>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2">Tecnología</td>
 						<td colspan="2" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['tecnologias']; ?>
+							<?php echo $producto['Producto']['tecnologiapic']; ?>
 						</td>
 					</tr>
 
 
 					<tr class="bg-gray-100">
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">% producto</td>
-						<td colspan="2" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['porcproducto']; ?>
+						
+					<td colspan="1" class="border border-gray-300 font-semibold p-2">Población</td>
+						<td colspan="3" class="border border-gray-300 p-2"><?php echo $producto['Producto']['poblacion']; ?>
 						</td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">% tarea</td>
-						<td colspan="2" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['porctareas']; ?>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Estado</td>
+						<td colspan="4" class="border border-gray-300 p-2">
+							<?php echo $producto['Producto']['estado']; ?>
 						</td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">% avance</td>
-						<td colspan="2" class="border border-gray-300 p-2">
 
-						</td>
+					
+
+						
 					</tr>
 
 
 					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Estado</td>
-						<td colspan="3" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['estado']; ?>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">% avance</td>
+						<td colspan="3" class="border border-gray-300 p-2"><?php echo $producto['Producto']['porcentajeavancetotal']; ?>
 						</td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Objetivo CB</td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 bg-gray-100">Pago estimado</td>
 
 						<td colspan="4" class="border border-gray-300 font-semibold p-2">
-							<?php echo $producto['Producto']['clasobjetivos']; ?>
+							<?php echo $producto['Producto']['Pago_calculado']; ?>
 						</td>
 					</tr>
 
@@ -346,7 +369,7 @@
 					<tr>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Evidencia requerida</td>
 						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['evidencia']; ?>
+							<?php echo $producto['Producto']['soportes']; ?>
 						</td>
 					</tr>
 
@@ -409,13 +432,13 @@
 			</svg>
 			<div class="w-[80%] ml-4">
 				<h1 class="text-xl font-semibold">Anexos relacionados al producto</h1>
-				<p class="text-gray-500"> <?php echo ($producto['Producto']['activity']); ?></p>
+				<p class="text-gray-500"> <?php echo ($producto['Producto']['producto']); ?></p>
 			</div>
 		</div>
 
 		<div class="flex items-start mb-4 pl-14">
 			<div class="w-[80%] ml-4">
-				<p class="text-gray-500"> Tarea: <?php echo ($producto['Producto']['tarea']); ?>.</p>
+				<p class="text-gray-500"> actividad: <?php echo ($producto['Producto']['actividad']); ?>.</p>
 			</div>
 		</div>
 
@@ -965,7 +988,7 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('textarea').each(function() {
+		$('texactividad').each(function() {
 			this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
 		}).on('input', function() {
 			this.style.height = 'auto';

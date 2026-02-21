@@ -68,7 +68,7 @@ class PlsesionesController extends AppController
                 'Plsesion.' . $this->Plsesion->primaryKey => $id
             ),
             'contain' => array(
-                'Producto' => array('fields' => array('id', 'activity', 'resultado')),
+                'Producto' => array('fields' => array('id', 'producto', 'actividad')),
                 'Responsable' => array('fields' => array('id', 'nombres', 'profesion')),
                 'Plsmomento' => array('fields' => array('id', 'momento', 'duracion', 'resultado', 'insumo', 'metodologia')),
             )

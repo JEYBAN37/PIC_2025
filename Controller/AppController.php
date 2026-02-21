@@ -68,6 +68,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller
 {
+   // protected $externalRedirectUrl = 'http://localhost:5173/colectivaspasto/';
 
     public $components = array(
         'Session',
@@ -101,6 +102,15 @@ class AppController extends Controller
 
         // Permitir acceso público a las acciones indicadas
         $this->Auth->allow('login', 'isAuthenticated', 'logout', 'viewAnalitic');
+        /*$this->Auth->logoutRedirect=array();
+        if (!$this->Auth->user()) {
+            $externalUrl = $this->externalRedirectUrl;
+            if (!preg_match('#^https?://#i', $externalUrl)) {
+                $externalUrl = 'https://' . $externalUrl;
+            }
+
+            return $this->redirect($externalUrl);
+        }*/
     }
 
     public function isAuthorized($user)

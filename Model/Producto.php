@@ -45,9 +45,9 @@ class Producto extends AppModel
 				'Producto.id',
 				'Producto.numproductos',
 				'Producto.nombredim',	
-				'Producto.activity',	
-				'Producto.tarea',				
-				'Producto.evidencia',				
+				'Producto.producto',	
+				'Producto.actividad',				
+				'Producto.soportes',				
 				'Producto.porcentajeavancetotal',				
 				'Producto.estado',
 			),
@@ -61,9 +61,9 @@ class Producto extends AppModel
 
 	
 	public $virtualFields = array(
-		'nombreproducto' => 'CONCAT(Producto.numproductos," | ",Producto.tarea)'
+		'nombreproducto' => 'CONCAT(Producto.numproductos," | ",Producto.actividad)'
 	);
-	public $displayField = 'nombreproducto';
+	public $displayField = 'nombredim';
 
 
 	/**
@@ -334,7 +334,7 @@ class Producto extends AppModel
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'primercohorte' => array(
+		/*'primercohorte' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				'message' => 'Elija un numero de la lista',
@@ -344,7 +344,7 @@ class Producto extends AppModel
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		/*'segundocohorte' => array(
+		'segundocohorte' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				'message' => 'Elija un numero de la lista',
@@ -508,7 +508,7 @@ class Producto extends AppModel
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Actividad' => array(
+		/*'Actividad' => array(
 			'className' => 'Actividad',
 			'foreignKey' => 'producto_id',
 			'dependent' => false,
@@ -520,7 +520,7 @@ class Producto extends AppModel
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
+		),*/
 		/*'ActividadesViewTest' => array(
 			'className' => 'ActividadesViewTest',
 			'foreignKey' => 'producto_id',

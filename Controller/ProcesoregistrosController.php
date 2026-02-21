@@ -274,6 +274,12 @@ class ProcesoregistrosController extends AppController
 			$tipos = array_map('trim', explode(',', $cursovidaStr));
 			$data['Procesoregistro']['cursovida'] = $tipos;
 		}
+		if (!empty($data['Procesoregistro']['limitantes'])) {
+			$cursovidaStr = strtolower($data['Procesoregistro']['limitantes']);
+			// Extraer cada palabra/frase hasta la coma
+			$tipos = array_map('trim', explode(',', $cursovidaStr));
+			$data['Procesoregistro']['limitantes'] = $tipos;
+		}
 
 		return $data;
 	}

@@ -52,7 +52,7 @@ class Acta extends AppModel
 			
 			'contain' => array(				
 				'Producto' => array(
-					'fields' => array('Producto.nombredim', 'Producto.tarea', 'Producto.numproductos')
+					'fields' => array('Producto.nombredim', 'Producto.actividad', 'Producto.numproductos')
 				),
 				'Responsable' => array(
 					'fields' => array('Responsable.nombres', 'Responsable.profesion')
@@ -334,23 +334,6 @@ class Acta extends AppModel
 
 	);
 
-	public $hasMany = array(
-		'Producto' => array(
-			'className' => 'Producto',
-			'foreignKey' => 'acta_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-
-
-	);
 
 
 	function checkUniqueName($data)

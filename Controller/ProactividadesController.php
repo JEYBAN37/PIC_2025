@@ -31,19 +31,7 @@ class ProactividadesController extends AppController
 		$this->set('tipoUsuario', $tipoUsuario);
 	}
 
-	function nuebus()
-	{
-		//$this->Acta->recursive = 0;
-		$this->Proactividad->recursive = 0;
-
-		$paginate = array("fields" => array("id", "", "proactividad_id", "N_producto", "Producto", "Dimension", "tarea", "tema", "comuna_actividad", "responsable"));
-		$this->Paginator->settings = $paginate;
-
-		$count = $this->Proactividad->find('count');
-		$this->Paginator->settings['limit'] = $count;
-
-		$this->set("l", $this->paginate());
-	}
+	
 
 
 	/**
@@ -82,12 +70,12 @@ class ProactividadesController extends AppController
 	 */
 	public function add()
 	{
+		
 		if ($this->request->is('post')) {
-			$this->Proactividad->create();
-			debug($this->request->data);
+			$this->Proactividad->create();			
 			if ($this->Proactividad->save($this->request->data)) {
 				$this->Session->setFlash('La sistematizacion del proceso formativo educativo fue gurdada, asocie las fechas, tematicas relaciondas a la sistematizacion.', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
-				return $this->redirect(array('controller' => 'procesoregistros', 'action' => 'add'));
+				return $this->redirect(array('controller' => 'Procesoregistros', 'action' => 'add'));
 			} else {
 				$this->Session->setFlash('No se ha podido guardar, por favor verifique el formulario', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
@@ -152,7 +140,6 @@ class ProactividadesController extends AppController
 		$this->response->type('json');
 
 		$columns = ['Proactividad.id'];
-
 		$start = $this->request->query('start');
 		$length = $this->request->query('length') ? $this->request->query('length') : 10;
 		$search = $this->request->query('search')['value'];
@@ -171,10 +158,19 @@ class ProactividadesController extends AppController
 					case 'id':
 						$orderBy['Proactividad.id'] = $dir;
 						break;
-					case 'nombreproducto':
+					
+					case 'numeroactividad':
 						// si es virtual o concatenado
-						$orderBy['Producto.numproductos'] = $dir;
+						$orderBy['Producto.id'] = $dir;
 						break;
+					case 'nombredim':
+						// si es virtual o concatenado
+						$orderBy['Producto.nombredim'] = $dir;
+						break;
+					case 'actividad':
+						// si es virtual o concatenado
+						$orderBy['Producto.actividad'] = $dir;
+						break;	
 					case 'objactividad':
 						$orderBy['Proactividad.objactividad'] = $dir;
 						break;
@@ -202,7 +198,7 @@ class ProactividadesController extends AppController
 					'Producto.nombredim LIKE' => "%$rol%",
 					'OR' => [
 						'Proactividad.id LIKE' => "%$search%",
-						'Producto.tarea LIKE' => "%$search%",
+						'Producto.actividad LIKE' => "%$search%",
 						'Proactividad.objactividad LIKE' => "%$search%",
 						'Responsable.nombres LIKE' => "%$search%"
 					]
@@ -210,7 +206,7 @@ class ProactividadesController extends AppController
 			} else {
 				$conditions['OR'] = [
 					'Proactividad.id LIKE' => "%$search%",
-					'Producto.tarea LIKE' => "%$search%",
+					'Producto.actividad LIKE' => "%$search%",
 					'Producto.id LIKE' => "%$search%",
 					'Proactividad.objactividad LIKE' => "%$search%",
 					'Responsable.nombres LIKE' => "%$search%"
@@ -236,8 +232,8 @@ class ProactividadesController extends AppController
 			'contain' => array(
 				'Producto' => array(
 					'fields' => array(
-						'Producto.numproductos',
-						'Producto.tarea',
+						
+						'Producto.actividad',
 						'Producto.nombredim',
 						'Producto.id'
 					)
@@ -263,8 +259,9 @@ class ProactividadesController extends AppController
 			$result['data'][] = [
 				'id' => $row['Proactividad']['id'],
 				'conCatNumSesiones' => $row[0]['numSesiones'] . ' / ' . $row['Proactividad']['totalsesiones'],
-				'idproducto' => $row['Producto']['id'],
-				'nombreproducto' => $row['Producto']['tarea'],
+				'numeroactividad' => $row['Producto']['id'],
+				'actividad' => $row['Producto']['actividad'],
+				'nombredim' => $row['Producto']['nombredim'],
 				'responsable' => isset($row['Responsable']['nombres']) ? $row['Responsable']['nombres'] : 'N/A',
 				'objactividad' => $row['Proactividad']['objactividad'],
 				'created' => $row['Proactividad']['created'],

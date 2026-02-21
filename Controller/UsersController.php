@@ -130,9 +130,12 @@ class UsersController extends AppController
 
 
     public function salir()
-    {
+        {
+      $this->Session->destroy();    
         $this->Auth->logout();
-        return $this->redirect('/bienvenida');
+
+       //$this->response->redirect('http://localhost:5173/login', 302);
+    return $this->redirect('http://localhost:5173/colectivaspasto/', 302); //Cambiar la pasar a otro servidor
     }
 
     public function check()

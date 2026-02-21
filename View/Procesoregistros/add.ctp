@@ -18,7 +18,6 @@ $option = array(
 ?>
 
 
-
 <div class="max-w-5xl mx-auto text-center mb-8">
     <h1 class="text-5xl font-bold mb-4 text-blue-600">
         Asociar sesión a proceso formativo - educativo
@@ -344,13 +343,149 @@ echo $this->Form->create('Procesoregistro', [
                 }
                 ?>
             </div>
-        </div>
+
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">10</span>
+                    <label for="limitantes" class="font-semibold">limitantes en el desarrollo del encuentro</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                $options = [
+                    '0. No aplica' => '0. No aplica',
+                    '1. Logstico' => '1 - Logístico(Materiales, Refrigerios, espacios)',
+                    '2. Administrativo' => '2 - Administrativo(Contractuales, no acuerdo institucional)',
+                    '3. Técnico' => '3 - Tecnicos(Limitantes conceptuales, metodologicos)',
+                    '4. Comunitario' => '4 - Comunitario(Renuencia, inasistencia de participantes, solicitud de garantias adicionales )',
+                    
+                ];
+
+                echo $this->Form->input(
+                    'limitantes',
+                    [
+                        'type' => 'select',
+                        'label' => false,
+                        'multiple' => true,
+                        'id' => 'limitantes',
+                        'class' => 'w-full',
+                        'empty' => false,
+                        'options' => $options,
+                        'error' => false // No mostrar error aquí
+                    ]
+                );
+                if (!empty($this->Form->error('limitantes'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('limitantes') . '</div>';
+                }
+                ?>
+            </div>
+
+           
+
+            <!-- Acompañamiento -->
+            <div class="flex justify-between col-span-2 text-md font-semibold m-6">
+                <div class="flex items-center w-64">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">11</span>
+                    <label for="acompanamiento" class="font-semibold">Acompañamiento Referente SMS</label>
+                    <p class="text-red-600">*</p>
+                </div>
+
+                <div class="flex space-x-4 items-center">
+                    <!-- Botón NO -->
+                    <div>
+                        <input type="radio"
+                            name="data[Procesoregistro][acompanamiento]"
+                            id="acompanamiento-no"
+                            value="0"
+                            class="hidden peer"
+                            data-target="acompanamiento"
+                            data-show="false"
+                            checked /> <!-- 👈 Por defecto NO -->
+                        <label for="acompanamiento-no"
+                            class="px-12 py-2 rounded-lg border cursor-pointer hover:text-white hover:bg-blue-600
+                       peer-checked:bg-blue-600 peer-checked:text-white">
+                            -
+                        </label>
+                    </div>
+
+                    <!-- Botón SÍ -->
+                    <div>
+                        <input type="radio"
+                            name="data[Procesoregistro][acompanamiento]"
+                            id="acompanamiento-si"
+                            value="1"
+                            data-target="acompanamiento"
+                            data-show="true"
+                            class="hidden peer cursor-pointer" />
+                        <label for="acompanamiento-si"
+                            class="px-12 py-2 rounded-lg border hover:bg-blue-600 cursor-pointer hover:text-white
+                       peer-checked:bg-blue-600 peer-checked:text-white">
+                            X
+                        </label>
+                    </div>
+                </div>
+                <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <?php
+
+                       $observacionseguimiento = [
+                            '0 Elegir' => 'Elegir',
+                            '1 Retroalimentación' => 'Brindo Retroalimentación',
+                            '2 No Retroalimentación ' => 'Sin Retroalimentación',
+                            '3 Apoyo Conceptual-normativo' => 'Apoyo Conceptual, normativo',
+                                                       
+                        ];
+
+                    echo $this->Form->input('observacionseguimiento', [
+                        'id' => 'acompanamiento',
+                        'style' => 'display: none;',
+                        'type' => 'select',
+                        'options' => $observacionseguimiento,
+                        'label' => false,
+                        'error' => false,
+                        'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                    ]);
+                    ?>
+                    
+                </div>
+                </div>
+
+            
+
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">12</span>
+                    <label for="numeroparticipantes" class="font-semibold">Total Número de participantes</label>
+                    <p class="text-red-600">*</p>
+
+                    </div>
+
+                            <?php
+                        echo $this->Form->input('numeroparticipantes', [
+                            'label' => false,
+                            'type' => 'number',
+                            'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                            'error' => false,
+                            'min' => 1,
+                            'max' => 15
+                        ]);
+
+                        if (!empty($this->Form->error('numeroparticipantes'))) {
+                            echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('totalsesiones') . '</div>';
+                        }
+                        ?>
+                    </div>
+                    <p class="help-block text-gray-500 text-xs mb-2">Ingrese el número participantes comunitarios de cuerdo a lista de asistencia</p>
+            
+               
+            </div>
+
+            
+            </div>
+
+        </div>        
     </div>
-</div>
-
-
-<div class="max-w-6xl mx-auto p-18 mt-4">
-    <div class="bg-white shadow-2xl rounded-xl p-12">
+    <div class="bg-white shadow-2xl rounded-xl p-16">
         <!-- Header -->
         <div class="flex items-center mb-4">
             <img src="../img/update/historicoHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg w-[60px]">
@@ -400,11 +535,6 @@ echo $this->Form->create('Procesoregistro', [
                     </span>
                 </div>
             </div>
-
-
-
-
-
             <div class="pt-2 flex gap-4">
                 <button type="submit" name="btn" value="Guardar y asociar otra sesion" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
                     <span>
@@ -430,6 +560,10 @@ echo $this->Form->create('Procesoregistro', [
         </div>
     </div>
 </div>
+
+
+    
+
 
 
 
@@ -578,6 +712,20 @@ $this->Html->script([
             placeholderValue: "Seleccione la(s) población(es)",
         });
 
+        const choices_limitantes = new Choices("#limitantes", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: true, // Permite eliminar seleccionados
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            maxItemCount: -1, // Sin límite
+            removeItems: true, // Permite quitar seleccionados
+            duplicateItemsAllowed: false,
+            placeholder: true,
+            placeholderValue: "Seleccione la(s) población(es)",
+        });
+
         const choices_cursovida = new Choices("#cursovida", {
             searchEnabled: true,
             searchChoices: true,
@@ -591,6 +739,8 @@ $this->Html->script([
             placeholder: true,
             placeholderValue: "Seleccione la(s) población(es)",
         });
+
+        
 
         // Aplicar estilos con Tailwind
         const inner = document.querySelector('.choices__inner');
@@ -678,9 +828,31 @@ $this->Html->script([
             $("#hora_inicio").val(hora_inicio);
             $("#hora_fin").val(hora_fin);
         });
+         // Busca todos los radios con data-target
+        document.querySelectorAll('input[type="radio"][data-target]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                var targetId = radio.getAttribute('data-target');
+                var show = radio.getAttribute('data-show') === 'true';
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = show ? 'block' : 'none';
+                }
+            });
+            // Mostrar/ocultar al cargar la página según el radio seleccionado
+            if (radio.checked) {
+                var targetId = radio.getAttribute('data-target');
+                var show = radio.getAttribute('data-show') === 'true';
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = show ? 'block' : 'none';
+                }
+            }
+        });
 
 
     });
+
+    
 
     window.addEventListener('popstate', function(event) {
         if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
