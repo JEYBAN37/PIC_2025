@@ -1,0 +1,582 @@
+<?php
+
+use function PHPSTORM_META\type;
+
+$this->layout = 'default' ?>
+<?php echo $this->Html->script('ckeditor/ckeditor'); ?>
+<!-- Choices.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker"></script>
+
+<div class="max-w-5xl mx-auto text-center mb-8">
+    <h1 class="text-5xl font-bold mb-4 text-blue-600">
+       Seguimiento ejecución Anexo Técnico PIC 2026
+    </h1>
+    <p class="text-gray-500 mb-4 text-lg">
+        Segumiento físico técnico al cumplimiento del plan de intervenciones colectivas
+    </p>
+</div>
+
+<!-- Formulario -->
+<?php
+echo $this->Form->create('Seguimiento', [
+    'type' => 'file',
+    'novalidate' => 'novalidate',
+    'class' => 'space-y-6',
+]);
+// se utiliza para llamar el id responsable donde sea necesario
+$nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION['Auth']['User']['id_responsable'] : '';
+echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type' => 'hidden'));
+?>
+
+
+
+<div class="max-w-6xl mx-auto p-18">
+    <div class="bg-white shadow-2xl rounded-xl p-12">
+        <!-- Header -->
+        <div class="flex items-center mb-4">
+            <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
+            <div class="ml-4">
+                <h1 class="text-xl font-semibold">Información del proceso</h1>
+                <p class="text-gray-500">Complete los datos básicos del proceso de sistematización.</p>
+            </div>
+
+        </div>
+
+        <?php
+        //echo $this->Form->input('id', ['type' => 'hidden']); ?>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 ">
+
+                <!-- Fecha de sesión realizada -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center ">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
+                    <label for="producto_id" class="font-semibold">Mes reportado</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <div class="col-span-2 text-md font-semibold my-6">
+                    <div class="flex flex-col w-full">
+                        <?php echo $this->Form->label('datetime_range', 'Seleccione Rango de Fecha y Hora', [
+                            'class' => 'text-gray-700 font-semibold text-sm mb-2'
+                        ]); ?>
+                        <input
+                            type="text"
+                            name="datetime_range"
+                            id="datetime_range"
+                            class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
+                            placeholder="Selecciona rango de fecha y hora" />
+                        <span class="text-sm text-red-600 mt-1">
+                            <?= $this->Form->error('datetime_range') ?>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+             <!-- Valor asignado de la actividad -->
+            <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
+                    <label for="valorprogramado" class="font-semibold">Porcentaje porgramado</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Porcentaje asisgnado en anexo técnico.</p>
+
+                <?php
+                echo $this->Form->input('valorprogramado', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 15
+                ]);
+
+                if (!empty($this->Form->error('valorprogramado'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('valorprogramado') . '</div>';
+                }
+                ?>
+            </div>
+
+			  <!-- Valor ejecutado de la actividad -->
+            <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
+                    <label for="valorejecutado" class="font-semibold">porcentaje ejecutado</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Porcentaje ejecutado del mes reportado.</p>
+
+                <?php
+                echo $this->Form->input('valorejecutado', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 15
+                ]);
+
+                if (!empty($this->Form->error('valorejecutado'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('valorejecutado') . '</div>';
+                }
+                ?>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="max-w-6xl mx-auto p-18 mt-8">
+    <div class="bg-white shadow-2xl rounded-xl p-12">
+        <!-- Header -->
+        <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 12h.01" />
+            </svg>
+            <div class="ml-4">
+                <h1 class="text-xl font-semibold">Observación de ejecución</h1>
+                <p class="text-gray-500">Registre los aspectos releventes sobre el desarrollo de la actividad</p>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2">
+
+            <!-- Observación Operador -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">1</span>
+                    <label for="observacionoperador" class="font-semibold">Observación Equipo PIC</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <?php
+                echo $this->Form->input('observacionoperador', [
+                    'label' => '',
+                    'data-maxlength' => 500,
+                    'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
+                    'error' => false // No mostrar error aquí
+                ]);
+                if (!empty($this->Form->error('observacionoperador'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('observacionoperador') . '</div>';
+                }
+                ?>
+            </div>
+
+            <!-- Observación Referente -->
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
+                    <label for="producto_id" class="font-semibold">Observación Referente SMS</label>
+                    <p class="text-red-600">*</p>
+                </div>
+                <?php
+                echo $this->Form->input('observacionreferente', [
+                    'label' => '',
+                    'data-maxlength' => 800,
+                    'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200',
+                    'error' => false // No mostrar error aquí
+                ]);
+                if (!empty($this->Form->error('observacionreferente'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('observacionreferente') . '</div>';
+                }
+                ?>
+            </div>            
+        </div>
+    </div>
+</div>
+
+<div class="max-w-6xl mx-auto p-18 mt-8">
+    <div class="bg-white shadow-2xl rounded-xl p-12">
+
+		<!-- Acompañamiento -->
+            <div class="flex justify-between col-span-2 text-md font-semibold m-6">
+                <div class="flex items-center w-64">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">11</span>
+                    <label for="acompanamiento" class="font-semibold">Acompañamiento Referente SMS</label>
+                    <p class="text-red-600">*</p>
+                </div>
+				  <p class="help-block text-gray-500 text-xs mb-2">Refiera si hubo acompañamiento según responsabilidad de equipo PIC </p>
+
+                <div class="flex space-x-4 items-center">
+                    <!-- Botón NO -->
+                    <div>
+                        <input type="radio"
+                            name="data[Seguimiento][acompanamiento]"
+                            id="acompanamiento-no"
+                            value="0"
+                            class="hidden peer"
+                            data-target="acompanamiento"
+                            data-show="false"
+                            checked /> <!-- 👈 Por defecto NO -->
+                        <label for="acompanamiento-no"
+                            class="px-12 py-2 rounded-lg border cursor-pointer hover:text-white hover:bg-blue-600
+                       peer-checked:bg-blue-600 peer-checked:text-white">
+                            -
+                        </label>
+                    </div>
+
+                    <!-- Botón SÍ -->
+                    <div>
+                        <input type="radio"
+                            name="data[Seguimiento][acompanamiento]"
+                            id="acompanamiento-si"
+                            value="1"
+                            data-target="acompanamiento"
+                            data-show="true"
+                            class="hidden peer cursor-pointer" />
+                        <label for="acompanamiento-si"
+                            class="px-12 py-2 rounded-lg border hover:bg-blue-600 cursor-pointer hover:text-white
+                       peer-checked:bg-blue-600 peer-checked:text-white">
+                            X
+                        </label>
+                    </div>
+                </div>
+                <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <?php
+
+                       $observacionseguimiento = [
+                            '0 Elegir' => 'Elegir',
+                            '1 Asistencia Técnica' => 'Asistencia Técnica',
+                            '2 Verificación propuestas pedagógicas ' => 'Verificación propuestas pedagógicas',
+                            '3 Verificación concertacion comunitaria' => 'Verificación concertacion comunitaria',
+							'4 Apoyo Gestión y articulación institucional' => 'Apoyo Gestión y articulación institucional',
+							'5 Orientación en la elaboración de soportes' => 'Orientacion en la elaboración de soportes', 
+							'6 Orientación en la elaboración de soportes' => 'Orientacion en la elaboración de soportes',                                                      
+							'7 Acompañamiento en acciones programadas' => 'Acompañamiento en acciones programadas',
+							'8 Acompañamiento Administrativo_Logistico' => 'Acompañamiento Administrativo_logistico',
+							'9 Verificación de convocatoria' => 'Verificación de convocatoria',
+
+                        ];
+
+                    echo $this->Form->input('observacionseguimiento', [
+                        'id' => 'descripcionacompanamiento',
+                        'style' => 'display: none;',
+                        'type' => 'select',
+                        'options' => $observacionseguimiento,
+                        'label' => false,
+                        'error' => false,
+                        'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                    ]);
+                    ?>
+                    
+                </div>
+                </div>      
+    </div>
+
+	 <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">10</span>
+                    <label for="limitantes" class="font-semibold">limitantes en el desarrollo de la actividad</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                $options = [
+                    '0. No aplica' => '0. No aplica',
+                    '1. Logstico' => '1 - Logístico(Materiales, Refrigerios, espacios)',
+                    '2. Administrativo' => '2 - Administrativo(Contractuales, no acuerdo institucional)',
+                    '3. Técnico' => '3 - Tecnicos(Limitantes conceptuales, metodologicos)',
+                    '4. Comunitario' => '4 - Comunitario(Renuencia, inasistencia de participantes, solicitud de garantias adicionales )',
+                    
+                ];
+
+                echo $this->Form->input(
+                    'limitantes',
+                    [
+                        'type' => 'select',
+                        'label' => false,
+                        'multiple' => true,
+                        'id' => 'limitantes',
+                        'class' => 'w-full',
+                        'empty' => false,
+                        'options' => $options,
+                        'error' => false // No mostrar error aquí
+                    ]
+                );
+                if (!empty($this->Form->error('limitantes'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('limitantes') . '</div>';
+                }
+                ?>
+            </div>
+
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">11</span>
+                    <label for="estado" class="font-semibold">Estado</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                $options = [
+                    '1. Cumple avance' => 'Cumple avance',
+                    '1. No cumple avance' => 'No cumple avance programado',
+                    '6. Complementar' => 'Complementar',                   
+                    '2. Reporte de avance' => 'Reporte de avance',
+                    '3. No aplica periodo' => 'No aplica periodo',
+                    '4. Sin avance' => 'Sin avance',
+                    '5. Reporte Actualizado' => 'Reporte actualizado',                    
+                ];
+
+                echo $this->Form->input('estado',[
+                        'type' => 'select',
+                        'label' => false, 
+                        'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                        'options' => $options,
+                        'error' => false // No mostrar error aquí
+                    ]
+                );
+                if (!empty($this->Form->error('estado'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('estado') . '</div>';
+                }
+                ?>
+            </div>
+
+             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
+                    <label for="enlace1" class="font-semibold">Enlace sopores adicionales</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
+
+                <?php
+                echo $this->Form->input('enlace1', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 15
+                ]);
+
+                if (!empty($this->Form->error('enlace1'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace1') . '</div>';
+                }
+                ?>
+            </div>
+
+                <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">12</span>
+                    <label for="enlace2" class="font-semibold">Enlace sopores adicionales</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
+
+                <?php
+                echo $this->Form->input('enlace2', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 15
+                ]);
+
+                if (!empty($this->Form->error('enlace1'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace2') . '</div>';
+                }
+                ?>
+            </div>
+
+            <div class="col-span-2 text-md font-semibold my-6">
+            <div class="flex items-center mb-4">
+                <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">13</span>
+                <label for="xxxxxxxx" class="font-semibold">Soportes</label>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="productoanexo" class="block text-gray-700 font-semibold text-sm mb-2">
+                    Adjuntar archivo comprimido (.zip o .rar)
+                </label>
+                <div class="relative w-full">
+                    <?php
+                    echo $this->Form->input('productoanexo', [
+                        'label' => false,
+                        'type' => 'file',
+                        'class' => 'block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
+                        'onchange' => 'validarTamanioSoporte()',
+                        'id' => 'productoanexo',
+                        'error' => false
+                    ]);
+                    if (!empty($this->Form->error('productoanexo'))) {
+                        echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('productoanexo') . '</div>';
+                    }
+
+                    echo $this->Form->input('dirproductoanexo', array('type' => 'hidden', 'class' => 'form-control'));
+                    ?>
+                </div>
+                <span class="text-xs text-gray-500 mt-1">
+                    NOTA:
+                    * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
+                    * listado asistencia.pdf (meet o físico), registro excel participantes <br>
+                    * tres (3) pantallazos o fotos resolución 600px * 600px <br>
+                    El nombre del archivo no debe tener tildes o diéresis.
+                </span>
+            </div>
+        </div>
+        <div class="pt-2 flex gap-4">
+            <button type="submit" name="btn" value="Guardar Seguimiento" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                        <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                        <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
+                        <path d="M7 3v4a1 1 0 0 0 1 1h7" />
+                    </svg>
+                </span>
+                Guardar Seguimiento
+            </button>
+            
+        </div>
+</div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const choices = new Choices("#producto_id", { // Botón para eliminar seleccionados
+            searchEnabled: true, // 🔎 activa búsqueda
+            searchChoices: true, // 🔎 filtra opciones
+            removeItemButton: false, // ❌ no mostrar botón de eliminar
+            itemSelectText: '', // 🚫 quita el "Press to select"
+            shouldSort: false, // 📌 mantiene el orden original
+            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
+        });
+
+         const choices_limitantes = new Choices("#limitantes", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: true, // Permite eliminar seleccionados
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            maxItemCount: -1, // Sin límite
+            removeItems: true, // Permite quitar seleccionados
+            duplicateItemsAllowed: false,
+            placeholder: true,
+            placeholderValue: "Seleccione lo(s) limitantes",
+        });
+
+        // Aplicar estilos con Tailwind
+        const inner = document.querySelector('.choices__inner');
+        if (inner) {
+            inner.classList.add(
+                'bg-white', 'border', 'border-gray-300', 'rounded-lg',
+                'px-3', 'py-2', 'focus:ring', 'focus:ring-blue-200', 'text-gray-700'
+            );
+        }
+
+        const dropdown = document.querySelector('.choices__list--dropdown');
+        if (dropdown) {
+            dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
+        }
+    });
+
+
+    CKEDITOR.on('instanceReady', function(ev) {
+        var editor = ev.editor;
+        var textarea = editor.element.$;
+        var maxChars = textarea.getAttribute("data-maxlength"); // Lee el límite de cada campo
+        maxChars = maxChars ? parseInt(maxChars) : 300; // Default 300 si no se define
+
+        // Crear un contador debajo del campo
+        var counter = document.createElement("div");
+        counter.className = "text-gray-600 mt-1 text-sm";
+        counter.id = "charCount_" + textarea.id;
+        textarea.parentNode.appendChild(counter);
+
+        function updateCount() {
+            var text = editor.getData().replace(/<[^>]*>/g, '');
+            var length = text.length;
+            var remaining = maxChars - length;
+
+            counter.innerHTML = "Caracteres usados: " + length + " / " + maxChars;
+
+            if (remaining < 0) {
+                counter.style.color = "red";
+                editor.setData(text.substring(0, maxChars));
+            } else {
+                counter.style.color = "gray";
+            }
+        }
+
+        // Bloquear si excede
+        editor.on('key', function(evt) {
+            var text = editor.getData().replace(/<[^>]*>/g, '');
+            if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
+                evt.cancel();
+                alert("Máximo permitido: " + maxChars + " caracteres.");
+            }
+        });
+
+        // Bloquear pegar excedido
+        editor.on('paste', function(evt) {
+            var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
+            if (text.length > maxChars) {
+                evt.cancel();
+                alert("No puedes pegar más de " + maxChars + " caracteres.");
+            }
+        });
+
+        editor.on('key', updateCount);
+        editor.on('paste', updateCount);
+        editor.on('change', updateCount);
+
+        updateCount(); // inicializar contador
+    });
+
+    // Detectar si el usuario intenta retroceder con la flecha del navegador
+    window.addEventListener('popstate', function(event) {
+        if (!confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            history.pushState(null, null, location.href);
+        }
+    });
+    function preventBackNavigation() {
+        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+        }
+    }
+
+    // Prevenir retroceso con la flecha del navegador (mejor experiencia)
+    history.pushState(null, null, location.href);
+
+    // Busca todos los radios con data-target
+        document.querySelectorAll('input[type="radio"][data-target]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                var targetId = radio.getAttribute('data-target');
+                var show = radio.getAttribute('data-show') === 'true';
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = show ? 'block' : 'none';
+                }
+            });
+            // Mostrar/ocultar al cargar la página según el radio seleccionado
+            if (radio.checked) {
+                var targetId = radio.getAttribute('data-target');
+                var show = radio.getAttribute('data-show') === 'true';
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = show ? 'block' : 'none';
+                }
+            }
+        });
+
+       
+</script>

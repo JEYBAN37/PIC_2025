@@ -25976,3 +25976,216 @@ Stack Trace:
 #8 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
 #9 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #10 {main}
+2026-02-21 17:27:19 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Producto.producto' in 'where clause'
+Request URL: /aplicacioncakephp/PIC_2025/productos/getProductos?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=numproductos&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=nombredim&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=producto&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=actividad&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=soportes&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=estado&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=modified&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1771691238898
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT COUNT(*)...', Array, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT COUNT(*)...', false)
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Producto), Array)
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('count', Array)
+#6 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProductosController.php(362): Model->find('count', Array)
+#7 [internal function]: ProductosController->getProductos()
+#8 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProductosController), Array)
+#9 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
+#11 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2026-02-21 17:27:25 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Producto.producto' in 'where clause'
+Request URL: /aplicacioncakephp/PIC_2025/productos/getProductos?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=numproductos&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=nombredim&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=producto&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=actividad&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=soportes&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=estado&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=modified&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1771691244754
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT COUNT(*)...', Array, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT COUNT(*)...', false)
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Producto), Array)
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('count', Array)
+#6 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProductosController.php(362): Model->find('count', Array)
+#7 [internal function]: ProductosController->getProductos()
+#8 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProductosController), Array)
+#9 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
+#11 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2026-02-23 15:01:00 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-23 15:55:04 Error: [MissingActionException] Action ProductosController::editsms() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProductosController',
+  'action' => 'editsms',
+)
+Request URL: /aplicacioncakephp/PIC_2025/productos/editsms/83
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-02-23 15:55:04 Error: [MissingActionException] Action ProductosController::editsms() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProductosController',
+  'action' => 'editsms',
+)
+Request URL: /aplicacioncakephp/PIC_2025/productos/editsms/sticky-footer.css
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-02-23 15:55:21 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProductosController.php, line 246]
+2026-02-23 15:55:21 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /aplicacioncakephp/PIC_2025/productos/smsedit/83
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 246)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 246, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 246, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-02-23 16:01:01 Error: [NotFoundException] Invalid seguimiento
+Request URL: /aplicacioncakephp/PIC_2025/seguimientos/view/83
+Stack Trace:
+#0 [internal function]: SeguimientosController->view('83')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SeguimientosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SeguimientosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-02-23 16:01:01 Error: [NotFoundException] Invalid seguimiento
+Request URL: /aplicacioncakephp/PIC_2025/seguimientos/view/sticky-footer.css
+Stack Trace:
+#0 [internal function]: SeguimientosController->view('sticky-footer.c...')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SeguimientosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SeguimientosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-02-24 15:26:58 Error: Fatal Error (4): syntax error, unexpected '<', expecting ']' in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\View\Seguimientos\add.ctp, line 261]
+2026-02-24 15:26:58 Error: [FatalErrorException] syntax error, unexpected '<', expecting ']'
+Request URL: /aplicacioncakephp/PIC_2025/seguimientos/add
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 261)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 261, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 261, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-02-24 22:23:27 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2054] Server sent charset unknown to the client. Please, report to the developers',
+  'enabled' => true,
+)
+Request URL: /aplicacioncakephp/PIC_2025//responsables/viewAnalitic
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3479): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3501): Model->setSource('responsables')
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3024): Model->getDataSource()
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2937): Model->_findCount('before', Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2872): Model->buildQuery('count', Array)
+#8 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ResponsablesController.php(91): Model->find('count')
+#9 [internal function]: ResponsablesController->viewAnalitic()
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ResponsablesController), Array)
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ResponsablesController), Object(CakeRequest))
+#13 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2026-02-24 22:23:27 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2054] Server sent charset unknown to the client. Please, report to the developers',
+  'enabled' => true,
+)
+Request URL: /aplicacioncakephp/PIC_2025//responsables/viewAnalitic
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3479): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3501): Model->setSource('responsables')
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3024): Model->getDataSource()
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2937): Model->_findCount('before', Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2872): Model->buildQuery('count', Array)
+#8 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ResponsablesController.php(91): Model->find('count')
+#9 [internal function]: ResponsablesController->viewAnalitic()
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ResponsablesController), Array)
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ResponsablesController), Object(CakeRequest))
+#13 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2026-02-24 22:23:39 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2054] Server sent charset unknown to the client. Please, report to the developers',
+  'enabled' => true,
+)
+Request URL: /aplicacioncakephp/PIC_2025//users/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3479): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3501): Model->setSource('users')
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\UsersController.php(43): Model->find('first', Array)
+#8 [internal function]: UsersController->login()
+#9 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2026-02-24 22:23:42 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2054] Server sent charset unknown to the client. Please, report to the developers',
+  'enabled' => true,
+)
+Request URL: /aplicacioncakephp/PIC_2025//users/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3479): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3501): Model->setSource('users')
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\UsersController.php(43): Model->find('first', Array)
+#8 [internal function]: UsersController->login()
+#9 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2026-02-24 22:23:43 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2054] Server sent charset unknown to the client. Please, report to the developers',
+  'enabled' => true,
+)
+Request URL: /aplicacioncakephp/PIC_2025//users/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3479): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3501): Model->setSource('users')
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\UsersController.php(43): Model->find('first', Array)
+#8 [internal function]: UsersController->login()
+#9 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
