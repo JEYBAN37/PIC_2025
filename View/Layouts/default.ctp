@@ -351,7 +351,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             <div class="submenu ml-8 mt-1 space-y-1">
                                 <button
                                     class="subitem block w-full text-left text-[13px] text-gray-500 hover:text-[#155dfc] hover:bg-gray-100 rounded p-1 cursor-pointer"
-                                    data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'nuebus']); ?>">
+                                    data-href="<?php echo $this->Html->url(['controller' => 'plsesiones', 'action' => 'index']); ?>">
                                     Registros Planes de Sesión
                                 </button>
 

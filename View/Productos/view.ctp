@@ -147,9 +147,9 @@
 		</button>
 
 	<?php elseif ($tipoUsuario === '3' || $tipoUsuario === '1') : ?>
-		<button title="Calificar PIC" type="button" id="btn-hide"
+		<button title="Reporte Actividad" type="button" id="btn-hide"
 			class="flex items-center w-38 space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-check-icon lucide-list-check" onclick="window.location.href='<?php echo $this->Html->url(array('action' => 'editpic', $producto['Producto']['id'])); ?>'">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-check-icon lucide-list-check" onclick="window.location.href='<?php echo $this->Html->url(array('controller'=>'Seguimientos','action' => 'add?reporte='. $producto['Producto']['id'])); ?>'">
 				<path d="M16 5H3" />
 				<path d="M16 12H3" />
 				<path d="M11 19H3" />
@@ -786,6 +786,34 @@
            </tbody>
         </table>
         `);
+
+		
+
+        // Bloquear si excede
+        editor.on('key', function(evt) {
+            var text = editor.getData().replace(/<[^>]*>/g, '');
+            if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
+                evt.cancel();
+                alert("Máximo permitido: " + maxChars + " caracteres.");
+            }
+        });
+
+        // Bloquear pegar excedido
+        editor.on('paste', function(evt) {
+            var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
+            if (text.length > maxChars) {
+                evt.cancel();
+                alert("No puedes pegar más de " + maxChars + " caracteres.");
+            }
+        });
+
+        editor.on('key', updateCount);
+        editor.on('paste', updateCount);
+        editor.on('change', updateCount);
+
+        updateCount(); // inicializar contador
+    });
+
 
 		// Conectar botones de paginación personalizados
 		$(document).on("click", ".first-page", function() {

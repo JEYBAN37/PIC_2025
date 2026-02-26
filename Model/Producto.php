@@ -473,7 +473,8 @@ class Producto extends AppModel
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
+		),
+	
 	);
 
 	/**
@@ -573,6 +574,13 @@ class Producto extends AppModel
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		),	
+		'Seguimiento' => array(
+			'className' => 'Seguimiento',
+			'foreignKey' => 'seguimiento_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 		/*'Productosactividad' => array(
 			'className' => 'Productosactividad',

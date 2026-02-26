@@ -185,7 +185,7 @@ class InfoeventosController extends AppController
 						break; 
 				                    
 					case 'tarea':
-						$orderBy['Producto.tarea'] = $dir;
+						$orderBy['Producto.actividad'] = $dir;
 						break;
                     case 'fecha':
 						$orderBy['Infoevento.fecha'] = $dir;
@@ -219,7 +219,7 @@ class InfoeventosController extends AppController
 				'Responsable.nombres LIKE' => "%$search%",
 				'Producto.numproductos LIKE' => "%$search%",
 				'Producto.nombredim LIKE' => "%$search%",				
-				'Producto.tarea LIKE' => "%$search%",
+				'Producto.actividad LIKE' => "%$search%",
 				'Producto.id LIKE' => "%$search%",
 				
 			];
@@ -242,7 +242,7 @@ class InfoeventosController extends AppController
                 'Producto' => array(
                     'fields' => array(
                         'Producto.id',
-                        'Producto.tarea',
+                        'Producto.actividad',
                         'Producto.nombredim',
                         'Producto.numproductos',
 						
@@ -273,7 +273,7 @@ class InfoeventosController extends AppController
                 'numproducto' => $row['Producto']['numproductos'],	
                 'prioridad' => $row['Producto']['nombredim'],
 				
-                'tarea' => $row['Producto']['tarea'],
+                'tarea' => $row['Producto']['actividad'],
                 'fecha' => $row['Infoevento']['fecha'],
                 'tema' => $row['Infoevento']['tema'],
                 'tipo' => $row['Infoevento']['tipo'],

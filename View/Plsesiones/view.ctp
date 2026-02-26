@@ -129,15 +129,15 @@
                     <tr>
                         <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Producto relacionado:</td>
                         <td colspan="8" class="border border-gray-300 p-2">
-                            <?php echo h($plsesion['Producto']['activity']); ?>
+                            <?php echo h($plsesion['Producto']['producto']); ?>
                         </td>
 
                     </tr>
 
                     <tr>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Tarea:</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Actividad:</td>
                         <td colspan="8" class="border border-gray-300 p-2">
-                            <?php echo h($plsesion['Producto']['resultado']); ?>
+                            <?php echo h($plsesion['Producto']['actividad']); ?>
                         </td>
                     </tr>
 
@@ -299,7 +299,7 @@
                         <td colspan="3" class="border border-gray-300 p-2">
                             <?php echo $plsesion['Plsesion']['tipoblacion']; ?>
                         </td>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2">Cursos de vida:</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2">Curso de vida</td>
                         <td colspan="4" class="border border-gray-300 p-2">
                             <?php echo $plsesion['Plsesion']['cursovida']; ?>
                         </td>
@@ -310,7 +310,7 @@
                         <td colspan="3" class="border border-gray-300 p-2">
                             <?php echo $plsesion['Plsesion']['proceso']; ?>
                         </td>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2">Dimensión:</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2">Temática:</td>
                         <td colspan="4" class="border border-gray-300 p-2">
                             <?php echo $plsesion['Plsesion']['dimension']; ?>
                         </td>

@@ -29,7 +29,7 @@ public function getInfoeventoCompleto($id = null){
 			
 			'contain' => array(				
 				'Producto' => array(
-					'fields' => array('Producto.nombredim', 'Producto.tarea', 'Producto.numproductos', 'Producto.id')
+					'fields' => array('Producto.nombredim', 'Producto.actividad', 'Producto.numproductos', 'Producto.id')
 				),
 				'Responsable' => array(
 					'fields' => array('Responsable.nombres', 'Responsable.profesion')
@@ -56,7 +56,7 @@ public function getInfoeventoCompleto($id = null){
 		'tema' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Registre la tematica tratada',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
