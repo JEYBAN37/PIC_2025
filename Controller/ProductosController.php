@@ -196,65 +196,8 @@ class ProductosController extends AppController
 	}
 
 
-	public function editpic($id = null)
+	public function editpic()
 	{
-		if (!$this->Producto->exists($id)) {
-			throw new NotFoundException(__('Invalid producto'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Producto->save($this->request->data)) {
-				//$this->Session->setFlash(__('The producto has been saved.'));
-				//return $this->redirect(array('action' => 'nuebus'));
-				$aux = "view/$id";
-
-				return $this->redirect(array('action' => $aux));
-			} else {
-				$this->Session->setFlash('Los soportes no ha sido guardado. Por favor revise los campos y trate nuevamente.', 'default', array('class' => 'alert alert-danger'));
-			}
-		} else {
-			$options = array('conditions' => array('Producto.' . $this->Producto->primaryKey => $id));
-			$this->request->data = $this->Producto->find('first', $options);
-		}
-
-		//$actas = $this->Producto->Acta->find('list');
-		$responsables = $this->Producto->Responsable->find('list');
-		$referentes = $this->Producto->Referente->find('list');
-		//$actividades = $this->Producto->Actividad->find('list');
-		$this->set(compact('responsables', 'referentes'));
-	}
-
-	public function smsedit($id = null)
-	{
-		if (!$this->Producto->exists($id)) {
-			throw new NotFoundException(__('Invalid producto'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Producto->save($this->request->data)) {
-				//$this->Session->setFlash(__('The producto has been saved.'));
-				//return $this->redirect(array('action' => 'nuebus'));
-
-				$aux = "view/$id";
-
-				return $this->redirect(array('action' => $aux));
-			} else {
-				$this->Session->setFlash('Los soportes no ha sido guardado. Por favor revise los campos y trate nuevamente.', 'default', array('class' => 'alert alert-danger'));
-			}
-		} else {
-			$options = array('conditions' => array('Producto.' . $this->Producto->primaryKey => $id));
-			$this->request->data = $this->Producto->find('first', $options);
-		}
-		$actividades = $this->Producto->Actividad->find('list');
-		$actas = $this->Producto->Acta->find('list');
-		$responsables = $this->Producto->Responsable->find('list');
-		$referentes = $this->Producto->Referente->find('list');
-		$actividades = $this->Producto->Actividad->find('list');
-		$this->set(compact('actividades', 'actas', 'responsables', 'referentes', 'actividades'));
-
-		if (!$this->Producto->exists($id)) {
-			throw new NotFoundException(__('Invalid producto'));
-		}
-		$options = array('conditions' => array('Producto.' . $this->Producto->primaryKey => $id));
-		$this->set('producto', $this->Producto->find('first', $options));
 	}
 
 	/**

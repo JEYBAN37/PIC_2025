@@ -16,7 +16,7 @@
             <tr class=" text-gray-900 font-light">
                 <th class="px-2 w-6"></th> <!-- control (+) -->
                 <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID</th>
-                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Id_Tarea </th>
+                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Tarea</th>
                 <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Temática</th>
                 <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Actividad</th>
                 <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Objetivo</th>
@@ -32,142 +32,156 @@
     </table>
 </div>
 
-    <script>
-        const URL_view = "<?php echo $this->Html->url(['action' => 'view', '__ID__']); ?>";
-        <?php if (!isset($tipoUsuario)) {
-            $tipoUsuario = null;
-        } ?>
-        const URL_edit = "<?php if ($tipoUsuario === '1' || $tipoUsuario === '3') {
-                                echo $this->Html->url(['action' => 'edit', '__ID__']);
-                            } else {
-                                echo '#';
-                            } ?>";
-        const URL_delete = "<?php echo $this->Html->url(['action' => 'delete', '__ID__']); ?>";
+<script>
+    const URL_view = "<?php echo $this->Html->url(['action' => 'view', '__ID__']); ?>";
+    <?php if (!isset($tipoUsuario)) {
+        $tipoUsuario = null;
+    } ?>
+    const URL_edit = "<?php if ($tipoUsuario === '1' || $tipoUsuario === '3') {
+                            echo $this->Html->url(['action' => 'edit', '__ID__']);
+                        } else {
+                            echo '#';
+                        } ?>";
+    const URL_delete = "<?php echo $this->Html->url(['action' => 'delete', '__ID__']); ?>";
+
+    function cambiarestado(event) {
+        const icon = event.currentTarget.querySelector('span');
+        if (icon.textContent === '+') {
+            icon.textContent = '-';
+        } else {
+            icon.textContent = '+';
+        }
+    };
 
 
-        $(document).ready(function() {
-            const $miTabla = $('#miTabla');
+    $(document).ready(function() {
+        const $miTabla = $('#miTabla');
+        const URL_view = "<?php echo $this->Html->url(['controller' => 'proactividades', 'action' => 'view', '__ID__']); ?>";
+        // Inicializar DataTable
+        const table = $miTabla.DataTable({
+            createdRow: function(row, data, dataIndex) {
+                // Aplica clases a cada celda del body
+                $('td', row).each(function(index) {
+                    $(this).addClass('px-4 py-3 align-center-left');
+                    if (index === 1) $(this).addClass(
+                        'text-center text-black font-bold'); // ID
 
-            // Inicializar DataTable
-            const table = $miTabla.DataTable({
-                createdRow: function(row, data, dataIndex) {
-                    // Aplica clases a cada celda del body
-                    $('td', row).each(function(index) {
-                        $(this).addClass('px-4 py-3 align-center-left');
-                        if (index === 1) $(this).addClass(
-                            'text-center text-black font-bold'); // ID
+                    if (index === 2) $(this).addClass('text-center'); // idproducto
 
-                        if (index === 2) $(this).addClass('text-center'); // idproducto
-
-                        // Para columnas de texto largo (por ejemplo, nombreproducto, objactividad)
-                        if (index === 3 || index === 4) {
-                            const maxLength = 200;
-                            const cellText = $(this).text();
-                            if (cellText.length > maxLength) {
-                                const truncated = cellText.substring(0, maxLength) + '...';
-                                $(this).html(
-                                    `<span class="texto-truncado">${truncated}</span>
+                    // Para columnas de texto largo (por ejemplo, nombreproducto, objactividad)
+                    if (index === 3 || index === 4) {
+                        const maxLength = 200;
+                        const cellText = $(this).text();
+                        if (cellText.length > maxLength) {
+                            const truncated = cellText.substring(0, maxLength) + '...';
+                            $(this).html(
+                                `<span class="texto-truncado">${truncated}</span>
                                      <span class="texto-completo hidden">${cellText}</span>
                                      <a href="#" class="ver-mas text-blue-500 underline ml-2">Ver más</a>
                                      <a href="#" class="ver-menos text-blue-500 underline ml-2 hidden">Ver menos</a>`
-                                );
-                            }
+                            );
                         }
+                    }
 
-                        if (index === 5) $(this).addClass(
-                            'text-center font-bold text-black text-xs'); // responsable
-                        if (index === 6) $(this).addClass('text-center'); // conCat
-                    });
-                    // Aplica clase a la fila completa si quieres
-                    $(row).addClass('hover:bg-gray-50 transition ');
-                },
-                responsive: {
-                    details: {
-                        type: 'column',
-                        target: 'td.dtr-control' // usa la col de control
+                    if (index === 5) $(this).addClass(
+                        'text-center font-bold text-black text-xs'); // responsable
+                    if (index === 6) $(this).addClass('text-center'); // conCat
+                });
+                // Aplica clase a la fila completa si quieres
+                $(row).addClass('hover:bg-gray-50 transition ');
+            },
+            responsive: {
+                details: {
+                    type: 'column',
+                    target: 'td.dtr-control' // usa la col de control
+                }
+            },
+            dom: '<"flex items-center justify-between py-8"<"w-2/3 flex"<"flex flex-row w-full custom-search-container">><"flex items-center custom-pagination"p>>rt',
+            pageLength: 7,
+            processing: true,
+            serverSide: true,
+            ajax: "<?php echo URL_TABS ?>/proactividades/getProactividades",
+            columns: [
+                // Columna control (+)
+                {
+                    data: null,
+                    className: 'dtr-control',
+                    orderable: false,
+                    searchable: false,
+                    defaultContent: '',
+                    render: function() {
+                        return `<span class="p-2 text-gray-400 cursor-pointer hover:text-blue-600 hover:bg-blue-50 rounded" onclick="cambiarestado(event)">+</span>`;
                     }
                 },
-                dom: '<"flex items-center justify-between py-8"<"w-2/3 flex"<"flex flex-row w-full custom-search-container">><"flex items-center custom-pagination"p>>rt',
-                pageLength: 7,
-                processing: true,
-                serverSide: true,
-                ajax: "/PIC/proactividades/getProactividades",
-                columns: [
-                    // Columna control (+)
-                    {
-                        data: null,
-                        className: 'dtr-control',
-                        orderable: false,
-                        searchable: false,
-                        defaultContent: '',
-                        render: function() {
-                            return '<span class="text-gray-400">+</span>';
-                        }
-                    },
 
-                    {
-                        data: "id"
-                    },
-                    {
-                        data: "numeroactividad"
-                    },
-                    {
-                        data: "nombredim"
-                    },                  
-                    {
-                        data: "actividad"
-                    },
-                    {
-                        data: "objactividad"
-                    },
-                    {
-                        data: "responsable"
-                    },
-                    {
-                        data: "conCatNumSesiones"
-                    },
-                    {
-                        data: "created"
-                    },
+                {
+                    data: "id",
+                    render: function(data) {
+                        return `<a href="${URL_view.replace('__ID__', data)}" class="text-blue-600 hover:underline cursor-pointer">${data}</a>`;
+                    }
+                },
+                {
+                    data: "numeroactividad"
+                },
+                {
+                    data: "nombredim",
+                    render: function(data) {
+                        return `<span class="font-bold text-black">${data}</span>`;
+                    }
+                },
+                {
+                    data: "actividad",
+                },
+                {
+                    data: "objactividad"
+                },
+                {
+                    data: "responsable"
+                },
+                {
+                    data: "conCatNumSesiones"
+                },
+                {
+                    data: "created"
+                },
 
-                    {
-                        data: "id",
-                        orderable: false,
-                        searchable: false,
-                        render: function(data) {
-                            const viewUrl = URL_view.replace('__ID__', data);
-                            const editUrl = URL_edit.replace('__ID__', data);
-                            const deleteUrl = URL_delete.replace('__ID__', data);
-                            return `
+                {
+                    data: "id",
+                    orderable: false,
+                    searchable: false,
+                    render: function(data) {
+                        const viewUrl = URL_view.replace('__ID__', data);
+                        const editUrl = URL_edit.replace('__ID__', data);
+                        const deleteUrl = URL_delete.replace('__ID__', data);
+                        return `
                                 <div class="relative inline-block text-left">
-                                    <a href="${viewUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
                                     ${editUrl !== '#' ? `<a href="${editUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>` : ''}
                                     <hr class="my-1 border-gray-200">
                                     <a href="${deleteUrl}" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                                     onclick="return confirm('¿Seguro que quieres borrar #${data}?');">Borrar</a>
                                 </div>`;
-                        }
                     }
-                ],
-                // Opcional: prioridades de columnas (qué esconder primero)
-                columnDefs: [{
-                        responsivePriority: 1,
-                        targets: 2
-                    }, // nombreproducto
-                    {
-                        responsivePriority: 2,
-                        targets: 3
-                    }, // objactividad
-                    {
-                        responsivePriority: 3,
-                        targets: -2
-                    } // created
-                ]
-            });
-            $miTabla.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
+                }
+            ],
+            // Opcional: prioridades de columnas (qué esconder primero)
+            columnDefs: [{
+                    responsivePriority: 1,
+                    targets: 2
+                }, // nombreproducto
+                {
+                    responsivePriority: 2,
+                    targets: 3
+                }, // objactividad
+                {
+                    responsivePriority: 3,
+                    targets: -2
+                } // created
+            ]
+        });
+        $miTabla.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
 
-            // Reemplazar el input original por uno custom
-            $('.custom-search-container').html(`
+        // Reemplazar el input original por uno custom
+        $('.custom-search-container').html(`
         <div class="relative w-1/2">
             <svg class="absolute left-2 top-2.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-search-icon lucide-scan-search"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg>
             <input 
@@ -180,8 +194,8 @@
         </div>
         `);
 
-            // Función para estilizar la paginación
-            $('.custom-pagination').html(`
+        // Función para estilizar la paginación
+        $('.custom-pagination').html(`
             <div class="pagination-container flex items-center space-x-2">
                 <button class="first-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Primera página" id="first-page">&laquo;&laquo;</button>
                 <button class="previous-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Página anterior" id="previous-page">&laquo;</button>
@@ -191,7 +205,7 @@
             </div>
         `);
 
-            $('.custom-table-length').html(`
+        $('.custom-table-length').html(`
         <table>
            <tbody>
                <tr>
@@ -214,124 +228,123 @@
         </table>
         `);
 
-            // Conectar botones de paginación personalizados
-            $(document).on("click", ".first-page", function() {
-                table.page("first").draw("page");
-            });
+        // Conectar botones de paginación personalizados
+        $(document).on("click", ".first-page", function() {
+            table.page("first").draw("page");
+        });
 
-            $(document).on("click", ".previous-page", function() {
-                table.page("previous").draw("page");
-            });
+        $(document).on("click", ".previous-page", function() {
+            table.page("previous").draw("page");
+        });
 
-            $(document).on("click", ".next-page", function() {
-                table.page("next").draw("page");
-            });
+        $(document).on("click", ".next-page", function() {
+            table.page("next").draw("page");
+        });
 
-            $(document).on("click", ".last-page", function() {
-                table.page("last").draw("page");
-            });
+        $(document).on("click", ".last-page", function() {
+            table.page("last").draw("page");
+        });
 
-            // Actualizar info de la página actual
-            function updatePageInfo() {
-                let info = table.page.info();
-                $(".page-info").text(`Página ${info.page + 1} de ${info.pages}`);
-            }
+        // Actualizar info de la página actual
+        function updatePageInfo() {
+            let info = table.page.info();
+            $(".page-info").text(`Página ${info.page + 1} de ${info.pages}`);
+        }
 
-            // Llamar en cada cambio de página
-            table.on("draw", function() {
-                updatePageInfo();
-                setupDropdowns(); // <-- Vuelve a conectar los eventos cada vez que se dibuja la tabla
-                stylePagination && stylePagination(); // si tienes esta función
-            });
+        // Llamar en cada cambio de página
+        table.on("draw", function() {
             updatePageInfo();
+            setupDropdowns(); // <-- Vuelve a conectar los eventos cada vez que se dibuja la tabla
+            stylePagination && stylePagination(); // si tienes esta función
+        });
+        updatePageInfo();
 
 
-            // Conectar el nuevo input con DataTables
-            $('#customSearch').on('keyup', function() {
-                table.search(this.value).draw();
+        // Conectar el nuevo input con DataTables
+        $('#customSearch').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        table.on('draw', stylePagination);
+    });
+
+
+    // Función para manejar el despliegue de los menús
+    function setupDropdowns() {
+        const buttons = document.querySelectorAll('[id^="menu-button-"]');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const buttonId = event.currentTarget.id;
+
+                const recordId = buttonId.split('-')[2];
+                console.log(buttonId);
+                const menu = document.getElementById(`menu-options-${recordId}`);
+
+                // Oculta todos los menús desplegables
+                document.querySelectorAll('[id^="menu-options-"]').forEach(m => {
+                    if (m.id !== menu.id) {
+                        m.classList.add('hidden');
+                    }
+                });
+
+                // Muestra o esconde el menú actual
+                menu.classList.toggle('hidden');
             });
+        });
 
-            table.on('draw', stylePagination);
+        // Oculta los menús si se hace clic fuera de ellos
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('[id^="menu-button-"]')) {
+                document.querySelectorAll('[id^="menu-options-"]').forEach(menu => {
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+
+        document.querySelectorAll('.ver-mas').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const td = link.closest('td');
+                td.querySelector('.texto-truncado').classList.add('hidden');
+                td.querySelector('.texto-completo').classList.remove('hidden');
+                td.querySelector('.ver-mas').classList.add('hidden');
+                td.querySelector('.ver-menos').classList.remove('hidden');
+            });
+        });
+
+        document.querySelectorAll('.ver-menos').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const td = link.closest('td');
+                td.querySelector('.texto-truncado').classList.remove('hidden');
+                td.querySelector('.texto-completo').classList.add('hidden');
+                td.querySelector('.ver-mas').classList.remove('hidden');
+                td.querySelector('.ver-menos').classList.add('hidden');
+            });
         });
 
 
-        // Función para manejar el despliegue de los menús
-        function setupDropdowns() {
-            const buttons = document.querySelectorAll('[id^="menu-button-"]');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', (event) => {
-                    const buttonId = event.currentTarget.id;
-
-                    const recordId = buttonId.split('-')[2];
-                    console.log(buttonId);
-                    const menu = document.getElementById(`menu-options-${recordId}`);
-
-                    // Oculta todos los menús desplegables
-                    document.querySelectorAll('[id^="menu-options-"]').forEach(m => {
-                        if (m.id !== menu.id) {
-                            m.classList.add('hidden');
-                        }
-                    });
-
-                    // Muestra o esconde el menú actual
-                    menu.classList.toggle('hidden');
-                });
-            });
-
-            // Oculta los menús si se hace clic fuera de ellos
-            window.addEventListener('click', function(event) {
-                if (!event.target.matches('[id^="menu-button-"]')) {
-                    document.querySelectorAll('[id^="menu-options-"]').forEach(menu => {
-                        if (!menu.classList.contains('hidden')) {
-                            menu.classList.add('hidden');
-                        }
-                    });
-                }
-            });
-
-            document.querySelectorAll('.ver-mas').forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const td = link.closest('td');
-                    td.querySelector('.texto-truncado').classList.add('hidden');
-                    td.querySelector('.texto-completo').classList.remove('hidden');
-                    td.querySelector('.ver-mas').classList.add('hidden');
-                    td.querySelector('.ver-menos').classList.remove('hidden');
-                });
-            });
-
-            document.querySelectorAll('.ver-menos').forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const td = link.closest('td');
-                    td.querySelector('.texto-truncado').classList.remove('hidden');
-                    td.querySelector('.texto-completo').classList.add('hidden');
-                    td.querySelector('.ver-mas').classList.remove('hidden');
-                    td.querySelector('.ver-menos').classList.add('hidden');
-                });
-            });
-
-
-            const menu = document.getElementById('miTabla_processing');
-            if (menu) {
-                menu.classList.remove('dataTables_processing');
-                menu.classList.add('hidden');
-            }
-
-
+        const menu = document.getElementById('miTabla_processing');
+        if (menu) {
+            menu.classList.remove('dataTables_processing');
+            menu.classList.add('hidden');
         }
 
-        // Función para la confirmación de borrado
-        function confirmarBorrado(id) {
-            if (confirm('¿Estás seguro de que quieres eliminar este registro?')) {
-                // Si el usuario confirma, redirige o envía una solicitud a la ruta de borrado.
-                // Aquí debes reemplazar '/ruta/borrar/' con tu URL real.
-                window.location.href = '/ruta/borrar/' + id;
-            }
-        }
 
-        // Llama a la función de configuración cuando el DOM esté cargado
-        document.addEventListener('DOMContentLoaded', setupDropdowns);
-    </script>
-    
+    }
+
+    // Función para la confirmación de borrado
+    function confirmarBorrado(id) {
+        if (confirm('¿Estás seguro de que quieres eliminar este registro?')) {
+            // Si el usuario confirma, redirige o envía una solicitud a la ruta de borrado.
+            // Aquí debes reemplazar '/ruta/borrar/' con tu URL real.
+            window.location.href = '/ruta/borrar/' + id;
+        }
+    }
+
+    // Llama a la función de configuración cuando el DOM esté cargado
+    document.addEventListener('DOMContentLoaded', setupDropdowns);
+</script>

@@ -5,6 +5,7 @@
 App::uses('AppModel', 'Model');
 App::uses('AuthComponent', 'Controller/Component');
 App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
+App::uses('Controller', 'Controller');
 
 /**
 
@@ -68,53 +69,131 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller
 {
-   // protected $externalRedirectUrl = 'http://localhost:5173/colectivaspasto/';
+    // protected $externalRedirectUrl = 'http://localhost:5173/colectivaspasto/';
 
     public $components = array(
+        'RequestHandler',
         'Session',
+        'Paginator',
+        'Acl',
         'Auth' => array(
-            'loginAction' => '/login',
-            'loginRedirect' => '/dashboard',
-            'logoutRedirect' => '/login',
-            'authenticate' => array(
-                'Form' => array(
-                    'userModel' => 'User',
-                    'fields' => array('username' => 'email', 'password' => 'password')
-                ),
+            'authorize' => array(
+                'Acl.Actions' => array('actionPath' => 'controllers', 'userModel' => 'Users')
             ),
-            'storage' => 'Session',
-            'authorize' => array('Controller')
-        )
+            array(
+                'authenticate' => array(
+                    'Form' => array(
+                        'passwordHasher' => 'md5'
+                        //'passwordHasher' => array(
+                        //    'className' => 'Simple',
+                        //    'hashType' => 'md5'
+                        //)
+                    )
+                )
+            )
+        ),
     );
 
-    public function beforeFilter()
+    function beforeFilter()
     {
         parent::beforeFilter();
 
-        header("Access-Control-Allow-Origin: http://localhost:5173");
-        header("Access-Control-Allow-Credentials: true");
-        header("Access-Control-Allow-Headers: Content-Type, Authorization");
-        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        $this->Auth->authenticate = array(
+            'Form' => array(
+                'fields' => array(
+                    'username' => 'username',
+                    'password' => 'password'
+                )
+            )
+        );
 
-        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-            exit; // Terminar la solicitud preflight
-        }
+        $this->Auth->authorize = array('Controller');
 
-        // Permitir acceso público a las acciones indicadas
-        $this->Auth->allow('login', 'isAuthenticated', 'logout', 'viewAnalitic');
-        /*$this->Auth->logoutRedirect=array();
-        if (!$this->Auth->user()) {
-            $externalUrl = $this->externalRedirectUrl;
-            if (!preg_match('#^https?://#i', $externalUrl)) {
-                $externalUrl = 'https://' . $externalUrl;
-            }
+        $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
 
-            return $this->redirect($externalUrl);
-        }*/
+        $this->Auth->logoutRedirect = array(
+            'controller' => 'users',
+            'action' => 'login'
+        );
+
+        $this->Auth->allow('login', 'logout');
+
+        $this->_checkInactivity();
     }
-
     public function isAuthorized($user)
     {
         return true;
+    }
+
+    protected function _checkInactivity()
+    {
+        if (
+            $this->request->controller === 'users' &&
+            $this->request->action === 'login'
+        ) {
+            return;
+        }
+
+
+        $user = $this->Auth->user();
+
+        if (!$user) {
+            return;
+        }
+
+        $now = time();
+        $lastActivity = $this->Session->read('Auth.lastActivity');
+
+        if ($lastActivity) {
+            $limit = Configure::read('Session.inactivityLimit');
+
+            if (($now - $lastActivity) > $limit) {
+                // sesión expirada por inactividad
+                $this->Auth->logout();
+                $this->Session->destroy();
+
+                $this->Session->setFlash(
+                    'Tu sesión expiró por inactividad',
+                    'default',
+                    array('class' => 'alert alert-warning')
+                );
+
+                return $this->redirect($this->Auth->loginAction);
+            }
+        }
+
+        // actualizar actividad
+        $this->Session->write('Auth.lastActivity', $now);
+    }
+
+
+    public function cargarProductosSelect()
+    {
+        $cacheKey = 'productos_select';
+        $productos = Cache::read($cacheKey, 'selects');
+        if ($productos === false) {
+            $productos = $this->Producto->find('list', [
+                'fields' => ['Producto.id', 'Producto.nombreproducto'],
+                'order' => ['Producto.modified' => 'DESC'],
+                'recursive' => -1
+            ]);
+            Cache::write($cacheKey, $productos, 'selects');
+        }
+        return $productos;
+    }
+
+    public function cargarUbicacionesSelect()
+    {
+        $cacheKey = 'ubicaciones_select';
+        $ubicaciones = Cache::read($cacheKey, 'selects');
+        if ($ubicaciones === false) {
+            $ubicaciones = $this->Ubicacion->find('list', [
+                'fields' => ['Ubicacion.id', 'Ubicacion.sitio'],
+                'order' => ['Ubicacion.modified' => 'DESC'],
+                'recursive' => -1
+            ]);
+            Cache::write($cacheKey, $ubicaciones, 'selects');
+        }
+        return $ubicaciones;
     }
 }

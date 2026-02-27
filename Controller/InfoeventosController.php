@@ -12,20 +12,20 @@ App::uses('Sanitize', 'Utility');
  */
 
 Router::connect(
-    '/:controller/:year/:month/:day',
-    array('action' => 'index'),
-    array(
-        'year' => '[12][0-9]{3}',
-        'month' => '0[1-9]|1[012]',
-        'day' => '0[1-9]|[12][0-9]|3[01]'
-    )
+	'/:controller/:year/:month/:day',
+	array('action' => 'index'),
+	array(
+		'year' => '[12][0-9]{3}',
+		'month' => '0[1-9]|1[012]',
+		'day' => '0[1-9]|[12][0-9]|3[01]'
+	)
 );
 class InfoeventosController extends AppController
 {
 
 	const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
-    const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
-    var $uses = array("Infoevento", "Producto", "Responsable");
+	const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
+	var $uses = array("Infoevento", "Producto", "Responsable");
 	/**
 	 * Components
 	 *
@@ -37,9 +37,15 @@ class InfoeventosController extends AppController
 	 *
 	 * @return void
 	 */
-	public function index($id = null)
+
+	public function beforeFilter()
 	{
+		parent::beforeFilter();
+		// Permitir acceso a métodos JSON sin autenticación
+		$this->Auth->allow('getInfoeventos');
 	}
+
+	public function index($id = null) {}
 
 
 	public function editanexo($id = null)
@@ -104,8 +110,8 @@ class InfoeventosController extends AppController
 				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-		$ubicaciones = $this->Infoevento->Ubicacion->find('list');
-		$productos = $this->Infoevento->Producto->find('list');
+		$ubicaciones = $this->cargarUbicacionesSelect();
+		$productos = $this->cargarProductosSelect();
 		$responsables = $this->Infoevento->Responsable->find('list');
 		$this->set(compact('ubicaciones', 'productos', 'responsables'));
 	}
@@ -139,14 +145,15 @@ class InfoeventosController extends AppController
 			$this->request->data = $this->Infoevento->find('first', $options);
 		}
 		$idredirect = $id;
-		$ubicaciones = $this->Infoevento->Ubicacion->find('list');
-		$productos = $this->Infoevento->Producto->find('list');
+		$ubicaciones = $this->cargarUbicacionesSelect();
+		$productos = $this->cargarProductosSelect();
 		$responsables = $this->Infoevento->Responsable->find('list');
+
 		$this->set(compact('ubicaciones', 'productos', 'responsables', 'idredirect'));
 	}
 
 
-	 public function getInfoeventos()
+	public function getInfoeventos()
 	{
 		$this->autoRender = false;
 		$this->response->type('json');
@@ -170,30 +177,30 @@ class InfoeventosController extends AppController
 				switch ($colName) {
 					case 'id':
 						$orderBy['Infoevento.id'] = $dir;
-						break; 
+						break;
 					case 'idactividad':
 						// si es virtual o concatenado
 						$orderBy['Producto.id'] = $dir;
-						break;                                         
+						break;
 					case 'numproducto':
 						// si es virtual o concatenado
 						$orderBy['Producto.numproductos'] = $dir;
 						break;
-                    case 'prioridad':
+					case 'prioridad':
 						// si es virtual o concatenado
 						$orderBy['Producto.nombredim'] = $dir;
-						break; 
-				                    
+						break;
+
 					case 'tarea':
 						$orderBy['Producto.tarea'] = $dir;
 						break;
-                    case 'fecha':
+					case 'fecha':
 						$orderBy['Infoevento.fecha'] = $dir;
 						break;
-                    case 'tema':
+					case 'tema':
 						$orderBy['Infoevento.tema'] = $dir;
 						break;
-                     case 'tipo':
+					case 'tipo':
 						$orderBy['Infoevento.tipo'] = $dir;
 						break;
 					case 'grupo':
@@ -202,7 +209,6 @@ class InfoeventosController extends AppController
 					case 'responsable':
 						$orderBy['Responsable.nombres'] = $dir;
 						break;
-					
 				}
 			}
 		}
@@ -218,10 +224,10 @@ class InfoeventosController extends AppController
 				'Infoevento.nombregrupo LIKE' => "%$search%",
 				'Responsable.nombres LIKE' => "%$search%",
 				'Producto.numproductos LIKE' => "%$search%",
-				'Producto.nombredim LIKE' => "%$search%",				
+				'Producto.nombredim LIKE' => "%$search%",
 				'Producto.tarea LIKE' => "%$search%",
 				'Producto.id LIKE' => "%$search%",
-				
+
 			];
 		}
 
@@ -237,27 +243,26 @@ class InfoeventosController extends AppController
 				'Infoevento.tipo',
 				'Infoevento.nombregrupo'
 			),
-			
-            'contain' => array(
-                'Producto' => array(
-                    'fields' => array(
-                        'Producto.id',
-                        'Producto.tarea',
-                        'Producto.nombredim',
-                        'Producto.numproductos',
-						
-                    )
-                ),
-                'Responsable' => array(
-                    'fields' => array('Responsable.id', 'Responsable.nombres')
-               )
-            ),
+
+			'contain' => array(
+				'Producto' => array(
+					'fields' => array(
+						'Producto.id',
+						'Producto.nombredim',
+						'Producto.numproductos',
+
+					)
+				),
+				'Responsable' => array(
+					'fields' => array('Responsable.id', 'Responsable.nombres')
+				)
+			),
 			'limit' => $length,
 			'offset' => $start,
 			'order' => $orderBy,
 			'recursive' => -1,
 		));
-        // debug($data);
+		// debug($data);
 
 		$result = [
 			"draw" => intval($this->request->query('draw')),
@@ -270,22 +275,20 @@ class InfoeventosController extends AppController
 			$result['data'][] = [
 				'id' => $row['Infoevento']['id'],
 				'idactividad' => $row['Producto']['id'],
-                'numproducto' => $row['Producto']['numproductos'],	
-                'prioridad' => $row['Producto']['nombredim'],
-				
-                'tarea' => $row['Producto']['tarea'],
-                'fecha' => $row['Infoevento']['fecha'],
-                'tema' => $row['Infoevento']['tema'],
-                'tipo' => $row['Infoevento']['tipo'],
+				'numproducto' => $row['Producto']['numproductos'],
+				'prioridad' => $row['Producto']['nombredim'],
+				'fecha' => $row['Infoevento']['fecha'],
+				'tema' => $row['Infoevento']['tema'],
+				'tipo' => $row['Infoevento']['tipo'],
 				'grupo' => $row['Infoevento']['nombregrupo'],
-                'responsables' => $row['Responsable']['nombres'],
+				'responsables' => $row['Responsable']['nombres'],
 
-				
-				
+
+
 			];
 		}
-		
-       
+
+
 		echo json_encode($result);
 	}
 

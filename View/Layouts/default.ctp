@@ -127,37 +127,57 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <a href="/react/#/homePage">
                     <h2
                         class="text-[#155dfc] text-2xl md:text-[28px] font-bold whitespace-nowrap hover:text-green-600 transition-colors">
-                        {{ dataHome.title }}
+                        SICB
                     </h2>
                 </a>
             </div>
 
-            <!-- Mobile button -->
-            <button class="md:hidden p-2" @click="isSidebarOpen = !isSidebarOpen">
-                <div class="w-6 h-6 flex flex-col justify-center items-center">
-                    <span
-                        :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm', isSidebarOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5']"></span>
-                    <span
-                        :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5', isSidebarOpen ? 'opacity-0' : 'opacity-100']"></span>
-                    <span
-                        :class="['bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm', isSidebarOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5']"></span>
-                </div>
-            </button>
-
             <!-- Desktop Icons -->
-            <div class="hidden p-6 md:flex items-center gap-8">
+            <div class="hidden p-6 md:flex items-center gap-4">
 
                 <!-- Botón admin solo si grupoUsuario == 1 -->
-                <button v-if="grupoUsuario === '1'" type="button" class="p-0 bg-transparent border-none"
-                    @click="goTo('/homePage/userAdmin')" aria-label="Ir a Administrador">
-                    <img class="w-4 h-4 object-cover cursor-pointer" :alt="dataHome.alt"
-                        :src="dataHome.adminIcon.default">
+                    <?php
+                                if ($tipoUsuario === '1' || $tipoUsuario === '3') :
+                                ?>
+                <button type="button" class="p-2 bg-transparent border-none hover:bg-gray-200 rounded" onclick="window.location.href='<?php echo $this->Html->url(['controller' => 'productos', 'action' => 'editpic']); ?>'"
+                    aria-label="Ir a vista de edición PIC">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save text-blue-600">
+                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                        <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
                 </button>
 
+                    <?php
+                                    endif;
+                    ?>
+
+                                        <?php
+                                if ($tipoUsuario === '1' || $tipoUsuario === '2') :
+                                ?>
+                <button type="button" class="p-2 bg-transparent border-none hover:bg-gray-200 rounded" onclick="window.location.href='<?php echo $this->Html->url(['controller' => 'productos', 'action' => 'smsedit']); ?>'"
+                    aria-label="Ir a vista de edición SMS">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save text-blue-600">
+                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                        <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
+                </button>
+
+                    <?php
+                                    endif;
+                    ?>
+
+
                 <!-- Icons dinámicos -->
-                <button v-for="icon in dataHome.icons" :key="icon.key" type="button"
-                    class="p-0 bg-transparent border-none" @click="icon.action" aria-label="Ir a {{ icon.key }}">
-                    <img class="w-4 h-4 object-cover cursor-pointer" :alt="dataHome.alt" :src="icon.default">
+                <!-- Botón admin solo si grupoUsuario == 1 -->
+                <button type="button" class="p-2 bg-transparent border-none hover:bg-gray-200 rounded" onclick="window.location.href='<?php echo $this->Html->url(['controller' => 'users', 'action' => 'salir']); ?>'"
+                    aria-label="Cerrar Sesión">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save text-blue-600">
+                        <path d="m16 17 5-5-5-5" />
+                        <path d="M21 12H9" />
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    </svg>
                 </button>
             </div>
         </div>
@@ -182,8 +202,28 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <div class="p-6 h-full relative">
                     <!-- Header / Usuario -->
                     <div class="mb-6 pl-2">
-                        <h1 id="nombreUsuario" class="text-lg font-semibold">{{ nombreUsuario }}</h1>
-                        <p id="rolUsuario" class="text-sm text-green-600">{{ rolUsuario }}</p>
+                        <h1 id="nombreUsuario" class="text-md font-semibold"><?php
+
+                                                                                $nombreUsuario = strtoupper(isset($_SESSION['Auth']['User']['nombre']) ? $_SESSION['Auth']['User']['nombre'] : '');
+                                                                                echo $nombreUsuario;
+                                                                                ?></h1>
+                        <p id="rolUsuario" class="text-sm text-green-600"><?php
+
+
+                                                                            $grupoUsuario = $_SESSION['Auth']['User']['group_id'];
+                                                                            $rol = "";
+                                                                            if ($grupoUsuario === '1') {
+                                                                                $rol = "Administrador";
+                                                                            } elseif ($grupoUsuario === '2') {
+                                                                                $rol = "Referente";
+                                                                            } elseif ($grupoUsuario === '3') {
+                                                                                $rol = "Operador PIC";
+                                                                            } else {
+                                                                                $rol = "Invitado";
+                                                                            }
+                                                                            echo $rol;
+                                                                            ?>
+                        </p>
                     </div>
 
                     <!-- Menú -->
@@ -192,15 +232,27 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <div class="menu-item" data-id="dashboard">
                             <button
                                 type="button"
-                                data-href="/react/#/homePage"
+                                data-href="<?php echo $this->Html->url(['controller' => 'productos', 'action' => 'editpic']); ?>"
                                 class="trigger flex items-center justify-between w-full p-2 hover:bg-gray-50 rounded-lg cursor-pointer group focus:outline-none">
                                 <div class="flex items-center gap-3">
+                                    <?php if ($tipoUsuario === '1' || $tipoUsuario === '3') : ?>
                                     <img
                                         class="icon w-4 h-4 object-cover"
                                         alt="Dashboard icon"
                                         src="<?php echo $this->webroot; ?>/img/update/resultados.png"
-                                        data-src-default="<?php echo $this->webroot; ?>/img/update/resultados.png"
-                                        data-src-hover="<?php echo $this->webroot; ?>/img/update/resultadosHover.png" />
+                                        data-href="<?php echo $this->Html->url(['controller' => 'productos', 'action' => 'editpic']); ?>">
+
+                                    <?php  endif ?>    
+
+                                    <?php if ($tipoUsuario === '1' || $tipoUsuario === '2') : ?>
+                                    <img
+                                        class="icon w-4 h-4 object-cover"
+                                        alt="Dashboard icon"
+                                        src="<?php echo $this->webroot; ?>/img/update/resultados.png"
+                                        data-href="<?php echo $this->Html->url(['controller' => 'productos', 'action' => 'smsedit']); ?>">
+
+                                    <?php  endif ?> 
+
                                     <span class="label font-normal text-sm text-gray-600 group-hover:text-[#155dfc]">
                                         Resultados
                                     </span>
@@ -482,81 +534,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
     <script>
-        const URLCAKE = "http://localhost:5173/colectivaspasto/"; //CAMBIAR AL AJUSTAR SERVIDOR
-        const {
-            createApp
-        } = Vue;
-
-        createApp({
-            data() {
-                return {
-                    isSidebarOpen: false,
-                    grupoUsuario: "1",
-                    nombreUsuario: "Usuario",
-                    rolUsuario: "Administrador",
-                    dataHome: {
-                        alt: "Logo",
-                        img: "https://via.placeholder.com/40x50",
-                        href: "/",
-                        title: "SICB",
-                        adminIcon: {
-                            default: "<?php echo $this->webroot; ?>/img/update/adminHover.png",
-                        },
-                        icons: [{
-                                key: "Home",
-                                default: "<?php echo $this->webroot; ?>/img/update/hogar.png",
-                                action: () => {
-                                    window.location.href = `/react/#/homePage`;
-                                }
-                            },
-                            {
-                                key: "Ayuda",
-                                default: "<?php echo $this->webroot; ?>/img/update/ayuda.png",
-                                action: () => {
-                                    window.location.href = `${URLCAKE}/users/home`;
-                                }
-                            },
-                            {
-                                key: "Salir",
-                                default: "<?php echo $this->webroot; ?>/img/update/cerrarSesion.png",
-                                action: () => {
-                                    window.location.href = `${URLCAKE}/users/salir`;
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            methods: {
-                goTo(path) {
-                    window.location.href = path;
-                }
-            },
-            mounted() {
-                <?php
-                $grupoUsuario = $_SESSION['Auth']['User']['group_id'];
-                $nombreUsuario = isset($_SESSION['Auth']['User']['nombre']) ? $_SESSION['Auth']['User']['nombre'] : '';
-                ?>
-                this.grupoUsuario = "<?php echo $grupoUsuario; ?>";
-                this.nombreUsuario = "<?php echo $nombreUsuario; ?>";
-                let rol = "";
-                switch ("<?php echo $grupoUsuario; ?>") {
-                    case "1":
-                        rol = "Administrador";
-                        break;
-                    case "2":
-                        rol = "Referente";
-                        break;
-                    case "3":
-                        rol = "Operador PIC";
-                        break;
-                    default:
-                        rol = "Invitado";
-                }
-                this.rolUsuario = rol;
-            }
-        }).mount('#app');
-
         // ----- Estado de sidebar (mobile) -----
         const sidebar = document.getElementById('sidebar');
         const toggleBtn = document.getElementById('toggleSidebar');

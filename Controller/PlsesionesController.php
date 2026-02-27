@@ -125,9 +125,7 @@ class PlsesionesController extends AppController
      */
     public function add()
     {
-
-
-        $productos = $this->Acta->cargarProductos();
+		$productos = $this->cargarProductosSelect();
         $this->set(compact('productos'));
 
         if ($this->request->is('post')) {
@@ -183,7 +181,7 @@ class PlsesionesController extends AppController
             'conditions' => ['Responsable.id' => $idResponsable],
             'fields' => ['id', 'nombres']
         ]) : null;
-        $productos = $this->Acta->cargarProductos();
+        $productos = $this->cargarProductosSelect();
         $idredirect = $id;
         $this->set(compact('responsable', 'productos', 'idredirect'));
     }

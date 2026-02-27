@@ -16,127 +16,107 @@ class UsersController extends AppController
 
     public function login()
     {
-        $this->autoRender = false;
-        $this->response->type('json');
-
         if ($this->request->is('post')) {
-            // Obtener datos del body
-            $data = $this->request->input('json_decode', true);
 
-            if (empty($data['username']) || empty($data['password'])) {
-                $this->response->statusCode(400);
-                echo json_encode([
-                    'status' => 'error',
-                    'message' => 'Faltan credenciales'
-                ]);
+            if (empty($this->request->data['g-recaptcha-response'])) {
+                $this->Session->setFlash('Debe completar el CAPTCHA', 'flash_custom', array('class' => 'error', 'title' => 'Error al iniciar sesión'));
                 return;
             }
 
-            $username = $data['username'];
-            $password = md5($data['password']);
-            // ⚠️ Para producción NO usar md5
-            $user = $this->User->find('first', [
-                'conditions' => [
-                    'User.username' => $username,
-                    'User.password' => $password
-                ]
-            ]);
 
+            // Obtener datos del body
 
-            if (!empty($user)) {
-                // Guardar datos en sesión
-                $this->Session->write("usr", $user["User"]["nombre_usuario"]);
-                $this->Session->write("nvl", $user["User"]["nivel"]);
-                $rolUsuario = null;
+            if ((isset($this->data)) && (!empty($this->data))) {
+                $r = $this->User->find("first", array(
+                    "conditions" => array(
+                        "username" => $this->data["User"]["username"],
+                        "password" => md5($this->data["User"]["password"])
+                    )
+                ));
 
-                if ($user["User"]["group_id"] === "3") {
+                if (isset($r) && !empty($r)) {
+                    $this->Session->write("usr", $r["User"]["nombre_usuario"]);
+                    $this->Session->write("nvl", $r["User"]["nivel"]);
 
-                    $rolUsuario = $this->Responsable->find('first', [
-                        'conditions' => ['Responsable.correo' => $user['User']['username']],
-                        'fields' => ['Responsable.id, Responsable.proyecto']
-                    ]);
+                    $rolUsuario = null;
 
-                    // Autenticar con AuthComponent
-                    $this->Auth->login([
-                        'id' => $user['User']['id'],
-                        'username' => $user['User']['username'],
-                        'group_id' => $user['User']['group_id'],
-                        'nombre' => $user['User']['nombre_usuario'],
-                        'id_responsable' => isset($rolUsuario['Responsable']['id']) ? $rolUsuario['Responsable']['id'] : null,
-                        'proyecto' => isset($rolUsuario['Responsable']['proyecto']) ? $rolUsuario['Responsable']['proyecto'] : null
+                    if ($r["User"]["group_id"] === "3") {
 
-                    ]);
+                        $rolUsuario = $this->Responsable->find('first', [
+                            'conditions' => ['Responsable.correo' => $r['User']['username']],
+                            'fields' => ['Responsable.id, Responsable.proyecto']
+                        ]);
 
-                } elseif ($user["User"]["group_id"] === "2") {
+                        // Autenticar con AuthComponent
+                        $this->Auth->login([
+                            'id' => $r['User']['id'],
+                            'username' => $r['User']['username'],
+                            'group_id' => $r['User']['group_id'],
+                            'nombre' => $r['User']['nombre_usuario'],
+                            'id_responsable' => isset($r['Responsable']['id']) ? $r['Responsable']['id'] : null,
+                            'proyecto' => isset($r['Responsable']['proyecto']) ? $r['Responsable']['proyecto'] : null,
+                            'rol' => $rolUsuario ? $rolUsuario['Responsable']['id'] : null
+                        ]);
 
-                    $rolUsuario = $this->Referente->find('first', [
-                        'conditions' => ['Referente.correo' => $user['User']['username']],
-                        'fields' => ['Referente.id, Referente.proyecto']
-                    ]);
+                        if ($this->Session->read('Auth.User')) {
+                        $this->Session->setFlash('Acceso exitoso, bienvenido', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
+                        return $this->redirect( array('controller' => 'productos', 'action' => 'editpic'));
+                        }
 
-                    // Autenticar con AuthComponent
-                    $this->Auth->login([
-                        'id' => $user['User']['id'],
-                        'username' => $user['User']['username'],
-                        'group_id' => $user['User']['group_id'],
-                        'nombre' => $user['User']['nombre_usuario'],
-                        'id_responsable' => isset($rolUsuario['Referente']['id']) ? $rolUsuario['Responsable']['id'] : null,
-                        'proyecto' => isset($rolUsuario['Referente']['proyecto']) ? $rolUsuario['Referente']['proyecto'] : null
+                    } elseif ($r["User"]["group_id"] === "2") {
 
-                    ]);
-                } elseif ($user["User"]["group_id"] === "1") {
-                    // Autenticar con AuthComponent
-                    $this->Auth->login([
-                        'id' => $user['User']['id'],
-                        'username' => $user['User']['username'],
-                        'group_id' => $user['User']['group_id'],
-                        'nombre' => $user['User']['nombre_usuario']
+                        $rolUsuario = $this->Referente->find('first', [
+                            'conditions' => ['Referente.correo' => $r['User']['username']],
+                            'fields' => ['Referente.id, Referente.proyecto']
+                        ]);
 
-                    ]);
+                        // Autenticar con AuthComponent
+                        $this->Auth->login([
+                            'id' => $r['User']['id'],
+                            'username' => $r['User']['username'],
+                            'group_id' => $r['User']['group_id'],
+                            'nombre' => $r['User']['nombre_usuario'],
+                            'id_responsable' => isset($r['Referente']['id']) ? $r['Referente']['id'] : null,
+                            'proyecto' => isset($r['Referente']['proyecto']) ? $r['Referente']['proyecto'] : null,
+                            'rol' => $rolUsuario ? $rolUsuario['Referente']['id'] : null
+
+                        ]);
+
+                        if ($this->Session->read('Auth.User')) {
+                        $this->Session->setFlash('Acceso exitoso, bienvenido', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
+                        return $this->redirect( array('controller' => 'productos', 'action' => 'smsedit'));
+                        }
+
+                    } elseif ($r["User"]["group_id"] === "1") {
+                        // Autenticar con AuthComponent
+                        $this->Auth->login([
+                            'id' => $r['User']['id'],
+                            'username' => $r['User']['username'],
+                            'group_id' => $r['User']['group_id'],
+                            'nombre' => $r['User']['nombre_usuario']
+
+                        ]);
+
+                        if ($this->Session->read('Auth.User')) {
+                            $this->Session->setFlash('Acceso exitoso, bienvenido', 'flash_custom',array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
+                             $this->redirect( array('controller' => 'Familias', 'action' => 'index'));
+                        }
+                    }
+                } else {
+                    $this->Session->setFlash('Por favor verifique sus credenciales', 'flash_custom', array('class' => 'error', 'title' => 'Error al iniciar sesión'));
                 }
-                // Nunca retornes la contraseña
-                unset($user['User']['password']);
-
-                $userData = [
-                    'id' => $user['User']['id'],
-                    'username' => $user['User']['username'],
-                    'nivel' => $user['User']['nivel'],
-                    'nombre' => $user['User']['nombre_usuario'],
-                    'group_id' => $user['User']['group_id'],
-                    'id_responsable' => isset($responsable['Responsable']['id']) ? $responsable['Responsable']['id'] : null,
-                    'proyecto' => isset($responsable['Responsable']['proyecto']) ? $responsable['Responsable']['proyecto'] : null
-                ];
-
-                echo json_encode([
-                    'status' => 'success',
-                    'user' => $userData
-                ]);
-            } else {
-                $this->response->statusCode(401);
-                echo json_encode([
-                    'status' => 'error',
-                    'message' => 'Credenciales inválidas'
-
-                ]);
-            }
-        } else {
-            $this->response->statusCode(405);
-            echo json_encode([
-                'status' => 'error',
-                'message' => 'Método no permitido'
-            ]);
+                }
+            $this->layout = 'login';
         }
     }
 
-
-    public function salir()
-        {
-      $this->Session->destroy();    
+    function salir()
+    {
+        $this->Session->destroy();
         $this->Auth->logout();
-
-       //$this->response->redirect('http://localhost:5173/login', 302);
-    return $this->redirect('http://localhost:5173/colectivaspasto/', 302); //Cambiar la pasar a otro servidor
+        $this->redirect("login");
     }
+
 
     public function check()
     {
@@ -712,4 +692,12 @@ class UsersController extends AppController
 
         echo "✅ Reparación completada\n";
     }
+
+    
+   public function beforeFilter()
+    {
+        parent::beforeFilter();
+        $this->Auth->allow();
+    }
+
 }

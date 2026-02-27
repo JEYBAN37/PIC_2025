@@ -85,7 +85,7 @@
                 pageLength: 7,
                 processing: true,
                 serverSide: true,
-                ajax: "/aplicacioncakephp/PIC_2025/actas/getActas", // Ajustar segun la Ruta para obtener datos
+                ajax: "<?php echo URL_TABS?>/actas/getActas", // Ajustar segun la Ruta para obtener datos
                 columns: [
                     // Columna control (+)
                     {

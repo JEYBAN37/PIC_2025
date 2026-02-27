@@ -94,7 +94,7 @@ class ActasController extends AppController
     public function add()
     {
         // Obtener el producto más recientemente modificado
-        $productos = $this->Acta->cargarProductos();
+        $productos = $this->cargarProductosSelect();
         $ubicaciones = $this->Acta->Ubicacion->find('list');
         $this->set(compact('productos', 'ubicaciones', 'responsables'));
 
@@ -157,7 +157,7 @@ class ActasController extends AppController
                 return $this->redirect(array('action' => $aux));
             } else {
 
-                $this->Session->setFlash(__('El acta no se ha guardado. Por favor, revise el formulario.', 'defalut', array('class' => self::ALERT_SUCCESS_CLASS)));
+                $this->Session->setFlash(__('El acta no se ha guardado. Por favor, revise el formulario.', 'default', array('class' => self::ALERT_ERROR_CLASS)));
             }
         } else {
 
@@ -166,9 +166,7 @@ class ActasController extends AppController
             $this->request->data = $this->Acta->find('first', $options);
         }
 
-        $productos = $this->Acta->Producto->find('list', array(
-            'order' => array('Producto.modified' => 'DESC')
-        ));
+        $productos = $this->cargarProductosSelect();
         $idredirect = $id;
         $ubicaciones = $this->Acta->Ubicacion->find('list');
         $responsables = $this->Acta->Responsable->find('list');

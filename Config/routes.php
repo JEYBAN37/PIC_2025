@@ -52,7 +52,7 @@
 
 	//Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 
-	Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
+	Router::connect('/', array('controller' => 'productos', 'action' => 'index'));
 
 /**
 

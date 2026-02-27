@@ -217,6 +217,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     'id' => 'producto_id',
                     'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
                     'label' => '',
+                    'options' => $productos,
                     'empty' => 'Seleccione el producto | actividad',
                     'error' => false // No mostrar error aquí
                 ]);

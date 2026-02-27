@@ -18,7 +18,6 @@
 				<th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID-actividad</th>
                  <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Número Producto</th>
 				 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Prioridad</th>              
-                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Actividad</th>
                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Fecha</th>
                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Temática</th>
                 <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Tipo</th>
@@ -87,7 +86,7 @@
                 pageLength: 7,
                 processing: true,
                 serverSide: true,
-                ajax: "/PIC/infoeventos/getInfoeventos", // Ajustar segun la Ruta para obtener datos
+                ajax: "<?php echo URL_TABS?>/infoeventos/getInfoeventos", // Ajustar segun la Ruta para obtener datos
                 columns: [
                     // Columna control (+)
                     {
@@ -112,10 +111,6 @@
                     },
                     {
                         data: "prioridad"
-                    },
-                   
-                    {
-                        data: "tarea"
                     },
                     {
                         data: "fecha"
