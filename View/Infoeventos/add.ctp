@@ -53,12 +53,12 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     <div class="flex flex-col w-full">
                         <input
                             type="text"
-                            name="datetime_range"
-                            id="datetime_range"
+                            name="data[Infoevento][fecha]"
+                            id="fecha"
                             class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
                             placeholder="Selecciona rango de fecha y hora" />
                         <span class="text-sm text-red-600 mt-1">
-                            <?= $this->Form->error('datetime_range') ?>
+                            <?= $this->Form->error('fecha') ?>
                         </span>
                     </div>
 
@@ -464,30 +464,25 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
 
 
         $(function() {
-            $('#datetime_range').daterangepicker({
-                singleDatePicker: true,
-                autoApply: true,
-                locale: {
-                    format: 'YYYY-MM-DD',
-                    applyLabel: "Aplicar",
-                    cancelLabel: "Cancelar",
-                    daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-                    monthNames: [
-                        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-                    ],
-                    firstDay: 1
-                }
-            }, function(start) {
-                // Extraer fecha y hora seleccionada
-                let fecha = start.format('YYYY-MM-DD');
-                // Si necesitas guardarlo en un campo oculto para enviarlo al backend:
-                if (!$("#fecha").length) {
-                    $("form").append('<?php echo $this->Form->hidden('fecha', ['id' => 'fecha']); ?>');
-                }
-                $("#fecha").val(fecha);
-            });
+        $('#fecha').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            autoApply: true,
+            locale: {
+                format: 'YYYY-MM-DD',
+                applyLabel: "Aplicar",
+                cancelLabel: "Cancelar",
+                daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+                monthNames: [
+                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+                ],
+                firstDay: 1
+            }
+        }, function(start) {
+            let fecha = start.format('YYYY-MM-DD');
         });
+    });
 
 
         CKEDITOR.on('instanceReady', function(ev) {

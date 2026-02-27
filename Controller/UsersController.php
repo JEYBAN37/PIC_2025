@@ -53,8 +53,8 @@ class UsersController extends AppController
                             'username' => $r['User']['username'],
                             'group_id' => $r['User']['group_id'],
                             'nombre' => $r['User']['nombre_usuario'],
-                            'id_responsable' => isset($r['Responsable']['id']) ? $r['Responsable']['id'] : null,
-                            'proyecto' => isset($r['Responsable']['proyecto']) ? $r['Responsable']['proyecto'] : null,
+                            'id_responsable' => isset($rolUsuario['Responsable']['id']) ? $rolUsuario['Responsable']['id'] : null,
+                            'proyecto' => isset($rolUsuario['Responsable']['proyecto']) ? $rolUsuario['Responsable']['proyecto'] : null,
                             'rol' => $rolUsuario ? $rolUsuario['Responsable']['id'] : null
                         ]);
 
@@ -76,8 +76,8 @@ class UsersController extends AppController
                             'username' => $r['User']['username'],
                             'group_id' => $r['User']['group_id'],
                             'nombre' => $r['User']['nombre_usuario'],
-                            'id_responsable' => isset($r['Referente']['id']) ? $r['Referente']['id'] : null,
-                            'proyecto' => isset($r['Referente']['proyecto']) ? $r['Referente']['proyecto'] : null,
+                            'id_responsable' => isset($rolUsuario['Referente']['id']) ? $rolUsuario['Referente']['id'] : null,
+                            'proyecto' => isset($rolUsuario['Referente']['proyecto']) ? $rolUsuario['Referente']['proyecto'] : null,
                             'rol' => $rolUsuario ? $rolUsuario['Referente']['id'] : null
 
                         ]);

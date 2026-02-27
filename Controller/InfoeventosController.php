@@ -98,6 +98,7 @@ class InfoeventosController extends AppController
 	public function add()
 	{
 		if ($this->request->is('post')) {
+			debug($this->request->data);
 			$this->Infoevento->create();
 			if ($this->Infoevento->save($this->request->data)) {
 				//$this->Session->setFlash(__('The infoevento has been saved.'));
