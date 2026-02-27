@@ -83,12 +83,12 @@ echo $this->Form->input('producto_id', array('value' => '' . $idAux, 'type' => '
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
-                    <label for="valorprogramado" class="font-semibold">Porcentaje porgramado</label>
+                    <label for="valorprogramado" class="font-semibold">Porcentaje porgramado para el mes</label>
                     <p class="text-red-600">*</p>
 
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Porcentaje asisgnado en anexo técnico.</p>
+                <p class="help-block text-gray-500 text-xs mb-2">Porcentaje asisgnado a la actividad para el mes reportado según anexo técnico.</p>
 
                 <?php
                 echo $this->Form->input('valorprogramado', [
@@ -109,7 +109,7 @@ echo $this->Form->input('producto_id', array('value' => '' . $idAux, 'type' => '
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">3</span>
-                    <label for="valorejecutado" class="font-semibold">porcentaje ejecutado</label>
+                    <label for="valorejecutado" class="font-semibold">porcentaje ejecutado para el mes</label>
                     <p class="text-red-600">*</p>
 
                 </div>
@@ -211,6 +211,96 @@ echo $this->Form->input('producto_id', array('value' => '' . $idAux, 'type' => '
                 }
                 ?>
             </div>
+
+                         <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">9</span>
+                    <label for="enlace1" class="font-semibold">Enlace sopores adicionales</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
+
+                <?php
+                echo $this->Form->input('enlace1', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 15
+                ]);
+
+                if (!empty($this->Form->error('enlace1'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace1') . '</div>';
+                }
+                ?>
+            </div>
+
+            <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">10</span>
+                    <label for="enlace2" class="font-semibold">Enlace sopores adicionales</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
+
+                <?php
+                echo $this->Form->input('enlace2', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 15
+                ]);
+
+                if (!empty($this->Form->error('enlace1'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace2') . '</div>';
+                }
+                ?>
+            </div>
+
+        <div class="col-span-2 text-md font-semibold my-6">
+            <div class="flex items-center mb-4">
+                <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
+                <label for="soportes" class="font-semibold">Soportes</label>
+            </div>
+
+            <p class="help-block text-gray-500 text-xs mb-2">Solo Adjutar soportes finales de cuerdo a soportes de anexo técnico (documentos, informes, agendas, planes)
+            </p>
+
+            <div class="flex flex-col gap-2">
+                <label for="productoanexo" class="block text-gray-700 font-semibold text-sm mb-2">
+                    Adjuntar archivo comprimido (.zip o .rar)
+                </label>
+                <div class="relative w-full">
+                    <?php
+                    echo $this->Form->input('productoanexo', [
+                        'label' => false,
+                        'type' => 'file',
+                        'class' => 'block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
+                        'onchange' => 'validarTamanioSoporte()',
+                        'id' => 'productoanexo',
+                        'error' => false
+                    ]);
+                    if (!empty($this->Form->error('productoanexo'))) {
+                        echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('productoanexo') . '</div>';
+                    }
+
+                    echo $this->Form->input('dirproductoanexo', array('type' => 'hidden', 'class' => 'form-control'));
+                    ?>
+                </div>
+                <span class="text-xs text-gray-500 mt-1">
+                    NOTA:
+                    * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
+                    * listado asistencia.pdf (meet o físico), registro excel participantes <br>
+                    * tres (3) pantallazos o fotos resolución 600px * 600px <br>
+                    El nombre del archivo no debe tener tildes o diéresis.
+                </span>
+            </div>
+        </div>
                       
         </div>
     </div>
@@ -350,92 +440,7 @@ echo $this->Form->input('producto_id', array('value' => '' . $idAux, 'type' => '
                 ?>
             </div>
 
-             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">9</span>
-                    <label for="enlace1" class="font-semibold">Enlace sopores adicionales</label>
-                    <p class="text-red-600">*</p>
 
-                </div>
-
-                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
-
-                <?php
-                echo $this->Form->input('enlace1', [
-                    'label' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
-                    'error' => false,
-                    'min' => 1,
-                    'max' => 15
-                ]);
-
-                if (!empty($this->Form->error('enlace1'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace1') . '</div>';
-                }
-                ?>
-            </div>
-
-                <div class="col-span-2 text-md font-semibold mt-4 mb-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">10</span>
-                    <label for="enlace2" class="font-semibold">Enlace sopores adicionales</label>
-                    <p class="text-red-600">*</p>
-
-                </div>
-
-                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
-
-                <?php
-                echo $this->Form->input('enlace2', [
-                    'label' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
-                    'error' => false,
-                    'min' => 1,
-                    'max' => 15
-                ]);
-
-                if (!empty($this->Form->error('enlace1'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace2') . '</div>';
-                }
-                ?>
-            </div>
-
-            <div class="col-span-2 text-md font-semibold my-6">
-            <div class="flex items-center mb-4">
-                <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
-                <label for="xxxxxxxx" class="font-semibold">Soportes</label>
-            </div>
-
-            <!--div class="flex flex-col gap-2">
-                <label for="productoanexo" class="block text-gray-700 font-semibold text-sm mb-2">
-                    Adjuntar archivo comprimido (.zip o .rar)
-                </label>
-                <div class="relative w-full">
-                    <?php
-                    echo $this->Form->input('productoanexo', [
-                        'label' => false,
-                        'type' => 'file',
-                        'class' => 'block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
-                        'onchange' => 'validarTamanioSoporte()',
-                        'id' => 'productoanexo',
-                        'error' => false
-                    ]);
-                    if (!empty($this->Form->error('productoanexo'))) {
-                        echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('productoanexo') . '</div>';
-                    }
-
-                    echo $this->Form->input('dirproductoanexo', array('type' => 'hidden', 'class' => 'form-control'));
-                    ?>
-                </div>
-                <span class="text-xs text-gray-500 mt-1">
-                    NOTA:
-                    * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
-                    * listado asistencia.pdf (meet o físico), registro excel participantes <br>
-                    * tres (3) pantallazos o fotos resolución 600px * 600px <br>
-                    El nombre del archivo no debe tener tildes o diéresis.
-                </span>
-            </div-->
-        </div>
         <div class="pt-2 flex gap-4">
             <button type="submit" name="btn" value="Guardar Seguimiento" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
                 <span>
