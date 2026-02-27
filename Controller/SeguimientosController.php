@@ -46,15 +46,27 @@ class SeguimientosController extends AppController {
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
+
+			if ($this->request->is('post')) {
 			$this->Seguimiento->create();
+			$id_producto = $this->request->data['Seguimiento']['producto_id'];
 			if ($this->Seguimiento->save($this->request->data)) {
-				$this->Session->setFlash(__('The seguimiento has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				
+				if (isset($this->request->data['btn']) && $this->request->data['btn'] == 'Guardar') {
+					$this->Session->setFlash('Registro de seguimiento se guradado con exito', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
+
+					return $this->redirect(array(
+						'controller' => 'Productos',
+						'action' => 'view/' . $id_producto,
+						'?' => array('producto' => $id_producto)
+					));
+				}
+
 			} else {
-				$this->Session->setFlash(__('The seguimiento could not be saved. Please, try again.'));
+				$this->Session->setFlash('El registro no fue guardado o esta pendiente un campo del formulario', 'flash_custom', array('class' => 'error', 'title' => 'Error al guardar el registro'));
 			}
 		}
+	
 		$productos = $this->Seguimiento->Producto->find('list');
 		$referentes = $this->Seguimiento->Referente->find('list');
 		$responsables = $this->Seguimiento->Responsable->find('list');

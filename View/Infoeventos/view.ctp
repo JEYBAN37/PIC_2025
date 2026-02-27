@@ -97,12 +97,12 @@
 					<tr>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Tipo</td>
 						<td colspan="4" class="border border-gray-300 p-2 uppercase"><?php echo h($infoevento['Infoevento']['tipo']); ?></td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Tema</td>
-						<td colspan="3" class="border border-gray-300 p-2"><?php echo h($infoevento['Infoevento']['tema']); ?></td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Temática</td>
+						<td colspan="3" class="border border-gray-300 p-2"><?php echo h($infoevento['Producto']['nombredim']); ?></td>
 					</tr>
 					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">Dimensión</td>
-						<td colspan="4" class="border border-gray-300 p-2 font-semibold"><?php echo h($infoevento['Producto']['dimensiones']); ?></td>
+						<td colspan="1" class="border border-gray-300 font-semibold p-2">Tema</td>
+						<td colspan="4" class="border border-gray-300 p-2 font-semibold"><?php echo h($infoevento['Infoevento']['tema']); ?></td>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2">Entorno</td>
 						<td colspan="3" class="border border-gray-300 p-2"><?php echo h($infoevento['Producto']['entorno']); ?></td>
 					</tr>
@@ -113,16 +113,16 @@
 							Producto
 						</td>
 						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $this->Html->link($infoevento['Producto']['activity'], array('controller' => 'productos', 'action' => 'view', $infoevento['Producto']['id'])); ?></td>
+							<?php echo $this->Html->link($infoevento['Producto']['producto'], array('controller' => 'productos', 'action' => 'view', $infoevento['Producto']['id'])); ?></td>
 					</tr>
 
 					<!-- Información general -->
 					<tr>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">
-							Tarea
+							Actividad
 						</td>
 						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $this->Html->div('tarea', $infoevento['Producto']['tarea'], ['escape' => false]); ?>
+							<?php echo $this->Html->div('actividad', $infoevento['Producto']['actividad'], ['escape' => false]); ?>
 						</td>
 					</tr>
 

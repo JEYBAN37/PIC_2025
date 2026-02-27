@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 2025-08-29 16:56:31 Error: [MissingActionException] Action AppController::img() could not be found.
 Exception Attributes: array (
   'controller' => 'AppController',
@@ -284,1460 +283,6 @@ Stack Trace:
 #0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2025-08-29 17:05:16 Error: [MissingActionException] Action AppController::img() could not be found.
-=======
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/resultados.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/documento.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/portaPapeles.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/historico.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/documento.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/resultados.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/documento.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/portaPapeles.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:31 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/historico.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:57 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/resultados.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:57 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/documento.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:57 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/historico.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:57 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/portaPapeles.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:58 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/documento.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:58 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/resultados.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:58 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/historico.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:07:58 Error: [MissingActionException] Action ProactividadesController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'ProactividadesController',
-  'action' => 'img',
-)
-Request URL: /PIC/proactividades/img/update/portaPapeles.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:15:57 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 17:15:57 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 17:16:10 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:16:10 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 17:22:18 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 17:22:18 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 17:23:10 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 17:23:10 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 18:06:03 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 18:06:03 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 18:11:07 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 18:11:07 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 18:34:01 Error: [MissingControllerException] Controller class ProductoController could not be found.
-Exception Attributes: array (
-  'class' => 'ProductoController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/producto/add
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 18:34:13 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 18:34:13 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-29 20:49:56 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 20:49:56 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:03:38 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:03:38 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:05:03 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:05:03 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:08:43 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:08:43 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:08:43 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:16:17 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.nombreproducto' in 'field list'
-Request URL: /PIC/procesoregistros/add
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('list', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProcesoregistrosController.php(86): Model->find('list', Array)
-#7 [internal function]: ProcesoregistrosController->add()
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-08-29 21:18:44 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.objatividad' in 'field list'
-Request URL: /PIC/procesoregistros/add
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('list', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProcesoregistrosController.php(87): Model->find('list', Array)
-#7 [internal function]: ProcesoregistrosController->add()
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-08-29 21:18:45 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.objatividad' in 'field list'
-Request URL: /PIC/procesoregistros/add
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('list', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProcesoregistrosController.php(87): Model->find('list', Array)
-#7 [internal function]: ProcesoregistrosController->add()
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-08-29 21:24:13 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-29 21:24:13 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-08-30 01:44:11 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-08-30 01:44:11 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:04:37 Error: [MissingControllerException] Controller class LoginController could not be found.
-Exception Attributes: array (
-  'class' => 'LoginController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/login
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:07:06 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 16:07:06 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 16:07:16 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:07:16 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:07:27 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:07:27 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:18:33 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:18:33 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:19:20 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 16:19:20 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 16:19:20 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 16:19:25 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
-Exception Attributes: array (
-  'class' => 'BienvenidaController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/bienvenida
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 16:19:30 Error: [MissingControllerException] Controller class LoginController could not be found.
-Exception Attributes: array (
-  'class' => 'LoginController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/login
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 17:59:24 Error: [MissingControllerException] Controller class BienvenidaController could not be found.
-Exception Attributes: array (
-  'class' => 'BienvenidaController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/bienvenida
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 18:10:26 Error: Fatal Error (1): Call to a member function findById() on null in [C:\xampp\htdocs\PIC\Controller\ProactividadesController.php, line 127]
-2025-09-01 18:10:26 Error: [FatalErrorException] Call to a member function findById() on null
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127)
-#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 18:10:46 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\PIC\Controller\ProactividadesController.php, line 127]
-2025-09-01 18:10:46 Error: [FatalErrorException] Call to a member function find() on null
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127)
-#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 18:10:47 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\PIC\Controller\ProactividadesController.php, line 127]
-2025-09-01 18:10:47 Error: [FatalErrorException] Call to a member function find() on null
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127)
-#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 18:10:48 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\PIC\Controller\ProactividadesController.php, line 127]
-2025-09-01 18:10:48 Error: [FatalErrorException] Call to a member function find() on null
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127)
-#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 127, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 18:11:07 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Responsable.nombre' in 'field list'
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Respons...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Respons...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Respons...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Responsable), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(127): Model->find('first', Array)
-#7 [internal function]: ProactividadesController->edit('4')
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-09-01 18:11:08 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Responsable.nombre' in 'field list'
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Respons...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Respons...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Respons...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Responsable), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(127): Model->find('first', Array)
-#7 [internal function]: ProactividadesController->edit('4')
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-09-01 18:23:25 Error: [MissingControllerException] Controller class ResponsableController could not be found.
-Exception Attributes: array (
-  'class' => 'ResponsableController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/Responsable/view/4
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 18:34:22 Error: Fatal Error (4): syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in [C:\xampp\htdocs\PIC\View\Proactividades\edit.ctp, line 867]
-2025-09-01 18:34:22 Error: [FatalErrorException] syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867)
-#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 18:34:31 Error: Fatal Error (4): syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in [C:\xampp\htdocs\PIC\View\Proactividades\edit.ctp, line 867]
-2025-09-01 18:34:31 Error: [FatalErrorException] syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867)
-#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 18:34:32 Error: Fatal Error (4): syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in [C:\xampp\htdocs\PIC\View\Proactividades\edit.ctp, line 867]
-2025-09-01 18:34:32 Error: [FatalErrorException] syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867)
-#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 867, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 18:38:39 Error: Fatal Error (4): syntax error, unexpected end of file in [C:\xampp\htdocs\PIC\Controller\ProactividadesController.php, line 141]
-2025-09-01 18:38:39 Error: [FatalErrorException] syntax error, unexpected end of file
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141)
-#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 18:54:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('UPDATE `cake_pi...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\Database\Mysql.php(411): DboSource->execute('UPDATE `cake_pi...')
-#3 C:\xampp\htdocs\lib\Cake\Model\Model.php(1823): Mysql->update(Object(Proactividad), Array, Array)
-#4 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(116): Model->save(Array)
-#5 [internal function]: ProactividadesController->edit('4')
-#6 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#7 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#9 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#10 {main}
-2025-09-01 18:55:26 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('UPDATE `cake_pi...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\Database\Mysql.php(411): DboSource->execute('UPDATE `cake_pi...')
-#3 C:\xampp\htdocs\lib\Cake\Model\Model.php(1823): Mysql->update(Object(Proactividad), Array, Array)
-#4 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(116): Model->save(Array)
-#5 [internal function]: ProactividadesController->edit('4')
-#6 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#7 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#9 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#10 {main}
-2025-09-01 18:56:34 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
-Request URL: /PIC/proactividades/edit/4
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('UPDATE `cake_pi...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\Database\Mysql.php(411): DboSource->execute('UPDATE `cake_pi...')
-#3 C:\xampp\htdocs\lib\Cake\Model\Model.php(1823): Mysql->update(Object(Proactividad), Array, Array)
-#4 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(116): Model->save(Array)
-#5 [internal function]: ProactividadesController->edit('4')
-#6 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#7 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#8 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#9 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#10 {main}
-2025-09-01 19:02:23 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.woff?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 19:02:24 Error: [MissingControllerException] Controller class FontsController could not be found.
-Exception Attributes: array (
-  'class' => 'FontsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/fonts/fontawesome-webfont.ttf?v=4.2.0
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 19:02:40 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 19:02:40 Error: [MissingActionException] Action AppController::img() could not be found.
-Exception Attributes: array (
-  'controller' => 'AppController',
-  'action' => 'img',
-)
-Request URL: /PIC/app/img/copylink.png
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 20:46:26 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [C:\xampp\htdocs\PIC\Controller\ProactividadesController.php, line 76]
-2025-09-01 20:46:26 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76)
-#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 20:47:53 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT DISTINCT...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT DISTINCT...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(800): DboSource->query('findById', Array, Object(Proactividad))
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(77): Model->__call('findById', Array)
-#9 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(77): Proactividad->findById('5', Array)
-#10 [internal function]: ProactividadesController->view('5')
-#11 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#13 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#14 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#15 {main}
-2025-09-01 20:48:07 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT DISTINCT...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT DISTINCT...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(800): DboSource->query('findById', Array, Object(Proactividad))
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(69): Model->__call('findById', Array)
-#9 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(69): Proactividad->findById('5', Array)
-#10 [internal function]: ProactividadesController->view('5')
-#11 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#13 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#14 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#15 {main}
-2025-09-01 20:48:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT DISTINCT...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT DISTINCT...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(800): DboSource->query('findById', Array, Object(Proactividad))
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(70): Model->__call('findById', Array)
-#9 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(70): Proactividad->findById('5', Array)
-#10 [internal function]: ProactividadesController->view('5')
-#11 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#13 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#14 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#15 {main}
-2025-09-01 20:49:01 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT DISTINCT...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT DISTINCT...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(800): DboSource->query('findById', Array, Object(Proactividad))
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(70): Model->__call('findById', Array)
-#9 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(70): Proactividad->findById('5', Array)
-#10 [internal function]: ProactividadesController->view('5')
-#11 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#13 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#14 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#15 {main}
-2025-09-01 20:50:07 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT DISTINCT...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT DISTINCT...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT DISTINCT...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(800): DboSource->query('findById', Array, Object(Proactividad))
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(69): Model->__call('findById', Array)
-#9 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(69): Proactividad->findById('5', Array)
-#10 [internal function]: ProactividadesController->view('5')
-#11 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#13 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#14 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#15 {main}
-2025-09-01 20:53:46 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\xampp\htdocs\PIC\Controller\ProactividadesController.php, line 70]
-2025-09-01 20:53:46 Error: [FatalErrorException] syntax error, unexpected ';'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70)
-#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 20:54:00 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DISTINCT `Proactividad`.`` FROM `cake_pic_2025`.`proactividades` AS `Proactivida' at line 1
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(70): Model->find('first', Array)
-#7 [internal function]: ProactividadesController->view('5')
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-09-01 20:54:18 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DISTINCT `Proactividad`.`` FROM `cake_pic_2025`.`proactividades` AS `Proactivida' at line 1
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(70): Model->find('first', Array)
-#7 [internal function]: ProactividadesController->view('5')
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-09-01 20:59:01 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.nombre' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(80): Model->find('first', Array)
-#7 [internal function]: ProactividadesController->view('5')
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-09-01 20:59:07 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.nombres' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(80): Model->find('first', Array)
-#7 [internal function]: ProactividadesController->view('5')
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-09-01 21:01:16 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Producto.nombre' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(80): Model->find('first', Array)
-#7 [internal function]: ProactividadesController->view('5')
-#8 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#9 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#12 {main}
-2025-09-01 21:11:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(94): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:11:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(94): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:11:39 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(94): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:11:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(94): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:11:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(94): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:11:47 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(94): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:11:48 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(94): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:14:00 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(97): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:14:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(97): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:15:18 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Procesoregistro.contain' in 'field list'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proceso...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proceso...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Proceso...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Proactividad), 'SELECT `Proceso...', Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Proactividad), Object(Procesoregistro), 'hasMany', 'Procesoregistro', Array, Array, true, Array, 1, Array)
-#6 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#7 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#8 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(99): Model->find('first', Array)
-#9 [internal function]: ProactividadesController->view('5')
-#10 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#12 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#13 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#14 {main}
-2025-09-01 21:20:32 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\PIC\Model\Proactividad.php, line 35]
-2025-09-01 21:20:32 Error: [FatalErrorException] Call to a member function find() on null
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 35)
-#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 35, Array)
-#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 35, Array)
-#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
-#4 [internal function]: App::shutdown()
-#5 {main}
-2025-09-01 21:20:45 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Proactividad.' in 'where clause'
-Request URL: /PIC/proactividades/view/5
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Proacti...', Array)
-#2 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Proacti...', Array, Array)
-#3 C:\xampp\htdocs\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Proacti...', false)
-#4 C:\xampp\htdocs\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Proactividad), Array)
-#5 C:\xampp\htdocs\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
-#6 C:\xampp\htdocs\PIC\Model\Proactividad.php(60): Model->find('first', Array)
-#7 C:\xampp\htdocs\PIC\Controller\ProactividadesController.php(67): Proactividad->getProactividadCompleto('5')
-#8 [internal function]: ProactividadesController->view('5')
-#9 C:\xampp\htdocs\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProactividadesController), Array)
-#10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#11 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProactividadesController), Object(CakeRequest))
-#12 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#13 {main}
-2025-09-01 21:42:45 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:42:51 Error: [MissingControllerException] Controller class PlsesionController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesion/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:42:57 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:44:38 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:44:39 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:44:50 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:44:50 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:44:51 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:44:51 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:45:02 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:45:03 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:45:03 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:45:03 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:45:04 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:45:04 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:45:04 Error: [MissingControllerException] Controller class PlsesionsController could not be found.
-Exception Attributes: array (
-  'class' => 'PlsesionsController',
-  'plugin' => NULL,
-)
-Request URL: /PIC/plsesions/view/46
-Stack Trace:
-#0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#1 {main}
-2025-09-01 21:52:47 Error: [MissingActionException] Action FilesController::procesoregistro() could not be found.
-Exception Attributes: array (
-  'controller' => 'FilesController',
-  'action' => 'procesoregistro',
-)
-Request URL: /PIC/files/procesoregistro/anexo/118/01-07-2025_MM_SSR_P17_T49_6ENCUENTROVBG.zip
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(FilesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 21:52:47 Error: [MissingActionException] Action FilesController::procesoregistro() could not be found.
-Exception Attributes: array (
-  'controller' => 'FilesController',
-  'action' => 'procesoregistro',
-)
-Request URL: /PIC/files/procesoregistro/anexo/118/sticky-footer.css
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(FilesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 21:57:51 Error: [MissingActionException] Action FilesController::procesoregistro() could not be found.
-Exception Attributes: array (
-  'controller' => 'FilesController',
-  'action' => 'procesoregistro',
-)
-Request URL: /PIC/files/procesoregistro/anexo/76/24-06-2025_MM_SSR_P17_T49_5ENCUENTROITSMETODOS.zip
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(FilesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 21:57:51 Error: [MissingActionException] Action FilesController::procesoregistro() could not be found.
-Exception Attributes: array (
-  'controller' => 'FilesController',
-  'action' => 'procesoregistro',
-)
-Request URL: /PIC/files/procesoregistro/anexo/76/sticky-footer.css
-Stack Trace:
-#0 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
-#1 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(FilesController), Object(CakeRequest))
-#2 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#3 {main}
-2025-09-01 22:02:47 Error: [MissingActionException] Action AppController::img() could not be found.
->>>>>>> origin/feature/view-proactividades
 Exception Attributes: array (
   'controller' => 'AppController',
   'action' => 'img',
@@ -26189,11 +24734,16 @@ Stack Trace:
 #11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #12 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+<<<<<<< HEAD
 2026-02-26 14:37:44 Error: [MissingControllerException] Controller class LoginController could not be found.
+=======
+2026-02-25 16:43:29 Error: [MissingControllerException] Controller class LoginController could not be found.
+>>>>>>> 67001a2819b6eb05b21360559bfe549f299e4a91
 Exception Attributes: array (
   'class' => 'LoginController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /PIC/login
 Stack Trace:
 #0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -28198,19 +26748,221 @@ Stack Trace:
 #0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2026-02-26 16:10:55 Error: [MissingControllerException] Controller class LoginController could not be found.
+=======
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 21:56:45 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053005312
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 21:57:02 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053022603
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 21:59:31 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053171131
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 22:01:34 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053293942
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 22:02:30 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053349790
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 22:06:09 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053568863
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 22:07:14 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053633837
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 22:07:59 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053679301
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 22:08:03 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772053683287
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 22:18:46 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772054326439
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-25 22:20:08 Error: [MissingControllerException] Controller class GetPlsesionesController could not be found.
+Exception Attributes: array (
+  'class' => 'GetPlsesionesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/getPlsesiones?draw=1&columns%5B0%5D%5Bdata%5D=&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=false&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=id&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=fecha&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=intension&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=tema&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B5%5D%5Bdata%5D=objetivog&columns%5B5%5D%5Bname%5D=&columns%5B5%5D%5Bsearchable%5D=true&columns%5B5%5D%5Borderable%5D=true&columns%5B5%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B5%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B6%5D%5Bdata%5D=tipoblacion&columns%5B6%5D%5Bname%5D=&columns%5B6%5D%5Bsearchable%5D=true&columns%5B6%5D%5Borderable%5D=true&columns%5B6%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B6%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B7%5D%5Bdata%5D=dimension&columns%5B7%5D%5Bname%5D=&columns%5B7%5D%5Bsearchable%5D=true&columns%5B7%5D%5Borderable%5D=true&columns%5B7%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B7%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B8%5D%5Bdata%5D=proceso&columns%5B8%5D%5Bname%5D=&columns%5B8%5D%5Bsearchable%5D=true&columns%5B8%5D%5Borderable%5D=true&columns%5B8%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B8%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B9%5D%5Bdata%5D=id&columns%5B9%5D%5Bname%5D=&columns%5B9%5D%5Bsearchable%5D=false&columns%5B9%5D%5Borderable%5D=false&columns%5B9%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B9%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=7&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1772054407859
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-26 02:19:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Seguimiento.seguimiento_id' in 'field list'
+Request URL: /aplicacioncakephp/PIC_2025/productos/edit/83
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Seguimi...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Seguimi...', Array, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Seguimi...', false)
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Producto), 'SELECT `Seguimi...', Array)
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Producto), Object(Seguimiento), 'hasMany', 'Seguimiento', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Producto), Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProductosController.php(151): Model->find('first', Array)
+#9 [internal function]: ProductosController->edit('83')
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProductosController), Array)
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
+#13 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2026-02-26 02:21:39 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Seguimiento.seguimiento_id' in 'field list'
+Request URL: /aplicacioncakephp/PIC_2025/productos/editpic/83
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Seguimi...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Seguimi...', Array, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Seguimi...', false)
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Producto), 'SELECT `Seguimi...', Array)
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Producto), Object(Seguimiento), 'hasMany', 'Seguimiento', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Producto), Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProductosController.php(179): Model->find('first', Array)
+#9 [internal function]: ProductosController->editpic('83')
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProductosController), Array)
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
+#13 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2026-02-26 02:21:47 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Seguimiento.seguimiento_id' in 'field list'
+Request URL: /aplicacioncakephp/PIC_2025/productos/editpic/83
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Seguimi...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Seguimi...', Array, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1421): DboSource->fetchAll('SELECT `Seguimi...', false)
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1259): DboSource->_fetchHasMany(Object(Producto), 'SELECT `Seguimi...', Array)
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1142): DboSource->queryAssociation(Object(Producto), Object(Seguimiento), 'hasMany', 'Seguimiento', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2905): DboSource->read(Object(Producto), Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(2877): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProductosController.php(179): Model->find('first', Array)
+#9 [internal function]: ProductosController->editpic('83')
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProductosController), Array)
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProductosController), Object(CakeRequest))
+#13 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2026-02-26 02:34:12 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProductosController.php, line 122]
+2026-02-26 02:34:12 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /aplicacioncakephp/PIC_2025/productos/add/83/Controller:Seguimientos
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 122)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 122, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 122, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-02-26 03:03:53 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] No se puede establecer una conexi�n ya que el equipo de destino deneg� expresamente dicha conexi�n.
+',
+  'enabled' => true,
+)
+Request URL: /aplicacioncakephp/PIC_2025/Seguimientos/add?reporte=83
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3479): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#4 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(3501): Model->setSource('seguimientos')
+#5 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1357): Model->getDataSource()
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1541): Model->schema()
+#7 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\SeguimientosController.php(51): Model->create()
+#8 [internal function]: SeguimientosController->add()
+#9 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SeguimientosController), Array)
+#10 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SeguimientosController), Object(CakeRequest))
+#12 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2026-02-26 14:57:53 Error: [MissingControllerException] Controller class LoginController could not be found.
+>>>>>>> 67001a2819b6eb05b21360559bfe549f299e4a91
 Exception Attributes: array (
   'class' => 'LoginController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /PIC/login
 Stack Trace:
 #0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
 2026-02-26 16:18:28 Error: [MissingControllerException] Controller class LoginController could not be found.
+=======
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-26 15:50:19 Error: [MissingControllerException] Controller class LoginController could not be found.
+>>>>>>> 67001a2819b6eb05b21360559bfe549f299e4a91
 Exception Attributes: array (
   'class' => 'LoginController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /PIC/login
 Stack Trace:
 #0 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -29006,3 +27758,23 @@ Stack Trace:
 #10 C:\xampp\htdocs\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(InfoeventosController), Object(CakeRequest))
 #11 C:\xampp\htdocs\PIC\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+=======
+Request URL: /aplicacioncakephp/PIC_2025/login
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-02-26 16:12:14 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'valorejecutado' cannot be null
+Request URL: /aplicacioncakephp/PIC_2025/Seguimientos/add?reporte=83
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `ca...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `ca...')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1834): DboSource->create(Object(Seguimiento), Array, Array)
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\SeguimientosController.php(53): Model->save(Array)
+#5 [internal function]: SeguimientosController->add()
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SeguimientosController), Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SeguimientosController), Object(CakeRequest))
+#9 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+>>>>>>> 67001a2819b6eb05b21360559bfe549f299e4a91

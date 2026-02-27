@@ -1,7 +1,4 @@
 <?php
-
-use function PHPSTORM_META\type;
-
 $this->layout = 'default' ?>
 <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
 <!-- Choices.js -->
@@ -32,7 +29,12 @@ echo $this->Form->create('Seguimiento', [
 // se utiliza para llamar el id responsable donde sea necesario
 $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION['Auth']['User']['id_responsable'] : '';
 echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type' => 'hidden'));
+
+$idAux = $_GET['reporte'];
+echo $this->Form->input('producto_id', array('value' => '' . $idAux, 'type' => 'hidden'));
 ?>
+
+
 
 
 
@@ -42,8 +44,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
         <div class="flex items-center mb-4">
             <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
             <div class="ml-4">
-                <h1 class="text-xl font-semibold">Información del proceso</h1>
-                <p class="text-gray-500">Complete los datos básicos del proceso de sistematización.</p>
+                <h1 class="text-xl font-semibold">Reporte de avance</h1>
+                <p class="text-gray-500">Diligencie la información solicitada segun corresponda</p>
             </div>
 
         </div>
@@ -56,23 +58,21 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <!-- Fecha de sesión realizada -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center ">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">1</span>
                     <label for="producto_id" class="font-semibold">Mes reportado</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <div class="col-span-2 text-md font-semibold my-6">
                     <div class="flex flex-col w-full">
-                        <?php echo $this->Form->label('datetime_range', 'Seleccione Rango de Fecha y Hora', [
+                        <?php echo $this->Form->label('fecha', 'Seleccione mes de reporte', [
                             'class' => 'text-gray-700 font-semibold text-sm mb-2'
                         ]); ?>
                         <input
-                            type="text"
-                            name="datetime_range"
-                            id="datetime_range"
+                            type="month"
                             class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
                             placeholder="Selecciona rango de fecha y hora" />
                         <span class="text-sm text-red-600 mt-1">
-                            <?= $this->Form->error('datetime_range') ?>
+                            <?= $this->Form->error('fecha') ?>
                         </span>
                     </div>
 
@@ -83,12 +83,12 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
-                    <label for="valorprogramado" class="font-semibold">Porcentaje porgramado</label>
+                    <label for="valorprogramado" class="font-semibold">Porcentaje porgramado para el mes</label>
                     <p class="text-red-600">*</p>
 
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Porcentaje asisgnado en anexo técnico.</p>
+                <p class="help-block text-gray-500 text-xs mb-2">Porcentaje asisgnado a la actividad para el mes reportado según anexo técnico.</p>
 
                 <?php
                 echo $this->Form->input('valorprogramado', [
@@ -108,8 +108,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
 			  <!-- Valor ejecutado de la actividad -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
-                    <label for="valorejecutado" class="font-semibold">porcentaje ejecutado</label>
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">3</span>
+                    <label for="valorejecutado" class="font-semibold">porcentaje ejecutado para el mes</label>
                     <p class="text-red-600">*</p>
 
                 </div>
@@ -122,7 +122,9 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
                     'error' => false,
                     'min' => 1,
-                    'max' => 15
+                    'maxLeght' => 2,
+                    'type' => 'number'
+                    //Consultar en gemmy ia limite de 0 a 100
                 ]);
 
                 if (!empty($this->Form->error('valorejecutado'))) {
@@ -157,15 +159,15 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
             <!-- Observación Operador -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">1</span>
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">4</span>
                     <label for="observacionoperador" class="font-semibold">Observación Equipo PIC</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
                 echo $this->Form->input('observacionoperador', [
-                    'label' => '',
-                    'data-maxlength' => 500,
+                    'label' => '',                   
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
+                     'data-maxlength' => 500,
                     'error' => false // No mostrar error aquí
                 ]);
                 if (!empty($this->Form->error('observacionoperador'))) {
@@ -174,11 +176,144 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 ?>
             </div>
 
-            <!-- Observación Referente -->
+             <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">5</span>
+                    <label for="limitantes" class="font-semibold">limitantes en el desarrollo de la actividad</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                $options = [
+                    '0. No' => 'No',
+                    '1. Logstico' => 'Logístico(Materiales, Refrigerios, espacios)',
+                    '2. Administrativo' => 'Administrativo(Contractuales, no acuerdo institucional)',
+                    '3. Técnico' => 'Tecnicos(Limitantes conceptuales, metodologicos)',
+                    '4. Comunitario' => 'Comunitario(Renuencia, inasistencia de participantes, solicitud de garantias adicionales )',
+                    
+                ];
+
+                echo $this->Form->input(
+                    'limitantes',
+                    [
+                        'type' => 'select',
+                        'label' => false,
+                        'multiple' => false,
+                        'id' => 'limitantes',
+                        'class' => 'w-full',
+                        'empty' => false,
+                        'options' => $options,
+                        'error' => false // No mostrar error aquí
+                    ]
+                );
+                if (!empty($this->Form->error('limitantes'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('limitantes') . '</div>';
+                }
+                ?>
+            </div>
+
+                         <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">9</span>
+                    <label for="enlace1" class="font-semibold">Enlace sopores adicionales</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
+
+                <?php
+                echo $this->Form->input('enlace1', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 15
+                ]);
+
+                if (!empty($this->Form->error('enlace1'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace1') . '</div>';
+                }
+                ?>
+            </div>
+
+            <div class="col-span-2 text-md font-semibold mt-4 mb-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">10</span>
+                    <label for="enlace2" class="font-semibold">Enlace sopores adicionales</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+
+                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
+
+                <?php
+                echo $this->Form->input('enlace2', [
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                    'error' => false,
+                    'min' => 1,
+                    'max' => 15
+                ]);
+
+                if (!empty($this->Form->error('enlace1'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace2') . '</div>';
+                }
+                ?>
+            </div>
+
+        <div class="col-span-2 text-md font-semibold my-6">
+            <div class="flex items-center mb-4">
+                <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
+                <label for="soportes" class="font-semibold">Soportes</label>
+            </div>
+
+            <p class="help-block text-gray-500 text-xs mb-2">Solo Adjutar soportes finales de cuerdo a soportes de anexo técnico (documentos, informes, agendas, planes)
+            </p>
+
+            <div class="flex flex-col gap-2">
+                <label for="productoanexo" class="block text-gray-700 font-semibold text-sm mb-2">
+                    Adjuntar archivo comprimido (.zip o .rar)
+                </label>
+                <div class="relative w-full">
+                    <?php
+                    echo $this->Form->input('productoanexo', [
+                        'label' => false,
+                        'type' => 'file',
+                        'class' => 'block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
+                        'onchange' => 'validarTamanioSoporte()',
+                        'id' => 'productoanexo',
+                        'error' => false
+                    ]);
+                    if (!empty($this->Form->error('productoanexo'))) {
+                        echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('productoanexo') . '</div>';
+                    }
+
+                    echo $this->Form->input('dirproductoanexo', array('type' => 'hidden', 'class' => 'form-control'));
+                    ?>
+                </div>
+                <span class="text-xs text-gray-500 mt-1">
+                    NOTA:
+                    * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
+                    * listado asistencia.pdf (meet o físico), registro excel participantes <br>
+                    * tres (3) pantallazos o fotos resolución 600px * 600px <br>
+                    El nombre del archivo no debe tener tildes o diéresis.
+                </span>
+            </div>
+        </div>
+                      
+        </div>
+    </div>
+</div>
+
+<div class="max-w-6xl mx-auto p-18 mt-8">
+    <div class="bg-white shadow-2xl rounded-xl p-12">
+
+    <!-- Observación Referente -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
-                    <label for="producto_id" class="font-semibold">Observación Referente SMS</label>
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">6</span>
+                    <label for="observacionreferente" class="font-semibold">Observación Referente SMS</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
@@ -192,22 +327,16 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('observacionreferente') . '</div>';
                 }
                 ?>
-            </div>            
-        </div>
-    </div>
-</div>
-
-<div class="max-w-6xl mx-auto p-18 mt-8">
-    <div class="bg-white shadow-2xl rounded-xl p-12">
+            </div>  
 
 		<!-- Acompañamiento -->
             <div class="flex justify-between col-span-2 text-md font-semibold m-6">
                 <div class="flex items-center w-64">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">11</span>
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">7</span>
                     <label for="acompanamiento" class="font-semibold">Acompañamiento Referente SMS</label>
                     <p class="text-red-600">*</p>
                 </div>
-				  <p class="help-block text-gray-500 text-xs mb-2">Refiera si hubo acompañamiento según responsabilidad de equipo PIC </p>
+				  <!--p class="help-block text-gray-500 text-xs mb-2">Refiera si hubo acompañamiento según responsabilidad de equipo PIC </p-->
 
                 <div class="flex space-x-4 items-center">
                     <!-- Botón NO -->
@@ -276,45 +405,12 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 </div>      
     </div>
 
-	 <div class="col-span-2 text-md font-semibold my-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">10</span>
-                    <label for="limitantes" class="font-semibold">limitantes en el desarrollo de la actividad</label>
-                    <p class="text-red-600">*</p>
-
-                </div>
-                <?php
-                $options = [
-                    '0. No aplica' => '0. No aplica',
-                    '1. Logstico' => '1 - Logístico(Materiales, Refrigerios, espacios)',
-                    '2. Administrativo' => '2 - Administrativo(Contractuales, no acuerdo institucional)',
-                    '3. Técnico' => '3 - Tecnicos(Limitantes conceptuales, metodologicos)',
-                    '4. Comunitario' => '4 - Comunitario(Renuencia, inasistencia de participantes, solicitud de garantias adicionales )',
-                    
-                ];
-
-                echo $this->Form->input(
-                    'limitantes',
-                    [
-                        'type' => 'select',
-                        'label' => false,
-                        'multiple' => true,
-                        'id' => 'limitantes',
-                        'class' => 'w-full',
-                        'empty' => false,
-                        'options' => $options,
-                        'error' => false // No mostrar error aquí
-                    ]
-                );
-                if (!empty($this->Form->error('limitantes'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('limitantes') . '</div>';
-                }
-                ?>
-            </div>
+	       
+            
 
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">11</span>
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">8</span>
                     <label for="estado" class="font-semibold">Estado</label>
                     <p class="text-red-600">*</p>
 
@@ -344,92 +440,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 ?>
             </div>
 
-             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
-                    <label for="enlace1" class="font-semibold">Enlace sopores adicionales</label>
-                    <p class="text-red-600">*</p>
 
-                </div>
-
-                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
-
-                <?php
-                echo $this->Form->input('enlace1', [
-                    'label' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
-                    'error' => false,
-                    'min' => 1,
-                    'max' => 15
-                ]);
-
-                if (!empty($this->Form->error('enlace1'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace1') . '</div>';
-                }
-                ?>
-            </div>
-
-                <div class="col-span-2 text-md font-semibold mt-4 mb-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">12</span>
-                    <label for="enlace2" class="font-semibold">Enlace sopores adicionales</label>
-                    <p class="text-red-600">*</p>
-
-                </div>
-
-                <p class="help-block text-gray-500 text-xs mb-2">Agregar enlace Drive para soportes en construccion o soportes adicionales</p>
-
-                <?php
-                echo $this->Form->input('enlace2', [
-                    'label' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
-                    'error' => false,
-                    'min' => 1,
-                    'max' => 15
-                ]);
-
-                if (!empty($this->Form->error('enlace1'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('enlace2') . '</div>';
-                }
-                ?>
-            </div>
-
-            <div class="col-span-2 text-md font-semibold my-6">
-            <div class="flex items-center mb-4">
-                <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">13</span>
-                <label for="xxxxxxxx" class="font-semibold">Soportes</label>
-            </div>
-
-            <div class="flex flex-col gap-2">
-                <label for="productoanexo" class="block text-gray-700 font-semibold text-sm mb-2">
-                    Adjuntar archivo comprimido (.zip o .rar)
-                </label>
-                <div class="relative w-full">
-                    <?php
-                    echo $this->Form->input('productoanexo', [
-                        'label' => false,
-                        'type' => 'file',
-                        'class' => 'block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
-                        'onchange' => 'validarTamanioSoporte()',
-                        'id' => 'productoanexo',
-                        'error' => false
-                    ]);
-                    if (!empty($this->Form->error('productoanexo'))) {
-                        echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('productoanexo') . '</div>';
-                    }
-
-                    echo $this->Form->input('dirproductoanexo', array('type' => 'hidden', 'class' => 'form-control'));
-                    ?>
-                </div>
-                <span class="text-xs text-gray-500 mt-1">
-                    NOTA:
-                    * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
-                    * listado asistencia.pdf (meet o físico), registro excel participantes <br>
-                    * tres (3) pantallazos o fotos resolución 600px * 600px <br>
-                    El nombre del archivo no debe tener tildes o diéresis.
-                </span>
-            </div>
-        </div>
         <div class="pt-2 flex gap-4">
             <button type="submit" name="btn" value="Guardar Seguimiento" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
                 <span>
@@ -448,47 +459,9 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const choices = new Choices("#producto_id", { // Botón para eliminar seleccionados
-            searchEnabled: true, // 🔎 activa búsqueda
-            searchChoices: true, // 🔎 filtra opciones
-            removeItemButton: false, // ❌ no mostrar botón de eliminar
-            itemSelectText: '', // 🚫 quita el "Press to select"
-            shouldSort: false, // 📌 mantiene el orden original
-            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
-            renderChoiceLimit: -1, // Sin límite de renderizado
-            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
-        });
-
-         const choices_limitantes = new Choices("#limitantes", {
-            searchEnabled: true,
-            searchChoices: true,
-            removeItemButton: true, // Permite eliminar seleccionados
-            itemSelectText: '',
-            shouldSort: false,
-            searchPlaceholderValue: "Escriba para filtrar...",
-            maxItemCount: -1, // Sin límite
-            removeItems: true, // Permite quitar seleccionados
-            duplicateItemsAllowed: false,
-            placeholder: true,
-            placeholderValue: "Seleccione lo(s) limitantes",
-        });
-
-        // Aplicar estilos con Tailwind
-        const inner = document.querySelector('.choices__inner');
-        if (inner) {
-            inner.classList.add(
-                'bg-white', 'border', 'border-gray-300', 'rounded-lg',
-                'px-3', 'py-2', 'focus:ring', 'focus:ring-blue-200', 'text-gray-700'
-            );
-        }
-
-        const dropdown = document.querySelector('.choices__list--dropdown');
-        if (dropdown) {
-            dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
-        }
-    });
-
+    
+    
+  
 
     CKEDITOR.on('instanceReady', function(ev) {
         var editor = ev.editor;
@@ -552,31 +525,12 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
         if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
             window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
         }
-    }
+    }    
 
     // Prevenir retroceso con la flecha del navegador (mejor experiencia)
     history.pushState(null, null, location.href);
 
-    // Busca todos los radios con data-target
-        document.querySelectorAll('input[type="radio"][data-target]').forEach(function(radio) {
-            radio.addEventListener('change', function() {
-                var targetId = radio.getAttribute('data-target');
-                var show = radio.getAttribute('data-show') === 'true';
-                var target = document.getElementById(targetId);
-                if (target) {
-                    target.style.display = show ? 'block' : 'none';
-                }
-            });
-            // Mostrar/ocultar al cargar la página según el radio seleccionado
-            if (radio.checked) {
-                var targetId = radio.getAttribute('data-target');
-                var show = radio.getAttribute('data-show') === 'true';
-                var target = document.getElementById(targetId);
-                if (target) {
-                    target.style.display = show ? 'block' : 'none';
-                }
-            }
-        });
+   
 
        
 </script>

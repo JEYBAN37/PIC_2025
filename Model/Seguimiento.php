@@ -45,7 +45,7 @@ class Seguimiento extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'observacionreferente' => array(
+		/*'observacionreferente' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -54,7 +54,7 @@ class Seguimiento extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		),*/
 		'estado' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),

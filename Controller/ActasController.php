@@ -346,7 +346,7 @@ class ActasController extends AppController
        
         $this->Acta->delete($id);
 
-        $this->redirect("nuebus");
+        $this->redirect("index");
     }
 
    

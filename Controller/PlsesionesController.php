@@ -30,25 +30,16 @@ class PlsesionesController extends AppController
      */
     public function index()
     {
-        //$this->Plsesion->recursive = 0;
-        //$this->set('plsesiones', $this->Paginator->paginate());
-        $this->Plsesion->recursive = 0;
-        $paginate = array("fields" => array("id", "fecha", "tema", "intension", "objetivog", "tipoblacion", "dimension", "proceso"));
-        $this->Paginator->settings = $paginate;
-
-        $count = $this->Plsesion->find('count');
-        if ($count > 0) {
-            $this->Paginator->settings['limit'] = $count;
-        }
-        $this->set("l", $this->paginate());
+         $tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
+       $this->set('tipoUsuario', $tipoUsuario);
     }
 
-    public function nuebus()
+    /*public function nuebus()
     {
       $tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
        $this->set('tipoUsuario', $tipoUsuario);
   
-    }
+    }*/
 
     /**
      * view method

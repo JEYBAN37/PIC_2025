@@ -31,7 +31,8 @@
 	 <script>
         const URL_view = "<?php echo $this->Html->url(['action' => 'view', '__ID__']); ?>";
         const URL_edit = "<?php echo $this->Html->url(['action' => 'edit', '__ID__']); ?>";
-        const URL_delete = "<?php echo $this->Html->url(['action' => 'delete', '__ID__']); ?>";
+        //const URL_delete = "<?php echo $this->Html->url(['action' => 'delete', '__ID__']); ?>";
+        const URL_seguimiento = "<?php echo $this->Html->url(['Controller'=>'Segimientos','action' => 'add', '__ID__']); ?>";
 
 
         $(document).ready(function() {
@@ -125,19 +126,21 @@
                         data: "id",
                         orderable: false,
                         searchable: false,
-                        render: function(data) {
+                        render: function(data, row) {
                             const viewUrl = URL_view.replace('__ID__', data);
                             const editUrl = URL_edit.replace('__ID__', data);
-                            const deleteUrl = URL_delete.replace('__ID__', data);
+                           // const deleteUrl = URL_delete.replace('__ID__', data);
+                            //const addSeguimientoUrl = URL_add.replace('__ID__', row);
                             return `
           <div class="relative inline-block text-left">
             <a href="${viewUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
             <a href="${editUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>
             <hr class="my-1 border-gray-200">
-            <a href="${deleteUrl}" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-               onclick="return confirm('¿Seguro que quieres borrar #${data}?');">Borrar</a>
+          
+            
           </div>`;
                         }
+
                     }
                 ],
                 // Opcional: prioridades de columnas (qué esconder primero)

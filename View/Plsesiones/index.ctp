@@ -1,124 +1,333 @@
-<div class="plsesiones index">
-	<h2><?php echo __('Plsesiones'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('fecha'); ?></th>
-			<th><?php echo $this->Paginator->sort('hora_fin'); ?></th>
-			<th><?php echo $this->Paginator->sort('sesion'); ?></th>
-			<th><?php echo $this->Paginator->sort('tema'); ?></th>
-			<th><?php echo $this->Paginator->sort('intension'); ?></th>
-			<th><?php echo $this->Paginator->sort('cuerpoterritorio'); ?></th>
-			<th><?php echo $this->Paginator->sort('part_significativa'); ?></th>
-			<th><?php echo $this->Paginator->sort('ciudadaniaactiva'); ?></th>
-			<th><?php echo $this->Paginator->sort('territorial'); ?></th>
-			<th><?php echo $this->Paginator->sort('poblacional'); ?></th>
-			<th><?php echo $this->Paginator->sort('interultural'); ?></th>
-			<th><?php echo $this->Paginator->sort('diferencial'); ?></th>
-			<th><?php echo $this->Paginator->sort('genero'); ?></th>
-			<th><?php echo $this->Paginator->sort('obj_individuos'); ?></th>
-			<th><?php echo $this->Paginator->sort('obj_organizaciones'); ?></th>
-			<th><?php echo $this->Paginator->sort('obj_instituciones'); ?></th>
-			<th><?php echo $this->Paginator->sort('objetivog'); ?></th>
-			<th><?php echo $this->Paginator->sort('objetivoe'); ?></th>
-			<th><?php echo $this->Paginator->sort('tipoblacion'); ?></th>
-			<th><?php echo $this->Paginator->sort('proceso'); ?></th>
-			<th><?php echo $this->Paginator->sort('dimension'); ?></th>
-			<th><?php echo $this->Paginator->sort('responsable_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('tematica'); ?></th>
-			<th><?php echo $this->Paginator->sort('resultado'); ?></th>
-			<th><?php echo $this->Paginator->sort('preguntasentido'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_obj1'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_obj2'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_obj3'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_premisa_ct'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_premisa_ps'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_premisa_ca'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_enfo_territorial'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_enfo_poblacional'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_enfo_intercultural'); ?></th>
-			<th><?php echo $this->Paginator->sort('califi_enfo_diferencial'); ?></th>
-			<th><?php echo $this->Paginator->sort('digitador'); ?></th>
-			<th><?php echo $this->Paginator->sort('anexo'); ?></th>
-			<th><?php echo $this->Paginator->sort('dirplanes'); ?></th>
-			<th><?php echo $this->Paginator->sort('enlaceurl'); ?></th>
-			<th><?php echo $this->Paginator->sort('fecharegistro'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($plsesiones as $plsesion): ?>
-	<tr>
-		<td><?php echo h($plsesion['Plsesion']['id']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['fecha']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['hora_fin']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['sesion']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['tema']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['intension']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['cuerpoterritorio']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['part_significativa']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['ciudadaniaactiva']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['territorial']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['poblacional']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['interultural']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['diferencial']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['genero']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['obj_individuos']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['obj_organizaciones']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['obj_instituciones']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['objetivog']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['objetivoe']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['tipoblacion']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['proceso']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['dimension']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($plsesion['Responsable']['nombres'], array('controller' => 'responsables', 'action' => 'view', $plsesion['Responsable']['id'])); ?>
-		</td>
-		<td><?php echo h($plsesion['Plsesion']['tematica']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['resultado']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['preguntasentido']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_obj1']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_obj2']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_obj3']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_premisa_ct']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_premisa_ps']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_premisa_ca']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_enfo_territorial']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_enfo_poblacional']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_enfo_intercultural']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['califi_enfo_diferencial']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['digitador']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['anexo']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['dirplanes']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['enlaceurl']); ?>&nbsp;</td>
-		<td><?php echo h($plsesion['Plsesion']['fecharegistro']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $plsesion['Plsesion']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $plsesion['Plsesion']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $plsesion['Plsesion']['id']), array(), __('Are you sure you want to delete # %s?', $plsesion['Plsesion']['id'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
+<?php $this->layout = 'default' ?>
+<div class="max-w-5xl mx-auto text-center mb-8">
+    <h1 class="text-5xl font-bold mb-4 text-blue-600">
+        Planes de Sesion
+    </h1>
+    <p class="text-gray-500 mb-4 text-lg">
+        Visualice el listado de planes de sesión.
+    </p>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Plsesion'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Responsables'), array('controller' => 'responsables', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Responsable'), array('controller' => 'responsables', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Plsmomentos'), array('controller' => 'plsmomentos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Plsmomento'), array('controller' => 'plsmomentos', 'action' => 'add')); ?> </li>
-	</ul>
+
+<div class="w-full max-w-lg sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto border border-gray-200 rounded-lg h-full px-12 pb-12 shadow-lg">
+    <table id="miTabla" style="width:100%;" class="stripe hover text-sm text-left text-gray-600 border border-gray-200 rounded-lg overflow-hidden">
+        <thead class="bg-gray-200 font-medium border-b border-gray-300">
+            <tr class=" text-gray-900 font-light">
+                <th class="px-2 w-6"></th> <!-- control (+) -->
+                <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID</th>
+                <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Fecha </th>
+                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Tema</th>
+                <th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Intensión</th>
+                <th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Objetivo general</th>
+                <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Tipo Población</th>
+                <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Dimensión</th>
+                <th class="px-2 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Proceso</th>
+                <th class="px-4 py-2 font-semibold text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-300">
+            <!-- DataTables llenará esta sección -->
+        </tbody>
+    </table>
 </div>
+
+
+
+    <script>
+        const URL_view = "<?php echo $this->Html->url(['action' => 'view', '__ID__']); ?>";
+        <?php if (!isset($tipoUsuario)) {
+            $tipoUsuario = null;
+        } ?>
+        const URL_edit = "<?php if ($tipoUsuario === '1' || $tipoUsuario === '3') {
+                                echo $this->Html->url(['action' => 'edit', '__ID__']);
+                            } else {
+                                echo '#';
+                            } ?>";
+        const URL_delete = "<?php echo $this->Html->url(['action' => 'delete', '__ID__']); ?>";
+
+
+        $(document).ready(function() {
+            const $miTabla = $('#miTabla');
+
+            // Inicializar DataTable
+            const table = $miTabla.DataTable({
+                createdRow: function(row, data, dataIndex) {
+                    // Aplica clases a cada celda del body
+                    $('td', row).each(function(index) {
+                        $(this).addClass('px-4 py-3 align-center-left');
+                        if (index === 1) $(this).addClass('text-center text-black font-bold'); // ID
+
+                        if (index === 2) $(this).addClass('text-center'); // idproducto
+
+                        // Para columnas de texto largo (por ejemplo, nombreproducto, objactividad)
+                        if (index === 3 || index === 4) {
+                            const maxLength = 200;
+                            const cellText = $(this).text();
+                            if (cellText.length > maxLength) {
+                                const truncated = cellText.substring(0, maxLength) + '...';
+                                $(this).html(
+                                    `<span class="texto-truncado">${truncated}</span>
+                                     <span class="texto-completo hidden">${cellText}</span>
+                                     <a href="#" class="ver-mas text-blue-500 underline ml-2">Ver más</a>
+                                     <a href="#" class="ver-menos text-blue-500 underline ml-2 hidden">Ver menos</a>`
+                                );
+                            }
+                        }
+
+                        if (index === 5) $(this).addClass('text-center font-bold text-black text-xs'); // responsable
+                        if (index === 6) $(this).addClass('text-center'); // conCat
+                    });
+                    // Aplica clase a la fila completa si quieres
+                    $(row).addClass('hover:bg-gray-50 transition ');
+                },
+                responsive: {
+                    details: {
+                        type: 'column',
+                        target: 'td.dtr-control' // usa la col de control
+                    }
+                },
+                dom: '<"flex items-center justify-between py-8"<"w-2/3 flex"<"flex flex-row w-full custom-search-container">><"flex items-center custom-pagination"p>>rt',
+                pageLength: 7,
+                processing: true,
+                serverSide: true,
+                ajax: "/aplicacioncakephp/PIC_2025/plsesiones/getPlsesiones",
+                columns: [
+                    // Columna control (+)
+                    {
+                        data: null,
+                        className: 'dtr-control',
+                        orderable: false,
+                        searchable: false,
+                        defaultContent: '',
+                        render: function() {
+                            return '<span class="text-gray-400">+</span>';
+                        }
+                    },
+
+                    {
+                        data: "id"
+                    },
+                    {
+                        data: "fecha"
+                    },
+                    {
+                        data: "intension"
+                    },
+                    {
+                        data: "tema"
+                    },
+                    {
+                        data: "objetivog"
+                    },
+                    {
+                        data: "tipoblacion"
+                    },
+                    {
+                        data: "dimension"
+                    },
+                    {
+                        data: "proceso"
+                    },
+                    {
+                        data: "id",
+                        orderable: false,
+                        searchable: false,
+                        render: function(data) {
+                            const viewUrl = URL_view.replace('__ID__', data);
+                            const editUrl = URL_edit.replace('__ID__', data);
+                            const deleteUrl = URL_delete.replace('__ID__', data);
+                            return `
+                                <div class="relative inline-block text-left">
+                                    <a href="${viewUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
+                                    ${editUrl !== '#' ? `<a href="${editUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>` : ''}
+                                    <a href="${deleteUrl}" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                                    onclick="return confirm('¿Seguro que quieres borrar #${data}?');">Borrar</a>
+                                </div>`;
+                        }
+                    }
+                ],
+                // Opcional: prioridades de columnas (qué esconder primero)
+                columnDefs: [{
+                        responsivePriority: 1,
+                        targets: 2
+                    }, // nombreproducto
+                    {
+                        responsivePriority: 2,
+                        targets: 3
+                    }, // objactividad
+                    {
+                        responsivePriority: 3,
+                        targets: -2
+                    } // created
+                ]
+            });
+            $miTabla.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
+
+            // Reemplazar el input original por uno custom
+            $('.custom-search-container').html(`
+        <div class="relative w-1/2">
+            <svg class="absolute left-2 top-2.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-search-icon lucide-scan-search"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg>
+            <input 
+                type="search" 
+                id="customSearch" 
+                class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg shadow-sm 
+                       focus:ring-2 focus:ring-blue-500 focus:outline-none w-full" 
+                placeholder="Buscar registros..."
+            >
+        </div>
+        `);
+
+            // Función para estilizar la paginación
+            $('.custom-pagination').html(`
+            <div class="pagination-container flex items-center space-x-2">
+                <button class="first-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Primera página" id="first-page">&laquo;&laquo;</button>
+                <button class="previous-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Página anterior" id="previous-page">&laquo;</button>
+                <span class="page-info text-gray-700 text-sm"></span>
+                <button class="next-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Página siguiente" id="next-page">&raquo;</button>
+                <button class="last-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Última página" id="last-page">&raquo;&raquo;</button>
+            </div>
+        `);
+
+            $('.custom-table-length').html(`
+        <table>
+           <tbody>
+               <tr>
+                   <td>
+                       <div class="flex items-center space-x-2">
+                           <label for="table-length" class="text-gray-700 text-sm">Mostrar</label>
+                           <select id="table-length" class="border border-gray-300 rounded px-2 py-1 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                               <option value="5">5</option>
+                               <option value="7" selected>7</option>
+                               <option value="10">10</option>
+                               <option value="25">25</option>
+                               <option value="50">50</option>
+                               <option value="100">100</option>
+                           </select>
+                           <span class="text-gray-700 text-sm">registros</span>
+                       </div>
+                   </td>
+               </tr>
+           </tbody>
+        </table>
+        `);
+
+            // Conectar botones de paginación personalizados
+            $(document).on("click", ".first-page", function() {
+                table.page("first").draw("page");
+            });
+
+            $(document).on("click", ".previous-page", function() {
+                table.page("previous").draw("page");
+            });
+
+            $(document).on("click", ".next-page", function() {
+                table.page("next").draw("page");
+            });
+
+            $(document).on("click", ".last-page", function() {
+                table.page("last").draw("page");
+            });
+
+            // Actualizar info de la página actual
+            function updatePageInfo() {
+                let info = table.page.info();
+                $(".page-info").text(`Página ${info.page + 1} de ${info.pages}`);
+            }
+
+            // Llamar en cada cambio de página
+            table.on("draw", function() {
+                updatePageInfo();
+                setupDropdowns(); // <-- Vuelve a conectar los eventos cada vez que se dibuja la tabla
+                stylePagination && stylePagination(); // si tienes esta función
+            });
+            updatePageInfo();
+
+
+            // Conectar el nuevo input con DataTables
+            $('#customSearch').on('keyup', function() {
+                table.search(this.value).draw();
+            });
+
+            table.on('draw', stylePagination);
+        });
+
+
+        // Función para manejar el despliegue de los menús
+        function setupDropdowns() {
+            const buttons = document.querySelectorAll('[id^="menu-button-"]');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const buttonId = event.currentTarget.id;
+
+                    const recordId = buttonId.split('-')[2];
+                    console.log(buttonId);
+                    const menu = document.getElementById(`menu-options-${recordId}`);
+
+                    // Oculta todos los menús desplegables
+                    document.querySelectorAll('[id^="menu-options-"]').forEach(m => {
+                        if (m.id !== menu.id) {
+                            m.classList.add('hidden');
+                        }
+                    });
+
+                    // Muestra o esconde el menú actual
+                    menu.classList.toggle('hidden');
+                });
+            });
+
+            // Oculta los menús si se hace clic fuera de ellos
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('[id^="menu-button-"]')) {
+                    document.querySelectorAll('[id^="menu-options-"]').forEach(menu => {
+                        if (!menu.classList.contains('hidden')) {
+                            menu.classList.add('hidden');
+                        }
+                    });
+                }
+            });
+
+            document.querySelectorAll('.ver-mas').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const td = link.closest('td');
+                    td.querySelector('.texto-truncado').classList.add('hidden');
+                    td.querySelector('.texto-completo').classList.remove('hidden');
+                    td.querySelector('.ver-mas').classList.add('hidden');
+                    td.querySelector('.ver-menos').classList.remove('hidden');
+                });
+            });
+
+            document.querySelectorAll('.ver-menos').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const td = link.closest('td');
+                    td.querySelector('.texto-truncado').classList.remove('hidden');
+                    td.querySelector('.texto-completo').classList.add('hidden');
+                    td.querySelector('.ver-mas').classList.remove('hidden');
+                    td.querySelector('.ver-menos').classList.add('hidden');
+                });
+            });
+
+
+            const menu = document.getElementById('miTabla_processing');
+            if (menu) {
+                menu.classList.remove('dataTables_processing');
+                menu.classList.add('hidden');
+            }
+
+
+        }
+
+        // Función para la confirmación de borrado
+        function confirmarBorrado(id) {
+            if (confirm('¿Estás seguro de que quieres eliminar este registro?')) {
+                // Si el usuario confirma, redirige o envía una solicitud a la ruta de borrado.
+                // Aquí debes reemplazar '/ruta/borrar/' con tu URL real.
+                window.location.href = '/ruta/borrar/' + id;
+            }
+        }
+
+        // Llama a la función de configuración cuando el DOM esté cargado
+        document.addEventListener('DOMContentLoaded', setupDropdowns);
+    </script>
+

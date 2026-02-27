@@ -160,9 +160,6 @@ class ProductosController extends AppController
 
 	public function editanexo($id = null)
 	{
-		if (!$this->Producto->exists($id)) {
-			throw new NotFoundException(__('Invalid producto'));
-		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Producto->save($this->request->data)) {
 				$this->Session->setFlash(__('The producto has been saved.'));
@@ -207,7 +204,7 @@ class ProductosController extends AppController
 	 * @param string $id
 	 * @return void
 	 */
-	public function delete($id = null)
+	/*public function delete($id = null)
 	{
 		$this->Producto->id = $id;
 		if (!$this->Producto->exists()) {
@@ -220,7 +217,7 @@ class ProductosController extends AppController
 			$this->Session->setFlash(__('The producto could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}
+	}*/
 
 	public function getProductos()
 	{
@@ -316,6 +313,7 @@ class ProductosController extends AppController
 				'Producto.soportes',
 				'Producto.estado',
 				'Producto.modified'
+				
 			),
 			'limit' => $length,
 			'offset' => $start,
@@ -343,6 +341,7 @@ class ProductosController extends AppController
 				'soportes' => $row['Producto']['soportes'],
 				'estado' => $row['Producto']['estado'],
 				'modified' => $row['Producto']['modified'],
+				
 			];
 		}
 

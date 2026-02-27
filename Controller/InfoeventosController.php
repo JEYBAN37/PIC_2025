@@ -192,7 +192,7 @@ class InfoeventosController extends AppController
 						break;
 
 					case 'tarea':
-						$orderBy['Producto.tarea'] = $dir;
+						$orderBy['Producto.actividad'] = $dir;
 						break;
 					case 'fecha':
 						$orderBy['Infoevento.fecha'] = $dir;
@@ -224,8 +224,8 @@ class InfoeventosController extends AppController
 				'Infoevento.nombregrupo LIKE' => "%$search%",
 				'Responsable.nombres LIKE' => "%$search%",
 				'Producto.numproductos LIKE' => "%$search%",
-				'Producto.nombredim LIKE' => "%$search%",
-				'Producto.tarea LIKE' => "%$search%",
+				'Producto.nombredim LIKE' => "%$search%",				
+				'Producto.actividad LIKE' => "%$search%",
 				'Producto.id LIKE' => "%$search%",
 
 			];
@@ -243,20 +243,21 @@ class InfoeventosController extends AppController
 				'Infoevento.tipo',
 				'Infoevento.nombregrupo'
 			),
-
-			'contain' => array(
-				'Producto' => array(
-					'fields' => array(
-						'Producto.id',
-						'Producto.nombredim',
-						'Producto.numproductos',
-
-					)
-				),
-				'Responsable' => array(
-					'fields' => array('Responsable.id', 'Responsable.nombres')
-				)
-			),
+			
+            'contain' => array(
+                'Producto' => array(
+                    'fields' => array(
+                        'Producto.id',
+                        'Producto.actividad',
+                        'Producto.nombredim',
+                        'Producto.numproductos',
+						
+                    )
+                ),
+                'Responsable' => array(
+                    'fields' => array('Responsable.id', 'Responsable.nombres')
+               )
+            ),
 			'limit' => $length,
 			'offset' => $start,
 			'order' => $orderBy,
@@ -275,11 +276,13 @@ class InfoeventosController extends AppController
 			$result['data'][] = [
 				'id' => $row['Infoevento']['id'],
 				'idactividad' => $row['Producto']['id'],
-				'numproducto' => $row['Producto']['numproductos'],
-				'prioridad' => $row['Producto']['nombredim'],
-				'fecha' => $row['Infoevento']['fecha'],
-				'tema' => $row['Infoevento']['tema'],
-				'tipo' => $row['Infoevento']['tipo'],
+                'numproducto' => $row['Producto']['numproductos'],	
+                'prioridad' => $row['Producto']['nombredim'],
+				
+                'tarea' => $row['Producto']['actividad'],
+                'fecha' => $row['Infoevento']['fecha'],
+                'tema' => $row['Infoevento']['tema'],
+                'tipo' => $row['Infoevento']['tipo'],
 				'grupo' => $row['Infoevento']['nombregrupo'],
 				'responsables' => $row['Responsable']['nombres'],
 

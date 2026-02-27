@@ -1125,7 +1125,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
             <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
-                    <label for="proactividad_id" class="font-semibold">Dimensión</label>
+                    <label for="dimension" class="font-semibold">Dimensión</label>
                     <p class="text-red-600">*</p>
 
                 </div>
