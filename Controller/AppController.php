@@ -172,6 +172,7 @@ class AppController extends Controller
         $cacheKey = 'productos_select';
         $productos = Cache::read($cacheKey, 'selects');
         if ($productos === false) {
+            $this->loadModel('Producto');
             $productos = $this->Producto->find('list', [
                 'fields' => ['Producto.id', 'Producto.nombreproducto'],
                 'order' => ['Producto.modified' => 'DESC'],
@@ -183,13 +184,13 @@ class AppController extends Controller
     }
 
     public function cargarUbicacionesSelect()
-    {
+    {   
         $cacheKey = 'ubicaciones_select';
         $ubicaciones = Cache::read($cacheKey, 'selects');
         if ($ubicaciones === false) {
+            $this->loadModel('Ubicacion');
             $ubicaciones = $this->Ubicacion->find('list', [
                 'fields' => ['Ubicacion.id', 'Ubicacion.sitio'],
-                'order' => ['Ubicacion.modified' => 'DESC'],
                 'recursive' => -1
             ]);
             Cache::write($cacheKey, $ubicaciones, 'selects');
