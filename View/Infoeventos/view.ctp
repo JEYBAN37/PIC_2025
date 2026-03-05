@@ -68,7 +68,7 @@
 					</tr>
 
 					<tr>
-						<td colspan="3" class="border border-gray-300 p-2">VIGENCIA: 2025</td>
+						<td colspan="3" class="border border-gray-300 p-2">VIGENCIA: 2026</td>
 						<td colspan="2" class="border border-gray-300 p-2">VERSIÓN: </td>
 						<td colspan="2" class="border border-gray-300 p-2">CÓDIGO: </td>
 						<td colspan="1" class="border border-gray-300 py-2 pr-12 pl-2"> <span class="font-semibold">Página:</span></td>

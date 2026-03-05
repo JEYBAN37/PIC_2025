@@ -60,7 +60,7 @@ class UsersController extends AppController
 
                         if ($this->Session->read('Auth.User')) {
                         $this->Session->setFlash('Acceso exitoso, bienvenido', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
-                        return $this->redirect( array('controller' => 'productos', 'action' => 'editpic'));
+                        return $this->redirect( array('controller' => 'productos', 'action' => 'index'));
                         }
 
                     } elseif ($r["User"]["group_id"] === "2") {
@@ -84,7 +84,7 @@ class UsersController extends AppController
 
                         if ($this->Session->read('Auth.User')) {
                         $this->Session->setFlash('Acceso exitoso, bienvenido', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
-                        return $this->redirect( array('controller' => 'productos', 'action' => 'smsedit'));
+                        return $this->redirect( array('controller' => 'productos', 'action' => 'index'));
                         }
 
                     } elseif ($r["User"]["group_id"] === "1") {

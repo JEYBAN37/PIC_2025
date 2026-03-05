@@ -30,9 +30,9 @@
 
 	 <script>
         const URL_view = "<?php echo $this->Html->url(['action' => 'view', '__ID__']); ?>";
-        const URL_edit = "<?php echo $this->Html->url(['action' => 'edit', '__ID__']); ?>";
+       // const URL_edit = "<?php echo $this->Html->url(['action' => 'edit', '__ID__']); ?>";
         //const URL_delete = "<?php echo $this->Html->url(['action' => 'delete', '__ID__']); ?>";
-        const URL_seguimiento = "<?php echo $this->Html->url(['Controller'=>'Segimientos','action' => 'add', '__ID__']); ?>";
+        //const URL_seguimiento = "<?php echo $this->Html->url(['Controller'=>'Segimientos','action' => 'add', '__ID__']); ?>";
 
 
         $(document).ready(function() {
@@ -96,7 +96,10 @@
                     },
 
                     {
-                        data: "id"
+                        data: "id",
+                        render: function(data) {
+                        return `<a href="${URL_view.replace('__ID__', data)}" class="text-blue-600 hover:underline cursor-pointer">${data}</a>`;
+                    }
                     },
 					
                     {
@@ -123,18 +126,19 @@
                     
 
                     {
-                        data: "id",
+                       
+                       data: "id",
                         orderable: false,
                         searchable: false,
                         render: function(data, row) {
                             const viewUrl = URL_view.replace('__ID__', data);
-                            const editUrl = URL_edit.replace('__ID__', data);
+                            //const editUrl = URL_edit.replace('__ID__', data);
                            // const deleteUrl = URL_delete.replace('__ID__', data);
                             //const addSeguimientoUrl = URL_add.replace('__ID__', row);
                             return `
           <div class="relative inline-block text-left">
             <a href="${viewUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Ver</a>
-            <a href="${editUrl}" class="block px-4 py-2 text-sm hover:bg-gray-100">Editar</a>
+          
             <hr class="my-1 border-gray-200">
           
             

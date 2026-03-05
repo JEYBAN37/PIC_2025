@@ -27,7 +27,7 @@
         </svg>
     </button>
 
-    <button title="Ir a listado de eventos" class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" onclick="window.location.href='<?php echo $this->Html->url(array('controller' => 'actas', 'action' => 'index')); ?>'">
+    <button title="Ir a listado de actas" class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" onclick="window.location.href='<?php echo $this->Html->url(array('controller' => 'actas', 'action' => 'index')); ?>'">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen">
             <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
             <path d="M14 2v4a2 2 0 0 0 2 2h4" />
@@ -84,7 +84,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="3" class="border border-gray-300 p-2">VIGENCIA: 2025</td>
+                        <td colspan="3" class="border border-gray-300 p-2">VIGENCIA: 2026</td>
                         <td colspan="2" class="border border-gray-300 p-2">VERSIÓN: </td>
                         <td colspan="2" class="border border-gray-300 p-2">CÓDIGO: </td>
                         <td colspan="1" class="border border-gray-300 py-2 pr-12 pl-2"> <span class="font-semibold">Página:</span></td>
@@ -332,10 +332,10 @@
                     </tr>
                     <tr>
                         <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">
-                            Actividad:
+                            Producto:
                         </td>
                         <td colspan="8" class="border border-gray-300 p-2">
-                            <?php echo ($acta['Producto']['resultado']); ?>
+                            <?php echo ($acta['Producto']['producto']); ?>
                         </td>
                     </tr>
                     <tr>
@@ -348,10 +348,10 @@
                     </tr>
                     <tr>
                         <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">
-                            Tarea:
+                            Actividad:
                         </td>
                         <td colspan="8" class="border border-gray-300 p-2">
-                            <?php echo ($acta['Producto']['tarea']); ?>
+                            <?php echo ($acta['Producto']['actividad']); ?>
                         </td>
                     </tr>
 

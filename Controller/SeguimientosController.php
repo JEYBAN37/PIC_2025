@@ -84,10 +84,44 @@ class SeguimientosController extends AppController {
 		if (!$this->Seguimiento->exists($id)) {
 			throw new NotFoundException(__('Invalid seguimiento'));
 		}
+
 		if ($this->request->is(array('post', 'put'))) {
+			$id_producto =$this->request->data['Seguimiento']['producto_id'];			
+			if ($this->Seguimiento->save($this->request->data)) {
+				$this->Session->setFlash('Registro de seguimiento se guradado con exito', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
+				return $this->redirect(array(
+						'controller' => 'Productos',
+						'action' => 'view/' . $id_producto,
+						'?' => array('producto' => $id_producto)
+					));
+			} else {
+				$this->Session->setFlash(__('The seguimiento could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('Seguimiento.' . $this->Seguimiento->primaryKey => $id));
+			$this->request->data = $this->Seguimiento->find('first', $options);
+		}
+		$productos = $this->Seguimiento->Producto->find('list');
+		$referentes = $this->Seguimiento->Referente->find('list');
+		$responsables = $this->Seguimiento->Responsable->find('list');
+		$this->set(compact('productos', 'referentes', 'responsables'));
+	}
+
+	public function editpic($id = null)
+	{
+		if (!$this->Seguimiento->exists($id)) {
+			throw new NotFoundException(__('Invalid seguimiento'));
+		}
+
+		if ($this->request->is(array('post', 'put'))) {
+			$id_producto =$this->request->data['Seguimiento']['producto_id'];			
 			if ($this->Seguimiento->save($this->request->data)) {
 				$this->Session->setFlash(__('The seguimiento has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array(
+						'controller' => 'Productos',
+						'action' => 'view/' . $id_producto,
+						'?' => array('producto' => $id_producto)
+					));
 			} else {
 				$this->Session->setFlash(__('The seguimiento could not be saved. Please, try again.'));
 			}

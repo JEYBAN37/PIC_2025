@@ -2,10 +2,10 @@
 
 <div class="max-w-5xl mx-auto text-center mb-8">
 	<h1 class="text-5xl font-bold mb-4 text-blue-600">
-		Formato Producto PIC 2025
+		Formato actividades PIC
 	</h1>
 	<p class="text-gray-500 mb-4 text-lg">
-		Visualice e imprima la información registrada en la sistematización de productos.
+		Visualice e imprima la información registrada de la actividad PIC.
 	</p>
 </div>
 
@@ -118,35 +118,16 @@
 			<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
 		</svg>
 	</button>
-	<button title="Actualizar soportes" class="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" onclick="window.location.href='<?php echo $this->Html->url(array('action' => 'edit', $producto['Producto']['id'])); ?>'">
-		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen">
-			<path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-			<path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
-		</svg>
-	</button>
+	
 	<button title="Ver Anexos" type="button" id="btn-hide"
 		class="flex items-center w-38 space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
 		<svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye">
 			<path d="M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3" />
 			<path d="m16 19 2 2 4-4" />
 		</svg>
-	</button>
+	</button>	
 
-	<?php
-	if ($tipoUsuario === '2' || $tipoUsuario === '1') :
-	?>
-
-		<button title="Calificar SMS" type="button" id="btn-hide"
-			class="flex items-center w-38 space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-check-icon lucide-list-check" onclick="window.location.href='<?php echo $this->Html->url(array('action' => 'smsedit', $producto['Producto']['id'])); ?>'">
-				<path d="M16 5H3" />
-				<path d="M16 12H3" />
-				<path d="M11 19H3" />
-				<path d="m15 18 2 2 4-4" />
-			</svg>
-		</button>
-
-	<?php elseif ($tipoUsuario === '3' || $tipoUsuario === '1') : ?>
+	<?php if ($tipoUsuario === '3' || $tipoUsuario === '1') : ?>
 		<button title="Reporte Actividad" type="button" id="btn-hide"
 			class="flex items-center w-38 space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-check-icon lucide-list-check" onclick="window.location.href='<?php echo $this->Html->url(array('controller'=>'Seguimientos','action' => 'add?reporte='. $producto['Producto']['id'])); ?>'">
@@ -184,7 +165,7 @@
 					</tr>
 
 					<tr>
-						<td colspan="3" class="border border-gray-300 p-2">VIGENCIA: 2025</td>
+						<td colspan="3" class="border border-gray-300 p-2">VIGENCIA: 2026</td>
 						<td colspan="1" class="border border-gray-300 p-2">VERSIÓN: 02</td>
 						<td colspan="2" class="border border-gray-300 p-2">CÓDIGO: SP-F-00X</td>
 						<td colspan="3" class="border border-gray-300 py-2 pr-12 pl-2">
@@ -194,7 +175,7 @@
 
 
 					<tr class="bg-gray-100">
-						<th colspan="9" class="border border-gray-300 text-center font-bold p-2 uppercase"><?php echo __('Producto Anexo Tecnico 2024'); ?></th>
+						<th colspan="9" class="border border-gray-300 text-center font-bold p-2 uppercase"><?php echo __('Anexo Tecnico 2026'); ?></th>
 					</tr>
 					<tr>
 						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center"><?php echo __('Responsable'); ?></td>
@@ -241,7 +222,7 @@
 
 						<td colspan="4" class="border border-gray-300 font-semibold p-2">
 							<?php
-							$valoractividad = $producto['Producto']['valor total'];
+							$valoractividad = $producto['Producto']['valor_total'];
 							if (is_numeric($valoractividad)) {
 								echo '$ ' . number_format($valoractividad, 0, '', '.');
 							} else {
@@ -373,37 +354,7 @@
 						</td>
 					</tr>
 
-					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Observación PIC</td>
-						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['observacionpic']; ?>
-						</td>
-					</tr>
-
-
-					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Observación SMS</td>
-						<td colspan="8" class="border border-gray-300 p-2">
-							<?php echo $producto['Producto']['observacionsms']; ?>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">Anexo</td>
-						<td colspan="2" class="border border-gray-300 p-2 text-blue-600 hover:underline break-words max-w-xs" style="word-break: break-all;">
-							<?php echo $this->Html->link('../files/producto/anexo/' . $producto['Producto']['dirproduc'] . '/' . $producto['Producto']['anexo']); ?>
-						</td>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">Enlaces:</td>
-						<td colspan="6" class="border border-gray-300 p-2 text-blue-600 hover:underline break-words max-w-xs" style="word-break: break-all;">
-							<?php echo $this->Html->link($producto['Producto']['enlace']); ?>
-						</td>
-					</tr>
-
-					<tr>
-						<td colspan="1" class="border border-gray-300 font-semibold p-2">Enlaces:</td>
-						<td colspan="8" class="border border-gray-300 p-2 text-blue-600 hover:underline break-words max-w-xs" style="word-break: break-all;">
-							<?php echo $this->Html->link($producto['Producto']['enlacedos']); ?>
-						</td>
-					</tr>
+					
 
 				</tbody>
 			</table>
@@ -444,11 +395,12 @@
 
 		<div class="grid grid-cols-1 mt-10 mb-5">
 			<div class="col-span-1 col-span-2 md:col-span-1 text-sm font-semibold rounded-lg border border-gray-300 py-[2px]">
-				<div class="grid grid-cols-1 sm:grid-cols-4">
+				<div class="grid grid-cols-1 sm:grid-cols-5">
 					<button type="button" id="btn-sistematizaciones" class="w-full py-1 text-black rounded hover:bg-blue-700 transition hover:text-white">Sistematizaciones</button>
 					<button type="button" id="btn-planes-sesion" class="w-full py-1 text-black rounded hover:bg-blue-700 transition hover:text-white">Planes de sesión</button>
 					<button type="button" id="btn-informe-eventos" class="w-full py-1 text-black rounded hover:bg-blue-700 transition hover:text-white">Informe de eventos</button>
 					<button type="button" id="btn-actas" class="w-full py-1 text-black rounded hover:bg-blue-700 transition hover:text-white">Actas</button>
+					<button type="button" id="btn-seguimientos" class="w-full py-1 text-black rounded hover:bg-blue-700 transition hover:text-white">Seguimientos</button>
 				</div>
 			</div>
 		</div>
@@ -516,7 +468,7 @@
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID</th>
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Fecha</th>
 								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Tema</th>
-								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Intención</th>
+								
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Dimensión</th>
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Responsable</th>
 								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Acciones</th>
@@ -531,7 +483,7 @@
 										<td><?php echo $plsesion['id']; ?></td>
 										<td><?php echo $plsesion['fecha']; ?></td>
 										<td><?php echo $plsesion['tema']; ?></td>
-										<td><?php echo $plsesion['intension']; ?></td>
+										
 										<td><?php echo $plsesion['dimension']; ?></td>
 										<td><?php echo $plsesion['Responsable']['nombres']; ?></td>
 										<td>
@@ -616,7 +568,7 @@
 					</div>
 				<?php endif; ?>
 			</div>
-
+           <!-- tabla actas -->
 			<div id="tab-actas" class="col-span-1 col-span-2 md:col-span-1 text-md font-semibold my-4  rounded-lg border  border-gray-300 px-8 pb-8">
 				<?php if (!empty($producto['Acta'])) : ?>
 					<table id="actas" style="width:100%;" class="stripe hover text-sm text-left text-gray-600 border border-gray-200 rounded-lg overflow-hidden">
@@ -671,6 +623,82 @@
 					</div>
 				<?php endif; ?>
 			</div>
+
+			<!-- tabla seguimientos -->
+			 <div id="tab-seguimientos" class="col-span-1 col-span-2 md:col-span-1 text-md font-semibold my-4  rounded-lg border  border-gray-300 px-8 pb-8">
+				<?php if (!empty($producto['Seguimiento'])) : ?>
+					<table id="seguimientos" style="width:100%;" class="stripe hover text-sm text-left text-gray-600 border border-gray-200 rounded-lg overflow-hidden">
+						<thead class="bg-gray-200 font-medium border-b border-gray-300">
+							<tr class=" text-gray-900 font-light">
+								<th class="px-2 w-6"></th> <!-- control (+) -->
+								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-gray-100">ID</th>
+								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Periodo</th>
+								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Estado</th>
+								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">% Ejecutado</th>
+								<th class="px-16 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Referente</th>
+								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Responsable</th>
+								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Registro</th>
+								<th class="px-4 py-2 font-semibold text-center cursor-pointer hover:bg-green-100">Acciones</th>
+							</tr>
+						</thead>
+						<tbody class="bg-white divide-y divide-gray-300">
+							<?php foreach ($producto['Seguimiento'] as $seguimiento) :
+								if (!empty($seguimiento['id'])) {
+							?>
+									<tr class="">
+										<td class="dtr-control"></td>
+										<td><?php echo $seguimiento['id']; ?></td>
+										<td><?php echo $seguimiento['fecha']; ?></td>
+										<td><?php echo $seguimiento['estado']; ?></td>
+										<td><?php echo $seguimiento['valorejecutado']; ?></td>
+										<td><?php 
+										$referente = $seguimiento['Referente']?$seguimiento['Referente']['nombres']:"";
+										if($referente){
+											echo $referente;
+										}else{
+											echo('Sin revisión');
+										}										
+										?></td>										
+										<td><?php echo $seguimiento['Responsable']['nombres']; ?></td>
+										<td><?php echo $seguimiento['created']; ?></td>
+																				
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+													<?php echo ('Acciones'); ?> <span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li> <?php echo $this->Html->link("Ver", "../seguimientos/view/" . $seguimiento['id'], array('target' => '_blank')); ?></li>
+													<li> 														
+														<?php 
+															
+															if($tipoUsuario === '2'){
+																echo $this->Html->link("Revisar", "../seguimientos/edit/" . $seguimiento['id'], array('target' => '_blank'));
+															}elseif($tipoUsuario === '3'){
+																echo $this->Html->link("Actualizar", "../seguimientos/editpic/" . $seguimiento['id'], array('target' => '_blank'));
+															}else{
+																echo $this->Html->link("Revisar", "../seguimientos/edit/" . $seguimiento['id'], array('target' => '_blank'));
+																echo $this->Html->link("actualizar", "../seguimientos/editpic/" . $seguimiento['id'], array('target' => '_blank'));
+															};																					
+														 ?></li>
+												</ul>
+											</div>
+
+										</td>
+									</tr>
+							<?php } else {
+									echo "<tr><td colspan='9' class='text-center p-4'>No hay repoetes registrados para este producto.</td></tr>";
+								}
+							endforeach; ?>
+						</tbody>
+					</table>
+				<?php else: ?>
+					<div class="text-center text-gray-500 pt-2">
+						No hay reportes registrados para este producto.
+					</div>
+				<?php endif; ?>
+			</div>		
+
 		</div>
 	</div>
 	<!-- Header -->
@@ -724,6 +752,7 @@
 		const $actividad = $('#actividad');
 		const $infoevento = $('#infoevento');
 		const $actas = $('#actas');
+		const $seguimiento = $('#seguimientos');
 
 
 		// Inicializar DataTable
@@ -732,12 +761,14 @@
 		const tableActividad = $actividad.DataTable(tablaProperties);
 		const tableInfoevento = $infoevento.DataTable(tablaProperties);
 		const tableActas = $actas.DataTable(tablaProperties);
+		const tableSeguimiento = $seguimiento.DataTable(tablaProperties);
 
 		$sistematizacion.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
 		$plansesion.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
 		$actividad.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
 		$infoevento.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
 		$actas.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
+		$seguimiento.removeClass("dataTable no-footer rounded-lg shadow-lg overflow-hidden");
 
 		// Reemplazar el input original por uno custom
 		$('.custom-search-container').html(`
@@ -812,8 +843,7 @@
         editor.on('change', updateCount);
 
         updateCount(); // inicializar contador
-    });
-
+    
 
 		// Conectar botones de paginación personalizados
 		$(document).on("click", ".first-page", function() {
@@ -822,6 +852,7 @@
 			tablePlansesion.page("first").draw("page");
 			tableInfoevento.page("first").draw("page");
 			tableActas.page("first").draw("page");
+			tableSeguimiento.page("first").draw("page");
 		});
 
 		$(document).on("click", ".previous-page", function() {
@@ -830,6 +861,7 @@
 			tablePlansesion.page("previous").draw("page");
 			tableInfoevento.page("previous").draw("page");
 			tableActas.page("previous").draw("page");
+			tableSeguimiento.page("previous").draw("page");
 		});
 
 		$(document).on("click", ".next-page", function() {
@@ -838,6 +870,7 @@
 			tablePlansesion.page("next").draw("page");
 			tableInfoevento.page("next").draw("page");
 			tableActas.page("next").draw("page");
+			tableSeguimiento.page("next").draw("page");
 		});
 
 		$(document).on("click", ".last-page", function() {
@@ -846,6 +879,7 @@
 			tablePlansesion.page("last").draw("page");
 			tableInfoevento.page("last").draw("page");
 			tableActas.page("last").draw("page");
+			tableSeguimiento.page("last").draw("page");
 		});
 
 		tableSistematizacion.on('draw', stylePagination);
@@ -853,7 +887,9 @@
 		tablePlansesion.on('draw', stylePagination);
 		tableInfoevento.on('draw', stylePagination);
 		tableActas.on('draw', stylePagination);
-	});
+		tableSeguimiento.on('draw', stylePagination);
+	
+
 
 	$(document).on('click', '.ver-mas', function(e) {
 		e.preventDefault();
@@ -871,6 +907,8 @@
 		td.find('.texto-completo').addClass('hidden');
 		td.find('.ver-mas').removeClass('hidden');
 		td.find('.ver-menos').addClass('hidden');
+	});
+
 	});
 </script>
 
@@ -913,6 +951,10 @@
 			{
 				btn: "btn-actas",
 				section: "tab-actas"
+			},
+			{
+				btn: "btn-seguimientos",
+				section: "tab-seguimientos"
 			}
 		];
 
@@ -935,7 +977,7 @@
 
 
 		// Mostrar el primero por defecto
-		showTab("tab-sistematizaciones", "btn-sistematizaciones");
+		showTab("tab-seguimientos", "btn-seguimientos");
 
 
 		var btn = document.getElementById('btn-print');

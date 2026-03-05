@@ -44,26 +44,23 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2">
 
-            <!-- Fecha de sesión realizada -->
-            <div class="col-span-2 text-md font-semibold my-6">
+               <!-- Fecha de sesión realizada -->
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
                 <div class="flex items-center ">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
                     <label for="producto_id" class="font-semibold">Fecha de registro</label>
                     <p class="text-red-600">*</p>
                 </div>
-                <div class="col-span-2 text-md font-semibold my-6">
+                <div class="col-span-2 text-md font-semibold my-4">
                     <div class="flex flex-col w-full">
-                        <?php echo $this->Form->label('datetime_range', 'Seleccione Rango de Fecha y Hora', [
-                            'class' => 'text-gray-700 font-semibold text-sm mb-2'
-                        ]); ?>
                         <input
                             type="text"
-                            name="datetime_range"
-                            id="datetime_range"
+                            name="data[Acta][fecha]"
+                            id="fecha"
                             class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
                             placeholder="Selecciona rango de fecha y hora" />
                         <span class="text-sm text-red-600 mt-1">
-                            <?= $this->Form->error('datetime_range') ?>
+                            <?= $this->Form->error('fecha') ?>
                         </span>
                     </div>
 
@@ -519,18 +516,14 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
 
 
     $(function() {
-        $('#datetime_range').daterangepicker({
-            timePicker: true,
-            timePicker24Hour: true,
-            timePickerIncrement: 1,
+         $('#fecha').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
             autoApply: true,
             locale: {
-                format: 'YYYY-MM-DD HH:mm',
-                separator: ' a ',
+                format: 'YYYY-MM-DD',
                 applyLabel: "Aplicar",
                 cancelLabel: "Cancelar",
-                fromLabel: "Desde",
-                toLabel: "Hasta",
                 daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
                 monthNames: [
                     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -538,28 +531,12 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 ],
                 firstDay: 1
             }
-        }, function(start, end) {
-            // 👇 Extraer fecha y horas
+        }, function(start) {
             let fecha = start.format('YYYY-MM-DD');
-            let hora_inicio = start.format('HH:mm');
-            let hora_fin = end.format('HH:mm');
-
-            console.log("Fecha:", fecha);
-            console.log("Hora inicio:", hora_inicio);
-            console.log("Hora fin:", hora_fin);
-
-            // Si necesitas guardarlos en campos ocultos para enviarlos al backend:
-            if (!$("#fecha").length) {
-                $("form").append('<?php echo $this->Form->hidden('fecha', ['id' => 'fecha']); ?>');
-                $("form").append('<?php echo $this->Form->hidden('hora_inicio', ['id' => 'hora_inicio']); ?>');
-                $("form").append('<?php echo $this->Form->hidden('hora_fin', ['id' => 'hora_fin']); ?>');
-            }
-            $("#fecha").val(fecha);
-            $("#hora_inicio").val(hora_inicio);
-            $("#hora_fin").val(hora_fin);
         });
     });
 
+        
 
     CKEDITOR.on('instanceReady', function(ev) {
         var editor = ev.editor;

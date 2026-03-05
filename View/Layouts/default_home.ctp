@@ -32,7 +32,7 @@ $cakeDescription = 'Ciudad Bienestar: Sistema de Información';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SICB PIC 2025</title>
+    <title>SICB PIC 2026</title>
 
     <?php echo $this->Html->charset(); ?>
     <title>

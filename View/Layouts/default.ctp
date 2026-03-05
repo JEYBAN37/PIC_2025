@@ -29,7 +29,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SICB PIC 2025</title>
+    <title>SICB PIC 2026</title>
     <?php echo $this->Html->charset(); ?>
     <title>
         <?php echo $cakeDescription ?>:

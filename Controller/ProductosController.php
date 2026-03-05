@@ -34,7 +34,7 @@ class ProductosController extends AppController
 	//public $components = array('Paginator');
 	public $helpers = array('Html', 'Form');
 	public $components = array('Paginator', 'Session', 'RequestHandler');
-	var $uses = array("Proactividad", "Procesoregistro", "Responsable", "Acta", "Producto");
+	var $uses = array("Proactividad", "Procesoregistro", "Responsable", "Acta", "Producto","Seguimiento");
 
 	/**
 	 * index method
@@ -92,14 +92,28 @@ class ProductosController extends AppController
 						'fields' => array('Acta.id', 'Acta.fecha', 'Acta.tema', 'Acta.objactividad', 'Acta.anexo'),
 						'Responsable' => array(
 							'fields' => array('Responsable.id', 'Responsable.nombres')
-						),
+						),						
+											
+						
 						'Ubicacion' => array(
 							'fields' => array('Ubicacion.id', 'Ubicacion.sitio')
 						)
-					)
+					),
+
+					'Seguimiento' => array(
+						'fields' => array('Seguimiento.id', 'Seguimiento.estado', 'Seguimiento.fecha','Seguimiento.valorejecutado','Seguimiento.created'),
+						'Referente' => array(
+							'fields' => array('Referente.id', 'Referente.nombres')
+						),	
+						'Responsable' => array(
+							'fields' => array('Responsable.id', 'Responsable.nombres')
+						),	
+						
+					)					
 				)
 			)
 		);
+		//debug($producto);
 		$this->set(compact('tipoUsuario', 'producto'));
 	}
 
@@ -193,7 +207,12 @@ class ProductosController extends AppController
 	}
 
 
+	
+
 	public function editpic()
+	{
+	}
+	public function smsedit()
 	{
 	}
 

@@ -14,6 +14,7 @@ App::uses('AppModel', 'Model');
  * @property Plsesion $Plsesion
  * @property Productosactividad $Productosactividad
  * @property Actividad $Actividad
+ * @property Actividad $Seguimiento
  */
 class Producto extends AppModel
 {
@@ -577,7 +578,7 @@ class Producto extends AppModel
 		),	
 		'Seguimiento' => array(
 			'className' => 'Seguimiento',
-			'foreignKey' => 'seguimiento_id',
+			'foreignKey' => 'producto_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

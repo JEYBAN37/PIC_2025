@@ -59,7 +59,7 @@
                         if (index === 2) $(this).addClass('text-center'); // idproducto
 
                         // Para columnas de texto largo (por ejemplo, nombreproducto, objactividad)
-                        if (index === 3 || index === 4) {
+                        if (index === 3 || index === 4 || index === 5) {
                             const maxLength = 200;
                             const cellText = $(this).text();
                             if (cellText.length > maxLength) {
@@ -73,7 +73,7 @@
                             }
                         }
 
-                        if (index === 5) $(this).addClass('text-center font-bold text-black text-xs'); // responsable
+                        
                         if (index === 6) $(this).addClass('text-center'); // conCat
                     });
                     // Aplica clase a la fila completa si quieres
