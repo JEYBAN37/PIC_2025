@@ -302,27 +302,10 @@ class PlsesionesController extends AppController
             }
         }
         $conditions = [];
-        $rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+       
 
 
-        if (!empty($search)) {
-            if (!empty($rol)) {
-                // nombredim es obligatoria (AND), el resto es OR
-                $conditions['AND'] = [
-                    'Producto.nombredim LIKE' => "%$rol%",
-                    'OR' => [
-                        'Plsesion.id LIKE' => "%$search%",
-                        'Plsesion.fecha LIKE' => "%$search%",
-                        'Plsesion.intension LIKE' => "%$search%",
-                        'Plsesion.tema LIKE' => "%$search%",
-                        'Plsesion.objetivog LIKE' => "%$search%",
-                        'Plsesion.tipoblacion LIKE' => "%$search%",
-                        'Plsesion.dimension LIKE' => "%$search%",
-                        'Plsesion.proceso LIKE' => "%$search%",
-                        'Plsesion.created LIKE' => "%$search%",
-                    ]
-                ];
-            } else {
+       
                 $conditions['OR'] = [
                     'Plsesion.id LIKE' => "%$search%",
                     'Plsesion.fecha LIKE' => "%$search%",
@@ -334,11 +317,7 @@ class PlsesionesController extends AppController
                     'Plsesion.proceso LIKE' => "%$search%",
                     'Plsesion.created LIKE' => "%$search%",
                 ];
-            }
-        } elseif (!empty($rol)) {
-            // Si no hay búsqueda pero sí rol, filtrar por nombredim igual
-            $conditions['Producto.nombredim LIKE'] = "%$rol%";
-        }
+            
 
         $total = $this->Plsesion->find('count');
         $filtered = $this->Plsesion->find('count', ['conditions' => $conditions]);

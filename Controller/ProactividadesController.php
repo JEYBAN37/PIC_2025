@@ -188,22 +188,10 @@ class ProactividadesController extends AppController
 			}
 		}
 		$conditions = [];
-		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+		
 
 
-		if (!empty($search)) {
-			if (!empty($rol)) {
-				// nombredim es obligatoria (AND), el resto es OR
-				$conditions['AND'] = [
-					'Producto.nombredim LIKE' => "%$rol%",
-					'OR' => [
-						'Proactividad.id LIKE' => "%$search%",
-						'Producto.actividad LIKE' => "%$search%",
-						'Proactividad.objactividad LIKE' => "%$search%",
-						'Responsable.nombres LIKE' => "%$search%"
-					]
-				];
-			} else {
+		
 				$conditions['OR'] = [
 					'Proactividad.id LIKE' => "%$search%",
 					'Producto.actividad LIKE' => "%$search%",
@@ -211,11 +199,8 @@ class ProactividadesController extends AppController
 					'Proactividad.objactividad LIKE' => "%$search%",
 					'Responsable.nombres LIKE' => "%$search%"
 				];
-			}
-		} elseif (!empty($rol)) {
-			// Si no hay búsqueda pero sí rol, filtrar por nombredim igual
-			$conditions['Producto.nombredim LIKE'] = "%$rol%";
-		}
+			
+		
 
 		$total = $this->Proactividad->find('count');
 		$filtered = $this->Proactividad->find('count', ['conditions' => $conditions]);

@@ -101,9 +101,11 @@ class ProductosController extends AppController
 					),
 
 					'Seguimiento' => array(
+						'order' => array('Seguimiento.fecha' => 'DESC'), // Ordenar los seguimientos por fecha de creación
 						'fields' => array('Seguimiento.id', 'Seguimiento.estado', 'Seguimiento.fecha','Seguimiento.valorejecutado','Seguimiento.created'),
 						'Referente' => array(
 							'fields' => array('Referente.id', 'Referente.nombres')
+						 	
 						),	
 						'Responsable' => array(
 							'fields' => array('Responsable.id', 'Responsable.nombres')
@@ -290,21 +292,7 @@ class ProductosController extends AppController
 		//BUSQUEDA
 		$conditions = [];
 		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
-		if (!empty($rol)) {
-			// nombredim es obligatoria (AND), el resto es OR
-			$conditions['AND'] = [
-				'Producto.nombredim LIKE' => "%$rol%",
-				'OR' => [
-					'Producto.numproductos LIKE' => "%$search%",
-					'Producto.nombredim LIKE' => "%$search%",
-					'Producto.producto LIKE' => "%$search%",
-					'Producto.actividad LIKE' => "%$search%",
-					'Producto.soportes LIKE' => "%$search%",
-					'Producto.estado LIKE' => "%$search%",
-					'Producto.modified LIKE' => "%$search%",
-				]
-			];
-		} else {
+		
 			$conditions['OR'] = [
 				'Producto.numproductos LIKE' => "%$search%",
 				'Producto.nombredim LIKE' => "%$search%",
@@ -314,7 +302,7 @@ class ProductosController extends AppController
 				'Producto.estado LIKE' => "%$search%",
 				'Producto.modified LIKE' => "%$search%",
 			];
-		}
+		
 
 		//CUENTA TOTAL DE REGISTROS
 		$total = $this->Producto->find('count');

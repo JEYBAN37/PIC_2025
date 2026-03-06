@@ -175,7 +175,7 @@ class AppController extends Controller
             $this->loadModel('Producto');
             $productos = $this->Producto->find('list', [
                 'fields' => ['Producto.id', 'Producto.nombreproducto'],
-                'order' => ['Producto.modified' => 'DESC'],
+                'order' => ['Producto.numproductos' => 'ASC'],
                 'recursive' => -1
             ]);
             Cache::write($cacheKey, $productos, 'selects');

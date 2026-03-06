@@ -43,7 +43,7 @@ class UsersController extends AppController
                     if ($r["User"]["group_id"] === "3") {
 
                         $rolUsuario = $this->Responsable->find('first', [
-                            'conditions' => ['Responsable.correo' => $r['User']['username']],
+                            'conditions' => ['Responsable.numero' => $r['User']['numero']],
                             'fields' => ['Responsable.id, Responsable.proyecto']
                         ]);
 
@@ -66,7 +66,7 @@ class UsersController extends AppController
                     } elseif ($r["User"]["group_id"] === "2") {
 
                         $rolUsuario = $this->Referente->find('first', [
-                            'conditions' => ['Referente.correo' => $r['User']['username']],
+                            'conditions' => ['Referente.numero' => $r['User']['numero']],
                             'fields' => ['Referente.id, Referente.proyecto']
                         ]);
 
@@ -99,7 +99,7 @@ class UsersController extends AppController
 
                         if ($this->Session->read('Auth.User')) {
                             $this->Session->setFlash('Acceso exitoso, bienvenido', 'flash_custom',array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
-                             $this->redirect( array('controller' => 'Familias', 'action' => 'index'));
+                             $this->redirect( array('controller' => 'productos', 'action' => 'index'));
                         }
                     }
                 } else {

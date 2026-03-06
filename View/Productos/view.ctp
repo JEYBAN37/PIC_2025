@@ -784,16 +784,7 @@
         </div>
         `);
 
-		// Función para estilizar la paginación
-		$('.custom-pagination').html(`
-            <div class="pagination-container flex items-center space-x-2">
-                <button class="first-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Primera página" id="first-page">&laquo;&laquo;</button>
-                <button class="previous-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Página anterior" id="previous-page">&laquo;</button>
-                <span class="page-info text-gray-700 text-sm"></span>
-                <button class="next-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Página siguiente" id="next-page">&raquo;</button>
-                <button class="last-page bg-white border border-gray-300 text-gray-700 px-3 py-1 rounded hover:bg-gray-100" title="Última página" id="last-page">&raquo;&raquo;</button>
-            </div>
-        `);
+		
 
 		$('.custom-table-length').html(`
         <table>
@@ -817,6 +808,56 @@
            </tbody>
         </table>
         `);
+
+		// 1. Al insertar el HTML, usa CLASES, no IDs para los botones
+$('.custom-pagination').html(`
+    <div class="pagination-container flex items-center space-x-2">
+        <button class="btn-first bg-white border border-gray-300 px-3 py-1 rounded hover:bg-gray-100">&laquo;&laquo;</button>
+        <button class="btn-prev bg-white border border-gray-300 px-3 py-1 rounded hover:bg-gray-100">&laquo;</button>
+        <span class="page-info text-gray-700 text-sm"></span>
+        <button class="btn-next bg-white border border-gray-300 px-3 py-1 rounded hover:bg-gray-100">&raquo;</button>
+        <button class="btn-last bg-white border border-gray-300 px-3 py-1 rounded hover:bg-gray-100">&raquo;&raquo;</button>
+    </div>
+`);
+
+// 2. Función genérica para actualizar el texto de "Página X de Y"
+function updatePaginationUI(tableInstance) {
+    const info = tableInstance.page.info();
+    const $container = $(tableInstance.table().container()).find('.custom-pagination');
+    $container.find('.page-info').text(`Página ${info.page + 1} de ${info.pages}`);
+    
+    // Opcional: Deshabilitar botones si no hay más páginas
+    $container.find('.btn-prev, .btn-first').prop('disabled', info.page === 0);
+    $container.find('.btn-next, .btn-last').prop('disabled', info.page >= info.pages - 1);
+}
+
+// 3. Eventos delegados (detectan qué tabla disparó el clic)
+$(document).on("click", ".btn-first, .btn-prev, .btn-next, .btn-last", function() {
+    // Buscamos la tabla que pertenece al contenedor de este botón
+    const $wrapper = $(this).closest('.dataTables_wrapper');
+    const tableApi = $wrapper.find('table').DataTable();
+    
+    if ($(this).hasClass('btn-first')) tableApi.page('first');
+    if ($(this).hasClass('btn-prev'))  tableApi.page('previous');
+    if ($(this).hasClass('btn-next'))  tableApi.page('next');
+    if ($(this).hasClass('btn-last'))  tableApi.page('last');
+    
+    tableApi.draw('page');
+});
+
+// 4. Suscribir cada tabla a la actualización de la UI al redibujar
+const todasLasTablas = [
+    tableSistematizacion, tablePlansesion, tableActividad, 
+    tableInfoevento, tableActas, tableSeguimiento
+];
+
+todasLasTablas.forEach(table => {
+    table.on('draw', function() {
+        updatePaginationUI(table);
+    });
+    // Llamada inicial para mostrar la info de página 1
+    updatePaginationUI(table);
+});
 
 		
 

@@ -37,6 +37,8 @@ class SeguimientosController extends AppController {
 			throw new NotFoundException(__('Invalid seguimiento'));
 		}
 		$options = array('conditions' => array('Seguimiento.' . $this->Seguimiento->primaryKey => $id));
+		$tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
+		$this->set('tipoUsuario',$tipoUsuario);
 		$this->set('seguimiento', $this->Seguimiento->find('first', $options));
 	}
 
@@ -84,11 +86,12 @@ class SeguimientosController extends AppController {
 		if (!$this->Seguimiento->exists($id)) {
 			throw new NotFoundException(__('Invalid seguimiento'));
 		}
-
+        $tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
+		
 		if ($this->request->is(array('post', 'put'))) {
 			$id_producto =$this->request->data['Seguimiento']['producto_id'];			
 			if ($this->Seguimiento->save($this->request->data)) {
-				$this->Session->setFlash('Registro de seguimiento se guradado con exito', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
+				$this->Session->setFlash('Su registro fue almacenado', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
 				return $this->redirect(array(
 						'controller' => 'Productos',
 						'action' => 'view/' . $id_producto,
@@ -100,6 +103,14 @@ class SeguimientosController extends AppController {
 		} else {
 			$options = array('conditions' => array('Seguimiento.' . $this->Seguimiento->primaryKey => $id));
 			$this->request->data = $this->Seguimiento->find('first', $options);
+			$id_producto =$this->request->data['Seguimiento']['producto_id'];
+		if($tipoUsuario !== '2'){
+			return $this->redirect(array(
+						'controller' => 'Productos',
+						'action' => 'view/' . $id_producto,
+						'?' => array('producto' => $id_producto)
+					));
+		}
 		}
 		$productos = $this->Seguimiento->Producto->find('list');
 		$referentes = $this->Seguimiento->Referente->find('list');
@@ -116,7 +127,7 @@ class SeguimientosController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			$id_producto =$this->request->data['Seguimiento']['producto_id'];			
 			if ($this->Seguimiento->save($this->request->data)) {
-				$this->Session->setFlash(__('The seguimiento has been saved.'));
+				$this->Session->setFlash('Su registro fue almacenado', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
 				return $this->redirect(array(
 						'controller' => 'Productos',
 						'action' => 'view/' . $id_producto,
