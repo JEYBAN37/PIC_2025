@@ -424,31 +424,34 @@ echo $this->Form->create('Procesoregistro', [
                         </label>
                     </div>
                 </div>
+              
                 <div class="col-span-2 text-md font-semibold my-6">
-                <div class="flex items-center mb-4">
-                    <?php
+                    <div class="flex items-center mb-4">
+                        <?php
 
-                       $observacionseguimiento = [
-                            '0 Elegir' => 'Elegir',
-                            '1 Retroalimentación' => 'Brindo Retroalimentación',
-                            '2 No Retroalimentación ' => 'Sin Retroalimentación',
-                            '3 Apoyo Conceptual-normativo' => 'Apoyo Conceptual, normativo',
-                                                       
-                        ];
+                        $observacionseguimiento = [
+                                '0 Elegir' => 'Elegir',
+                                '1 Retroalimentación' => 'Brindo Retroalimentación',
+                                '2 No Retroalimentación ' => 'Sin Retroalimentación',
+                                '3 Apoyo Conceptual-normativo' => 'Apoyo Conceptual, normativo',
+                                                        
+                            ];
 
-                    echo $this->Form->input('observacionseguimiento', [
-                        'id' => 'acompanamiento',
-                        'style' => 'display: none;',
-                        'type' => 'select',
-                        'options' => $observacionseguimiento,
-                        'label' => false,
-                        'error' => false,
-                        'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
-                    ]);
-                    ?>
+                        echo $this->Form->input('observacionseguimiento', [
+                            'id' => 'acompanamiento',
+                            'style' => 'display: none;',
+                            'type' => 'select',
+                            'options' => $observacionseguimiento,
+                            'label' => false,
+                            'error' => false,
+                            'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                        ]);
+                        ?>
+                        
+                    </div>
                     
                 </div>
-                </div>
+            </div>
 
             
 
@@ -458,7 +461,7 @@ echo $this->Form->create('Procesoregistro', [
                     <label for="numeroparticipantes" class="font-semibold">Total Número de participantes</label>
                     <p class="text-red-600">*</p>
 
-                    </div>
+                </div>
 
                             <?php
                         echo $this->Form->input('numeroparticipantes', [
@@ -474,18 +477,16 @@ echo $this->Form->create('Procesoregistro', [
                             echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('totalsesiones') . '</div>';
                         }
                         ?>
-                    </div>
+                    
                     <p class="help-block text-gray-500 text-xs mb-2">Ingrese el número participantes comunitarios de cuerdo a lista de asistencia</p>
             
                
-            </div>
-
+            </div>        
             
-            </div>
 
         </div>        
     </div>
-    <div class="bg-white shadow-2xl rounded-xl p-16">
+    <div class="bg-white shadow-2xl rounded-xl p-16 mt-4">
         <!-- Header -->
         <div class="flex items-center mb-4">
             <img src="../img/update/historicoHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg w-[60px]">
