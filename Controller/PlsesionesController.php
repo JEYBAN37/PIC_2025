@@ -122,8 +122,12 @@ class PlsesionesController extends AppController
         if ($this->request->is('post')) {
             $this->Plsesion->create();
             if ($this->Plsesion->save($this->request->data)) {
-                $this->Session->setFlash(__('El Plan de sesion ha sido guardado.'));
-                //return $this->redirect(array('action' => 'nuebus'));
+                
+                $this->Session->setFlash(
+						'El registro fue almacenado correctamente, realice otro registro',
+						'default',
+						array('class' => self::ALERT_SUCCESS_CLASS)
+					);
                 return $this->redirect(array('controller' => 'Plsmomentos', 'action' => 'add?sesion=' . $this->Plsesion->id));
             } else {
                 $this->Session->setFlash('El plan de sesión no ha sido guardado. Por favor, trate nuevamente.', 'default', array('class' => self::ALERT_ERROR_CLASS));

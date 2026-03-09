@@ -15,7 +15,7 @@
 </div>
 
 <?php
-echo $this->Form->input('id', array('type' => 'hidden'));
+
 echo $this->Form->create('Acta',  [
     'type' => 'file',
     'novalidate' => 'novalidate',
@@ -43,6 +43,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                 <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">Creador</span>
             </div>
             <?php
+            echo $this->Form->input('id', array('type' => 'hidden'));
             echo $this->Form->input('responsable_id', [
                 'label' => false,
                 'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
@@ -57,25 +58,25 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
 
         <div class="grid grid-cols-1 md:grid-cols-2">
             <!-- Fecha de sesión realizada -->
-            <div class="col-span-2 text-md font-semibold my-6">
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
                 <div class="flex items-center ">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
-                    <label for="producto_id" class="font-semibold">Registro de fecha</label>
+                    <label for="producto_id" class="font-semibold">Fecha de registro</label>
                     <p class="text-red-600">*</p>
                 </div>
-                <div class="col-span-2 text-md font-semibold my-6">
+                <div class="col-span-2 text-md font-semibold my-4">
                     <div class="flex flex-col w-full">
                         <?php echo $this->Form->label('datetime_range', 'Seleccione Rango de Fecha y Hora', [
                             'class' => 'text-gray-700 font-semibold text-sm mb-2'
                         ]); ?>
                         <input
                             type="text"
-                            name="datetime_range"
-                            id="datetime_range"
+                            name="data[Acta][fecha]"
+                            id="fecha"
                             class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
                             placeholder="Selecciona rango de fecha y hora" />
                         <span class="text-sm text-red-600 mt-1">
-                            <?= $this->Form->error('datetime_range') ?>
+                            <?= $this->Form->error('fecha') ?>
                         </span>
                     </div>
 
@@ -205,7 +206,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                 <?php
                 echo $this->Form->input('objactividad', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -250,7 +251,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                     'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false, // No mostrar error aquí
-                    'data-maxlength' => 600, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
 
                 ]);
                 if (!empty($this->Form->error('ordendia'))) {
@@ -286,7 +287,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                         'label' => '',
                         'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                         'error' => false, // No mostrar error aquí
-                        'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                        'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
 
                     ]);
                     if (!empty($this->Form->error('compromisosprevios'))) {
@@ -314,7 +315,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                     'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false, // No mostrar error aquí
-                    'data-maxlength' => 4000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 25000, // <-- aquí defines el límite de caracteres
 
                 ]);
                 if (!empty($this->Form->error('desarrollo'))) {
@@ -337,7 +338,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                 echo $this->Form->input('compromiso', [
                     'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
-                    'data-maxlength' => 2000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 10000, // <-- aquí defines el límite de caracteres
                     'error' => false // No mostrar error aquí
                 ]);
                 if (!empty($this->Form->error('compromiso'))) {
@@ -357,7 +358,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
             <img src="<?php echo $this->webroot; ?>/img/update/historicoHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg w-[60px]">
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Cierre de Acta</h1>
-                <p class="text-gray-500">Datos finales del acta.</p>
+                <p class="text-gray-500">Complete los datos finales del acta.</p>
             </div>
 
         </div>
@@ -375,9 +376,8 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                 $alcancereunion = array(
                     '' => 'Elegir',
                     'planeacion operativa administrativa' => 'Planenación operativa/administrativa',
-                    'ejcucion operativa administrativa' => 'Ejecución operativa/administrativa',
                     'planeacion pedagogica' => 'Planeación pedagógica',
-                    'articulacion interinstitucional' => 'Apoyo interinstitucional',
+                    'articulacion interinstitucional' => 'Articulación interinstitucional',
                     'acompañamiento a organizaciones' => 'Acompañamiento a organizaciones',
                     'Ejecucion de eventos o actividades' => 'Ejecución de eventos o actividades',
                     'participacion escenarios externos' => 'participación escenarios externos'
@@ -561,18 +561,14 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
 
 
     $(function() {
-        $('#datetime_range').daterangepicker({
-            timePicker: true,
-            timePicker24Hour: true,
-            timePickerIncrement: 1,
+         $('#fecha').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
             autoApply: true,
             locale: {
-                format: 'YYYY-MM-DD HH:mm',
-                separator: ' a ',
+                format: 'YYYY-MM-DD',
                 applyLabel: "Aplicar",
                 cancelLabel: "Cancelar",
-                fromLabel: "Desde",
-                toLabel: "Hasta",
                 daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
                 monthNames: [
                     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -580,27 +576,11 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                 ],
                 firstDay: 1
             }
-        }, function(start, end) {
-            // 👇 Extraer fecha y horas
+        }, function(start) {
             let fecha = start.format('YYYY-MM-DD');
-            let hora_inicio = start.format('HH:mm');
-            let hora_fin = end.format('HH:mm');
-
-            console.log("Fecha:", fecha);
-            console.log("Hora inicio:", hora_inicio);
-            console.log("Hora fin:", hora_fin);
-
-            // Si necesitas guardarlos en campos ocultos para enviarlos al backend:
-            if (!$("#fecha").length) {
-                $("form").append('<?php echo $this->Form->hidden('fecha', ['id' => 'fecha']); ?>');
-                $("form").append('<?php echo $this->Form->hidden('hora_inicio', ['id' => 'hora_inicio']); ?>');
-                $("form").append('<?php echo $this->Form->hidden('hora_fin', ['id' => 'hora_fin']); ?>');
-            }
-            $("#fecha").val(fecha);
-            $("#hora_inicio").val(hora_inicio);
-            $("#hora_fin").val(hora_fin);
         });
     });
+
 
 
     CKEDITOR.on('instanceReady', function(ev) {

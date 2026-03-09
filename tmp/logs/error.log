@@ -526,3 +526,36 @@ Stack Trace:
 #11 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ActasController), Object(CakeRequest))
 #12 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2026-03-09 16:51:50 Error: [MissingActionException] Action ActasController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ActasController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/actas/img/update/docHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ActasController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-03-09 16:51:50 Error: [MissingActionException] Action ActasController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ActasController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/actas/img/update/historicoHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ActasController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-03-09 16:52:20 Error: [MissingActionException] Action ActasController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ActasController',
+  'action' => 'img',
+)
+Request URL: /aplicacioncakephp/PIC_2025/actas/img/update/historicoHover.png
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ActasController), Object(CakeRequest))
+#2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
