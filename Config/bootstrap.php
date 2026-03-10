@@ -26,7 +26,7 @@
 
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
-define('URL_TABS', '/aplicacioncakephp/PIC_2025/');
+define('URL_TABS', '/PIC/');
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.

@@ -12,7 +12,7 @@ $this->layout = 'default' ?>
 
 <div class="max-w-5xl mx-auto text-center mb-8">
     <h1 class="text-5xl font-bold mb-4 text-blue-600">
-       Seguimiento ejecución Anexo Técnico PIC 2026
+        Seguimiento ejecución Anexo Técnico PIC 2026
     </h1>
     <p class="text-gray-500 mb-4 text-lg">
         Segumiento físico técnico al cumplimiento del plan de intervenciones colectivas
@@ -32,6 +32,8 @@ echo $this->Form->input('responsable_id', array('type' => 'hidden'));
 echo $this->Form->input('referente_id', array('value' => $nombreUsuario, 'type' => 'hidden'));
 // se utiliza para mantener el id del seguimiento
 echo $this->Form->input('producto_id', array('type' => 'hidden'));
+
+$idredirect = $this->Form->value('producto_id');
 ?>
 
 
@@ -55,8 +57,8 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
 
         <div class="grid grid-cols-1 md:grid-cols-2 ">
 
-         
-                <!-- Fecha de sesión realizada -->
+
+            <!-- Fecha de sesión realizada -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center ">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">1</span>
@@ -65,17 +67,17 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 </div>
                 <div class="col-span-2 text-md font-semibold my-6">
                     <div class="flex flex-col w-full">
-                      <?php
-                echo $this->Form->input('fecha', [
-                    'label' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
-                    'error' => false,
-                    'readonly'
-                    
-                    
-                ]);
+                        <?php
+                        echo $this->Form->input('fecha', [
+                            'label' => false,
+                            'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                            'error' => false,
+                            'readonly'
+
+
+                        ]);
                         ?>
-                           
+
                         <span class="text-sm text-red-600 mt-1">
                             <?= $this->Form->error('fecha') ?>
                         </span>
@@ -84,7 +86,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 </div>
             </div>
 
-             <!-- Valor asignado de la actividad -->
+            <!-- Valor asignado de la actividad -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
@@ -101,7 +103,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                     'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
                     'error' => false,
                     'type' => 'number',
-                   'readonly'
+                    'readonly'
                 ]);
 
                 if (!empty($this->Form->error('valorprogramado'))) {
@@ -110,7 +112,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 ?>
             </div>
 
-			  <!-- Valor ejecutado de la actividad -->
+            <!-- Valor ejecutado de la actividad -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">3</span>
@@ -148,135 +150,142 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
 <div class="max-w-6xl mx-auto p-18 mt-8">
     <div class="bg-white shadow-2xl rounded-xl p-12">
 
-    <!-- Observación Referente -->
-            <div class="col-span-2 text-md font-semibold my-6">
+        <!-- Observación Referente -->
+        <div class="col-span-2 text-md font-semibold my-6">
+            <div class="flex items-center mb-4">
+                <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">6</span>
+                <label for="observacionreferente" class="font-semibold">Observación Referente SMS</label>
+                <p class="text-red-600">*</p>
+            </div>
+            <?php
+            echo $this->Form->input('observacionreferente', [
+                'label' => '',
+                'data-maxlength' => 1200,
+                'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200',
+                'error' => false // No mostrar error aquí
+            ]);
+            if (!empty($this->Form->error('observacionreferente'))) {
+                echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('observacionreferente') . '</div>';
+            }
+            ?>
+        </div>
+
+        <!-- Acompañamiento -->
+        <div class="flex flex-col md:flex-row justify-center md:justify-between col-span-1 md:col-span-2 text-md font-semibold my-6 mr-4">
+            <div class="flex items-center mb-4">
+                <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">7</span>
+                <label for="actividad" class="font-semibold">Acompañamiento Referente SMS</label>
+                <p class="text-red-600">*</p>
+            </div>
+
+            <div class="flex space-x-4 items-center justify-center md:justify-start mt-4 pr-0 md:pr-[10%]  md:mt-0 ">
+                <!-- Botón NO -->
+                <?php $selected = $this->Form->value('acompanamiento'); ?>
+                <div>
+                    <input type="radio"
+                        name="data[Seguimiento][acompanamiento]"
+                        id="acompanamiento-no"
+                        value="0"
+                        class="hidden peer"
+                        data-target="acompanamiento"
+                        data-show="false"
+                        <?php if ($selected === null || $selected === '' || $selected === '0') echo 'checked'; ?>
+
+                        checked /> <!-- 👈 Por defecto NO -->
+                    <label for="acompanamiento-no"
+                        class="px-12 py-2 rounded-lg border cursor-pointer hover:text-white hover:bg-blue-600
+                       peer-checked:bg-blue-600 peer-checked:text-white">
+                        NO
+                    </label>
+                </div>
+
+                <!-- Botón SÍ -->
+                <div>
+                    <input type="radio"
+                        name="data[Seguimiento][acompanamiento]"
+                        id="acompanamiento-si"
+                        value="1"
+                        data-target="acompanamiento"
+                        data-show="true"
+                        <?php if ($selected === '1') echo 'checked'; ?>
+                        class="hidden peer cursor-pointer" />
+                    <label for="acompanamiento-si"
+                        class="px-12 py-2 rounded-lg border hover:bg-blue-600 cursor-pointer hover:text-white
+                       peer-checked:bg-blue-600 peer-checked:text-white">
+                        SI
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="acompanamiento" class="grid grid-cols-2 gap-4 col-span-2 md:col-span-2 text-md font-semibold">
+
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">6</span>
-                    <label for="observacionreferente" class="font-semibold">Observación Referente SMS</label>
-                    <p class="text-red-600">*</p>
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">?</span>
+                    <label for="numeroAnimales" class="font-semibold">Observacion de Segumimineto</label>
                 </div>
                 <?php
-                echo $this->Form->input('observacionreferente', [
-                    'label' => '',
-                    'data-maxlength' => 800,
-                    'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200',
-                    'error' => false // No mostrar error aquí
-                ]);
-                if (!empty($this->Form->error('observacionreferente'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('observacionreferente') . '</div>';
-                }
-                ?>
-            </div>  
 
-		<!-- Acompañamiento -->
-            <div class="flex justify-between col-span-2 text-md font-semibold m-6">
-                <div class="flex items-center w-64">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">7</span>
-                    <label for="acompanamiento" class="font-semibold">Acompañamiento Referente SMS</label>
-                    <p class="text-red-600">*</p>
-                </div>
-				  <!--p class="help-block text-gray-500 text-xs mb-2">Refiera si hubo acompañamiento según responsabilidad de equipo PIC </p-->
+                $observacionseguimiento = [
+                    '0 Elegir' => 'Elegir',
+                    '1 Asistencia Técnica' => 'Asistencia Técnica',
+                    '2 Verificación propuestas pedagógicas ' => 'Verificación propuestas pedagógicas',
+                    '3 Verificación concertacion comunitaria' => 'Verificación concertacion comunitaria',
+                    '4 Apoyo Gestión y articulación institucional' => 'Apoyo Gestión y articulación institucional',
+                    '5 Orientación en la elaboración de soportes' => 'Orientacion en la elaboración de soportes',
+                    '6 Orientación en la elaboración de soportes' => 'Orientacion en la elaboración de soportes',
+                    '7 Acompañamiento en acciones programadas' => 'Acompañamiento en acciones programadas',
+                    '8 Acompañamiento Administrativo_Logistico' => 'Acompañamiento Administrativo_logistico',
+                    '9 Verificación de convocatoria' => 'Verificación de convocatoria',
 
-                <div class="flex space-x-4 items-center">
-                    <!-- Botón NO -->
-                    <div>
-                        <input type="radio"
-                            name="data[Seguimiento][acompanamiento]"
-                            id="acompanamiento-no"
-                            value="0"
-                            class="hidden peer"
-                            data-target="acompanamiento"
-                            data-show="false"
-                            checked /> <!-- 👈 Por defecto NO -->
-                        <label for="acompanamiento-no"
-                            class="px-12 py-2 rounded-lg border cursor-pointer hover:text-white hover:bg-blue-600
-                       peer-checked:bg-blue-600 peer-checked:text-white">
-                            NO
-                        </label>
-                    </div>
-
-                    <!-- Botón SÍ -->
-                    <div>
-                        <input type="radio"
-                            name="data[Seguimiento][acompanamiento]"
-                            id="acompanamiento-si"
-                            value="1"
-                            data-target="acompanamiento"
-                            data-show="true"
-                            class="hidden peer cursor-pointer" />
-                        <label for="acompanamiento-si"
-                            class="px-12 py-2 rounded-lg border hover:bg-blue-600 cursor-pointer hover:text-white
-                       peer-checked:bg-blue-600 peer-checked:text-white">
-                            SI
-                        </label>
-                    </div>
-                </div>
-                <div class="col-span-2 text-md font-semibold my-6">
-                <div class="flex items-center mb-4">
-                    <?php
-
-                       $observacionseguimiento = [
-                            '0 Elegir' => 'Elegir',
-                            '1 Asistencia Técnica' => 'Asistencia Técnica',
-                            '2 Verificación propuestas pedagógicas ' => 'Verificación propuestas pedagógicas',
-                            '3 Verificación concertacion comunitaria' => 'Verificación concertacion comunitaria',
-							'4 Apoyo Gestión y articulación institucional' => 'Apoyo Gestión y articulación institucional',
-							'5 Orientación en la elaboración de soportes' => 'Orientacion en la elaboración de soportes', 
-							'6 Orientación en la elaboración de soportes' => 'Orientacion en la elaboración de soportes',                                                      
-							'7 Acompañamiento en acciones programadas' => 'Acompañamiento en acciones programadas',
-							'8 Acompañamiento Administrativo_Logistico' => 'Acompañamiento Administrativo_logistico',
-							'9 Verificación de convocatoria' => 'Verificación de convocatoria',
-
-                        ];
-
-                    echo $this->Form->input('observacionseguimiento', [
-                        'id' => 'descripcionacompanamiento',
-                        'style' => 'display: none;',
-                        'type' => 'select',
-                        'options' => $observacionseguimiento,
-                        'label' => false,
-                        'error' => false,
-                        'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
-                    ]);
-                    ?>
-                    
-                </div>
-                </div>      
-    </div>
-
-	       
-            
-
-            <div class="col-span-2 text-md font-semibold my-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">8</span>
-                    <label for="estado" class="font-semibold">Estado</label>
-                    <p class="text-red-600">*</p>
-
-                </div>
-                <?php
-                $options = [
-                    '1. Cumple avance' => 'Cumple avance',
-                    '1. Sin avance programado' => 'Sin avance programado',                   
-                    '3. No aplica periodo' => 'No aplica periodo',
-                    '4. Sin avance' => 'Sin avance',
-                    '5. Avance limitado' => 'Avance limitado',
-                    '6. Corregir' => 'Corregir',                    
                 ];
 
-                echo $this->Form->input('estado',[
-                        'type' => 'select',
-                        'label' => false, 
-                        'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
-                        'options' => $options,
-                        'error' => false // No mostrar error aquí
-                    ]
-                );
-                if (!empty($this->Form->error('estado'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('estado') . '</div>';
-                }
+                echo $this->Form->input('descripcionacompanamiento', [
+                    'id' => 'descripcionacompanamiento',
+                    'type' => 'select',
+                    'options' => $observacionseguimiento,
+                    'label' => false,
+                    'error' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                ]);
+
                 ?>
             </div>
+        </div>
+
+        <div class="col-span-2 text-md font-semibold my-6">
+            <div class="flex items-center mb-4">
+                <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">8</span>
+                <label for="estado" class="font-semibold">Estado</label>
+                <p class="text-red-600">*</p>
+
+            </div>
+            <?php
+            $options = [
+                '1. Cumple avance' => 'Cumple avance',
+                '1. Sin avance programado' => 'Sin avance programado',
+                '3. No aplica periodo' => 'No aplica periodo',
+                '4. Sin avance' => 'Sin avance',
+                '5. Avance limitado' => 'Avance limitado',
+                '6. Corregir' => 'Corregir',
+            ];
+
+            echo $this->Form->input(
+                'estado',
+                [
+                    'type' => 'select',
+                    'label' => false,
+                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                    'options' => $options,
+                    'error' => false // No mostrar error aquí
+                ]
+            );
+            if (!empty($this->Form->error('estado'))) {
+                echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('estado') . '</div>';
+            }
+            ?>
+        </div>
 
 
         <div class="pt-2 flex gap-4">
@@ -290,36 +299,33 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 </span>
                 Guardar Seguimiento
             </button>
-            
         </div>
-</div>
+    </div>
 </div>
 
 
 <script>
-    
-    
-   $(function() {
-         $('#fecha').daterangepicker({
-            singleDatePicker: true,
-            showDropdowns: true,
-            autoApply: true,
-            locale: {
-                format: 'YYYY-MM-DD',
-                applyLabel: "Aplicar",
-                cancelLabel: "Cancelar",
-                daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-                monthNames: [
-                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-                ],
-                firstDay: 1
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('input[type="radio"][data-target]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                var targetId = radio.getAttribute('data-target');
+                var show = radio.getAttribute('data-show') === 'true';
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = show ? 'block' : 'none';
+                }
+            });
+            // Mostrar/ocultar al cargar la página según el radio seleccionado
+            if (radio.checked) {
+                var targetId = radio.getAttribute('data-target');
+                var show = radio.getAttribute('data-show') === 'true';
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = show ? 'block' : 'none';
+                }
             }
-        }, function(start) {
-            let fecha = start.format('YYYY-MM-DD');
         });
     });
-
 
     CKEDITOR.on('instanceReady', function(ev) {
         var editor = ev.editor;
@@ -373,7 +379,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
         updateCount(); // inicializar contador
     });
 
-    // Detectar si el usuario intenta retroceder con la flecha del navegador
+        // Detectar si el usuario intenta retroceder con la flecha del navegador
     window.addEventListener('popstate', function(event) {
         if (!confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
             history.pushState(null, null, location.href);
@@ -381,14 +387,10 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
     });
     function preventBackNavigation() {
         if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
-            window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+            window.location.href = '<?php echo $this->Html->url(['controller' => 'Productos', 'action' => 'view', $idredirect]); ?>';
         }
     }    
 
     // Prevenir retroceso con la flecha del navegador (mejor experiencia)
     history.pushState(null, null, location.href);
-
-   
-
-       
 </script>

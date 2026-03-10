@@ -12,7 +12,7 @@ $this->layout = 'default' ?>
 
 <div class="max-w-5xl mx-auto text-center mb-8">
     <h1 class="text-5xl font-bold mb-4 text-blue-600">
-       Seguimiento ejecución Anexo Técnico PIC 2026
+        Seguimiento ejecución Anexo Técnico PIC 2026
     </h1>
     <p class="text-gray-500 mb-4 text-lg">
         Segumiento físico técnico al cumplimiento del plan de intervenciones colectivas
@@ -28,11 +28,11 @@ echo $this->Form->create('Seguimiento', [
 ]);
 // se utiliza para llamar el id responsable donde sea necesario
 $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION['Auth']['User']['id_responsable'] : '';
-echo $this->Form->input('responsable_id', array('value' => $nombreUsuario,'type' => 'hidden'));
+echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type' => 'hidden'));
 echo $this->Form->input('referente_id', array('type' => 'hidden'));
 // se utiliza para mantener el id del seguimiento
 echo $this->Form->input('producto_id', array('type' => 'hidden'));
-
+$idredirect = $this->Form->value('producto_id');
 ?>
 
 
@@ -56,8 +56,8 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
 
         <div class="grid grid-cols-1 md:grid-cols-2 ">
 
-             
-                <!-- Fecha de sesión realizada -->
+
+            <!-- Fecha de sesión realizada -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center ">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">1</span>
@@ -66,17 +66,17 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 </div>
                 <div class="col-span-2 text-md font-semibold my-6">
                     <div class="flex flex-col w-full">
-                      <?php
-                echo $this->Form->input('fecha', [
-                    'label' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
-                    'error' => false,
-                    'readonly'
-                    
-                    
-                ]);
+                        <?php
+                        echo $this->Form->input('fecha', [
+                            'label' => false,
+                            'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
+                            'error' => false,
+                            'readonly'
+
+
+                        ]);
                         ?>
-                           
+
                         <span class="text-sm text-red-600 mt-1">
                             <?= $this->Form->error('fecha') ?>
                         </span>
@@ -85,7 +85,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 </div>
             </div>
 
-             <!-- Valor asignado de la actividad -->
+            <!-- Valor asignado de la actividad -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
@@ -104,7 +104,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                     'type' => 'number',
                     'min' => 1,
                     'maxLeght' => 2,
-                    
+
                 ]);
 
                 if (!empty($this->Form->error('valorprogramado'))) {
@@ -113,7 +113,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 ?>
             </div>
 
-			  <!-- Valor ejecutado de la actividad -->
+            <!-- Valor ejecutado de la actividad -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">3</span>
@@ -173,9 +173,9 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 </div>
                 <?php
                 echo $this->Form->input('observacionoperador', [
-                    'label' => '',                   
+                    'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
-                     'data-maxlength' => 500,
+                    'data-maxlength' => 500,
                     'error' => false // No mostrar error aquí
                 ]);
                 if (!empty($this->Form->error('observacionoperador'))) {
@@ -184,7 +184,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 ?>
             </div>
 
-             <div class="col-span-2 text-md font-semibold my-6">
+            <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">5</span>
                     <label for="limitantes" class="font-semibold">limitantes en el desarrollo de la actividad</label>
@@ -198,7 +198,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                     '2. Administrativo' => 'Administrativo(Contractuales, no acuerdo institucional)',
                     '3. Técnico' => 'Tecnicos(Limitantes conceptuales, metodologicos)',
                     '4. Comunitario' => 'Comunitario(Renuencia, inasistencia de participantes, solicitud de garantias adicionales )',
-                    
+
                 ];
 
                 echo $this->Form->input(
@@ -270,7 +270,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 ?>
             </div>
 
-        <!--div class="col-span-2 text-md font-semibold my-6">
+            <!--div class="col-span-2 text-md font-semibold my-6">
             <div class="flex items-center mb-4">
                 <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
                 <label for="soportes" class="font-semibold">Soportes</label>
@@ -309,32 +309,7 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 </span>
             </div>
         </div-->
-                      
         </div>
-    </div>
-</div>
-
-<div class="max-w-6xl mx-auto p-18 mt-8">
-    <div class="bg-white shadow-2xl rounded-xl p-12">   
-            
-
-            <div class="col-span-2 text-md font-semibold my-6">
-              
-                <?php
-                echo $this->Form->input('estado',[
-                       'type' => 'hidden',
-                        'value' => 'Reporte de avance',
-                        'error' => false // No mostrar error aquí
-                    ]
-                );
-                if (!empty($this->Form->error('estado'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('estado') . '</div>';
-                }
-                ?>
-            </div>
-
-            
-
 
         <div class="pt-2 flex gap-4">
             <button type="submit" name="btn" value="Guardar" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
@@ -347,36 +322,28 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
                 </span>
                 Guardar Seguimiento
             </button>
-            
         </div>
-</div>
+
+    </div>
 </div>
 
 
 <script>
-    
-    
-   $(function() {
-         $('#fecha').daterangepicker({
-            singleDatePicker: true,
-            showDropdowns: true,
-            autoApply: true,
-            locale: {
-                format: 'YYYY-MM',
-                applyLabel: "Aplicar",
-                cancelLabel: "Cancelar",
-                //daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-                monthNames: [
-                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-                ],
-                firstDay: 1
-            }
-        }, function(start) {
-            let fecha = start.format('YYYY-MM');
+    document.addEventListener("DOMContentLoaded", function() {
+        const choices_limitantes = new Choices("#limitantes", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: true, // Permite eliminar seleccionados
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            maxItemCount: -1, // Sin límite
+            removeItems: true, // Permite quitar seleccionados
+            duplicateItemsAllowed: false,
+            placeholder: true,
+            placeholderValue: "Seleccione un vector..."
         });
     });
-
 
     CKEDITOR.on('instanceReady', function(ev) {
         var editor = ev.editor;
@@ -436,16 +403,13 @@ echo $this->Form->input('producto_id', array('type' => 'hidden'));
             history.pushState(null, null, location.href);
         }
     });
+
     function preventBackNavigation() {
         if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
-            window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+            window.location.href = '<?php echo $this->Html->url(['controller' => 'Productos', 'action' => 'view', $idredirect]); ?>';
         }
-    }    
+    }
 
     // Prevenir retroceso con la flecha del navegador (mejor experiencia)
     history.pushState(null, null, location.href);
-
-   
-
-       
 </script>

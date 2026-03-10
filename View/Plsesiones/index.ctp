@@ -89,7 +89,7 @@
                 pageLength: 7,
                 processing: true,
                 serverSide: true,
-                ajax: "/aplicacioncakephp/PIC_2025/plsesiones/getPlsesiones",
+                ajax: "<?php echo URL_TABS?>/plsesiones/getPlsesiones",
                 columns: [
                     // Columna control (+)
                     {
