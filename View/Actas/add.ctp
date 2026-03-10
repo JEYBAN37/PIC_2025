@@ -190,7 +190,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('objactividad', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -235,7 +235,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false, // No mostrar error aquí
-                    'data-maxlength' => 600, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
 
                 ]);
                 if (!empty($this->Form->error('ordendia'))) {
@@ -271,7 +271,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                         'label' => '',
                         'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                         'error' => false, // No mostrar error aquí
-                        'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                        'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
 
                     ]);
                     if (!empty($this->Form->error('compromisosprevios'))) {
@@ -299,7 +299,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false, // No mostrar error aquí
-                    'data-maxlength' => 4000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 25000, // <-- aquí defines el límite de caracteres
 
                 ]);
                 if (!empty($this->Form->error('desarrollo'))) {
@@ -322,7 +322,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 echo $this->Form->input('compromiso', [
                     'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
-                    'data-maxlength' => 2000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 10000, // <-- aquí defines el límite de caracteres
                     'error' => false // No mostrar error aquí
                 ]);
                 if (!empty($this->Form->error('compromiso'))) {
@@ -361,7 +361,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     '' => 'Elegir',
                     'planeacion operativa administrativa' => 'Planenación operativa/administrativa',
                     'planeacion pedagogica' => 'Planeación pedagógica',
-                    'articulacion interinstitucional' => 'Articulacion interinstitucional',
+                    'articulacion interinstitucional' => 'Articulación interinstitucional',
                     'acompañamiento a organizaciones' => 'Acompañamiento a organizaciones',
                     'Ejecucion de eventos o actividades' => 'Ejecución de eventos o actividades',
                     'participacion escenarios externos' => 'participación escenarios externos'

@@ -157,6 +157,8 @@ class ProcesoregistrosController extends AppController
 	public function add()
 	{
 		if ($this->request->is('post'))
+
+			
 			if ($this->Procesoregistro->save($this->request->data)) {
 
 				if ($this->request->data['btn'] == 'Guardar y asociar otra sesion') {

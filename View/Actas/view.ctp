@@ -125,7 +125,20 @@
                     <tr class="bg-gray-100">
                         <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Tema:</td>
                         <td colspan="8" class="border border-gray-300 p-2">
-                            <?php echo h($acta['Acta']['objactividad']); ?>
+
+                          <?php
+                            $auxDsr = strrpos(($acta['Acta']['objactividad']), '/');
+                            if ($auxDsr === false) {
+                            ?>
+                                <textarea class="ckeditor" readonly><?php echo ($acta['Acta']['objactividad']); ?></textarea> <?php
+                                                                                                                        } else {
+                                                                                                                            print($acta['Acta']['objactividad']);
+                                                                                                                        }
+                                                                                                                            ?>
+
+                            
+
+                           
                         </td>
                     </tr>
 
@@ -203,25 +216,13 @@
                     </tr>
                     <tr>
                         <td class="border border-gray-300 p-2">
-                            <?php
-                            $ordenDia = $acta['Acta']['ordendia'];
-                            // Divide la cadena en una lista usando expresiones regulares para detectar números seguidos de punto o paréntesis
-                            $items = preg_split('/\s*(\d+[\.\)]\s*)/', $ordenDia, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
-
-                            echo '<ol class="list-decimal ml-6 text-left">';
-                            for ($i = 0; $i < count($items); $i++) {
-                                // Si el elemento es un número (por ejemplo, "1." o "2)")
-                                if (preg_match('/^\d+[\.\)]$/', trim($items[$i]))) {
-                                    // El siguiente elemento es el texto del punto
-                                    $texto = isset($items[$i + 1]) ? trim($items[$i + 1]) : '';
-                                    if ($texto !== '') {
-                                        echo '<li>' . h($texto) . '</li>';
-                                    }
-                                    $i++; // Saltar el texto ya procesado
-                                }
-                            }
-                            echo '</ol>';
+                       <?php if ($auxDsr === false) {
                             ?>
+                                <textarea class="ckeditor" readonly><?php echo ($acta['Acta']['ordendia']); ?></textarea> <?php
+                                                                                                                        } else {
+                                                                                                                            print($acta['Acta']['ordendia']);
+                                                                                                                        }
+                                                                                                                            ?>
                         </td>
                     </tr>
                 </tbody>
