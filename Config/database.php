@@ -79,10 +79,10 @@ class DATABASE_CONFIG {
 public $default = array(
 	'datasource' => 'Database/Mysql',
     'persistent' => false,
-    'host' => 'localhost:3306',
+    'host' => 'localhost:3307',
     'login' => 'root',
-    'password' => '',
-    'database' => 'cake_pic_2026',
+    'password' => '20166',
+    'database' => 'cake_Pic_2026',
     'prefix' => '',
     'unix_socket' => 'C:/xampp/mysql/mysql.sock',
     'encoding' => 'utf8',
