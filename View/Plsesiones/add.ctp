@@ -255,7 +255,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('intension', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -930,7 +930,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('objetivog', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -950,7 +950,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('objetivoe', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -1142,7 +1142,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('preguntasentido', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -1152,7 +1152,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 ?>
             </div>
 
-            <!-- Resumen de momentos  -->
+            <!-- Resumen de momentos borrar  -->
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">6</span>
