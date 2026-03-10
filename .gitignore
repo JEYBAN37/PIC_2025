@@ -20,7 +20,9 @@ webroot/files
 
 # CakePHP 2
 
-/app/tmp/*
-/app/Config/core.php
-/app/Config/database.php
-/vendors/*
+/tmp/*
+Config/core.php
+Config/database.php
+vendors/*
+Config/bootstrap.php
+Config/database.php

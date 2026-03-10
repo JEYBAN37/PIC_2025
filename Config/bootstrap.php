@@ -119,3 +119,6 @@ CakeLog::config('error', array(
 Inflector::rules('singular', array('rules' => array('/(.*)res$/i' => '\1r', '/(.*)nes$/i' => '\1n', '/(.*)des$/i' => '\1d', '/(.*)ses$/i' => '\1s'), 'irregular' => array(), 'uninflected' => array()));
  
 Inflector::rules('plural', array('rules' => array('/(.*)r$/i' => '\1res', '/(.*)n$/i' => '\1nes', '/(.*)d$/i' => '\1des', '/(.*)s$/i' => '\1ses'), 'irregular' => array(), 'uninflected' => array() ) );
+
+
+//andres getial Erazo
