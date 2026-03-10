@@ -22,11 +22,9 @@
 ]);
 
 
-echo $this->Form->input('plsesion_id', array('value' => '' . $idAux, 'type' => 'hidden'));
-
 echo $this->Form->input('id');
 echo $this->Form->input('plsesion_id', array('type' => 'hidden'));
-
+$idAux = $this->Form->value('plsesion_id');
 
 
 
@@ -85,12 +83,12 @@ $accionesInformativas = array(
                 </div>
                 <?php
                 echo $this->Form->input('duracion', [
-                    'type' => 'select',
+                    'type' => 'readonly',
                     'id' => 'duracion',
                     'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-500 focus:text-gray-800',
                     'onchange' => 'mostrarBarrio(this.value);',
                     'error' => false,
-                    'options' => $duracionesFiltradas,
+                    //'options' => $duracionesFiltradas,
                     'label' => '',
                     'empty' => 'Seleccione duración',
                 ]);
@@ -191,18 +189,7 @@ $accionesInformativas = array(
         </div>
 
         <div class="flex gap-4">
-            <!-- Botón -->
-            <div class="pt-2">
-                <div class="cursor-pointer bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                        <rect width="13" height="7" x="3" y="3" rx="1" />
-                        <path d="m22 15-3-3 3-3" />
-                        <rect width="13" height="7" x="3" y="14" rx="1" />
-                    </svg>
-                    <?php echo $this->Form->submit('Guardar Otro', array('name' => 'btn', 'class' => 'cursor-pointer hover:bg-green-700 transition')); ?>
-                </div>
-            </div>
-
+            
 
             <!-- Botón -->
             <div class="pt-2">
@@ -214,23 +201,7 @@ $accionesInformativas = array(
                     </svg>
                     <?php echo $this->Form->submit('Finalizar', array('name' => 'btn', 'class' => 'cursor-pointer hover:bg-green-700 transition')); ?>
                 </div>
-            </div>
-
-
-            <!-- Botón -->
-            <div class="pt-2">
-                <button type="button" name="Finalizar" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2" onclick="preventBackNavigation()">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                            <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
-                            <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
-                            <circle cx="12" cy="12" r="1" />
-                            <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-                        </svg>
-
-                    </span>
-                    Ir A Plan de Sesión
-                </button>
+            </div>           
             </div>
         </div>
     </div>
