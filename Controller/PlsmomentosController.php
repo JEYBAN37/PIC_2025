@@ -117,7 +117,6 @@ class PlsmomentosController extends AppController
             $this->Plsmomento->create();
             if ($this->Plsmomento->save($this->request->data)) {
                 if ($this->request->data['btn'] == 'Guardar Otro') {
-                    debug($duracionEnMinutos);
                     if ($duracionEnMinutos + $tiempoDisponible == 480) {
                         $this->Session->setFlash(__('Has alcanzado el límite máximo de 8 horas para esta sesión.'), 'default', array('class' => self::ALERT_ERROR_CLASS));
                         return $this->redirect(array('controller' => 'plsesiones', 'action' => 'view/' . $this->data["Plsmomento"]["plsesion_id"]));

@@ -157,7 +157,7 @@
 					</tr>
 					<tr>
 						<td colspan="8" class="border border-gray-300 font-semibold text-center p-2">
-							NOMBRE DEL FORMATO: ANEXO TECNICO PIC
+							NOMBRE DEL FORMATO: <br>Reporte al cumplimiento de actividades (PIC) del Sistema de información Ciudad Bienestar</br>
 						</td>
 					</tr>
 

@@ -215,6 +215,39 @@ $idredirect = $this->Form->value('producto_id');
                 ?>
             </div>
 
+            <!-- Curso de vida -->
+            <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
+
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">2</span>
+                    <label for="limitantes" class="font-semibold">Limitantes</label>
+                    <p class="text-red-600">*</p>
+
+                </div>
+                <?php
+                echo $this->Form->input('limitantes', [
+                    'type' => 'select',
+                    'label' => false,
+                    'multiple' => true,
+                    'empty' => false,
+                    'id' => 'limitantes',
+                    'options' => [
+                    '0. No' => 'Ninguno',
+                    '1. Logstico' => 'Logístico(Materiales, Refrigerios, espacios)',
+                    '2. Administrativo' => 'Administrativo(Contractuales, no acuerdo institucional)',
+                    '3. Técnico' => 'Tecnicos(Limitantes conceptuales, metodologicos)',
+                    '4. Comunitario' => 'Comunitario(Renuencia, inasistencia de participantes, solicitud de garantias adicionales )',
+
+                    ],
+                    'class' => 'w-full',
+                    'error' => false
+                ]);
+                if (!empty($this->Form->error('cursovida'))) {
+                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('cursovida') . '</div>';
+                }
+                ?>
+            </div>
+
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">6</span>
@@ -336,9 +369,23 @@ $idredirect = $this->Form->value('producto_id');
             removeItems: true, // Permite quitar seleccionados
             duplicateItemsAllowed: false,
             placeholder: true,
-            placeholderValue: "Seleccione un vector..."
+            placeholderValue: "Seleccione limtantes presentados"
         });
     });
+
+     const choices_cursovida = new Choices("#limitantes", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: true, // Permite eliminar seleccionados
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            maxItemCount: -1, // Sin límite
+            removeItems: true, // Permite quitar seleccionados
+            duplicateItemsAllowed: false,
+            placeholder: true,
+            placeholderValue: "Seleccione limtantes presentados",
+        });
 
     CKEDITOR.on('instanceReady', function(ev) {
         var editor = ev.editor;
