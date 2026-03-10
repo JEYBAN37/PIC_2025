@@ -21,8 +21,8 @@ webroot/files
 # CakePHP 2
 
 /tmp/*
-Config/core.php
-Config/database.php
-vendors/*
+/config/core.php
+/config/database.php
+/vendors/*
 Config/bootstrap.php
 Config/database.php
