@@ -559,3 +559,13 @@ Stack Trace:
 #1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ActasController), Object(CakeRequest))
 #2 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2026-03-10 21:27:50 Error: Fatal Error (1): Call to a member function value() on null in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\View\Plsmomentos\edit.ctp, line 27]
+2026-03-10 21:27:50 Error: [FatalErrorException] Call to a member function value() on null
+Request URL: /aplicacioncakephp/PIC_2025/Plsmomentos/edit/1
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 27)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 27, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 27, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

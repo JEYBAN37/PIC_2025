@@ -218,11 +218,9 @@ class PlsmomentosController extends AppController
         }
         if ($this->request->is(array('post', 'put'))) {
             if ($this->Plsmomento->save($this->request->data)) {
-                //$this->Session->setFlash(__('The plsmomento has been saved.'));
-                //return $this->redirect(array('action' => 'index'));
-                //return $this->redirect(array('controller' => 'plsesiones', 'action' => 'nuebus'));
+                          
                 return $this->redirect(array('controller' => 'plsesiones', 'action' => 'view/' . $this->data["Plsmomento"]["plsesion_id"]));
-            } else {
+                } else {
                 $this->Session->setFlash(__('El plan de sesión no ha sido guardado. Por favor, trate nuevamente.'));
             }
         } else {

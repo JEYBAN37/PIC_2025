@@ -1,3 +1,4 @@
+
 <?php $this->layout = 'default' ?>
 <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -19,7 +20,7 @@ $option = array(
 
 $optionpuntaje = [
     '' => 'Elegir',
-    '1 No tiene' => '1 No tiene',
+
     '2 Poca' => '2 Poca',
     '3 Moderada' => '3 Moderada',
     '4 Fuerte' => '4 Fuerte',
@@ -54,7 +55,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
 
 
 ?>
-<?php echo $this->Form->input('id', ['type' => 'hidden']); ?>
+
 
 <div class="max-w-5xl mx-auto text-center mb-8">
     <h1 class="text-5xl font-bold mb-4 text-blue-600">
@@ -87,7 +88,10 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 </div>
                 <div class="col-span-2 text-md font-semibold my-6">
                     <div class="flex flex-col w-full">
-                        <?php echo $this->Form->label('fecha', 'Seleccione Rango de Fecha', [
+                        <?php 
+                        echo $this->Form->input('id', ['type' => 'hidden']); 
+                        
+                        echo $this->Form->label('fecha', 'Seleccione Rango de Fecha', [
                             'class' => 'text-gray-700 font-semibold text-sm mb-2'
                         ]); ?>
                         <input
@@ -271,7 +275,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 <?php
                 echo $this->Form->input('intension', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -1074,12 +1078,12 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                     'empty' => false,
                     'id' => 'cursovida',
                     'options' => [
-                        'primera infancia' => 'Primera infancia',
-                        'infancia' => 'Infancia',
-                        'adolescencia' => 'Adolescencia',
-                        'juventud' => 'Juventud',
-                        'adultez' => 'Adultez',
-                        'vejez' => 'Vejez'
+                        'Primera infancia' => 'Primera infancia',
+                        'Infancia' => 'Infancia',
+                        'Adolescencia' => 'Adolescencia',
+                        'Juventud' => 'Juventud',
+                        'Adultez' => 'Adultez',
+                        'Vejez' => 'Vejez'
                     ],
                     'class' => 'w-full',
                     'error' => false
@@ -1125,26 +1129,22 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
             <div class="col-span-2 md:col-span-1 text-md font-semibold my-6 mr-4">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
-                    <label for="dimension" class="font-semibold">Dimensión</label>
+                    <label for="dimension" class="font-semibold">Temática</label>
                     <p class="text-red-600">*</p>
 
                 </div>
                 <?php
                 $optiontime = [
                     '' => 'Elegir',
-                    '1. Débil Garantía Derecho a la Salud - Educación Popular' => '1. Débil Garantía Derecho a la Salud - Educación Popular',
-                    '2. Débil Garantía Derecho a la Salud - Participación Social' => '2. Débil Garantía Derecho a la Salud - Participación Social',
-                    '3. Débil Vigilancia Epidemiológica - Formación Trabajador Popular' => '3. Débil Vigilancia Epidemiológica - Formación Trabajador Popular',
-                    '4. Débil Vigilancia Epidemiológica - Vigilancia Comunitaria' => '4. Débil Vigilancia Epidemiológica - Vigilancia Comunitaria',
-                    '5. Deficiente Resolutividad GDPE' => '5. Deficiente Resolutividad GDPE',
-                    '6. Emergencias y Desastres' => '6. Emergencias y Desastres',
-                    '7. Lesiones Autoinfligidas - Estrategias Salud Mental' => '7. Lesiones Autoinfligidas - Estrategias Salud Mental',
-                    '8. Mal Nutrición - HEVS' => '8. Mal Nutrición - HEVS',
-                    '9. Mal Nutrición - SAN' => '9. Mal Nutrición - SAN',
-                    '10. Morbimortalidad Enfermedades Transmisibles - Estrategia Inmunización' => '10. Morbimortalidad Enfermedades Transmisibles - Estrategia Inmunización',
-                    '11. Morbimortalidad Enfermedades Transmisibles - Infancia' => '11. Morbimortalidad Enfermedades Transmisibles - Infancia',
-                    '12. Morbimortalidad Materna - SSR' => '12. Morbimortalidad Materna - SSR',
-                    '13. Morbimortalidad - Determinantes Ambientales' => '13. Morbimortalidad - Determinantes Ambientales'
+                    '1.Seguridad Alimentaria Nutricional' => '1.Seguridad Alimentaria Nutricional',
+                    '2.Salud mental' => '2.Salud mental',
+                    '3.Vigilancia salud publica' => '3.Vigilancia salud publica',
+                    '4.Gestion Riesgo EMYD' => '4.Gestion Riesgo EMYD',
+                    '5.Salud Sexual y reproductiva' => '5.Salud Sexual y reproductiva',
+                    '6.HEVS' => '6.HEVS',
+                    '7.Salud ambiental' => '7.Salud ambiental',
+                    '8.Enfoque diferencial' => '8.9.Enfoque diferencial',
+                    '9.Garantia Derecho a la salud' => '10.Garantia Derecho a la salud',
                 ];
                 echo $this->Form->input('dimension', [
                     'type' => 'select',
@@ -1169,7 +1169,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 <?php
                 echo $this->Form->input('preguntasentido', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -1179,25 +1179,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 ?>
             </div>
 
-            <!-- Resumen de momentos  -->
-            <div class="col-span-2 text-md font-semibold my-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">6</span>
-                    <label for="objactividad" class="font-semibold">Registre los aspectos relevantes de cada momento asi como palabras clave escriba despues de cada momento las palalbras claves y la idea principal(Opcional).</label>
-                    <p class="text-red-600">*</p>
-                </div>
-                <?php
-                echo $this->Form->input('momentosresumen', [
-                    'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
-                    'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
-                    'error' => false // No mostrar error aquí
-                ]);
-                if (!empty($this->Form->error('momentosresumen'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('momentosresumen') . '</div>';
-                }
-                ?>
-            </div>
+       
 
         </div>
     </div>
@@ -1226,7 +1208,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
 
                 <div class="flex flex-col gap-2">
                     <label for="ProcesoregistroAnexo" class="block text-gray-700 font-semibold text-sm mb-2">
-                        Adjuntar archivo comprimido (.zip o .rar)
+                    Adjuntar archivo (.zip, .rar, .pdf, .doc, docx)
                     </label>
                     <div class="relative w-full">
                         <?php
@@ -1247,10 +1229,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                     </div>
                     <span class="text-xs text-gray-500 mt-1">
                         NOTA:
-                        * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
-                        * listado asistencia.pdf (meet o físico), registro excel participantes <br>
-                        * tres (3) pantallazos o fotos resolución 600px * 600px <br>
-                        El nombre del archivo no debe tener tildes o diéresis.
+                        * Cargar plan de sesion .pdf o .doc <br>
                     </span>
                 </div>
                 <div class="relative w-full mt-4">
