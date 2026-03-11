@@ -104,6 +104,7 @@ class ActasController extends AppController
             if ($this->Acta->save($this->request->data)) {
                 $id = $this->Acta->id;
                 $aux = "view/$id";
+                $this->Session->setFlash('El acta fue creada con exito', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
                 return $this->redirect(array('action' => $aux));
             } else {
                 $this->Session->setFlash(
@@ -127,51 +128,47 @@ class ActasController extends AppController
      * @return void
 
      */
-    public function edit($id = null)
-    {
-
-        if (!$this->Acta->exists($id)) {
-
-            throw new NotFoundException(__('Invalid acta'));
-        }
-
-        if ($this->request->is(array('post', 'put'))) {
-
-            if (empty($this->request->data['Acta']['anexo']['name'])) {
-                unset($this->request->data['Acta']['anexo']); // CakePHP no reemplaza
-            } else {
-                // Aquí procesar la subida de archivo
-                $archivo = $this->request->data['Acta']['anexo'];
-                $nombreArchivo = time() . '_' . $archivo['name'];
-                move_uploaded_file($archivo['tmp_name'], WWW_ROOT . 'uploads' . DS . $nombreArchivo);
-                $this->request->data['Acta']['anexo'] = $nombreArchivo;
-            }
-
-
-            if ($this->Acta->save($this->request->data)) {
-
-                //$this->Session->setFlash(__('The acta has been saved.'));
-
-                $aux = "view/$id";
-
-                return $this->redirect(array('action' => $aux));
-            } else {
-
-                $this->Session->setFlash(__('El acta no se ha guardado. Por favor, revise el formulario.', 'default', array('class' => self::ALERT_ERROR_CLASS)));
-            }
-        } else {
-
-            $options = array('conditions' => array('Acta.' . $this->Acta->primaryKey => $id));
-
-            $this->request->data = $this->Acta->find('first', $options);
-        }
-
-        $productos = $this->cargarProductosSelect();
-        $idredirect = $id;
-        $ubicaciones = $this->Acta->Ubicacion->find('list');
-        $responsables = $this->Acta->Responsable->find('list');
-        $this->set(compact('productos', 'ubicaciones', 'responsables' ,'idredirect'));
+public function edit($id = null) {
+    if (!$this->Acta->exists($id)) {
+        throw new NotFoundException(__('Invalid acta'));
     }
+
+    if ($this->request->is(array('post', 'put'))) {
+        
+        // Manejo del archivo (Anexo)
+        if (empty($this->request->data['Acta']['anexo']['name'])) {
+            unset($this->request->data['Acta']['anexo']); 
+        } 
+
+        if ($this->Acta->save($this->request->data)) {
+           $this->Session->setFlash('El acta fue actualizada con exito', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
+            return $this->redirect(array('action' => 'view', $id));
+        } else {
+           $this->Session->setFlash(
+                    'El acta no se ha guardado.  por favor verificar el formulario. Revise nuevamente todos los campos de selección.',
+                    'default',
+                    array('class' => self::ALERT_ERROR_CLASS)
+                );
+        }
+    } else {
+        $options = array('conditions' => array('Acta.' . $this->Acta->primaryKey => $id));
+        $this->request->data = $this->Acta->find('first', $options);
+
+        // --- AJUSTE DE FECHA PARA LA VISTA ---
+        if (!empty($this->request->data['Acta']['fecha'])) {
+            // Formateamos la fecha para que el JS la entienda (YYYY-MM-DD)
+            $fechaDb = $this->request->data['Acta']['fecha'];
+            $this->request->data['Acta']['fecha'] = date('Y-m-d', strtotime($fechaDb));
+        }
+    }
+
+    $productos = $this->cargarProductosSelect();
+    $ubicaciones = $this->Acta->Ubicacion->find('list');
+    $responsables = $this->Acta->Responsable->find('list');
+    
+    // Pasamos el ID y los datos a la vista
+    $this->set(compact('productos', 'ubicaciones', 'responsables', 'id'));
+}
 
     public function editanexo($id = null)
     {
