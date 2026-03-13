@@ -117,7 +117,6 @@ class PlsmomentosController extends AppController
             $this->Plsmomento->create();
             if ($this->Plsmomento->save($this->request->data)) {
                 if ($this->request->data['btn'] == 'Guardar Otro') {
-                    debug($duracionEnMinutos);
                     if ($duracionEnMinutos + $tiempoDisponible == 480) {
                         $this->Session->setFlash(__('Has alcanzado el límite máximo de 8 horas para esta sesión.'), 'default', array('class' => self::ALERT_ERROR_CLASS));
                         return $this->redirect(array('controller' => 'plsesiones', 'action' => 'view/' . $this->data["Plsmomento"]["plsesion_id"]));
@@ -219,11 +218,9 @@ class PlsmomentosController extends AppController
         }
         if ($this->request->is(array('post', 'put'))) {
             if ($this->Plsmomento->save($this->request->data)) {
-                //$this->Session->setFlash(__('The plsmomento has been saved.'));
-                //return $this->redirect(array('action' => 'index'));
-                //return $this->redirect(array('controller' => 'plsesiones', 'action' => 'nuebus'));
+                          
                 return $this->redirect(array('controller' => 'plsesiones', 'action' => 'view/' . $this->data["Plsmomento"]["plsesion_id"]));
-            } else {
+                } else {
                 $this->Session->setFlash(__('El plan de sesión no ha sido guardado. Por favor, trate nuevamente.'));
             }
         } else {
