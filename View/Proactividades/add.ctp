@@ -78,7 +78,8 @@
 
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Ingrese el número de sesiones (talleres, encuentros) que desarrollará para este proceso.</p>
+                <p class="help-block text-gray-500 text-xs mb-2">Ingrese el número de sesiones (talleres, encuentros)
+                    que desarrollará para este proceso.</p>
 
                 <?php
                 echo $this->Form->input('totalsesiones', [
@@ -86,7 +87,7 @@
                     'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
                     'error' => false,
                     'min' => 1,
-                    'max' => 15
+                    'max' => 50
                 ]);
 
                 if (!empty($this->Form->error('totalsesiones'))) {
@@ -106,7 +107,7 @@
                 <?php
                 echo $this->Form->input('objactividad', [
                     'label' => '',
-                    'data-maxlength' => 500,
+                    'data-maxlength' => 1000,
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -126,7 +127,7 @@
                 <?php
                 echo $this->Form->input('objetivoespecifico', [
                     'label' => '',
-                    'data-maxlength' => 800,
+                    'data-maxlength' => 2000,
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -148,10 +149,14 @@
 
         <!-- Botón -->
         <div class="pt-2">
-            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+            <button type="submit"
+                class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
                 <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                        <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-save-icon lucide-save">
+                        <path
+                            d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
                         <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
                         <path d="M7 3v4a1 1 0 0 0 1 1h7" />
                     </svg>
@@ -164,100 +169,100 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const choices = new Choices("#producto_id", {
-            searchEnabled: true,
-            searchChoices: true,
-            removeItemButton: false,
-            itemSelectText: '',
-            shouldSort: false,
-            searchPlaceholderValue: "Escriba para filtrar...",
-            fuseOptions: {
-                includeScore: true,
-                threshold: 0.3,
-                keys: ['label', 'value']
-            },
-            renderChoiceLimit: -1, // Sin límite de renderizado
-            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
-        });
-
-        // Aplicar estilos con Tailwind
-        const inner = document.querySelector('.choices__inner');
-        if (inner) {
-            inner.classList.add(
-                'bg-white', 'border', 'border-gray-300', 'rounded-lg',
-                'px-3', 'py-2', 'focus:ring', 'focus:ring-blue-200', 'text-gray-700'
-            );
-        }
-
-        const dropdown = document.querySelector('.choices__list--dropdown');
-        if (dropdown) {
-            dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
-        }
+document.addEventListener("DOMContentLoaded", () => {
+    const choices = new Choices("#producto_id", {
+        searchEnabled: true,
+        searchChoices: true,
+        removeItemButton: false,
+        itemSelectText: '',
+        shouldSort: false,
+        searchPlaceholderValue: "Escriba para filtrar...",
+        fuseOptions: {
+            includeScore: true,
+            threshold: 0.3,
+            keys: ['label', 'value']
+        },
+        renderChoiceLimit: -1, // Sin límite de renderizado
+        searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
     });
 
+    // Aplicar estilos con Tailwind
+    const inner = document.querySelector('.choices__inner');
+    if (inner) {
+        inner.classList.add(
+            'bg-white', 'border', 'border-gray-300', 'rounded-lg',
+            'px-3', 'py-2', 'focus:ring', 'focus:ring-blue-200', 'text-gray-700'
+        );
+    }
 
-    CKEDITOR.on('instanceReady', function(ev) {
-        var editor = ev.editor;
-        var textarea = editor.element.$;
-        var maxChars = textarea.getAttribute("data-maxlength"); // Lee el límite de cada campo
-        maxChars = maxChars ? parseInt(maxChars) : 300; // Default 300 si no se define
+    const dropdown = document.querySelector('.choices__list--dropdown');
+    if (dropdown) {
+        dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
+    }
+});
 
-        // Crear un contador debajo del campo
-        var counter = document.createElement("div");
-        counter.className = "text-gray-600 mt-1 text-sm";
-        counter.id = "charCount_" + textarea.id;
-        textarea.parentNode.appendChild(counter);
 
-        function updateCount() {
-            var text = editor.getData().replace(/<[^>]*>/g, '');
-            var length = text.length;
-            var remaining = maxChars - length;
+CKEDITOR.on('instanceReady', function(ev) {
+    var editor = ev.editor;
+    var textarea = editor.element.$;
+    var maxChars = textarea.getAttribute("data-maxlength"); // Lee el límite de cada campo
+    maxChars = maxChars ? parseInt(maxChars) : 300; // Default 300 si no se define
 
-            counter.innerHTML = "Caracteres usados: " + length + " / " + maxChars;
+    // Crear un contador debajo del campo
+    var counter = document.createElement("div");
+    counter.className = "text-gray-600 mt-1 text-sm";
+    counter.id = "charCount_" + textarea.id;
+    textarea.parentNode.appendChild(counter);
 
-            if (remaining < 0) {
-                counter.style.color = "red";
-                editor.setData(text.substring(0, maxChars));
-            } else {
-                counter.style.color = "gray";
-            }
-        }
+    function updateCount() {
+        var text = editor.getData().replace(/<[^>]*>/g, '');
+        var length = text.length;
+        var remaining = maxChars - length;
 
-        // Bloquear si excede
-        editor.on('key', function(evt) {
-            var text = editor.getData().replace(/<[^>]*>/g, '');
-            if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
-                evt.cancel();
-                alert("Máximo permitido: " + maxChars + " caracteres.");
-            }
-        });
+        counter.innerHTML = "Caracteres usados: " + length + " / " + maxChars;
 
-        // Bloquear pegar excedido
-        editor.on('paste', function(evt) {
-            var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
-            if (text.length > maxChars) {
-                evt.cancel();
-                alert("No puedes pegar más de " + maxChars + " caracteres.");
-            }
-        });
-
-        editor.on('key', updateCount);
-        editor.on('paste', updateCount);
-        editor.on('change', updateCount);
-
-        updateCount(); // inicializar contador
-    });
-
-    // Detectar si el usuario intenta retroceder con la flecha del navegador
-    window.addEventListener('popstate', function(event) {
-        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
-            window.location.href = 'index'; // Redirigir a la página deseada
+        if (remaining < 0) {
+            counter.style.color = "red";
+            editor.setData(text.substring(0, maxChars));
         } else {
-            history.pushState(null, null, location.href); // Mantener en la página actual
+            counter.style.color = "gray";
+        }
+    }
+
+    // Bloquear si excede
+    editor.on('key', function(evt) {
+        var text = editor.getData().replace(/<[^>]*>/g, '');
+        if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
+            evt.cancel();
+            alert("Máximo permitido: " + maxChars + " caracteres.");
         }
     });
 
-    // Prevenir retroceso con la flecha del navegador (mejor experiencia)
-    history.pushState(null, null, location.href);
+    // Bloquear pegar excedido
+    editor.on('paste', function(evt) {
+        var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
+        if (text.length > maxChars) {
+            evt.cancel();
+            alert("No puedes pegar más de " + maxChars + " caracteres.");
+        }
+    });
+
+    editor.on('key', updateCount);
+    editor.on('paste', updateCount);
+    editor.on('change', updateCount);
+
+    updateCount(); // inicializar contador
+});
+
+// Detectar si el usuario intenta retroceder con la flecha del navegador
+window.addEventListener('popstate', function(event) {
+    if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+        window.location.href = 'index'; // Redirigir a la página deseada
+    } else {
+        history.pushState(null, null, location.href); // Mantener en la página actual
+    }
+});
+
+// Prevenir retroceso con la flecha del navegador (mejor experiencia)
+history.pushState(null, null, location.href);
 </script>

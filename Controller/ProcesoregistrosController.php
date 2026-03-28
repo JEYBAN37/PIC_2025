@@ -171,22 +171,17 @@ class ProcesoregistrosController extends AppController
 					//echo '<script> alert("registro guardado"); </script>';
 					return $this->redirect(array('controller' => 'Procesoregistros', 'action' => 'add?sesion=' . $this->data["Procesoregistro"]["procesoregistro_id"]));
 				} else {
-					//return $this->redirect(array('controller' => 'plsesiones', 'action' => 'nuebus'));                
-					return $this->redirect(array('controller' => 'SistematizacionProcesosViewTests', 'action' => 'nuebus/' . $this->data["Procesoregistro"]["procesoregistro_id"]));
+					//return $this->redirect(array('controller' => 'plsesiones', 'action' => 'index'));                
+					return $this->redirect(array('controller' => 'Proactividades', 'action' => 'index/'));
 				}
 			} else {
 				$this->Session->setFlash('El registro no fue almacenado, Por favor trate nuevamente.', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
 
-		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
-
-		$conditions = [];
-		if (!empty($rol)) {
-			$conditions['Producto.nombredim'] = $rol;
-		}
+		
 
 		$productos = $this->Producto->find('list', [
-			'conditions' => $conditions,
+			//'conditions' => $conditions,
 			'fields' => ['Producto.id'],
 			'order' => ['Producto.modified' => 'DESC'],
 			'recursive' => -1

@@ -7,7 +7,8 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class SeguimientosController extends AppController {
-
+    const ALERT_SUCCESS_CLASS = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'; // Puedes cambiar esto por clases Tailwind, por ejemplo: '';
+    const ALERT_ERROR_CLASS = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative';
 /**
  * Components
  *
@@ -89,16 +90,23 @@ class SeguimientosController extends AppController {
         $tipoUsuario = isset($_SESSION['Auth']['User']['group_id']) ? $_SESSION['Auth']['User']['group_id'] : '';
 		
 		if ($this->request->is(array('post', 'put'))) {
-			$id_producto =$this->request->data['Seguimiento']['producto_id'];			
+			
+			$id_producto =$this->request->data['Seguimiento']['producto_id'];
+			
 			if ($this->Seguimiento->save($this->request->data)) {
-				$this->Session->setFlash('Su registro fue almacenado', 'flash_custom', array('class' => 'success', 'title' => 'El registro se ha completado correctamente'));
+				  
+				 $this->Session->setFlash(
+						'El seguimiento fue almacenado correctamente, realice otro registro',
+						'default',
+						array('class' => self::ALERT_SUCCESS_CLASS)
+					);
 				return $this->redirect(array(
 						'controller' => 'Productos',
 						'action' => 'view/' . $id_producto,
 						'?' => array('producto' => $id_producto)
 					));
 			} else {
-				$this->Session->setFlash(__('The seguimiento could not be saved. Please, try again.'));
+				 $this->Session->setFlash('El seguimiento no ha sido guardado. Por favor, trate nuevamente.', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
 		} else {
 			$options = array('conditions' => array('Seguimiento.' . $this->Seguimiento->primaryKey => $id));
