@@ -179,8 +179,10 @@ class ProcesoregistrosController extends AppController
 			}
 
 		
+		
 
 		$productos = $this->Producto->find('list', [
+			
 			//'conditions' => $conditions,
 			'fields' => ['Producto.id'],
 			'order' => ['Producto.modified' => 'DESC'],
@@ -233,15 +235,12 @@ class ProcesoregistrosController extends AppController
 			$this->request->data = $this->tranformData($this->request->data);
 		}
 
-		$rol = isset($_SESSION['Auth']['User']['proyecto']) ? $_SESSION['Auth']['User']['proyecto'] : '';
+		
 
-		$conditions = [];
-		if (!empty($rol)) {
-			$conditions['Producto.nombredim'] = $rol;
-		}
+		
 
 		$productos = $this->Producto->find('list', [
-			'conditions' => $conditions,
+			
 			'fields' => ['Producto.id'],
 			'order' => ['Producto.modified' => 'DESC'],
 			'recursive' => -1

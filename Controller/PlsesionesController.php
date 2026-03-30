@@ -122,12 +122,11 @@ class PlsesionesController extends AppController
         if ($this->request->is('post')) {
             $this->Plsesion->create();
             if ($this->Plsesion->save($this->request->data)) {
-                
                 $this->Session->setFlash(
-						'El registro fue almacenado correctamente, realice otro registro',
-						'default',
-						array('class' => self::ALERT_SUCCESS_CLASS)
-					);
+                    'El registro fue almacenado correctamente, realice otro registro',
+                    'default',
+                    array('class' => self::ALERT_SUCCESS_CLASS)
+                );
                 return $this->redirect(array('controller' => 'Plsmomentos', 'action' => 'add?sesion=' . $this->Plsesion->id));
             } else {
                 $this->Session->setFlash('El plan de sesión no ha sido guardado. Por favor, trate nuevamente.', 'default', array('class' => self::ALERT_ERROR_CLASS));
@@ -142,36 +141,34 @@ class PlsesionesController extends AppController
      * @param string $id
      * @return void
      */
-    public function edit($id = null)
-    {
-        if (!$this->Plsesion->exists($id)) {
-            throw new NotFoundException(__('Invalid plsesion'));
-        }
-        if ($this->request->is(array('post', 'put'))) {
+    public function edit($id = null) {
+    if (!$this->Plsesion->exists($id)) {
+        throw new NotFoundException(__('Invalid plsesion'));
+    }
 
-            if (empty($this->request->data['Plsesion']['anexo']['name'])) {
-                unset($this->request->data['Plsesion']['anexo']); // CakePHP no reemplaza
-            } else {
-                // Aquí procesar la subida de archivo
-                $archivo = $this->request->data['Plsesion']['anexo'];
-                $nombreArchivo = time() . '_' . $archivo['name'];
-                move_uploaded_file($archivo['tmp_name'], WWW_ROOT . 'uploads' . DS . $nombreArchivo);
-                $this->request->data['Plsesion']['anexo'] = $nombreArchivo;
-            }
+    if ($this->request->is(array('post', 'put'))) {
+        
+        // 1. Si no se seleccionó un archivo nuevo, quitamos el campo
+        // para que el Behavior no intente borrar o sobrescribir con nada vacío.
+        if (empty($this->request->data['Plsesion']['anexo']['name'])) {
+            unset($this->request->data['Plsesion']['anexo']);
+        } 
+        // NOTA: No necesitas el 'else' con move_uploaded_file. 
+        // El Behavior leerá el array en $this->request->data['Plsesion']['anexo'] y hará la magia.
 
-            if ($this->Plsesion->save($this->request->data)) {
-                $this->Session->setFlash('El plan de sesión ha sido guardado. agregue momentos al plan de sesión', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
-                return $this->redirect(array('controller' => 'Plsesiones', 'action' => 'view', $this->Plsesion->id));
-            } else {
-                $this->Session->setFlash('El plan de sesión no ha sido guardado. Por favor, trate nuevamente.', 'default', array('class' => self::ALERT_ERROR_CLASS));
-            }
+        if ($this->Plsesion->save($this->request->data)) {
+            $this->Session->setFlash('El plan de sesión ha sido guardado...', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
+            return $this->redirect(array('controller' => 'Plsesiones', 'action' => 'view', $this->Plsesion->id));
         } else {
-            $options = array('conditions' => array('Plsesion.' . $this->Plsesion->primaryKey => $id));
-            $this->request->data = $this->Plsesion->find('first', $options);
-            $this->request->data = $this->tranformData($this->request->data);
+            $this->Session->setFlash('El plan de sesión no ha sido guardado.', 'default', array('class' => self::ALERT_ERROR_CLASS));
         }
-
-        $idResponsable = isset($this->request->data['Plsesion']['responsable_id']) ? $this->request->data['Plsesion']['responsable_id'] : null;
+    } else {
+        $options = array('conditions' => array('Plsesion.' . $this->Plsesion->primaryKey => $id));
+        $this->request->data = $this->Plsesion->find('first', $options);
+        $this->request->data = $this->tranformData($this->request->data);
+    }
+    
+     $idResponsable = isset($this->request->data['Plsesion']['responsable_id']) ? $this->request->data['Plsesion']['responsable_id'] : null;
         $responsable = $idResponsable ? $this->Responsable->find('first', [
             'conditions' => ['Responsable.id' => $idResponsable],
             'fields' => ['id', 'nombres']
@@ -179,7 +176,7 @@ class PlsesionesController extends AppController
         $productos = $this->cargarProductosSelect();
         $idredirect = $id;
         $this->set(compact('responsable', 'productos', 'idredirect'));
-    }
+}
 
     private function tranformData($data)
     {

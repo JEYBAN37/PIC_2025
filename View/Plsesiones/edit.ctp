@@ -216,7 +216,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 <?php
                 echo $this->Form->input('tema', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 3000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -263,7 +263,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 <?php
                 echo $this->Form->input('intension', [
                     'label' => '',
-                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -862,7 +862,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 <?php
                 echo $this->Form->input('objetivog', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 3000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -884,7 +884,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 <?php
                 echo $this->Form->input('objetivoe', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 3000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -1081,7 +1081,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
                 <?php
                 echo $this->Form->input('preguntasentido', [
                     'label' => '',
-                    'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 10000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -1256,14 +1256,14 @@ function agregarOpcionSeleccion() {
     $("#PlsesionResponsableId").prepend("<option value='' selected='selected'>Seleccione</option>");
 }
 
-function validarTamanioSoporte() {
-    var auxFile = document.getElementById('PlsesionAnexo');
-    var sizeF = auxFile.files[0].size;
-    if (sizeF > 3000000) {
-        alert('El archivo debe ser menor a 3 Mb');
-        auxFile.value = '';
+    function validarTamanioSoporte() {
+        var auxFile = document.getElementById('PlsesionAnexo');
+        var sizeF = auxFile.files[0].size;
+        if (sizeF > 4000000) {
+            alert('El archivo debe ser menor a 4 Mb');
+            auxFile.value = '';
+        }
     }
-}
 
 function mostrar(isChecked) {
     if (isChecked) {

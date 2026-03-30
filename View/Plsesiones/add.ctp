@@ -213,7 +213,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('tema', [
                     'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 3000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -255,7 +255,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('intension', [
                     'label' => '',
-                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -930,7 +930,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('objetivog', [
                     'label' => '',
-                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 3000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -950,7 +950,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('objetivoe', [
                     'label' => '',
-                    'data-maxlength' => 1000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 3000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -1142,7 +1142,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 <?php
                 echo $this->Form->input('preguntasentido', [
                     'label' => '',
-                    'data-maxlength' => 5000, // <-- aquí defines el límite de caracteres
+                    'data-maxlength' => 10000, // <-- aquí defines el límite de caracteres
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -1152,25 +1152,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 ?>
             </div>
 
-            <!-- Resumen de momentos borrar  -->
-            <div class="col-span-2 text-md font-semibold my-6">
-                <div class="flex items-center mb-4">
-                    <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">6</span>
-                    <label for="objactividad" class="font-semibold">Registre los aspectos relevantes de cada momento asi como palabras clave escriba despues de cada momento las palalbras claves y la idea principal(Opcional).</label>
-                    <p class="text-red-600">*</p>
-                </div>
-                <?php
-                echo $this->Form->input('momentosresumen', [
-                    'label' => '',
-                    'data-maxlength' => 500, // <-- aquí defines el límite de caracteres
-                    'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
-                    'error' => false // No mostrar error aquí
-                ]);
-                if (!empty($this->Form->error('momentosresumen'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('momentosresumen') . '</div>';
-                }
-                ?>
-            </div>
+         
 
         </div>
     </div>
@@ -1199,7 +1181,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
 
                 <div class="flex flex-col gap-2">
                     <label for="ProcesoregistroAnexo" class="block text-gray-700 font-semibold text-sm mb-2">
-                        Adjuntar archivo comprimido (.zip o .rar)
+                        Adjuntar archivo (.zip, .rar, .pdf, .doc, docx)
                     </label>
                     <div class="relative w-full">
                         <?php
@@ -1220,10 +1202,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     </div>
                     <span class="text-xs text-gray-500 mt-1">
                         NOTA:
-                        * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
-                        * listado asistencia.pdf (meet o físico), registro excel participantes <br>
-                        * tres (3) pantallazos o fotos resolución 600px * 600px <br>
-                        El nombre del archivo no debe tener tildes o diéresis.
+                        * Cargar plan de sesion .pdf o .doc <br>
+                        
                     </span>
                 </div>
             </div>
@@ -1538,8 +1518,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
     function validarTamanioSoporte() {
         var auxFile = document.getElementById('PlsesionAnexo');
         var sizeF = auxFile.files[0].size;
-        if (sizeF > 3000000) {
-            alert('El archivo debe ser menor a 3 Mb');
+        if (sizeF > 4000000) {
+            alert('El archivo debe ser menor a 4 Mb');
             auxFile.value = '';
         }
     }
