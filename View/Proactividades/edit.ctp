@@ -82,7 +82,7 @@ echo $this->Form->create('Proactividad', [
                     'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
                     'error' => false,
                     'min' => 1,
-                    'max' => 15
+                    'max' => 50
                 ]);
 
                 if (!empty($this->Form->error('totalsesiones'))) {

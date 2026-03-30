@@ -149,7 +149,7 @@ $accionesInformativas = array(
                 <?php
                 echo $this->Form->input('resultado', [
                     'label' => '',
-                    'data-maxlength' => 1000,
+                    'data-maxlength' => 5000,
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);
@@ -172,7 +172,7 @@ $accionesInformativas = array(
                 <?php
                 echo $this->Form->input('insumo', [
                     'label' => '',
-                    'data-maxlength' => 1000,
+                    'data-maxlength' => 5000,
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
                     'error' => false // No mostrar error aquí
                 ]);

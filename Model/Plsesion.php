@@ -451,8 +451,8 @@ class Plsesion extends AppModel
                 'message' => 'El archivo debe ser de tipo pdf, zip, o rar'
             ),
             'isBelowMaxSize' => array(
-                'rule' => array('isBelowMaxSize', 3000000),
-                'message' => 'El tamaño delarchivo es demasiado grande. Maximo 3mb'
+                'rule' => array('isBelowMaxSize', 4000000),
+                'message' => 'El tamaño delarchivo es demasiado grande. Maximo 4mb'
             ),
 
             'checkUniqueName' => array(

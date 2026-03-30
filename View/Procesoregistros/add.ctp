@@ -115,7 +115,7 @@ echo $this->Form->create('Procesoregistro', [
                     'id' => 'plsesion_id',
                     'class' => 'w-full',
                     'label' => false,
-                    'empty' => 'Seleccione la sistematización relacionada',
+                    'empty' => 'Seleccione el plan de sesión',
                 ]);
 
                 if (!empty($this->Form->error('plsesion_id'))) {
@@ -470,7 +470,7 @@ echo $this->Form->create('Procesoregistro', [
                             'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
                             'error' => false,
                             'min' => 1,
-                            'max' => 15
+                            'max' => 200
                         ]);
 
                         if (!empty($this->Form->error('numeroparticipantes'))) {
