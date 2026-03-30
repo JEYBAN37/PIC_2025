@@ -98,7 +98,7 @@ $idredirect = $this->Form->value('producto_id');
                 echo $this->Form->input('observacionoperador', [
                     'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
-                    'data-maxlength' => 500,
+                    'data-maxlength' => 2000,
                     'error' => false, // No mostrar error aquí
                     'readonly'
                 ]);
