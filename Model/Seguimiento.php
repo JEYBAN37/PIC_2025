@@ -70,13 +70,13 @@ public $actsAs = array(
 			),
 		),
 		'limitantes' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			 'multiple' => array(
+                'rule' => array('multiple', array('min' => 1)),
+                'message' => 'Por favor seleccione al menos una opción',
+                //'allowEmpty' => false,
+                //'required' => false,
+                //'last' => false, // Stop validation after this rule
+                //'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
 		'acompanamiento' => array(
@@ -90,13 +90,13 @@ public $actsAs = array(
 			),
 		),
 		'descripcionacompanamiento' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			 'multiple' => array(
+                'rule' => array('multiple', array('min' => 1)),
+                'message' => 'Por favor seleccione al menos una opción',
+                //'allowEmpty' => false,
+                //'required' => false,
+                //'last' => false, // Stop validation after this rule
+                //'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
 		'enlace1' => array(
@@ -192,4 +192,18 @@ public $actsAs = array(
 			'order' => ''
 		)
 	);
+
+	 public function beforeSave($options = array())
+    {
+        if (isset($this->data[$this->alias]['limitantes']) && is_array($this->data[$this->alias]['limitantes'])) {
+            $this->data[$this->alias]['limitantes'] = implode(',', $this->data[$this->alias]['limitantes']);
+        }
+
+
+        if (isset($this->data[$this->alias]['descripcionacompanamiento']) && is_array($this->data[$this->alias]['descripcionacompanamiento'])) {
+            $this->data[$this->alias]['descripcionacompanamiento'] = implode(',', $this->data[$this->alias]['descripcionacompanamiento']);
+        }
+
+        return true;
+    }
 }

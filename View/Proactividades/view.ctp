@@ -10,8 +10,11 @@
 </div>
 
 <div class="flex max-w-6xl mx-auto text-center mb-8 gap-4">
-    <button title="Imprimir" type="button" id="btn-print" class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-printer-icon lucide-printer">
+    <button title="Imprimir" type="button" id="btn-print"
+        class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-printer-icon lucide-printer">
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
             <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
             <rect x="6" y="14" width="12" height="8" rx="1" />
@@ -21,12 +24,17 @@
     <?php
     if ($tipoUsuario === 2 || $tipoUsuario === 1) :
     ?>
-        <button title="Editar Sistematizacion" class="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" onclick="window.location.href='<?php echo $this->Html->url(array('action' => 'edit', $proactividad['Proactividad']['id'])); ?>'">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen">
-                <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
-            </svg>
-        </button>
+    <button title="Editar Sistematizacion"
+        class="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+        onclick="window.location.href='<?php echo $this->Html->url(array('action' => 'edit', $proactividad['Proactividad']['id'])); ?>'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-square-pen-icon lucide-square-pen">
+            <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+            <path
+                d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
+        </svg>
+    </button>
     <?php
     endif;
     ?>
@@ -34,7 +42,9 @@
 
     <button title="Ver Encuentros" type="button" id="btn-hide"
         class="flex items-center w-38 space-x-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-        <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye">
+        <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-eye-icon lucide-eye">
             <path d="M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3" />
             <path d="m16 19 2 2 4-4" />
         </svg>
@@ -66,22 +76,31 @@
                         <td colspan="3" class="border border-gray-300 p-2">VIGENCIA: 2026</td>
                         <td colspan="2" class="border border-gray-300 p-2">VERSIÓN: </td>
                         <td colspan="2" class="border border-gray-300 p-2">CÓDIGO: </td>
-                        <td colspan="1" class="border border-gray-300 py-2 pr-12 pl-2"> <span class="font-semibold">Página:</span></td>
+                        <td colspan="1" class="border border-gray-300 py-2 pr-12 pl-2"> <span
+                                class="font-semibold">Página:</span></td>
                     </tr>
 
                     <tr>
 
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center"><?php echo __('Responsable'); ?></td>
-                        <td colspan="4" class="border border-gray-300 p-2"><?php echo h($proactividad['Responsable']['nombres']); ?> </td>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center"><?php echo __('Profesión'); ?></td>
-                        <td colspan="3" class="border border-gray-300 p-2"><?php echo h($proactividad['Responsable']['profesion']); ?> </td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">
+                            <?php echo __('Responsable'); ?></td>
+                        <td colspan="4" class="border border-gray-300 p-2">
+                            <?php echo h($proactividad['Responsable']['nombres']); ?> </td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">
+                            <?php echo __('Profesión'); ?></td>
+                        <td colspan="3" class="border border-gray-300 p-2">
+                            <?php echo h($proactividad['Responsable']['profesion']); ?> </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2" class="border border-gray-300 font-semibold p-2 text-center">Fecha de Ingreso</td>
-                        <td colspan="3" class="border border-gray-300 p-2"><?php echo h($proactividad['Proactividad']['created']); ?></td>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Fecha actualización</td>
-                        <td colspan="3" class="border border-gray-300 p-2"><?php echo h($proactividad['Proactividad']['modified']); ?></td>
+                        <td colspan="2" class="border border-gray-300 font-semibold p-2 text-center">Fecha de Ingreso
+                        </td>
+                        <td colspan="3" class="border border-gray-300 p-2">
+                            <?php echo h($proactividad['Proactividad']['created']); ?></td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Fecha actualización
+                        </td>
+                        <td colspan="3" class="border border-gray-300 p-2">
+                            <?php echo h($proactividad['Proactividad']['modified']); ?></td>
                     </tr>
 
 
@@ -97,9 +116,9 @@
                     </tr>
 
                     <tr>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Dimensión:</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Temática:</td>
                         <td colspan="4" class="border border-gray-300 p-2">
-                            <?php echo h($proactividad['Producto']['dimensiones']); ?>
+                            <?php echo h($proactividad['Producto']['nombredim']); ?>
                         </td>
                         <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Entorno:</td>
                         <td colspan="3" class="border border-gray-300 p-2">
@@ -110,19 +129,16 @@
                     <tr>
                         <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Producto:</td>
                         <td colspan="8" class="border border-gray-300 p-2">
-                            <?php echo h($proactividad['Producto']['activity']); ?>
+                            <?php echo h($proactividad['Producto']['producto']); ?>
                         </td>
                     </tr>
 
                     <tr class="bg-gray-100">
                         <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Tarea:</td>
-                        <td colspan="4" class="border border-gray-300 p-2">
-                            <?php echo $this->Html->link($proactividad['Producto']['tarea'], ['controller' => 'productos', 'action' => 'view', $proactividad['Producto']['id']]); ?>
+                        <td colspan="8" class="border border-gray-300 p-2">
+                            <?php echo $this->Html->link($proactividad['Producto']['actividad'], ['controller' => 'productos', 'action' => 'view', $proactividad['Producto']['id']]); ?>
                         </td>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center">Producto relacionado:</td>
-                        <td colspan="3" class="border border-gray-300 p-2">
-                            <?php echo h($proactividad['Proactividad']['producto1']); ?>
-                        </td>
+
                     </tr>
 
                     <tr>
@@ -137,7 +153,8 @@
                         <td colspan="3" class="border border-gray-300 p-2">
                             <?php echo h($proactividad['Proactividad']['grupo']); ?>
                         </td>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2">Características de población:</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2">Características de población:
+                        </td>
                         <td colspan="4" class="border border-gray-300 p-2">
                             <?php echo h($proactividad['Proactividad']['poblaciones']); ?>
                         </td>
@@ -215,7 +232,7 @@
                             $auxContObj = strrpos(($proactividad['Proactividad']['contobjetivo']), '/');
                             if ($auxContObj === false) {
                             ?>
-                                <?php echo ($proactividad['Proactividad']['contobjetivo']); ?>
+                            <?php echo ($proactividad['Proactividad']['contobjetivo']); ?>
                             <?php
                             } else {
                                 print($proactividad['Proactividad']['contobjetivo']);
@@ -237,7 +254,8 @@
                     </tr>
 
                     <tr>
-                        <td colspan="1" class="border border-gray-300 font-semibold p-2">Participación significativa</td>
+                        <td colspan="1" class="border border-gray-300 font-semibold p-2">Participación significativa
+                        </td>
                         <td colspan="2" class="border border-gray-300 p-2">
                             <?php echo h($proactividad['Proactividad']['premisauno']); ?>
                         </td>
@@ -271,7 +289,7 @@
                             $auxContPrem = strrpos(h($proactividad['Proactividad']['contpremisa']), '/');
                             if ($auxContPrem === false) {
                             ?>
-                                <?php echo h($proactividad['Proactividad']['contpremisa']); ?> sin registro
+                            <?php echo h($proactividad['Proactividad']['contpremisa']); ?> sin registro
                             <?php
                             } else {
                                 print($proactividad['Proactividad']['contpremisa']);
@@ -323,7 +341,7 @@
                             $auxContPers = strrpos(($proactividad['Proactividad']['contperspectiva']), '/');
                             if ($auxContPers === false) {
                             ?>
-                                <?php echo ($proactividad['Proactividad']['contperspectiva']); ?>
+                            <?php echo ($proactividad['Proactividad']['contperspectiva']); ?>
                             <?php
                             } else {
                                 print($proactividad['Proactividad']['contperspectiva']);
@@ -345,14 +363,22 @@
                     </tr>
 
                     <tr>
-                        <td class="border border-gray-300 font-semibold p-2 text-center bg-gray-100"><?php echo __('Territorial') ?></td>
-                        <td class="border border-gray-300 p-2"><?php echo h($proactividad['Proactividad']['enfoqueuno']); ?></td>
-                        <td class="border border-gray-300 font-semibold p-2 text-center bg-gray-100"><?php echo __('Poblacional'); ?></td>
-                        <td class="border border-gray-300 p-2"><?php echo h($proactividad['Proactividad']['enfoquedos']); ?></td>
-                        <td class="border border-gray-300 font-semibold p-2 text-center bg-gray-100"><?php echo __('Intercultural'); ?></td>
-                        <td class="border border-gray-300 p-2"><?php echo h($proactividad['Proactividad']['enfoquetres']); ?></td>
-                        <td class="border border-gray-300 font-semibold p-2 text-center bg-gray-100"><?php echo __('Diferencial'); ?></td>
-                        <td class="border border-gray-300 p-2"><?php echo h($proactividad['Proactividad']['enfoquecuatro']); ?></td>
+                        <td class="border border-gray-300 font-semibold p-2 text-center bg-gray-100">
+                            <?php echo __('Territorial') ?></td>
+                        <td class="border border-gray-300 p-2">
+                            <?php echo h($proactividad['Proactividad']['enfoqueuno']); ?></td>
+                        <td class="border border-gray-300 font-semibold p-2 text-center bg-gray-100">
+                            <?php echo __('Poblacional'); ?></td>
+                        <td class="border border-gray-300 p-2">
+                            <?php echo h($proactividad['Proactividad']['enfoquedos']); ?></td>
+                        <td class="border border-gray-300 font-semibold p-2 text-center bg-gray-100">
+                            <?php echo __('Intercultural'); ?></td>
+                        <td class="border border-gray-300 p-2">
+                            <?php echo h($proactividad['Proactividad']['enfoquetres']); ?></td>
+                        <td class="border border-gray-300 font-semibold p-2 text-center bg-gray-100">
+                            <?php echo __('Diferencial'); ?></td>
+                        <td class="border border-gray-300 p-2">
+                            <?php echo h($proactividad['Proactividad']['enfoquecuatro']); ?></td>
                     </tr>
                 </tbody>
             </table>
@@ -373,7 +399,7 @@
                             $auxContEnf = strrpos(h($proactividad['Proactividad']['contribucionenfoque']), '/');
                             if ($auxContEnf === false) {
                             ?>
-                                <?php echo h($proactividad['Proactividad']['contribucionenfoque']); ?>
+                            <?php echo h($proactividad['Proactividad']['contribucionenfoque']); ?>
                             <?php
                             } else {
                                 print($proactividad['Proactividad']['contribucionenfoque']);
@@ -400,7 +426,7 @@
                             $auxComp = strrpos(h($proactividad['Proactividad']['compromiso']), '/');
                             if ($auxComp === false) {
                             ?>
-                                <?php echo h($proactividad['Proactividad']['compromiso']); ?>
+                            <?php echo h($proactividad['Proactividad']['compromiso']); ?>
                             <?php
                             } else {
                                 print($proactividad['Proactividad']['compromiso']);
@@ -427,7 +453,7 @@
                             $auxApor = strrpos(h($proactividad['Proactividad']['aportes']), '/');
                             if ($auxApor === false) {
                             ?>
-                                <?php echo h($proactividad['Proactividad']['aportes']); ?>
+                            <?php echo h($proactividad['Proactividad']['aportes']); ?>
                             <?php
                             } else {
                                 print($proactividad['Proactividad']['aportes']);
@@ -454,7 +480,7 @@
                             $auxConcl = strrpos(($proactividad['Proactividad']['conclusiones']), '/');
                             if ($auxConcl === false) {
                             ?>
-                                <?php echo h($proactividad['Proactividad']['conclusiones']); ?>
+                            <?php echo h($proactividad['Proactividad']['conclusiones']); ?>
                             <?php
                             } else {
                                 print($proactividad['Proactividad']['conclusiones']);
@@ -481,7 +507,7 @@
                             $auxConcl = strrpos(h($proactividad['Proactividad']['relatoria']), '/');
                             if ($auxConcl === false) {
                             ?>
-                                <?php echo h($proactividad['Proactividad']['relatoria']); ?>
+                            <?php echo h($proactividad['Proactividad']['relatoria']); ?>
                             <?php
                             } else {
                                 print($proactividad['Proactividad']['relatoria']);
@@ -508,7 +534,10 @@
     <div class="bg-white shadow-2xl rounded-xl p-12 block">
         <!-- Contenido a imprimir -->
         <div class="flex items-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 12h.01" />
@@ -536,76 +565,114 @@
 
         <div class="overflow-x-auto">
             <?php if (!empty($proactividad['Procesoregistro'])) : ?>
-                <?php foreach ($proactividad['Procesoregistro'] as $procesoregistro) : ?>
-                    <div class="mb-6">
-                        <table class="w-full">
-                            <tbody>
-                                <tr>
-                                    <td colspan="9">
-                                        <!-- Botón de menú de opciones -->
-                                        <div class="relative inline-block text-left">
-                                            <button type="button" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200 hover:rounded-md focus:outline-none" onclick="toggleMenu(this)">
-                                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                                    <path d="M3 5h1" />
-                                                    <path d="M3 12h1" />
-                                                    <path d="M3 19h1" />
-                                                    <path d="M8 5h1" />
-                                                    <path d="M8 12h1" />
-                                                    <path d="M8 19h1" />
-                                                    <path d="M13 5h8" />
-                                                    <path d="M13 12h8" />
-                                                    <path d="M13 19h8" />
-                                                </svg>
-                                            </button>
-                                            <div class="hidden absolute left-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg z-50 menu-options">
-                                                <a href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'edit', $procesoregistro['id']]); ?>"
-                                                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">Editar</a>
-                                                <form method="post" action="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'deleteInProactividades', $procesoregistro['id'], $proactividad['Proactividad']['id']]); ?>" onsubmit="return confirm('<?php echo __('¿Está seguro/a de eliminar el registro con ID# %s?', $procesoregistro['id']); ?>');">
-                                                    <?php echo $this->Form->hidden('_method', ['value' => 'POST']); ?>
-                                                    <button type="submit" class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 text-sm">Borrar</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+            <?php foreach ($proactividad['Procesoregistro'] as $procesoregistro) : ?>
+            <div class="mb-6">
+                <table class="w-full">
+                    <tbody>
+                        <tr>
+                            <td colspan="9">
+                                <!-- Botón de menú de opciones -->
+                                <div class="relative inline-block text-left">
+                                    <button type="button"
+                                        class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200 hover:rounded-md focus:outline-none"
+                                        onclick="toggleMenu(this)">
+                                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path d="M3 5h1" />
+                                            <path d="M3 12h1" />
+                                            <path d="M3 19h1" />
+                                            <path d="M8 5h1" />
+                                            <path d="M8 12h1" />
+                                            <path d="M8 19h1" />
+                                            <path d="M13 5h8" />
+                                            <path d="M13 12h8" />
+                                            <path d="M13 19h8" />
+                                        </svg>
+                                    </button>
+                                    <div
+                                        class="hidden absolute left-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg z-50 menu-options">
+                                        <a href="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'edit', $procesoregistro['id']]); ?>"
+                                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-sm">Editar</a>
+                                        <form method="post"
+                                            action="<?php echo $this->Html->url(['controller' => 'procesoregistros', 'action' => 'deleteInProactividades', $procesoregistro['id'], $proactividad['Proactividad']['id']]); ?>"
+                                            onsubmit="return confirm('<?php echo __('¿Está seguro/a de eliminar el registro con ID# %s?', $procesoregistro['id']); ?>');">
+                                            <?php echo $this->Form->hidden('_method', ['value' => 'POST']); ?>
+                                            <button type="submit"
+                                                class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 text-sm">Borrar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
 
-                                <tr class="mt-4 bg-gray-100 ">
-                                    <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700"> Tema</td>
-                                    <td colspan="7" class="border border-gray-300 p-2 font-semibold text-blue-600 text-sm hover:underline">
-                                        <?php echo $this->Html->link(strtoupper($procesoregistro['tema']), array('controller' => 'procesoregistros', 'action' => 'view', $procesoregistro['id'])); ?>
-                                    </td>
-                                </tr>
+                        <tr class="mt-4 bg-gray-100 ">
+                            <td colspan="1"
+                                class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700"> Tema
+                            </td>
+                            <td colspan="7"
+                                class="border border-gray-300 p-2 font-semibold text-blue-600 text-sm hover:underline">
 
-                                <tr>
-                                    <td colspan="1" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Fecha</td>
-                                    <td colspan="2" class="border border-gray-300 p-2 font-bold text-sm"><?php echo $procesoregistro['fecha']; ?></td>
-                                    <td colspan="1" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Lugar</td>
-                                    <td colspan="3" class="border border-gray-300 p-2 text-sm text-gray-700"><?php echo $procesoregistro['Ubicacion']['sitio']; ?></td>
-                                </tr>
-                                <tr class="bg-gray-100">
-                                    <td colspan="1" class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Plan de Sesión</td>
-                                    <td colspan="4" class="border border-gray-300 p-2 hover:underline text-sm text-gray-700">
-                                        <?php echo $this->Html->link($procesoregistro['Plsesion']['tema'], array('controller' => 'plsesiones', 'action' => 'view', $procesoregistro['Plsesion']['id'])); ?>
-                                    </td>
-                                </tr>
+                                <?php
+                            $auxDsr = strrpos(($procesoregistro['tema']), '/');
+                            if ($auxDsr === false) {
+                            ?>
+                                <textarea class="ckeditor" readonly><?php echo ($procesoregistro['tema']); 
+                                ?></textarea>
+                                <?php
+                                      } else {
+                                           print($procesoregistro['tema']);
+                                       }
+                                 ?>
+                            </td>
+                        </tr>
 
-                                <tr>
-                                    <td colspan="1" class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Anexo</td>
-                                    <td colspan="4" class="border border-gray-300 p-2 hover:underline text-sm">
-                                        <a href="<?php echo $this->webroot . 'files/procesoregistro/anexo/' . $procesoregistro['sisproceso_dir'] . '/' . $procesoregistro['anexo']; ?>" target="_blank" class="text-blue-600 underline ml-2">
-                                            <?php echo $procesoregistro['anexo']; ?>
-                                        </a>
-                                    </td>
-                                </tr>
-                        </table>
+                        <tr>
+                            <td colspan="1"
+                                class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">
+                                Fecha</td>
+                            <td colspan="2" class="border border-gray-300 p-2 font-bold text-sm">
+                                <?php echo $procesoregistro['fecha']; ?></td>
+                            <td colspan="1"
+                                class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">
+                                Lugar</td>
+                            <td colspan="3" class="border border-gray-300 p-2 text-sm text-gray-700">
+                                <?php echo $procesoregistro['Ubicacion']['sitio']; ?></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td colspan="1"
+                                class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Plan
+                                de Sesión</td>
+                            <td colspan="4" class="border border-gray-300 p-2 hover:underline text-sm text-gray-700">
+                                <?php echo h($procesoregistro['plsesion_id']); ?>
 
-                    </div>
-                <?php endforeach; ?>
+                                <?php echo $this->Html->link($procesoregistro['plsesion_id'], 
+                                ['controller' => 'Plsesiones', 'action' => 'view', $plsesiones['id']]); ?>
+
+
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="1"
+                                class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">
+                                Anexo</td>
+                            <td colspan="4" class="border border-gray-300 p-2 hover:underline text-sm">
+                                <a href="<?php echo $this->webroot . 'files/procesoregistro/anexo/' . $procesoregistro['sisproceso_dir'] . '/' . $procesoregistro['anexo']; ?>"
+                                    target="_blank" class="text-blue-600 underline ml-2">
+                                    <?php echo $procesoregistro['anexo']; ?>
+                                </a>
+                            </td>
+                        </tr>
+                </table>
+
+            </div>
+            <?php endforeach; ?>
 
             <?php else: ?>
-                <div class="text-center text-gray-500 py-8">
-                    <span class="font-semibold text-lg">No hay encuentros agregados</span>
-                </div>
+            <div class="text-center text-gray-500 py-8">
+                <span class="font-semibold text-lg">No hay encuentros agregados</span>
+            </div>
             <?php endif; ?>
         </div>
 
@@ -613,89 +680,94 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var btn = document.getElementById('btn-print');
-        var printContents = document.getElementById('print-area');
-        var btnHide = document.getElementById('btn-hide');
-        const btnText = document.getElementById('btn-text');
-        const btnIcon = document.getElementById('btn-icon');
+document.addEventListener("DOMContentLoaded", function() {
+    var btn = document.getElementById('btn-print');
+    var printContents = document.getElementById('print-area');
+    var btnHide = document.getElementById('btn-hide');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
 
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (!printContents) {
-                alert("El área de impresión está vacía o no existe");
-                return;
-            }
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (!printContents) {
+            alert("El área de impresión está vacía o no existe");
+            return;
+        }
 
-            var w = window.open('', '', 'height=900,width=1200');
-            w.document.write('<html><head><title>Impresión</title>');
-            w.document.write('<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">');
-            w.document.write('<link rel="stylesheet" href="/css/app.css" />');
-            // Estilos para impresión: ajusta márgenes y fuerza salto de página
-            w.document.write('<style>@media print { body { margin: 0; } .bg-white { box-shadow: none !important; } table { page-break-inside:auto; } tr { page-break-inside:avoid; page-break-after:auto; } .page-break { page-break-before:always; } }</style>');
-            w.document.write('</head><body style="margin:0;padding:0;">');
-            w.document.write('<div style="width:100vw;max-width:100%;box-sizing:border-box;">' + printContents.innerHTML + '</div>');
-            w.document.write('</body></html>');
-            w.document.close();
-            w.focus();
-            w.print();
-        });
+        var w = window.open('', '', 'height=900,width=1200');
+        w.document.write('<html><head><title>Impresión</title>');
+        w.document.write(
+            '<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">'
+        );
+        w.document.write('<link rel="stylesheet" href="/css/app.css" />');
+        // Estilos para impresión: ajusta márgenes y fuerza salto de página
+        w.document.write(
+            '<style>@media print { body { margin: 0; } .bg-white { box-shadow: none !important; } table { page-break-inside:auto; } tr { page-break-inside:avoid; page-break-after:auto; } .page-break { page-break-before:always; } }</style>'
+        );
+        w.document.write('</head><body style="margin:0;padding:0;">');
+        w.document.write('<div style="width:100vw;max-width:100%;box-sizing:border-box;">' +
+            printContents.innerHTML + '</div>');
+        w.document.write('</body></html>');
+        w.document.close();
+        w.focus();
+        w.print();
+    });
 
 
 
-        let isEdit = true; // estado inicial: "Editar"
+    let isEdit = true; // estado inicial: "Editar"
 
-        btnHide.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (isEdit) {
+    btnHide.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (isEdit) {
 
-                // Volver a "Editar"
-                btnHide.title = 'Ver Sistematización';
-                btnIcon.innerHTML = `
+            // Volver a "Editar"
+            btnHide.title = 'Ver Sistematización';
+            btnIcon.innerHTML = `
                  <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
                 <circle cx="12" cy="12" r="3" />
             `;
-            } else {
-                // Cambiar a "Guardar"
+        } else {
+            // Cambiar a "Guardar"
 
-                btnHide.title = 'Ver encuentros';
-                btnIcon.innerHTML = `
+            btnHide.title = 'Ver encuentros';
+            btnIcon.innerHTML = `
             <path d="M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3" />
             <path d="m16 19 2 2 4-4" />
             `;
-            }
-            isEdit = !isEdit;
-            printContents.classList.toggle('block');
-            printContents.classList.toggle('hidden');
-        });
+        }
+        isEdit = !isEdit;
+        printContents.classList.toggle('block');
+        printContents.classList.toggle('hidden');
     });
+});
 </script>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('textarea').each(function() {
-            this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
-        }).on('input', function() {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + 'px';
-        });
-
+$(document).ready(function() {
+    $('textarea').each(function() {
+        this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+    }).on('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
     });
 
-    function toggleMenu(btn) {
-        // Cierra otros menús abiertos
-        document.querySelectorAll('.menu-options').forEach(function(menu) {
-            if (menu !== btn.nextElementSibling) menu.classList.add('hidden');
-        });
-        // Alterna el menú actual
-        btn.nextElementSibling.classList.toggle('hidden');
-    }
-    // Cierra el menú si se hace clic fuera
-    document.addEventListener('click', function(e) {
-        document.querySelectorAll('.menu-options').forEach(function(menu) {
-            if (!menu.contains(e.target) && !menu.previousElementSibling.contains(e.target)) {
-                menu.classList.add('hidden');
-            }
-        });
+});
+
+function toggleMenu(btn) {
+    // Cierra otros menús abiertos
+    document.querySelectorAll('.menu-options').forEach(function(menu) {
+        if (menu !== btn.nextElementSibling) menu.classList.add('hidden');
     });
+    // Alterna el menú actual
+    btn.nextElementSibling.classList.toggle('hidden');
+}
+// Cierra el menú si se hace clic fuera
+document.addEventListener('click', function(e) {
+    document.querySelectorAll('.menu-options').forEach(function(menu) {
+        if (!menu.contains(e.target) && !menu.previousElementSibling.contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    });
+});
 </script>

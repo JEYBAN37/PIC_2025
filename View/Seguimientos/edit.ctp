@@ -109,6 +109,7 @@ $idredirect = $this->Form->value('producto_id');
             </div>
 
 
+
             <!-- Valor asignado de la actividad -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
@@ -235,7 +236,8 @@ $idredirect = $this->Form->value('producto_id');
             <div class="col-span-2 md:col-span-1 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">?</span>
-                    <label for="numeroAnimales" class="font-semibold">Observacion de Segumimineto</label>
+                    <label for="tipoAcomañaiento" class="font-semibold">Observacion del
+                        acompañamiento</label>
                 </div>
                 <?php
 
@@ -256,15 +258,19 @@ $idredirect = $this->Form->value('producto_id');
                 echo $this->Form->input('descripcionacompanamiento', [
                     'id' => 'descripcionacompanamiento',
                     'type' => 'select',
+                    'multiple' => true,
+                    'empty' => false,
                     'options' => $observacionseguimiento,
                     'label' => false,
                     'error' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-700',
+                     'class' => 'w-full'
                 ]);
 
                 ?>
             </div>
         </div>
+
+
 
         <div class="col-span-2 text-md font-semibold my-6">
             <div class="flex items-center mb-4">
@@ -393,6 +399,19 @@ CKEDITOR.on('instanceReady', function(ev) {
     editor.on('change', updateCount);
 
     updateCount(); // inicializar contador
+});
+const choices_descripcionacompanamiento = new Choices("#descripcionacompanamiento", {
+    searchEnabled: true,
+    searchChoices: true,
+    removeItemButton: true, // Permite eliminar seleccionados
+    itemSelectText: '',
+    shouldSort: false,
+    searchPlaceholderValue: "Escriba para filtrar...",
+    maxItemCount: -1, // Sin límite
+    removeItems: true, // Permite quitar seleccionados
+    duplicateItemsAllowed: false,
+    placeholder: true,
+    placeholderValue: "Seleccione la(s) acción(es) de acompañamiento",
 });
 
 // Detectar si el usuario intenta retroceder con la flecha del navegador

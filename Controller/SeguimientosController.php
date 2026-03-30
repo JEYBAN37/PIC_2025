@@ -112,6 +112,7 @@ class SeguimientosController extends AppController {
 			$options = array('conditions' => array('Seguimiento.' . $this->Seguimiento->primaryKey => $id));
 			$this->request->data = $this->Seguimiento->find('first', $options);
 			$id_producto =$this->request->data['Seguimiento']['producto_id'];
+			$this->request->data = $this->tranformData($this->request->data);
 		if($tipoUsuario !== '2'){
 			return $this->redirect(array(
 						'controller' => 'Productos',
@@ -125,6 +126,8 @@ class SeguimientosController extends AppController {
 		$responsables = $this->Seguimiento->Responsable->find('list');
 		$this->set(compact('productos', 'referentes', 'responsables'));
 	}
+
+	
 
 	public function editpic($id = null)
 	{
@@ -147,12 +150,34 @@ class SeguimientosController extends AppController {
 		} else {
 			$options = array('conditions' => array('Seguimiento.' . $this->Seguimiento->primaryKey => $id));
 			$this->request->data = $this->Seguimiento->find('first', $options);
+			$this->request->data = $this->tranformData($this->request->data);
 		}
 		$productos = $this->Seguimiento->Producto->find('list');
 		$referentes = $this->Seguimiento->Referente->find('list');
 		$responsables = $this->Seguimiento->Responsable->find('list');
 		$this->set(compact('productos', 'referentes', 'responsables'));
 	}
+
+	private function tranformData($data)
+    {
+        
+        if (!empty($data['Seguimiento']['limitantes'])) {
+            $limitantesStr = $data['Seguimiento']['limitantes'];
+            // Extraer cada palabra/frase hasta la coma
+            $tipos = array_map('trim', explode(',', $limitantesStr));
+            $data['Seguimiento']['limitantes'] = $tipos;
+        }
+		
+        if (!empty($data['Seguimiento']['descripcionacompanamiento'])) {
+            $poblacionStr = $data['Seguimiento']['descripcionacompanamiento'];
+            // Extraer cada palabra/frase hasta la coma
+            $tipos = array_map('trim', explode(',', $poblacionStr));
+            $data['Seguimiento']['descripcionacompanamiento'] = $tipos;
+        }
+
+
+        return $data;
+    }
 
 /**
  * delete method
