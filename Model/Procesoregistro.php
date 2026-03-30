@@ -309,7 +309,7 @@ class Procesoregistro extends AppModel
 	);
 
 	public $hasMany = array(
-		'Persona' => array(
+		/*'Persona' => array(
 			'className' => 'Persona',
 			'foreignKey' => 'procesoregistro_id',
 			'dependent' => false,
@@ -321,7 +321,7 @@ class Procesoregistro extends AppModel
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
+		),/*
 		'Participantesprocesos' => array(
 			'className' => 'Participantesprocesos',
 			'foreignKey' => 'Procesoregistro_id',
@@ -335,6 +335,7 @@ class Procesoregistro extends AppModel
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		
 		/*'Producto' => array(
 			'className' => 'Producto',
 			'foreignKey' => 'Procesoregistro_id',
@@ -370,19 +371,7 @@ class Procesoregistro extends AppModel
 	 * @var array
 	 */
 	public $hasAndBelongsToMany = array(
-		'Persona' => array(
-			'className' => 'Persona',
-			'joinTable' => 'participantesprocesos',
-			'foreignKey' => 'procesoregistro_id',
-			'associationForeignKey' => 'persona_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-		)
+		
 		/*'Producto' => array(
 			'className' => 'Producto',
 			'joinTable' => 'productosactividades',

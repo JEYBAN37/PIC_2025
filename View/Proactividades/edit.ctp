@@ -28,7 +28,8 @@ echo $this->Form->create('Proactividad', [
     <div class="bg-white shadow-2xl rounded-xl p-12">
         <!-- Header -->
         <div class="flex items-center mb-4">
-            <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
+            <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600"
+                class="p-2 bg-blue-100 rounded-lg">
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Información del proceso</h1>
                 <p class="text-gray-500">Complete los datos básicos del proceso de sistematización.</p>
@@ -65,7 +66,7 @@ echo $this->Form->create('Proactividad', [
                 ?>
             </div>
 
-             <!-- total_sesiones tratada -->
+            <!-- total_sesiones tratada -->
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">2</span>
@@ -74,7 +75,8 @@ echo $this->Form->create('Proactividad', [
 
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Ingrese el número de sesiones (talleres, encuentros) que desarrollará para este proceso.</p>
+                <p class="help-block text-gray-500 text-xs mb-2">Ingrese el número de sesiones (talleres, encuentros)
+                    que desarrollará para este proceso.</p>
 
                 <?php
                 echo $this->Form->input('totalsesiones', [
@@ -207,7 +209,10 @@ echo $this->Form->create('Proactividad', [
     <div class="bg-white shadow-2xl rounded-xl p-12">
         <!-- Header -->
         <div class="flex items-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 12h.01" />
@@ -269,14 +274,18 @@ echo $this->Form->create('Proactividad', [
 
         <!-- Header -->
         <div class="flex items-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 12h.01" />
             </svg>
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Objetivos Ciudad Bienestar</h1>
-                <p class="text-gray-500">Relación de la actividad a sistematizar con los objetivos de la estrategia Ciudad Bienestar</p>
+                <p class="text-gray-500">Relación de la actividad a sistematizar con los objetivos de la estrategia
+                    Ciudad Bienestar</p>
             </div>
 
         </div>
@@ -370,7 +379,8 @@ echo $this->Form->create('Proactividad', [
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-start mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
-                    <label for="producto_id" class="font-semibold">Describa de qué forma la actividad contribuye con el o los objetivos de la estrategia CB segun la puntuacion asignada</label>
+                    <label for="producto_id" class="font-semibold">Describa de qué forma la actividad contribuye con el
+                        o los objetivos de la estrategia CB segun la puntuacion asignada</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
@@ -394,7 +404,10 @@ echo $this->Form->create('Proactividad', [
 
         <!-- Header -->
         <div class="flex items-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 12h.01" />
@@ -482,7 +495,8 @@ echo $this->Form->create('Proactividad', [
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-start mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
-                    <label for="producto_id" class="font-semibold">Describa de qué forma la actividad contribuye con el o los objetivos de la estrategia CB segun la puntuacion asignada</label>
+                    <label for="producto_id" class="font-semibold">Describa de qué forma la actividad contribuye con el
+                        o los objetivos de la estrategia CB segun la puntuacion asignada</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
@@ -508,14 +522,18 @@ echo $this->Form->create('Proactividad', [
 
         <!-- Header -->
         <div class="flex items-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 12h.01" />
             </svg>
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Perspectivas Ciudad Bienestar</h1>
-                <p class="text-gray-500">Relación de la actividad con las perspectivas de la estrategia Ciudad Bienestar</p>
+                <p class="text-gray-500">Relación de la actividad con las perspectivas de la estrategia Ciudad Bienestar
+                </p>
             </div>
 
         </div>
@@ -573,7 +591,8 @@ echo $this->Form->create('Proactividad', [
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-start mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">3</span>
-                    <label for="producto_id" class="font-semibold">Describa de qué forma la actividad contribuye con las perspectivas de la estrategia CB, segun la puntuacion asignada</label>
+                    <label for="producto_id" class="font-semibold">Describa de qué forma la actividad contribuye con las
+                        perspectivas de la estrategia CB, segun la puntuacion asignada</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
@@ -599,7 +618,10 @@ echo $this->Form->create('Proactividad', [
 
         <!-- Header -->
         <div class="flex items-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 12h.01" />
@@ -709,7 +731,8 @@ echo $this->Form->create('Proactividad', [
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-start mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">5</span>
-                    <label for="producto_id" class="font-semibold">Describa de qué forma la actividad contribuye con el o los enfoques de la estrategia CB,segun la puntuacion asignada</label>
+                    <label for="producto_id" class="font-semibold">Describa de qué forma la actividad contribuye con el
+                        o los enfoques de la estrategia CB,segun la puntuacion asignada</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
@@ -735,7 +758,10 @@ echo $this->Form->create('Proactividad', [
 
         <!-- Header -->
         <div class="flex items-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                class="p-2 bg-blue-100 rounded-lg text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-clipboard-pen-icon lucide-clipboard-pen">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="4" />
                 <path d="M12 12h.01" />
@@ -752,7 +778,8 @@ echo $this->Form->create('Proactividad', [
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-start mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
-                    <label for="producto_id" class="font-semibold">Analice y explique de qué manera se aplicaron las líneas y sublíneas de la Política Publica en Salud Colectiva al proceso pedagógico</label>
+                    <label for="producto_id" class="font-semibold">Analice y explique de qué manera se aplicaron las
+                        líneas y sublíneas de la Política Publica en Salud Colectiva al proceso pedagógico</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
@@ -831,7 +858,8 @@ echo $this->Form->create('Proactividad', [
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-start mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">5</span>
-                    <label for="producto_id" class="font-semibold">Realice un breve relatoria del proceso realizado</label>
+                    <label for="producto_id" class="font-semibold">Realice un breve relatoria del proceso
+                        realizado</label>
                     <p class="text-red-600">*</p>
                 </div>
                 <?php
@@ -866,10 +894,14 @@ echo $this->Form->create('Proactividad', [
         <div class="flex gap-4">
             <!-- Botón -->
             <div class="pt-2">
-                <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+                <button type="submit"
+                    class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
                     <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                            <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-save-icon lucide-save">
+                            <path
+                                d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
                             <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
                             <path d="M7 3v4a1 1 0 0 0 1 1h7" />
                         </svg>
@@ -881,13 +913,18 @@ echo $this->Form->create('Proactividad', [
 
             <!-- Botón -->
             <div class="pt-2">
-                <button type="button" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2" onclick="preventBackNavigation()">
+                <button type="button"
+                    class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2"
+                    onclick="preventBackNavigation()">
                     <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-save-icon lucide-save">
                             <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
                             <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
                             <circle cx="12" cy="12" r="1" />
-                            <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
+                            <path
+                                d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
                         </svg>
 
                     </span>
@@ -903,112 +940,113 @@ echo $this->Form->create('Proactividad', [
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const choices = new Choices("#producto_id", { // Botón para eliminar seleccionados
-            searchEnabled: true, // 🔎 activa búsqueda
-            searchChoices: true, // 🔎 filtra opciones
-            removeItemButton: false, // ❌ no mostrar botón de eliminar
-            itemSelectText: '', // 🚫 quita el "Press to select"
-            shouldSort: false, // 📌 mantiene el orden original
-            searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
-            renderChoiceLimit: -1, // Sin límite de renderizado
-            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
-        });
-
-        const choices_tipopoblacion = new Choices("#tipopoblacion", {
-            searchEnabled: true,
-            searchChoices: true,
-            removeItemButton: true, // Permite eliminar seleccionados
-            itemSelectText: '',
-            shouldSort: false,
-            searchPlaceholderValue: "Escriba para filtrar...",
-            maxItemCount: -1, // Sin límite
-            removeItems: true, // Permite quitar seleccionados
-            duplicateItemsAllowed: false,
-            placeholder: true,
-            placeholderValue: "Seleccione la(s) población(es)",
-        });
-
-        // Aplicar estilos con Tailwind
-        const inner = document.querySelector('.choices__inner');
-        if (inner) {
-            inner.classList.add(
-                'bg-white', 'border', 'border-gray-300', 'rounded-lg',
-                'px-3', 'py-2', 'focus:ring', 'focus:ring-blue-200', 'text-gray-700'
-            );
-        }
-
-        const dropdown = document.querySelector('.choices__list--dropdown');
-        if (dropdown) {
-            dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
-        }
+document.addEventListener("DOMContentLoaded", () => {
+    const choices = new Choices("#producto_id", { // Botón para eliminar seleccionados
+        searchEnabled: true, // 🔎 activa búsqueda
+        searchChoices: true, // 🔎 filtra opciones
+        removeItemButton: false, // ❌ no mostrar botón de eliminar
+        itemSelectText: '', // 🚫 quita el "Press to select"
+        shouldSort: false, // 📌 mantiene el orden original
+        searchPlaceholderValue: "Escriba para filtrar...", // placeholder búsqueda
+        renderChoiceLimit: -1, // Sin límite de renderizado
+        searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
     });
 
-
-    CKEDITOR.on('instanceReady', function(ev) {
-        var editor = ev.editor;
-        var textarea = editor.element.$;
-        var maxChars = textarea.getAttribute("data-maxlength"); // Lee el límite de cada campo
-        maxChars = maxChars ? parseInt(maxChars) : 300; // Default 300 si no se define
-
-        // Crear un contador debajo del campo
-        var counter = document.createElement("div");
-        counter.className = "text-gray-600 mt-1 text-sm";
-        counter.id = "charCount_" + textarea.id;
-        textarea.parentNode.appendChild(counter);
-
-        function updateCount() {
-            var text = editor.getData().replace(/<[^>]*>/g, '');
-            var length = text.length;
-            var remaining = maxChars - length;
-
-            counter.innerHTML = "Caracteres usados: " + length + " / " + maxChars;
-
-            if (remaining < 0) {
-                counter.style.color = "red";
-                editor.setData(text.substring(0, maxChars));
-            } else {
-                counter.style.color = "gray";
-            }
-        }
-
-        // Bloquear si excede
-        editor.on('key', function(evt) {
-            var text = editor.getData().replace(/<[^>]*>/g, '');
-            if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
-                evt.cancel();
-                alert("Máximo permitido: " + maxChars + " caracteres.");
-            }
-        });
-
-        // Bloquear pegar excedido
-        editor.on('paste', function(evt) {
-            var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
-            if (text.length > maxChars) {
-                evt.cancel();
-                alert("No puedes pegar más de " + maxChars + " caracteres.");
-            }
-        });
-
-        editor.on('key', updateCount);
-        editor.on('paste', updateCount);
-        editor.on('change', updateCount);
-
-        updateCount(); // inicializar contador
+    const choices_tipopoblacion = new Choices("#tipopoblacion", {
+        searchEnabled: true,
+        searchChoices: true,
+        removeItemButton: true, // Permite eliminar seleccionados
+        itemSelectText: '',
+        shouldSort: false,
+        searchPlaceholderValue: "Escriba para filtrar...",
+        maxItemCount: -1, // Sin límite
+        removeItems: true, // Permite quitar seleccionados
+        duplicateItemsAllowed: false,
+        placeholder: true,
+        placeholderValue: "Seleccione la(s) población(es)",
     });
 
-    // Detectar si el usuario intenta retroceder con la flecha del navegador
-    window.addEventListener('popstate', function(event) {
-        if (!confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
-            history.pushState(null, null, location.href);
-        }
-    });
-    function preventBackNavigation() {
-        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
-            window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+    // Aplicar estilos con Tailwind
+    const inner = document.querySelector('.choices__inner');
+    if (inner) {
+        inner.classList.add(
+            'bg-white', 'border', 'border-gray-300', 'rounded-lg',
+            'px-3', 'py-2', 'focus:ring', 'focus:ring-blue-200', 'text-gray-700'
+        );
+    }
+
+    const dropdown = document.querySelector('.choices__list--dropdown');
+    if (dropdown) {
+        dropdown.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'border', 'border-gray-200');
+    }
+});
+
+
+CKEDITOR.on('instanceReady', function(ev) {
+    var editor = ev.editor;
+    var textarea = editor.element.$;
+    var maxChars = textarea.getAttribute("data-maxlength"); // Lee el límite de cada campo
+    maxChars = maxChars ? parseInt(maxChars) : 300; // Default 300 si no se define
+
+    // Crear un contador debajo del campo
+    var counter = document.createElement("div");
+    counter.className = "text-gray-600 mt-1 text-sm";
+    counter.id = "charCount_" + textarea.id;
+    textarea.parentNode.appendChild(counter);
+
+    function updateCount() {
+        var text = editor.getData().replace(/<[^>]*>/g, '');
+        var length = text.length;
+        var remaining = maxChars - length;
+
+        counter.innerHTML = "Caracteres usados: " + length + " / " + maxChars;
+
+        if (remaining < 0) {
+            counter.style.color = "red";
+            editor.setData(text.substring(0, maxChars));
+        } else {
+            counter.style.color = "gray";
         }
     }
 
-    // Prevenir retroceso con la flecha del navegador (mejor experiencia)
-    history.pushState(null, null, location.href);
+    // Bloquear si excede
+    editor.on('key', function(evt) {
+        var text = editor.getData().replace(/<[^>]*>/g, '');
+        if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
+            evt.cancel();
+            alert("Máximo permitido: " + maxChars + " caracteres.");
+        }
+    });
+
+    // Bloquear pegar excedido
+    editor.on('paste', function(evt) {
+        var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
+        if (text.length > maxChars) {
+            evt.cancel();
+            alert("No puedes pegar más de " + maxChars + " caracteres.");
+        }
+    });
+
+    editor.on('key', updateCount);
+    editor.on('paste', updateCount);
+    editor.on('change', updateCount);
+
+    updateCount(); // inicializar contador
+});
+
+// Detectar si el usuario intenta retroceder con la flecha del navegador
+window.addEventListener('popstate', function(event) {
+    if (!confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+        history.pushState(null, null, location.href);
+    }
+});
+
+function preventBackNavigation() {
+    if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+        window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+    }
+}
+
+// Prevenir retroceso con la flecha del navegador (mejor experiencia)
+history.pushState(null, null, location.href);
 </script>

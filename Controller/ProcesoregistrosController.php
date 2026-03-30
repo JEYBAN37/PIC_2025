@@ -171,7 +171,7 @@ class ProcesoregistrosController extends AppController
 					//echo '<script> alert("registro guardado"); </script>';
 					return $this->redirect(array('controller' => 'Procesoregistros', 'action' => 'add?sesion=' . $this->data["Procesoregistro"]["procesoregistro_id"]));
 				} else {
-					//return $this->redirect(array('controller' => 'plsesiones', 'action' => 'nuebus'));                
+					//return $this->redirect(array('controller' => 'plsesiones', 'action' => 'index'));                
 					return $this->redirect(array('controller' => 'Proactividades', 'action' => 'index/'));
 				}
 			} else {
@@ -179,9 +179,11 @@ class ProcesoregistrosController extends AppController
 			}
 
 		
+		
 
 		$productos = $this->Producto->find('list', [
 			
+			//'conditions' => $conditions,
 			'fields' => ['Producto.id'],
 			'order' => ['Producto.modified' => 'DESC'],
 			'recursive' => -1
