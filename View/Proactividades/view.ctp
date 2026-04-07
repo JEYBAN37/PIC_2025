@@ -570,7 +570,7 @@
                 <table class="w-full">
                     <tbody>
                         <tr>
-                            <td colspan="9">
+                            <td colspan="6">
                                 <!-- Botón de menú de opciones -->
                                 <div class="relative inline-block text-left">
                                     <button type="button"
@@ -609,7 +609,7 @@
                             <td colspan="1"
                                 class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700"> Tema
                             </td>
-                            <td colspan="7"
+                            <td colspan="5"
                                 class="border border-gray-300 p-2 font-semibold text-blue-600 text-sm hover:underline">
 
                                 <?php
@@ -627,28 +627,33 @@
                         </tr>
 
                         <tr>
-                            <td colspan="1"
-                                class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">
+                            <td
+                                class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700 bg-gray-50">
+                                Id_encuentro</td>
+                            <td class="border border-gray-300 p-2 font-bold text-sm text-center">
+                                <?php echo $procesoregistro['id']; ?></td>
+
+                            <td
+                                class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700 bg-gray-50">
                                 Fecha</td>
-                            <td colspan="2" class="border border-gray-300 p-2 font-bold text-sm">
+                            <td class="border border-gray-300 p-2 font-bold text-sm text-center">
                                 <?php echo $procesoregistro['fecha']; ?></td>
-                            <td colspan="1"
-                                class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">
+
+                            <td
+                                class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700 bg-gray-50">
                                 Lugar</td>
-                            <td colspan="3" class="border border-gray-300 p-2 text-sm text-gray-700">
-                                <?php echo $procesoregistro['Ubicacion']['sitio']; ?></td>
+                            <td class="border border-gray-300 p-2 text-sm text-gray-700">
+                                <?php echo h($procesoregistro['Ubicacion']['sitio']); ?></td>
                         </tr>
                         <tr class="bg-gray-100">
                             <td colspan="1"
                                 class="border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">Plan
                                 de Sesión</td>
-                            <td colspan="4" class="border border-gray-300 p-2 hover:underline text-sm text-gray-700">
+                            <td colspan="5" class="border border-gray-300 p-2 hover:underline text-sm text-gray-700">
                                 <?php echo h($procesoregistro['plsesion_id']); ?>
 
-                                <?php echo $this->Html->link($procesoregistro['plsesion_id'], 
-                                ['controller' => 'Plsesiones', 'action' => 'view', $plsesiones['id']]); ?>
-
-
+                                <?php //echo $this->Html->link($procesoregistro['plsesion_id'], 
+                               // ['controller' => 'Plsesiones', 'action' => 'view', $plsesiones['id']]); ?>
 
                             </td>
                         </tr>
@@ -657,7 +662,7 @@
                             <td colspan="1"
                                 class=" border border-gray-300 font-semibold p-2 text-center text-sm text-gray-700">
                                 Anexo</td>
-                            <td colspan="4" class="border border-gray-300 p-2 hover:underline text-sm">
+                            <td colspan="5" class="border border-gray-300 p-2 hover:underline text-sm">
                                 <a href="<?php echo $this->webroot . 'files/procesoregistro/anexo/' . $procesoregistro['sisproceso_dir'] . '/' . $procesoregistro['anexo']; ?>"
                                     target="_blank" class="text-blue-600 underline ml-2">
                                     <?php echo $procesoregistro['anexo']; ?>

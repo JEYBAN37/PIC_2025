@@ -106,6 +106,7 @@ $idredirect = $this->Form->value('producto_id');
                     'type' => 'number',
                     'min' => 1,
                     'maxLeght' => 2,
+                    'readonly'
 
                 ]);
 

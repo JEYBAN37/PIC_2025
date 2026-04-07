@@ -89,7 +89,7 @@ public $actsAs = array(
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'descripcionacompanamiento' => array(
+		/*'descripcionacompanamiento' => array(
 			 'multiple' => array(
                 'rule' => array('multiple', array('min' => 1)),
                 'message' => 'Por favor seleccione al menos una opción',
@@ -98,7 +98,7 @@ public $actsAs = array(
                 //'last' => false, // Stop validation after this rule
                 //'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		),*/
 		'enlace1' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),

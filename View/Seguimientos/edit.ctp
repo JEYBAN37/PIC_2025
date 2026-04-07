@@ -119,7 +119,8 @@ $idredirect = $this->Form->value('producto_id');
 
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Porcentaje asisgnado a la actividad para el mes
+                <p class="help-block text-gray-500 text-xs mb-2">Verificar el Porcentaje asisgnado a la actividad para
+                    el mes
                     reportado según anexo técnico.</p>
 
                 <?php
@@ -127,8 +128,8 @@ $idredirect = $this->Form->value('producto_id');
                     'label' => false,
                     'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
                     'error' => false,
-                    'type' => 'number',
-                    'readonly'
+                    'type' => 'number'
+                    
                 ]);
 
                 if (!empty($this->Form->error('valorprogramado'))) {
