@@ -272,17 +272,17 @@ $idredirect = $this->Form->value('producto_id');
             </div>
 
             <div class="col-span-2 text-md font-semibold my-6">
-            <div class="flex items-center mb-4">
+                <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">8</span>
                     <label for="proactividad_id" class="font-semibold">Soportes</label>
-            </div>
+                </div>
 
-            <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-2">
                     <label for="ProcesoregistroAnexo" class="block text-gray-700 font-semibold text-sm mb-2">
-                    Adjuntar archivo comprimido (.zip o .rar)
-                </label>
-                <div class="relative w-full">
-                    <?php
+                        Adjuntar archivo comprimido (.zip o .rar)
+                    </label>
+                    <div class="relative w-full">
+                        <?php
                     echo $this->Form->input('productoanexo', [
                         'label' => false,
                         'type' => 'file',
@@ -297,15 +297,15 @@ $idredirect = $this->Form->value('producto_id');
 
                     echo $this->Form->input('dirproductoanexo', array('type' => 'hidden', 'class' => 'form-control'));
                     ?>
+                    </div>
+                    <span class="text-xs text-gray-500 mt-1">
+                        NOTA:
+                        * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
+                        * listado asistencia.pdf (meet o físico), registro excel participantes <br>
+                        * tres (3) pantallazos o fotos resolución 600px * 600px <br>
+                        El nombre del archivo no debe tener tildes o diéresis.
+                    </span>
                 </div>
-                <span class="text-xs text-gray-500 mt-1">
-                    NOTA:
-                    * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
-                    * listado asistencia.pdf (meet o físico), registro excel participantes <br>
-                    * tres (3) pantallazos o fotos resolución 600px * 600px <br>
-                    El nombre del archivo no debe tener tildes o diéresis.
-                </span>
-            </div>
 
                 <div class="relative w-full mt-4">
                     <?php if (!empty($this->request->data['Seguimiento']['dirproductoanexo'])): ?>

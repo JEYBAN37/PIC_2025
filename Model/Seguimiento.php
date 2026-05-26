@@ -9,9 +9,6 @@ App::uses('AppModel', 'Model');
  */
 class Seguimiento extends AppModel {
 
-public $actsAs = array(
-		'Containable'
-	);
 
 /**
  * Validation rules
@@ -29,16 +26,16 @@ public $actsAs = array(
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		/*'fecha' => array(
-			'date' => array(
-				//'rule' => array('date'),
-				//'message' => 'Your custom message here',
+		'fecha' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Debe agregar fecha',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),*/
+		),
 		'observacionoperador' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -119,7 +116,7 @@ public $actsAs = array(
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'referente_id' => array(
+	/*	'referente_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -128,7 +125,7 @@ public $actsAs = array(
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		),*/
 		'responsable_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -140,26 +137,57 @@ public $actsAs = array(
 			),
 		),
 		'productoanexo' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			'uploadError' => array(
+				'rule' => 'uploadError',
+				'message' => 'Por favor verifique campo, intente nuevamente',
+				'on' => 'create'
 			),
-		),
-		'dirproductoanexo' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			'isUnderPhpSizeLimit' => array(
+				'rule' => 'isUnderPhpSizeLimit',
+				'message' => 'Archivo excede el límite de tamaño de archivo de subida'
+			),
+			'isValidMimeType' => array(
+
+				'rule' => array('isValidExtension', array('rar', 'zip', 'pdf')),
+				'message' => 'El archivo debe ser de tipo pdf, zip, or rar'
+			),
+			'isBelowMaxSize' => array(
+				'rule' => array('isBelowMaxSize', 5000000),
+				'message' => 'El tamaño delarchivo es demasiado grande. Maximo 5mb'
+			),
+			/* 'isValidExtension' => array(
+	    		'rule' => array('isValidExtension', array('jpg', 'png'), false),
+        		'message' => 'La imagen no tiene la extension jpg o png'
+	    	),*/
+			'checkUniqueName' => array(
+				'rule' => array('checkUniqueName'),
+				'message' => 'Ya existe un archivo con el mismo nombre',
+				'on' => 'update'
 			),
 		),
 		
+		
+	);
+
+	public $actsAs = array(
+		'Containable',
+		'Upload.Upload' => array(
+			'productoanexo' => array(
+				'fields' => array(
+					'dirproductoanexo' => 'dirproductoanexo'
+				),
+				'thumbnailMethod' => 'php',
+
+				'deleteOnUpdate' => false,
+				'deleteFolderOndelete' => true
+			),
+
+			'checkUniqueName' => array(
+				'rule' => array('checkUniqueName'),
+				'message' => 'Existe un archivo almacenado con el mismo nombre',
+				'on' => 'update'
+			),
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -215,5 +243,5 @@ public $actsAs = array(
 		} else {
 			return true;
 		}
-    }
+	}
 }

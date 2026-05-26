@@ -215,6 +215,7 @@ class ProcesoregistrosController extends AppController
 			} else {
 				// Aquí procesar la subida de archivo
 				$archivo = $this->request->data['Procesoregistro']['anexo'];
+				//debug($archivo);
 				$nombreArchivo = time() . '_' . $archivo['name'];
 				move_uploaded_file($archivo['tmp_name'], WWW_ROOT . 'uploads' . DS . $nombreArchivo);
 				$this->request->data['Procesoregistro']['anexo'] = $nombreArchivo;

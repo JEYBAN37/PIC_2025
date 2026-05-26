@@ -99,6 +99,7 @@ class ActasController extends AppController
         $this->set(compact('productos', 'ubicaciones', 'responsables'));
 
         if ($this->request->is('post')) {
+            
             $this->Acta->create();
 
             if ($this->Acta->save($this->request->data)) {

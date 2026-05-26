@@ -53,6 +53,7 @@ class SeguimientosController extends AppController {
 			if ($this->request->is('post')) {
 			$this->Seguimiento->create();
 			$id_producto = $this->request->data['Seguimiento']['producto_id'];
+			//debug($this->request->data);
 			if ($this->Seguimiento->save($this->request->data)) {
 				
 				if (isset($this->request->data['btn']) && $this->request->data['btn'] == 'Guardar') {
@@ -145,7 +146,8 @@ class SeguimientosController extends AppController {
 						'?' => array('producto' => $id_producto)
 					));
 			} else {
-				$this->Session->setFlash(__('The seguimiento could not be saved. Please, try again.'));
+				
+				$this->Session->setFlash('El Seguimiento no se ha actualizdo. por favor verificar el formulario. Revise nuevamente todos los campos de selección.', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
 		} else {
 			$options = array('conditions' => array('Seguimiento.' . $this->Seguimiento->primaryKey => $id));
