@@ -104,8 +104,7 @@ $idredirect = $this->Form->value('producto_id');
                     'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
                     'error' => false,
                     'type' => 'number',
-                    'min' => 1,
-                    'maxLeght' => 2,
+                    
                     'readonly'
 
                 ]);
@@ -181,7 +180,7 @@ $idredirect = $this->Form->value('producto_id');
                 echo $this->Form->input('observacionoperador', [
                     'label' => '',
                     'class' => 'ckeditor border rounded-lg w-full p-2 focus:ring focus:ring-blue-200 mt-2',
-                    'data-maxlength' => 500,
+                    'data-maxlength' =>2000,
                     'error' => false // No mostrar error aquí
                 ]);
                 if (!empty($this->Form->error('observacionoperador'))) {

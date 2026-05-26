@@ -271,17 +271,14 @@ $idredirect = $this->Form->value('producto_id');
                 ?>
             </div>
 
-            <!--div class="col-span-2 text-md font-semibold my-6">
+            <div class="col-span-2 text-md font-semibold my-6">
             <div class="flex items-center mb-4">
-                <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
-                <label for="soportes" class="font-semibold">Soportes</label>
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">8</span>
+                    <label for="proactividad_id" class="font-semibold">Soportes</label>
             </div>
 
-            <p class="help-block text-gray-500 text-xs mb-2">Solo Adjutar soportes finales de cuerdo a soportes de anexo técnico (documentos, informes, agendas, planes)
-            </p>
-
             <div class="flex flex-col gap-2">
-                <label for="productoanexo" class="block text-gray-700 font-semibold text-sm mb-2">
+                    <label for="ProcesoregistroAnexo" class="block text-gray-700 font-semibold text-sm mb-2">
                     Adjuntar archivo comprimido (.zip o .rar)
                 </label>
                 <div class="relative w-full">
@@ -291,7 +288,7 @@ $idredirect = $this->Form->value('producto_id');
                         'type' => 'file',
                         'class' => 'block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
                         'onchange' => 'validarTamanioSoporte()',
-                        'id' => 'productoanexo',
+                        'id' => 'ProcesoregistroAnexo',
                         'error' => false
                     ]);
                     if (!empty($this->Form->error('productoanexo'))) {
@@ -309,7 +306,27 @@ $idredirect = $this->Form->value('producto_id');
                     El nombre del archivo no debe tener tildes o diéresis.
                 </span>
             </div>
-        </div-->
+
+                <div class="relative w-full mt-4">
+                    <?php if (!empty($this->request->data['Seguimiento']['dirproductoanexo'])): ?>
+                    <div
+                        class="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                        Archivo actual:
+                        <?php
+							if (!empty($this->request->data['Seguimiento']['dirproductoanexo'])) {
+								echo $this->Html->link(
+									($this->request->data['Seguimiento']['dirproductoanexo']),
+									$link,
+									['target' => '_blank', 'class' => 'underline text-blue-700 hover:text-blue-900']
+								);
+							} else {
+								echo '<span class="text-gray-400 italic">Sin plan de cuidado</span>';
+							}
+							?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
 
             <div class="pt-2 flex gap-4">
                 <button type="submit" name="btn" value="Guardar"

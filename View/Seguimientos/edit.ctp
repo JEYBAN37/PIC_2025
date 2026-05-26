@@ -283,6 +283,7 @@ $idredirect = $this->Form->value('producto_id');
             <?php
             $options = [
                 '1. Cumple avance' => 'Cumple avance',
+                '1. Avance parcial' => 'Avance parcial',
                 '1. Sin avance programado' => 'Sin avance programado',
                 '3. No aplica periodo' => 'No aplica periodo',
                 '4. Sin avance' => 'Sin avance',

@@ -206,4 +206,14 @@ public $actsAs = array(
 
         return true;
     }
+
+	function checkUniqueName($data)
+	{
+		$isUnique = $this->find('first', array('fields' => array('Seguimiento.productoanexo'), 'conditions' => array('Seguimiento.productoanexo' => $data['productoanexo'])));
+		if (!empty($isUnique)) {
+			return false;
+		} else {
+			return true;
+		}
+    }
 }
