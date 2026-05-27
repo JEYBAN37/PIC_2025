@@ -277,21 +277,22 @@ $idredirect = $this->Form->value('producto_id');
                 ?>
             </div>
 
-            <!--div class="col-span-2 text-md font-semibold my-6">
-            <div class="flex items-center mb-4">
-                <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
-                <label for="soportes" class="font-semibold">Soportes</label>
-            </div>
+            <div class="col-span-2 text-md font-semibold my-6">
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">11</span>
+                    <label for="soportes" class="font-semibold">Soportes</label>
+                </div>
 
-            <p class="help-block text-gray-500 text-xs mb-2">Solo Adjutar soportes finales de cuerdo a soportes de anexo técnico (documentos, informes, agendas, planes)
-            </p>
+                <p class="help-block text-gray-500 text-xs mb-2">Solo Adjutar soportes finales de cuerdo a soportes de
+                    anexo técnico (documentos, informes, agendas, planes)
+                </p>
 
-            <div class="flex flex-col gap-2">
-                <label for="productoanexo" class="block text-gray-700 font-semibold text-sm mb-2">
-                    Adjuntar archivo comprimido (.zip o .rar)
-                </label>
-                <div class="relative w-full">
-                    <?php
+                <div class="flex flex-col gap-2">
+                    <label for="productoanexo" class="block text-gray-700 font-semibold text-sm mb-2">
+                        Adjuntar archivo comprimido (.zip o .rar)
+                    </label>
+                    <div class="relative w-full">
+                        <?php
                     echo $this->Form->input('productoanexo', [
                         'label' => false,
                         'type' => 'file',
@@ -306,16 +307,16 @@ $idredirect = $this->Form->value('producto_id');
 
                     echo $this->Form->input('dirproductoanexo', array('type' => 'hidden', 'class' => 'form-control'));
                     ?>
+                    </div>
+                    <span class="text-xs text-gray-500 mt-1">
+                        NOTA:
+                        * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
+                        * listado asistencia.pdf (meet o físico), registro excel participantes <br>
+                        * tres (3) pantallazos o fotos resolución 600px * 600px <br>
+                        El nombre del archivo no debe tener tildes o diéresis.
+                    </span>
                 </div>
-                <span class="text-xs text-gray-500 mt-1">
-                    NOTA:
-                    * Cargar en archivo comprimido extensión ".zip" o ".rar" <br>
-                    * listado asistencia.pdf (meet o físico), registro excel participantes <br>
-                    * tres (3) pantallazos o fotos resolución 600px * 600px <br>
-                    El nombre del archivo no debe tener tildes o diéresis.
-                </span>
             </div>
-        </div-->
         </div>
 
         <div class="pt-2 flex gap-4">

@@ -45,22 +45,49 @@ class ProcesoregistrosController extends AppController
 			throw new NotFoundException(__('Invalid procesoregistro'));
 		}
 		$options = array('conditions' => array('Procesoregistro.' . $this->Procesoregistro->primaryKey => $id));
-
 		$procesoregistro = $this->Procesoregistro->find('first', $options);
-		$files = $this->viewZip($procesoregistro['Procesoregistro']['anexo'], $id);
-		$this->set(compact('procesoregistro', 'files'));
+		
+		// Capturamos el archivo enviado por la URL query (?file=archivo.zip)
+		$file = $this->request->query('file');
+		$adjuntosZip = array('images' => array(), 'otherFiles' => array());
+		
+		// Si no se pasó por URL pero el registro ya tiene un archivo guardado en la BD, lo usamos
+    if (empty($file) && !empty($procesoregistro['Procesoregistro']['anexo'])) {
+        $file = $procesoregistro['Procesoregistro']['anexo'];
+    }
+    
+    $adjuntosZip = array('images' => array(), 'otherFiles' => array());
+    if (!empty($file) && is_string($file)) {
+        $adjuntosZip = $this->viewZip($file, $id);
+    }
+    
+    $this->set(compact('procesoregistro', 'adjuntosZip'));
 	}
 
 	public function viewZip($file = null, $id = null)
 	{
 		if (!$file) {
-			return [];
+			return ['images' => [], 'otherFiles' => []];
 		}
 
+		// 1. Validar la ruta física real donde el plugin guarda el archivo
+		// Nota: Como tu plugin usa la estructura webroot/files/procesoregistro/anexo/{id}/{file}
 		$filePath = WWW_ROOT . 'files' . DS . 'procesoregistro' . DS . 'anexo' . DS . $id . DS . $file;
 
+		// Fallback: Si no existe ahí, buscamos en la carpeta general de uploads
 		if (!file_exists($filePath)) {
-			return [];
+			$alternative = WWW_ROOT . 'uploads' . DS . $fileName;
+			if (file_exists($alternative)) {
+				$filePath = $alternative;
+			} elseif (file_exists($file)) {
+				$filePath = $file;
+			} elseif (file_exists(WWW_ROOT . ltrim($file, '/\\'))) {
+				$filePath = WWW_ROOT . ltrim($file, '/\\');
+			}
+		}
+
+		if (!file_exists($filePath)) {
+			return ['images' => [], 'otherFiles' => []];
 		}
 
 		$sessionId = $this->Session->id();
@@ -69,60 +96,57 @@ class ProcesoregistrosController extends AppController
 		if (!is_dir($extractPath)) {
 			mkdir($extractPath, 0777, true);
 		}
-		// Extraer todos los archivos
-		$zip = new PclZip($filePath);
-		$list = $zip->extract(
-			PCLZIP_OPT_PATH,
-			$extractPath
-		);
-
-		// Extraer archivos que no sean jpg/jpeg/png/gif y guardar sus rutas
-		$otherFiles = [];
-		if (is_array($list)) {
-			foreach ($list as $entry) {
-				$ext = strtolower(pathinfo($entry['filename'], PATHINFO_EXTENSION));
-				if (!in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
-					$webPath = '/' . $entry['filename'];
-					$webPath = str_replace(DIRECTORY_SEPARATOR, '/', $webPath);
-					$otherFiles[] = $webPath;
-				}
-			}
-		}
-
-		if ($list == 0) {
-			return [];
-		}
 
 		$images = [];
-		$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($extractPath));
-		foreach ($rii as $f) {
-			if ($f->isDir()) continue;
-			$ext = strtolower($f->getExtension());
+		$otherFiles = [];
 
-			if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+		// 2. Usar ZipArchive nativo en lugar de PclZip para garantizar lectura binaria
+		$zip = new ZipArchive;
+		if ($zip->open($filePath) === TRUE) {
+			$zip->extractTo($extractPath);
+			$zip->close();
+
+			// 3. Recorrer de forma recursiva la carpeta temporal donde se extrajo
+			$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($extractPath));
+			foreach ($rii as $f) {
+				if ($f->isDir()) continue;
+				
+				$ext = strtolower($f->getExtension());
 				$path = $f->getPathname();
 
-				// ⚡ Reducir calidad (solo JPG/PNG, GIF lo dejamos igual)
-				if (in_array($ext, ['jpg', 'jpeg'])) {
-					$img = imagecreatefromjpeg($path);
-					imagejpeg($img, $path, 30); // calidad 30% (ajústalo: 30 = muy baja, 90 = casi original)
-					imagedestroy($img);
-				} elseif ($ext === 'png') {
-					$img = imagecreatefrompng($path);
-					imagepng($img, $path, 6); // compresión 0 (mejor calidad) a 9 (peor)
-					imagedestroy($img);
+				// Soportar variaciones comunes de extensión de imagen incluyendo 'jpeg'
+				if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+					
+					// Reducir la calidad en el servidor para optimizar la carga en Pasto
+					if (in_array($ext, ['jpg', 'jpeg'])) {
+						$img = @imagecreatefromjpeg($path);
+						if ($img) {
+							imagejpeg($img, $path, 30); // Calidad 30%
+							imagedestroy($img);
+						}
+					} elseif ($ext === 'png') {
+						$img = @imagecreatefrompng($path);
+						if ($img) {
+							imagepng($img, $path, 6);
+							imagedestroy($img);
+						}
+					}
+
+					// Normalizar la URL pública para el navegador web
+					$relativePath = str_replace(WWW_ROOT, '', $path);
+					$relativePath = str_replace(DIRECTORY_SEPARATOR, '/', $relativePath);
+					$webPath = Router::url('/' . $relativePath, true);
+
+					$images[] = $webPath;
+				} else {
+					// Si son PDFs u otros documentos, guardamos su ruta relativa interna
+					$relativePath = str_replace($extractPath, '', $path);
+					$relativePath = str_replace(DIRECTORY_SEPARATOR, '/', $relativePath);
+					$otherFiles[] = $relativePath;
 				}
-
-				$relativePath = str_replace(WWW_ROOT, '/', $path); // quita C:/xampp/htdocs/PIC/webroot
-				$relativePath = str_replace(DIRECTORY_SEPARATOR, '/', $relativePath);
-				$webPath = Router::url($relativePath, true); // 🔥 genera http://localhost/PIC/files/tmp/...
-
-
-				$images[] = $webPath;
 			}
-
-			//normalizar las rutas para los otros documentos
 		}
+
 		return compact('images', 'otherFiles');
 	}
 
@@ -211,22 +235,29 @@ class ProcesoregistrosController extends AppController
 		if ($this->request->is(array('post', 'put'))) {
 
 			if (empty($this->request->data['Procesoregistro']['anexo']['name'])) {
-				unset($this->request->data['Procesoregistro']['anexo']); // CakePHP no reemplaza
-			} else {
-				// Aquí procesar la subida de archivo
-				$archivo = $this->request->data['Procesoregistro']['anexo'];
-				//debug($archivo);
-				$nombreArchivo = time() . '_' . $archivo['name'];
-				move_uploaded_file($archivo['tmp_name'], WWW_ROOT . 'uploads' . DS . $nombreArchivo);
-				$this->request->data['Procesoregistro']['anexo'] = $nombreArchivo;
-			}
+				unset($this->request->data['Procesoregistro']['anexo']); 
+            	unset($this->request->data['Procesoregistro']['sisproceso_dir']);
+				
+			} 
 
 			if ($this->Procesoregistro->save($this->request->data)) {
 
 				$this->Session->setFlash('El registro fue almacenado correctamente', 'default', array('class' =>  self::ALERT_SUCCESS_CLASS));
-				$aux = "view/$id";
+				// Si el usuario subió un archivo nuevo o ya existía uno guardado en la base de datos
+			if (!empty($this->request->data['Procesoregistro']['anexo'])) {
+				$nombreArchivo = $this->request->data['Procesoregistro']['anexo'];
+        
+					return $this->redirect(array(
+							'action' => 'view', 
+							$id, 
+							'?' => array('file' => $nombreArchivo)
+						));
+						} else {
+							// Si no se subió un archivo nuevo, redirige a la vista normal sin parámetros
+							return $this->redirect(array('action' => 'view', $id));
+						}
 
-				return $this->redirect(array('action' => $aux));
+
 			} else {
 				$this->Session->setFlash('El registro no fue almacenado, Por favor trate nuevamente.', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
@@ -257,55 +288,53 @@ class ProcesoregistrosController extends AppController
 
 	private function tranformData($data)
 	{
-		// Ejemplo: viene "2. Hombres,4. Niños y niñas"
+		if (!empty($data['Procesoregistro']['cursovida'])) {
+			$poblacionStr = $data['Procesoregistro']['cursovida'];
+			$tipos = array_map('trim', explode(',', $poblacionStr));
+			$data['Procesoregistro']['cursovida'] = $tipos;
+		}
+
+		if (!empty($data['Procesoregistro']['poblacion'])) {
+			$poblacionStr = $data['Procesoregistro']['poblacion'];
+			$tipos = array_map('trim', explode(',', $poblacionStr));
+			$data['Procesoregistro']['poblacion'] = $tipos;
+		}
+
+		if (!empty($data['Procesoregistro']['vulnerabilidad'])) {
+			$poblacionStr = $data['Procesoregistro']['vulnerabilidad'];
+			$tipos = array_map('trim', explode(',', $poblacionStr));
+			$data['Procesoregistro']['vulnerabilidad'] = $tipos;
+		}
+
+		if (!empty($data['Procesoregistro']['apoyos'])) {
+			$poblacionStr = $data['Procesoregistro']['apoyos'];
+			$tipos = array_map('trim', explode(',', $poblacionStr));
+			$data['Procesoregistro']['apoyos'] = $tipos;
+		}
+
+		if (!empty($data['Procesoregistro']['mecanismo'])) {
+			$poblacionStr = $data['Procesoregistro']['mecanismo'];
+			$tipos = array_map('trim', explode(',', $poblacionStr));
+			$data['Procesoregistro']['mecanismo'] = $tipos;
+		}
+
+		// AJUSTE NUEVO: Mapeo para volver a convertir en Array en la Vista de edición
 		if (!empty($data['Procesoregistro']['tipopoblacion'])) {
 			$poblacionStr = $data['Procesoregistro']['tipopoblacion'];
-			// Extraer cada palabra/frase hasta la coma
 			$tipos = array_map('trim', explode(',', $poblacionStr));
 			$data['Procesoregistro']['tipopoblacion'] = $tipos;
 		}
 
-		if (!empty($data['Procesoregistro']['cursovida'])) {
-			$cursovidaStr = strtolower($data['Procesoregistro']['cursovida']);
-			// Extraer cada palabra/frase hasta la coma
-			$tipos = array_map('trim', explode(',', $cursovidaStr));
-			$data['Procesoregistro']['cursovida'] = $tipos;
-		}
 		if (!empty($data['Procesoregistro']['limitantes'])) {
-			$cursovidaStr = strtolower($data['Procesoregistro']['limitantes']);
-			// Extraer cada palabra/frase hasta la coma
-			$tipos = array_map('trim', explode(',', $cursovidaStr));
+			$poblacionStr = $data['Procesoregistro']['limitantes'];
+			$tipos = array_map('trim', explode(',', $poblacionStr));
 			$data['Procesoregistro']['limitantes'] = $tipos;
 		}
 
 		return $data;
 	}
 
-	public function editanexo($id = null)
-	{
-		if (!$this->Procesoregistro->exists($id)) {
-			throw new NotFoundException(__('Invalid procesoregistro'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Procesoregistro->save($this->request->data)) {
-				$this->Session->setFlash('El archivo fue almacenado correctamente', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
-				//return $this->redirect(array('action' => 'nuebus'));
 
-				$aux = "view/$id";
-
-				return $this->redirect(array('action' => $aux));
-			} else {
-				$this->Session->setFlash('El archivo no fue almacenado correctamente, verifique e intente nuevamente', 'default', array('class' => self::ALERT_ERROR_CLASS));
-			}
-		} else {
-			$options = array('conditions' => array('Procesoregistro.' . $this->Procesoregistro->primaryKey => $id));
-			$this->request->data = $this->Procesoregistro->find('first', $options);
-		}
-		$proactividades = $this->Procesoregistro->Proactividad->find('list');
-		$ubicaciones = $this->Procesoregistro->Ubicacion->find('list');
-		$plsesiones = $this->Procesoregistro->Plsesion->find('list');
-		$this->set(compact('proactividades', 'ubicaciones', 'plsesiones'));
-	}
 
 
 	/**

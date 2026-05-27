@@ -39,7 +39,7 @@ class Seguimiento extends AppModel {
 		'observacionoperador' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Por favor diligenciar la observación correspondiente',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -96,7 +96,7 @@ class Seguimiento extends AppModel {
                 //'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),*/
-		'enlace1' => array(
+		/*'enlace1' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -115,7 +115,7 @@ class Seguimiento extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		),*/
 	/*	'referente_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -174,7 +174,7 @@ class Seguimiento extends AppModel {
 		'Upload.Upload' => array(
 			'productoanexo' => array(
 				'fields' => array(
-					'dirproductoanexo' => 'dirproductoanexo'
+					'dir' => 'dirproductoanexo'
 				),
 				'thumbnailMethod' => 'php',
 
