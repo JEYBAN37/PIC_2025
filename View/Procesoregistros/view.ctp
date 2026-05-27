@@ -155,13 +155,13 @@
                                     </td>
                               </tr>
 
-                              <tr>
-                                    <td class="border border-gray-300 font-semibold p-2 text-center">Evidencias Documentales</td>
-                                    <td colspan="8" class="border border-gray-300 p-2">
-                                          <div class="flex flex-wrap gap-2 w-full">
-                                                <?php if (!empty($files['otherFiles'])): ?>
-                                                      <?php foreach ($files['otherFiles'] as $file): ?>
-                                                            <?php
+                    <tr>
+                        <td class="border border-gray-300 font-semibold p-2 text-center">Evidencias Documentales</td>
+                        <td colspan="8" class="border border-gray-300 p-2">
+                            <div class="flex flex-wrap gap-2 w-full">
+                                <?php if (!empty($files['otherFiles'])): ?>
+                                <?php foreach ($files['otherFiles'] as $file): ?>
+                                <?php
                                                             // Elimina el prefijo "C:/xampp/htdocs/PIC/" si existe
                                                             $webPath = str_replace('C:/xampp/htdocs/PIC/webroot', '', $file);
                                                             // Asegura que la ruta comience con "webroot/"
