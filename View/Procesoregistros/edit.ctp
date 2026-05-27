@@ -131,20 +131,18 @@ echo $this->Form->create('Procesoregistro', [
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">4</span>
                     <label for="objactividad" class="font-semibold">Temática tratada</label>
                     <p class="text-red-600">*</p>
-
                 </div>
 
                 <p class="help-block text-gray-500 text-xs mb-2">
                     Ingrese aquí exclusivamente el título de la temática tratada.
                 </p>
 
-                <!-- Input oculto: guarda el ID -->
                 <?php echo $this->Form->hidden('tema', ['id' => 'tema_hidden']); ?>
 
-                <!-- Input visible: solo muestra el nombre -->
                 <input type="text" id="tema_visible" class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none
-                  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 mt-2 font-semibold
-                  text-gray-700 text-sm focus:text-gray-900" placeholder="Seleccione un plan de sesión" readonly />
+                focus:ring-1 focus:ring-blue-500 focus:border-blue-500 mt-2 font-semibold
+                text-gray-700 text-sm focus:text-gray-900" placeholder="Seleccione un plan de sesión" readonly
+                    value="<?php echo isset($this->request->data['Procesoregistro']['tema']) ? h(strip_tags($this->request->data['Procesoregistro']['tema'])) : ''; ?>" />
             </div>
 
             <div class="col-span-2 text-md font-semibold my-6">
@@ -778,8 +776,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    temaHidden.value = data.data.nombre; // guardar el ID
-                    temaVisible.value = data.data.nombre; // mostrar el nombre
+                    const textoLimpio = stripHTML(data.data.nombre).trim();
+                    temaHidden.value =
+                        textoLimpio; // guardar el nombre limpio en el hidden para la BD
+                    temaVisible.value =
+                        textoLimpio; // mostrar el nombre limpio visible en el formulario
                 } else {
                     temaHidden.value = "";
                     temaVisible.value = "No encontrado";
@@ -855,6 +856,10 @@ $(function() {
             }
         }
     });
+
+
+
+
 
 
 });
