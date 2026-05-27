@@ -180,33 +180,24 @@ class ProcesoregistrosController extends AppController
 	 */
 	public function add()
 	{
-		if ($this->request->is('post'))
-
-			
+		if ($this->request->is('post')) {
 			if ($this->Procesoregistro->save($this->request->data)) {
-
 				if ($this->request->data['btn'] == 'Guardar y asociar otra sesion') {
-					//$session->setFlash("registro guardado");
 					$this->Session->setFlash(
 						'El registro fue almacenado correctamente, realice otro registro',
 						'default',
 						array('class' => self::ALERT_SUCCESS_CLASS)
 					);
-					//echo '<script> alert("registro guardado"); </script>';
 					return $this->redirect(array('controller' => 'Procesoregistros', 'action' => 'add?sesion=' . $this->data["Procesoregistro"]["procesoregistro_id"]));
 				} else {
-					//return $this->redirect(array('controller' => 'plsesiones', 'action' => 'index'));                
 					return $this->redirect(array('controller' => 'Proactividades', 'action' => 'index/'));
 				}
 			} else {
 				$this->Session->setFlash('El registro no fue almacenado, Por favor trate nuevamente.', 'default', array('class' => self::ALERT_ERROR_CLASS));
 			}
-
-		
-		
+		}
 
 		$productos = $this->Producto->find('list', [
-			
 			//'conditions' => $conditions,
 			'fields' => ['Producto.id'],
 			'order' => ['Producto.modified' => 'DESC'],
@@ -216,8 +207,16 @@ class ProcesoregistrosController extends AppController
 		$ubicaciones = $this->Ubicacion->find('list');
 		$proactividades = $this->Procesoregistro->cargarProactividad();
 		$plsesiones = $this->Procesoregistro->cargarPlanSesion($productos);
+		if (empty($plsesiones)) {
+			$plsesiones = $this->Plsesion->find('list', [
+				'fields' => ['Plsesion.id', 'Plsesion.tema'],
+				'order' => ['Plsesion.tema' => 'ASC'],
+				'recursive' => -1
+			]);
+		}
+		$plsesion = $plsesiones;
 
-		$this->set(compact('proactividades', 'ubicaciones', 'plsesiones'));
+		$this->set(compact('proactividades', 'ubicaciones', 'plsesiones', 'plsesion'));
 	}
 
 	/**

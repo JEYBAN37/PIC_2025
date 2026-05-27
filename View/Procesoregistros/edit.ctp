@@ -134,20 +134,17 @@ echo $this->Form->create('Procesoregistro', [
 
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Ingrese aquí exclusivamente el título de la temática
-                    tratada. No incluya poblaciones, lugares de realización de la actividad ni ningún otro dato.</p>
+                <p class="help-block text-gray-500 text-xs mb-2">
+                    Ingrese aquí exclusivamente el título de la temática tratada.
+                </p>
 
-                <?php
-                echo $this->Form->input('tema', [
-                    'label' => false,
-                    'class' => 'border border-gray-300 rounded-lg w-full p-2 focus:outline-none  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 borde azul  mt-2 font-semibold text-gray-700  text-sm focus:text-gray-900',
-                    'error' => false
-                ]);
+                <!-- Input oculto: guarda el ID -->
+                <?php echo $this->Form->hidden('tema', ['id' => 'tema_hidden']); ?>
 
-                if (!empty($this->Form->error('tema'))) {
-                    echo '<div class="text-red-600 text-md mt-1 font-semibold">' . $this->Form->error('tema') . '</div>';
-                }
-                ?>
+                <!-- Input visible: solo muestra el nombre -->
+                <input type="text" id="tema_visible" class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none
+                  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 mt-2 font-semibold
+                  text-gray-700 text-sm focus:text-gray-900" placeholder="Seleccione un plan de sesión" readonly />
             </div>
 
             <div class="col-span-2 text-md font-semibold my-6">
@@ -761,6 +758,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const select = document.getElementById("plsesion_id");
     const temaHidden = document.getElementById("tema_hidden");
     const temaVisible = document.getElementById("tema_visible");
+
+    function stripHTML(html) {
+        const temp = document.createElement('div');
+        temp.innerHTML = html || '';
+        return temp.textContent || temp.innerText || '';
+    }
 
     select.addEventListener("change", function() {
         const valor = this.value;

@@ -753,6 +753,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const temaHidden = document.getElementById("tema_hidden");
     const temaVisible = document.getElementById("tema_visible");
 
+    function stripHTML(html) {
+        const temp = document.createElement('div');
+        temp.innerHTML = html || '';
+        return temp.textContent || temp.innerText || '';
+    }
+
     select.addEventListener("change", function() {
         const valor = this.value;
         if (!valor) {
@@ -766,8 +772,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    temaHidden.value = data.data.nombre; // guardar el ID
-                    temaVisible.value = data.data.nombre; // mostrar el nombre
+                    const nombreLimpio = stripHTML(data.data.nombre);
+                    temaHidden.value = nombreLimpio;
+                    temaVisible.value = nombreLimpio;
                 } else {
                     temaHidden.value = "";
                     temaVisible.value = "No encontrado";

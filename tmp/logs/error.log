@@ -793,3 +793,21 @@ Stack Trace:
 #3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2026-05-27 18:01:06 Error: [NotFoundException] Invalid procesoregistro
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/index
+Stack Trace:
+#0 [internal function]: ProcesoregistrosController->edit('index')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-27 18:01:06 Error: [NotFoundException] Invalid procesoregistro
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/sticky-footer.css
+Stack Trace:
+#0 [internal function]: ProcesoregistrosController->edit('sticky-footer.c...')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

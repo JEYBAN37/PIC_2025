@@ -316,6 +316,19 @@ $idredirect = $this->Form->value('producto_id');
                         El nombre del archivo no debe tener tildes o diéresis.
                     </span>
                 </div>
+
+                <div class="relative w-full mt-4">
+                    <?php if (!empty($this->request->data['Seguimiento']['productoanexo'])): ?>
+                    <div
+                        class="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                        Archivo actual:
+                        <a href="<?php echo $this->webroot . 'files/seguimiento/productoanexo/' . $this->request->data['Seguimiento']['dirproductoanexo'] . '/' . $this->request->data['Seguimiento']['productoanexo']; ?>"
+                            target="_blank" class="text-blue-600 underline ml-2">
+                            <?php echo $this->request->data['Seguimiento']['productoanexo']; ?>
+                        </a>
+                    </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
 
