@@ -475,7 +475,9 @@ echo $this->Form->create('Procesoregistro', [
         <!-- Header -->
         <div class="flex items-center mb-4">
 
-            <img src="/img/update/historicoHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg w-[60px]">
+             <img src="<?php echo $this->webroot; ?>/img/update/historicoHover.png" alt="p-8 bg-blue-600"
+                class="p-2 bg-blue-100 rounded-lg w-[60px]">
+
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Soportes requeridos</h1>
                 <p class="text-gray-500">Anexe los documentos requeridos para la sesión.</p>
