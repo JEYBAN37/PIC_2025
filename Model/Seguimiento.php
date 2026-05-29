@@ -149,7 +149,9 @@ class Seguimiento extends AppModel {
 			'isValidMimeType' => array(
 
 				'rule' => array('isValidExtension', array('rar', 'zip', 'pdf')),
-				'message' => 'El archivo debe ser de tipo pdf, zip, or rar'
+				'message' => 'El archivo debe ser de tipo pdf, zip, or rar',
+				'allowEmpty' => true,  // AJUSTE CLAVE: Permite que el campo esté vacío en el formulario
+				'required' => false,   // AJUSTE CLAVE: Indica que el campo no es obligatorio en la petición POST
 			),
 			'isBelowMaxSize' => array(
 				'rule' => array('isBelowMaxSize', 5000000),

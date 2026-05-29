@@ -52,7 +52,14 @@ class SeguimientosController extends AppController {
 
 			if ($this->request->is('post')) {
 			$this->Seguimiento->create();
+
 			$id_producto = $this->request->data['Seguimiento']['producto_id'];
+					// Si no se seleccionó ningún archivo, limpiamos el arreglo para que no interfiera en la BD
+			if (empty($this->request->data['Seguimiento']['productoanexo']['name'])) {
+				unset($this->request->data['Seguimiento']['productoanexo']);
+				unset($this->request->data['Seguimiento']['dirproductoanexo']);
+			}
+			
 			//debug($this->request->data);
 			if ($this->Seguimiento->save($this->request->data)) {
 				
