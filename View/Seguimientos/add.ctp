@@ -111,7 +111,7 @@ $idredirect = $this->Form->value('producto_id');
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">3</span>
-                    <label for="valorejecutado" class="font-semibold">porcentaje ejecutado para el mes</label>
+                    <label for="valorejecutado" class="font-semibold">Porcentaje ejecutado para el mes</label>
                     <p class="text-red-600">*</p>
 
                 </div>
@@ -222,7 +222,7 @@ $idredirect = $this->Form->value('producto_id');
             <div class="col-span-2 text-md font-semibold mt-4 mb-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-blue-200 text-md font-semibold">6</span>
-                    <label for="enlace1" class="font-semibold">Enlace sopores adicionales</label>
+                    <label for="enlace1" class="font-semibold">Enlace soportes adicionales</label>
                     <p class="text-red-600">*</p>
 
                 </div>

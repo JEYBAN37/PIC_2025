@@ -159,6 +159,21 @@ class InfoeventosController extends AppController
 		$this->set(compact('ubicaciones', 'productos', 'responsables', 'idredirect'));
 	}
 
+	 private function tranformData($data)
+    {
+        // Ejemplo: viene "2. Hombres,4. Niños y niñas"
+        if (!empty($data['Infoevento']['polaciones'])) {
+            $poblacionStr = $data['Infoevento']['poblaciones'];
+            // Extraer cada palabra/frase hasta la coma
+            $tipos = array_map('trim', explode(',', $poblacionStr));
+            $data['Infoevento']['poblaciones'] = $tipos;
+        }
+       
+
+        return $data;
+    }
+
+
 
 	public function getInfoeventos()
 	{

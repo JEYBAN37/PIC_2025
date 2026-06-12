@@ -189,7 +189,7 @@ class PlsesionesController extends AppController
         }
 
         if (!empty($data['Plsesion']['cursovida'])) {
-            $cursovidaStr = strtolower($data['Plsesion']['cursovida']);
+            $cursovidaStr = $data['Plsesion']['cursovida'];
             // Extraer cada palabra/frase hasta la coma
             $tipos = array_map('trim', explode(',', $cursovidaStr));
             $data['Plsesion']['cursovida'] = $tipos;

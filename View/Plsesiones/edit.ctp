@@ -923,7 +923,7 @@ echo $this->Form->input('modified', array('label' => ' Fecha de registro', 'type
             <div class="col-span-2 text-md font-semibold my-6">
                 <div class="flex items-center mb-4">
                     <span class="mr-2 px-2 rounded-lg bg-green-200 text-md font-semibold">1</span>
-                    <label for="tipoblacion" class="font-semibold">Tipo de poblaciónparticipante</label>
+                    <label for="tipoblacion" class="font-semibold">Tipo de población participante</label>
                     <p class="text-red-600">*</p>
 
                 </div>
@@ -1256,14 +1256,14 @@ function agregarOpcionSeleccion() {
     $("#PlsesionResponsableId").prepend("<option value='' selected='selected'>Seleccione</option>");
 }
 
-    function validarTamanioSoporte() {
-        var auxFile = document.getElementById('PlsesionAnexo');
-        var sizeF = auxFile.files[0].size;
-        if (sizeF > 4000000) {
-            alert('El archivo debe ser menor a 4 Mb');
-            auxFile.value = '';
-        }
+function validarTamanioSoporte() {
+    var auxFile = document.getElementById('PlsesionAnexo');
+    var sizeF = auxFile.files[0].size;
+    if (sizeF > 4000000) {
+        alert('El archivo debe ser menor a 4 Mb');
+        auxFile.value = '';
     }
+}
 
 function mostrar(isChecked) {
     if (isChecked) {
@@ -1358,7 +1358,8 @@ document.addEventListener("DOMContentLoaded", () => {
         var url = enlaceInput.value;
         if (url && !validarDominioEnlace(url)) {
             alert(
-                'El enlace proporcionado no es válido. Por favor, utilice un enlace de google.com, onedrive.com, dropbox.com o github.com.');
+                'El enlace proporcionado no es válido. Por favor, utilice un enlace de google.com, onedrive.com, dropbox.com o github.com.'
+            );
             enlaceInput.value = ''; // Limpiar el campo
             enlaceInput.focus();
         }
@@ -1401,7 +1402,7 @@ document.addEventListener("DOMContentLoaded", () => {
         removeItems: true, // Permite quitar seleccionados
         duplicateItemsAllowed: false,
         placeholder: true,
-        placeholderValue: "Seleccione la(s) población(es)",
+        placeholderValue: "Seleccione el curso de vida",
     });
 
     // Aplicar estilos con Tailwind
