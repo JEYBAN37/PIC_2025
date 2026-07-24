@@ -492,9 +492,9 @@
 													<?php echo ('Acciones'); ?> <span class="caret"></span>
 												</button>
 												<ul class="dropdown-menu" role="menu">
-													<li><?php echo $this->Html->link("Ver", "../proactividades/view/" . $proactividad['id'], array('target' => '_blank')); ?></li>
-													<li><?php echo $this->Html->link("Editar", "../proactividades/edit/" . $proactividad['id'], array('target' => '_blank')); ?></li>
-													<li><?php echo $this->Html->link(('Nueva sistematización'), array('controller' => 'proactividades', 'action' => 'add')); ?></li>
+													<li><?php echo $this->Html->link("Ver", "../plsesiones/view/" . $plsesion['id'], array('target' => '_blank')); ?></li>
+													<li><?php echo $this->Html->link("Editar", "../plesesiones/edit/" . $plsesion['id'], array('target' => '_blank')); ?></li>
+													<li><?php echo $this->Html->link(('Nuevo plan de sesion'), array('controller' => 'plsesiones', 'action' => 'add')); ?></li>
 
 												</ul>
 											</div>

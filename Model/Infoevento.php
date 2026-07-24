@@ -181,7 +181,7 @@ public function getInfoeventoCompleto($id = null){
              'message' => 'El archivo debe ser de tipo pdf, zip, or rar'
 	    	),
 		    'isBelowMaxSize' => array(
-	    		'rule' => array('isBelowMaxSize', 3000000),
+	    		'rule' => array('isBelowMaxSize', 5000000),
         		'message' => 'El tamaño delarchivo es demasiado grande. Maximo 5mb'
 	    	),
 		   /* 'isValidExtension' => array(

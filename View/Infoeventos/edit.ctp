@@ -34,7 +34,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
     <div class="bg-white shadow-2xl rounded-xl p-12">
         <!-- Header -->
         <div class="flex items-center mb-4">
-            <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg">
+            <img src="<?php echo $this->webroot; ?>/img/update/docHover.png" alt="p-8 bg-blue-600"
+                class="p-2 bg-blue-100 rounded-lg">
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Información General</h1>
                 <p class="text-gray-500">Agregar Informe de eventos o acciones informativas.</p>
@@ -52,10 +53,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                 </div>
                 <div class="col-span-2 text-md font-semibold my-4">
                     <div class="flex flex-col w-full">
-                        <input
-                            type="text"
-                            name="datetime_range"
-                            id="datetime_range"
+                        <input type="text" name="datetime_range" id="datetime_range"
                             class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
                             placeholder="Selecciona rango de fecha y hora" />
                         <span class="text-sm text-red-600 mt-1">
@@ -166,7 +164,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     <p class="text-red-600">*</p>
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Por ejemplo: Grupo surprisecity, si el informe o evento refiere grupos participantes.</p>
+                <p class="help-block text-gray-500 text-xs mb-2">Por ejemplo: Grupo surprisecity, si el informe o evento
+                    refiere grupos participantes.</p>
 
                 <?php
                 echo $this->Form->input('nombregrupo', [
@@ -190,7 +189,9 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
                     <p class="text-red-600">*</p>
                 </div>
 
-                <p class="help-block text-gray-500 text-xs mb-2">Ingrese aquí exclusivamente el título de la temática o austo del informe o evento. No incluya poblaciones, lugares de realización de la actividad o ningún otro dato.</p>
+                <p class="help-block text-gray-500 text-xs mb-2">Ingrese aquí exclusivamente el título de la temática o
+                    austo del informe o evento. No incluya poblaciones, lugares de realización de la actividad o ningún
+                    otro dato.</p>
 
                 <?php
                 echo $this->Form->input('tema', [
@@ -237,7 +238,8 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
     <div class="bg-white shadow-2xl rounded-xl p-12">
         <!-- Header -->
         <div class="flex items-center mb-0">
-            <img src="<?php echo $this->webroot; ?>/img/update/historicoHover.png" alt="p-8 bg-blue-600" class="p-2 bg-blue-100 rounded-lg w-[60px]">
+            <img src="<?php echo $this->webroot; ?>/img/update/historicoHover.png" alt="p-8 bg-blue-600"
+                class="p-2 bg-blue-100 rounded-lg w-[60px]">
             <div class="ml-4">
                 <h1 class="text-xl font-semibold">Detalles Adicionales</h1>
                 <p class="text-gray-500">Complete los datos adicionales.</p>
@@ -360,219 +362,214 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
 
                 <div class="relative w-full mt-4">
                     <?php if (!empty($this->request->data['Infoevento']['anexo'])): ?>
-                        <div class="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
-                            Archivo actual:
-                            <a href="<?php echo $this->webroot . 'files/infoevento/anexo/' . $this->request->data['Infoevento']['informe_dir'] . '/' . $this->request->data['Infoevento']['anexo']; ?>" target="_blank" class="text-blue-600 underline ml-2">
-                                <?php echo $this->request->data['Infoevento']['anexo']; ?>
-                            </a>
-                        </div>
+                    <div
+                        class="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 p-3 file:mr-4 file:py-6 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                        Archivo actual:
+                        <a href="<?php echo $this->webroot . 'files/infoevento/anexo/' . $this->request->data['Infoevento']['informe_dir'] . '/' . $this->request->data['Infoevento']['anexo']; ?>"
+                            target="_blank" class="text-blue-600 underline ml-2">
+                            <?php echo $this->request->data['Infoevento']['anexo']; ?>
+                        </a>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
             <div class="pt-2 flex gap-4">
-                <button type="submit" name="btn" value="Guardar Acta" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
+                <button type="submit" name="btn" value="Guardar Acta"
+                    class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2">
                     <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                            <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-save-icon lucide-save">
+                            <path
+                                d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
                             <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
                             <path d="M7 3v4a1 1 0 0 0 1 1h7" />
                         </svg>
                     </span>
-                    Guardar Acta
+                    Guardar
                 </button>
-                <button type="button" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2" onclick="preventBackNavigation()">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                            <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
-                            <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
-                            <circle cx="12" cy="12" r="1" />
-                            <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-                        </svg>
 
-                    </span>
-                    Ver Momento
-                </button>
             </div>
         </div>
     </div>
 
 
     <script type="text/javascript">
-        function validarTamanioSoporte() {
-            var auxFile = document.getElementById('InfoeventoAnexo');
-            var sizeF = auxFile.files[0].size;
+    function validarTamanioSoporte() {
+        var auxFile = document.getElementById('InfoeventoAnexo');
+        var sizeF = auxFile.files[0].size;
 
-            if (sizeF > 5000000) {
-                alert('El archivo debe ser menor a 5 Mb');
-                auxFile.value = '';
-            }
+        if (sizeF > 5000000) {
+            alert('El archivo debe ser menor a 5 Mb');
+            auxFile.value = '';
+        }
+    }
+
+    function agregarOpcionSeleccion() {
+        $("#InfoeventoUbicacionId").prepend("<option value='' selected='selected'>Seleccione</option>");
+        $("#InfoeventoProductoId").prepend("<option value='' selected='selected'>Seleccione</option>");
+        $("#InfoeventoResponsableId").prepend("<option value='' selected='selected'>Seleccione</option>");
+    }
+
+    function mostrarBarrio(id) {
+        if (id == "2")
+            $("#divActualizarBarrio").show();
+        else
+            $("#divActualizarBarrio").hide();
+    }
+
+    function validar() {
+        var todo_correcto = true;
+
+        if (document.getElementById('status').value == '') {
+            todo_correcto = false;
         }
 
-        function agregarOpcionSeleccion() {
-            $("#InfoeventoUbicacionId").prepend("<option value='' selected='selected'>Seleccione</option>");
-            $("#InfoeventoProductoId").prepend("<option value='' selected='selected'>Seleccione</option>");
-            $("#InfoeventoResponsableId").prepend("<option value='' selected='selected'>Seleccione</option>");
+        if (!todo_correcto) {
+            alert('Algunos campos no están correctos, vuelva a revisarlos');
         }
 
-        function mostrarBarrio(id) {
-            if (id == "2")
-                $("#divActualizarBarrio").show();
-            else
-                $("#divActualizarBarrio").hide();
+        return todo_correcto;
+    }
+
+    function mostrar(id) {
+        if (id == "si") {
+            $("#si").show();
+            $("#no").hide();
+
+        } else if (id == "no") {
+            $("#si").hide();
+            $("#no").show();
+
         }
+    }
 
-        function validar() {
-            var todo_correcto = true;
+    document.addEventListener("DOMContentLoaded", () => {
 
-            if (document.getElementById('status').value == '') {
-                todo_correcto = false;
-            }
+        const options = {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: false,
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            renderChoiceLimit: -1, // Sin límite de renderizado
+            searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
+        };
 
-            if (!todo_correcto) {
-                alert('Algunos campos no están correctos, vuelva a revisarlos');
-            }
+        const choices_ubicacion = new Choices("#ubicacion_id", options);
+        const choices_producto = new Choices("#producto_id", options);
 
-            return todo_correcto;
-        }
-
-        function mostrar(id) {
-            if (id == "si") {
-                $("#si").show();
-                $("#no").hide();
-
-            } else if (id == "no") {
-                $("#si").hide();
-                $("#no").show();
-
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-
-            const options = {
-                searchEnabled: true,
-                searchChoices: true,
-                removeItemButton: false,
-                itemSelectText: '',
-                shouldSort: false,
-                searchPlaceholderValue: "Escriba para filtrar...",
-                renderChoiceLimit: -1, // Sin límite de renderizado
-                searchResultLimit: 20, // Puedes aumentar este valor si tienes muchos resultados
-            };
-
-            const choices_ubicacion = new Choices("#ubicacion_id", options);
-            const choices_producto = new Choices("#producto_id", options);
-
-            const choices_tipopoblacion = new Choices("#poblaciones", {
-                searchEnabled: true,
-                searchChoices: true,
-                removeItemButton: true, // Permite eliminar seleccionados
-                itemSelectText: '',
-                shouldSort: false,
-                searchPlaceholderValue: "Escriba para filtrar...",
-                maxItemCount: -1, // Sin límite
-                removeItems: true, // Permite quitar seleccionados
-                duplicateItemsAllowed: false,
-                placeholder: true,
-                placeholderValue: "Seleccione la(s) población(es)",
-            });
+        const choices_tipopoblacion = new Choices("#poblaciones", {
+            searchEnabled: true,
+            searchChoices: true,
+            removeItemButton: true, // Permite eliminar seleccionados
+            itemSelectText: '',
+            shouldSort: false,
+            searchPlaceholderValue: "Escriba para filtrar...",
+            maxItemCount: -1, // Sin límite
+            removeItems: true, // Permite quitar seleccionados
+            duplicateItemsAllowed: false,
+            placeholder: true,
+            placeholderValue: "Seleccione la(s) población(es)",
         });
+    });
 
 
-        $(function() {
-            $('#datetime_range').daterangepicker({
-                singleDatePicker: true,
-                autoApply: true,
-                locale: {
-                    format: 'YYYY-MM-DD',
-                    applyLabel: "Aplicar",
-                    cancelLabel: "Cancelar",
-                    daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-                    monthNames: [
-                        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-                    ],
-                    firstDay: 1
-                }
-            }, function(start) {
-                // Extraer fecha y hora seleccionada
-                let fecha = start.format('YYYY-MM-DD');
-                // Si necesitas guardarlo en un campo oculto para enviarlo al backend:
-                if (!$("#fecha").length) {
-                    $("form").append('<?php echo $this->Form->hidden('fecha', ['id' => 'fecha']); ?>');
-                }
-                $("#fecha").val(fecha);
-            });
-        });
-
-
-        CKEDITOR.on('instanceReady', function(ev) {
-            var editor = ev.editor;
-            var textarea = editor.element.$;
-            var maxChars = textarea.getAttribute("data-maxlength"); // Lee el límite de cada campo
-            maxChars = maxChars ? parseInt(maxChars) : 300; // Default 300 si no se define
-
-            // Crear un contador debajo del campo
-            var counter = document.createElement("div");
-            counter.className = "text-gray-600 mt-1 text-sm";
-            counter.id = "charCount_" + textarea.id;
-            textarea.parentNode.appendChild(counter);
-
-            function updateCount() {
-                var text = editor.getData().replace(/<[^>]*>/g, '');
-                var length = text.length;
-                var remaining = maxChars - length;
-
-                counter.innerHTML = "Caracteres usados: " + length + " / " + maxChars;
-
-                if (remaining < 0) {
-                    counter.style.color = "red";
-                    editor.setData(text.substring(0, maxChars));
-                } else {
-                    counter.style.color = "gray";
-                }
+    $(function() {
+        $('#datetime_range').daterangepicker({
+            singleDatePicker: true,
+            autoApply: true,
+            locale: {
+                format: 'YYYY-MM-DD',
+                applyLabel: "Aplicar",
+                cancelLabel: "Cancelar",
+                daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+                monthNames: [
+                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+                ],
+                firstDay: 1
             }
-
-            // Bloquear si excede
-            editor.on('key', function(evt) {
-                var text = editor.getData().replace(/<[^>]*>/g, '');
-                if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
-                    evt.cancel();
-                    alert("Máximo permitido: " + maxChars + " caracteres.");
-                }
-            });
-
-            // Bloquear pegar excedido
-            editor.on('paste', function(evt) {
-                var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
-                if (text.length > maxChars) {
-                    evt.cancel();
-                    alert("No puedes pegar más de " + maxChars + " caracteres.");
-                }
-            });
-
-            editor.on('key', updateCount);
-            editor.on('paste', updateCount);
-            editor.on('change', updateCount);
-
-            updateCount(); // inicializar contador
+        }, function(start) {
+            // Extraer fecha y hora seleccionada
+            let fecha = start.format('YYYY-MM-DD');
+            // Si necesitas guardarlo en un campo oculto para enviarlo al backend:
+            if (!$("#fecha").length) {
+                $("form").append('<?php echo $this->Form->hidden('fecha', ['id' => 'fecha']); ?>');
+            }
+            $("#fecha").val(fecha);
         });
+    });
 
-        // Detectar si el usuario intenta retroceder con la flecha del navegador
-        window.addEventListener('popstate', function(event) {
-            if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
-                window.location.href = 'index'; // Redirigir a la página deseada
+
+    CKEDITOR.on('instanceReady', function(ev) {
+        var editor = ev.editor;
+        var textarea = editor.element.$;
+        var maxChars = textarea.getAttribute("data-maxlength"); // Lee el límite de cada campo
+        maxChars = maxChars ? parseInt(maxChars) : 300; // Default 300 si no se define
+
+        // Crear un contador debajo del campo
+        var counter = document.createElement("div");
+        counter.className = "text-gray-600 mt-1 text-sm";
+        counter.id = "charCount_" + textarea.id;
+        textarea.parentNode.appendChild(counter);
+
+        function updateCount() {
+            var text = editor.getData().replace(/<[^>]*>/g, '');
+            var length = text.length;
+            var remaining = maxChars - length;
+
+            counter.innerHTML = "Caracteres usados: " + length + " / " + maxChars;
+
+            if (remaining < 0) {
+                counter.style.color = "red";
+                editor.setData(text.substring(0, maxChars));
             } else {
-                history.pushState(null, null, location.href); // Mantener en la página actual
-            }
-        });
-
-        function preventBackNavigation() {
-            if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
-                window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+                counter.style.color = "gray";
             }
         }
 
-        // Prevenir retroceso con la flecha del navegador (mejor experiencia)
-        history.pushState(null, null, location.href);
+        // Bloquear si excede
+        editor.on('key', function(evt) {
+            var text = editor.getData().replace(/<[^>]*>/g, '');
+            if (text.length >= maxChars && evt.data.keyCode != 8 && evt.data.keyCode != 46) {
+                evt.cancel();
+                alert("Máximo permitido: " + maxChars + " caracteres.");
+            }
+        });
+
+        // Bloquear pegar excedido
+        editor.on('paste', function(evt) {
+            var text = evt.data.dataValue.replace(/<[^>]*>/g, '');
+            if (text.length > maxChars) {
+                evt.cancel();
+                alert("No puedes pegar más de " + maxChars + " caracteres.");
+            }
+        });
+
+        editor.on('key', updateCount);
+        editor.on('paste', updateCount);
+        editor.on('change', updateCount);
+
+        updateCount(); // inicializar contador
+    });
+
+    // Detectar si el usuario intenta retroceder con la flecha del navegador
+    window.addEventListener('popstate', function(event) {
+        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            window.location.href = 'index'; // Redirigir a la página deseada
+        } else {
+            history.pushState(null, null, location.href); // Mantener en la página actual
+        }
+    });
+
+    function preventBackNavigation() {
+        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
+            window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
+        }
+    }
+
+    // Prevenir retroceso con la flecha del navegador (mejor experiencia)
+    history.pushState(null, null, location.href);
     </script>

@@ -415,6 +415,12 @@ class Producto extends AppModel
 				'message' => 'Ya existe un archivo con el mismo nombre',
 				'on' => 'update'
 			),
+			'isUniqueName' => array(
+				'rule' => array('checkUniqueName'), // Especifica la función como un array de regla interna
+				'message' => 'El nombre de este archivo ya ha sido registrado previamente.',
+				'allowEmpty' => true, // Permite que pase la validación en la edición si el archivo viene vacío
+				'required' => false
+			)
 		),
 
 
@@ -621,13 +627,29 @@ class Producto extends AppModel
 	);*/
 
 
-	function checkUniqueName($data)
+	public function checkUniqueName($data)
 	{
-		$isUnique = $this->find('first', array('fields' => array('Producto.anexo'), 'conditions' => array('Producto.anexo' => $data['anexo'])));
-		if (!empty($isUnique)) {
-			return false;
-		} else {
+		// Si estamos editando y el archivo no cambió, no es necesario validar unicidad
+		if (empty($data['anexo']) || is_array($data['anexo'])) {
 			return true;
 		}
+
+		$conditions = array('Producto.anexo' => $data['anexo']);
+		
+		// Si estamos editando (existe un ID en el modelo), excluimos el registro actual de la búsqueda
+		if (!empty($this->id)) {
+			$conditions['Producto.id !='] = $this->id;
+		}
+
+		$isUnique = $this->find('first', array(
+			'fields' => array('Producto.anexo'), 
+			'conditions' => $conditions,
+			'recursive' => -1
+		));
+
+		return empty($isUnique); // Retorna true si está libre, false si ya existe duplicado
 	}
+	
+
+
 }

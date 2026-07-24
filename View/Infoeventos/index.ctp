@@ -86,7 +86,7 @@
                 pageLength: 7,
                 processing: true,
                 serverSide: true,
-                ajax: "<?php echo URL_TABS?>/infoeventos/getInfoeventos", // Ajustar segun la Ruta para obtener datos
+                ajax: "<?php echo URL_TABS?>/infoeventos/getInfoeventos", // Ajustar segun la Ruta para obtener datos EN SERVIDO AGREGAR ../
                 columns: [
                     // Columna control (+)
                     {

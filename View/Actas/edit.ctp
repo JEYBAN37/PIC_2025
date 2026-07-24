@@ -1,5 +1,9 @@
 <?php $this->layout = 'default' ?>
 <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
+<!-- Choices.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment"></script>
@@ -74,10 +78,13 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                             name="data[Acta][fecha]"
                             id="fecha"
                             class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
-                            placeholder="Selecciona rango de fecha y hora" />
+                            placeholder="Selecciona rango de fecha y hora"
+                            placeholder="Selecciona fecha"
+                            value="<?php echo isset($this->request->data['Acta']['fecha']) ? $this->request->data['Acta']['fecha'] : ''; ?>"  />
                         <span class="text-sm text-red-600 mt-1">
                             <?= $this->Form->error('fecha') ?>
-                        </span>
+                        </span>                      
+
                     </div>
 
                 </div>
@@ -480,18 +487,7 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
                 </span>
                 Guardar Acta
             </button>
-            <button type="button" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium flex items-center justify-center gap-2" onclick="preventBackNavigation()">
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
-                        <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
-                        <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
-                        <circle cx="12" cy="12" r="1" />
-                        <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-                    </svg>
-
-                </span>
-                Ver Acta
-            </button>
+           
         </div>
     </div>
 </div>
@@ -553,12 +549,31 @@ $nombreUsuario = isset($_SESSION['Auth']['User']['id_responsable']) ? $_SESSION[
     });
 
 
-    function preventBackNavigation() {
-        if (confirm('¿Está seguro que desea salir de la página? Se pueden perder los cambios no guardados.')) {
-            window.location.href = '<?php echo $this->Html->url(['action' => 'view', $idredirect]); ?>';
-        }
-    }
+   $(function() {
+    // Obtenemos el valor que viene del input (el que puso CakePHP)
+    let fechaInicial = $('#fecha').val();
 
+    $('#fecha').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        autoApply: true,
+        // Si hay una fecha cargada, la usamos, si no, usamos la fecha actual
+        startDate: fechaInicial ? fechaInicial : moment(), 
+        locale: {
+            format: 'YYYY-MM-DD',
+            applyLabel: "Aplicar",
+            cancelLabel: "Cancelar",
+            daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+            monthNames: [
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ],
+            firstDay: 1
+        }
+    }, function(start) {
+        console.log("Fecha seleccionada: " + start.format('YYYY-MM-DD'));
+    });
+});
 
     $(function() {
          $('#fecha').daterangepicker({

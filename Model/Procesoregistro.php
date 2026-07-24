@@ -200,7 +200,7 @@ class Procesoregistro extends AppModel
 			),
 		),
 
-		'plsesion_id' => array(
+	/*	'plsesion_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				'message' => 'Por favor verifique campo',
@@ -209,7 +209,7 @@ class Procesoregistro extends AppModel
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		),*/
 		'anexo' => array(
 			'uploadError' => array(
 				'rule' => 'uploadError',
@@ -238,6 +238,13 @@ class Procesoregistro extends AppModel
 				'message' => 'Ya existe un archivo con el mismo nombre',
 				'on' => 'update'
 			),
+				'isUniqueName' => array(
+				'rule' => array('checkUniqueName'), // Especifica la función como un array de regla interna
+				'message' => 'El nombre de este archivo ya ha sido registrado previamente.',
+				'allowEmpty' => true, // Permite que pase la validación en la edición si el archivo viene vacío
+				'required' => false
+			)
+			
 		),
 
 
@@ -254,10 +261,12 @@ class Procesoregistro extends AppModel
 				),
 				'thumbnailMethod' => 'php',
 
-				'deleteOnUpdate' => false,
+				'deleteOnUpdate' => true,
 				'deleteFolderOndelete' => true
 			),
 
+		
+			
 			'checkUniqueName' => array(
 				'rule' => array('checkUniqueName'),
 				'message' => 'Existe un archivo almacenado con el mismo nombre',
@@ -309,7 +318,7 @@ class Procesoregistro extends AppModel
 	);
 
 	public $hasMany = array(
-		'Persona' => array(
+		/*'Persona' => array(
 			'className' => 'Persona',
 			'foreignKey' => 'procesoregistro_id',
 			'dependent' => false,
@@ -321,7 +330,7 @@ class Procesoregistro extends AppModel
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
+		),/*
 		'Participantesprocesos' => array(
 			'className' => 'Participantesprocesos',
 			'foreignKey' => 'Procesoregistro_id',
@@ -335,6 +344,7 @@ class Procesoregistro extends AppModel
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		
 		/*'Producto' => array(
 			'className' => 'Producto',
 			'foreignKey' => 'Procesoregistro_id',
@@ -370,19 +380,7 @@ class Procesoregistro extends AppModel
 	 * @var array
 	 */
 	public $hasAndBelongsToMany = array(
-		'Persona' => array(
-			'className' => 'Persona',
-			'joinTable' => 'participantesprocesos',
-			'foreignKey' => 'procesoregistro_id',
-			'associationForeignKey' => 'persona_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-		)
+		
 		/*'Producto' => array(
 			'className' => 'Producto',
 			'joinTable' => 'productosactividades',
@@ -398,31 +396,61 @@ class Procesoregistro extends AppModel
 		)*/
 	);
 
-
-	function checkUniqueName($data)
+	public function checkUniqueName($data)
 	{
-		$isUnique = $this->find('first', array('fields' => array('Procesoregistro.anexo'), 'conditions' => array('Procesoregistro.anexo' => $data['anexo'])));
-
-		if (!empty($isUnique)) {
-			return false;
-		} else {
+		// Si estamos editando y el archivo no cambió, no es necesario validar unicidad
+		if (empty($data['anexo']) || is_array($data['anexo'])) {
 			return true;
 		}
+
+		$conditions = array('Procesoregistro.anexo' => $data['anexo']);
+		
+		// Si estamos editando (existe un ID en el modelo), excluimos el registro actual de la búsqueda
+		if (!empty($this->id)) {
+			$conditions['Procesoregistro.id !='] = $this->id;
+		}
+
+		$isUnique = $this->find('first', array(
+			'fields' => array('Procesoregistro.anexo'), 
+			'conditions' => $conditions,
+			'recursive' => -1
+		));
+
+		return empty($isUnique); // Retorna true si está libre, false si ya existe duplicado
 	}
+
 
 	public function beforeSave($options = array())
 	{
-		if (isset($this->data[$this->alias]['cursovida']) && is_array($this->data[$this->alias]['cursovida'])) {
-			$this->data[$this->alias]['cursovida'] = implode(',', $this->data[$this->alias]['cursovida']);
-		}
-
-
+		// AJUSTE: Aplanar tipopoblacion de Array a String
 		if (isset($this->data[$this->alias]['tipopoblacion']) && is_array($this->data[$this->alias]['tipopoblacion'])) {
 			$this->data[$this->alias]['tipopoblacion'] = implode(',', $this->data[$this->alias]['tipopoblacion']);
 		}
 
+		// AJUSTE: Aplanar limitantes de Array a String
 		if (isset($this->data[$this->alias]['limitantes']) && is_array($this->data[$this->alias]['limitantes'])) {
 			$this->data[$this->alias]['limitantes'] = implode(',', $this->data[$this->alias]['limitantes']);
+		}
+
+		// --- Tus lógicas originales intactas ---
+		if (isset($this->data[$this->alias]['cursovida']) && is_array($this->data[$this->alias]['cursovida'])) {
+			$this->data[$this->alias]['cursovida'] = implode(',', $this->data[$this->alias]['cursovida']);
+		}
+
+		if (isset($this->data[$this->alias]['poblacion']) && is_array($this->data[$this->alias]['poblacion'])) {
+			$this->data[$this->alias]['poblacion'] = implode(',', $this->data[$this->alias]['poblacion']);
+		}
+
+		if (isset($this->data[$this->alias]['vulnerabilidad']) && is_array($this->data[$this->alias]['vulnerabilidad'])) {
+			$this->data[$this->alias]['vulnerabilidad'] = implode(',', $this->data[$this->alias]['vulnerabilidad']);
+		}
+
+		if (isset($this->data[$this->alias]['apoyos']) && is_array($this->data[$this->alias]['apoyos'])) {
+			$this->data[$this->alias]['apoyos'] = implode(',', $this->data[$this->alias]['apoyos']);
+		}
+
+		if (isset($this->data[$this->alias]['mecanismo']) && is_array($this->data[$this->alias]['mecanismo'])) {
+			$this->data[$this->alias]['mecanismo'] = implode(',', $this->data[$this->alias]['mecanismo']);
 		}
 
 		return true;

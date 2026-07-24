@@ -569,3 +569,245 @@ Stack Trace:
 #3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2026-05-26 18:49:07 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/MN-SAN-6-04-2026-%20genoy%20segundo%20taller.zip
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-26 21:35:59 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/MN-SAN-6-04-2026-%20genoy%20segundo%20taller.zip
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-26 21:44:24 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/21-04-2026DGDS-GC_P17_T76AsistenciatecnicaSICB.rar
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-26 21:56:36 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/MN-SAN-6-04-2026-%20genoy%20segundo%20taller.zip
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-26 21:56:57 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/10/MN-SAN-6-04-2026-%20genoy%20segundo%20taller.zip
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-26 22:03:03 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/MN-SAN-6-04-2026-%20genoy%20segundo%20taller.zip
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-26 22:04:57 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/21-04-2026DGDS-GC_P17_T76AsistenciatecnicaSICB.rar
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-26 23:13:04 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/21-04-2026DGDS-GC_P17_T76AsistenciatecnicaSICB.rar
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-26 23:25:13 Error: [NotFoundException] Invalid seguimiento
+Request URL: /aplicacioncakephp/PIC_2025/seguimientos/view/102
+Stack Trace:
+#0 [internal function]: SeguimientosController->view('102')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SeguimientosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SeguimientosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-26 23:25:14 Error: [NotFoundException] Invalid seguimiento
+Request URL: /aplicacioncakephp/PIC_2025/seguimientos/view/sticky-footer.css
+Stack Trace:
+#0 [internal function]: SeguimientosController->view('sticky-footer.c...')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SeguimientosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SeguimientosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-26 23:25:21 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /aplicacioncakephp/PIC_2025/files/seguimiento/productoanexo/MN-SAN-16-03-2026-%20genoy%20primer%20taller.zip
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-27 01:20:20 Error: [NotFoundException] Invalid procesoregistro
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/index
+Stack Trace:
+#0 [internal function]: ProcesoregistrosController->edit('index')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-27 01:20:20 Error: [NotFoundException] Invalid procesoregistro
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/sticky-footer.css
+Stack Trace:
+#0 [internal function]: ProcesoregistrosController->edit('sticky-footer.c...')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-27 01:25:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/5
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('UPDATE `cake_pi...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\Database\Mysql.php(411): DboSource->execute('UPDATE `cake_pi...')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1823): Mysql->update(Object(Procesoregistro), Array, Array)
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProcesoregistrosController.php(219): Model->save(Array)
+#5 [internal function]: ProcesoregistrosController->edit('5')
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#9 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2026-05-27 01:29:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/5
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('UPDATE `cake_pi...', Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Datasource\Database\Mysql.php(411): DboSource->execute('UPDATE `cake_pi...')
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Model\Model.php(1823): Mysql->update(Object(Procesoregistro), Array, Array)
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProcesoregistrosController.php(219): Model->save(Array)
+#5 [internal function]: ProcesoregistrosController->edit('5')
+#6 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#7 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#9 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2026-05-27 01:35:45 Error: Fatal Error (4): syntax error, unexpected end of file, expecting function (T_FUNCTION) in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Model\Procesoregistro.php, line 425]
+2026-05-27 01:35:45 Error: [FatalErrorException] syntax error, unexpected end of file, expecting function (T_FUNCTION)
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/5
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-05-27 01:35:48 Error: Fatal Error (4): syntax error, unexpected end of file, expecting function (T_FUNCTION) in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Model\Procesoregistro.php, line 425]
+2026-05-27 01:35:48 Error: [FatalErrorException] syntax error, unexpected end of file, expecting function (T_FUNCTION)
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/5
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-05-27 01:35:50 Error: Fatal Error (4): syntax error, unexpected end of file, expecting function (T_FUNCTION) in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Model\Procesoregistro.php, line 425]
+2026-05-27 01:35:50 Error: [FatalErrorException] syntax error, unexpected end of file, expecting function (T_FUNCTION)
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/5
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 425, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-05-27 01:45:30 Error: Fatal Error (1): Class 'PclZip' not found in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProcesoregistrosController.php, line 73]
+2026-05-27 01:45:30 Error: [FatalErrorException] Class 'PclZip' not found
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/view/5
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-05-27 01:48:37 Error: Fatal Error (1): Class 'PclZip' not found in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProcesoregistrosController.php, line 73]
+2026-05-27 01:48:37 Error: [FatalErrorException] Class 'PclZip' not found
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/view/5
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-05-27 01:49:56 Error: Fatal Error (1): Class 'PclZip' not found in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProcesoregistrosController.php, line 73]
+2026-05-27 01:49:56 Error: [FatalErrorException] Class 'PclZip' not found
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/view/5
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'PclZip' ...', 'C:\\xampp\\htdocs...', 73, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-05-27 17:12:33 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\xampp\htdocs\aplicacioncakephp\PIC_2025\Controller\ProcesoregistrosController.php, line 68]
+2026-05-27 17:12:33 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/cleanupTmp
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 68)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 68, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 68, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-05-27 17:12:33 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/view/5?file%5Bname%5D=MN-SAN-28-04-2026-+cabrera+segundo+taller+%281%29.zip&file%5Btype%5D=application%2Fx-zip-compressed&file%5Btmp_name%5D=C%3A%5Cxampp%5Ctmp%5CphpFD3A.tmp&file%5Berror%5D=0&file%5Bsize%5D=673732
+Stack Trace:
+#0 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 68)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 68, Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 68, Array)
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-05-27 18:01:06 Error: [NotFoundException] Invalid procesoregistro
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/index
+Stack Trace:
+#0 [internal function]: ProcesoregistrosController->edit('index')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-27 18:01:06 Error: [NotFoundException] Invalid procesoregistro
+Request URL: /aplicacioncakephp/PIC_2025/procesoregistros/edit/sticky-footer.css
+Stack Trace:
+#0 [internal function]: ProcesoregistrosController->edit('sticky-footer.c...')
+#1 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ProcesoregistrosController), Array)
+#2 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

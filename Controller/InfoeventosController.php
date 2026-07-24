@@ -98,17 +98,18 @@ class InfoeventosController extends AppController
 	public function add()
 	{
 		if ($this->request->is('post')) {
-			debug($this->request->data);
 			$this->Infoevento->create();
 			if ($this->Infoevento->save($this->request->data)) {
-				//$this->Session->setFlash(__('The infoevento has been saved.'));
-				//return $this->redirect(array('action' => 'index'));
-
 				$id = $this->Infoevento->id;
 				$aux = "view/$id";
-				return $this->redirect(array('action' => $aux));
+				   $this->Session->setFlash('El informe fue guardado con exito', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
+                return $this->redirect(array('action' => $aux));
 			} else {
-				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('class' => 'alert alert-danger'));
+				 $this->Session->setFlash(
+                    'El registro no se ha guardado. por favor verificar el formulario. Revise nuevamente todos los campos de selección.',
+                    'default',
+                    array('class' => self::ALERT_ERROR_CLASS)
+                );
 			}
 		}
 		$ubicaciones = $this->cargarUbicacionesSelect();
@@ -137,9 +138,14 @@ class InfoeventosController extends AppController
 
 				$id = $this->Infoevento->id;
 				$aux = "view/$id";
-				return $this->redirect(array('action' => $aux));
+				  $this->Session->setFlash('El informe fue guardado con exito', 'default', array('class' => self::ALERT_SUCCESS_CLASS));
+                return $this->redirect(array('action' => $aux));
 			} else {
-				$this->Session->setFlash('El formulario no se ha guardado, por favor verifique la informacion.', 'default', array('alert alert-danger'));
+				 $this->Session->setFlash(
+                    'El registro no se ha guardado. por favor verificar el formulario. Revise nuevamente todos los campos de selección.',
+                    'default',
+                    array('class' => self::ALERT_ERROR_CLASS)
+                );
 			}
 		} else {
 			$options = array('conditions' => array('Infoevento.' . $this->Infoevento->primaryKey => $id));
@@ -152,6 +158,21 @@ class InfoeventosController extends AppController
 
 		$this->set(compact('ubicaciones', 'productos', 'responsables', 'idredirect'));
 	}
+
+	 private function tranformData($data)
+    {
+        // Ejemplo: viene "2. Hombres,4. Niños y niñas"
+        if (!empty($data['Infoevento']['polaciones'])) {
+            $poblacionStr = $data['Infoevento']['poblaciones'];
+            // Extraer cada palabra/frase hasta la coma
+            $tipos = array_map('trim', explode(',', $poblacionStr));
+            $data['Infoevento']['poblaciones'] = $tipos;
+        }
+       
+
+        return $data;
+    }
+
 
 
 	public function getInfoeventos()
