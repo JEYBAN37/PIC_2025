@@ -1305,6 +1305,7 @@ function agregarOpcionSeleccion() {
 
 function validarDominioEnlace(url) {
     const dominiosPermitidos = [
+        'docs.google.com'
         'drive.google.com',
         'onedrive.com',
         'youtube.com',

@@ -1297,6 +1297,7 @@ echo $this->Form->input('responsable_id', array('value' => $nombreUsuario, 'type
 
     function validarDominioEnlace(url) {
         const dominiosPermitidos = [
+            'docs.google.com'
             'drive.google.com',
             'onedrive.com',
             'youtube.com',

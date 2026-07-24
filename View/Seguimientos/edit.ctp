@@ -282,7 +282,8 @@ $idredirect = $this->Form->value('producto_id');
             </div>
             <?php
             $options = [
-                '1. Cumple avance' => 'Cumple avance',
+            '1. Cumple actividad Cerreda' => 'Cumple actividad cerrada',    
+            '1. Cumple avance' => 'Cumple avance',
                 '1. Avance parcial' => 'Avance parcial',
                 '1. Sin avance programado' => 'Sin avance programado',
                 '3. No aplica periodo' => 'No aplica periodo',
