@@ -811,3 +811,133 @@ Stack Trace:
 #3 C:\xampp\htdocs\aplicacioncakephp\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProcesoregistrosController), Object(CakeRequest))
 #4 C:\xampp\htdocs\aplicacioncakephp\PIC_2025\webroot\index.php(109): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2026-07-25 02:11:43 Error: Fatal Error (1): Class 'BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 241]
+2026-07-25 02:11:43 Error: [FatalErrorException] Class 'BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:11:43 Error: Fatal Error (1): Class 'BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 241]
+2026-07-25 02:11:44 Error: [FatalErrorException] Class 'BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:12:08 Error: Fatal Error (1): Class 'BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 241]
+2026-07-25 02:12:08 Error: [FatalErrorException] Class 'BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:12:09 Error: Fatal Error (1): Class 'BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 241]
+2026-07-25 02:12:09 Error: [FatalErrorException] Class 'BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'BigQuery...', 'C:\\xampp\\htdocs...', 241, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:13:09 Error: Fatal Error (1): Class 'Google\Cloud\BigQuery\BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 244]
+2026-07-25 02:13:09 Error: [FatalErrorException] Class 'Google\Cloud\BigQuery\BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:13:27 Error: Fatal Error (1): Class 'Google\Cloud\BigQuery\BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 244]
+2026-07-25 02:13:27 Error: [FatalErrorException] Class 'Google\Cloud\BigQuery\BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:13:28 Error: Fatal Error (1): Class 'Google\Cloud\BigQuery\BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 244]
+2026-07-25 02:13:28 Error: [FatalErrorException] Class 'Google\Cloud\BigQuery\BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:15:05 Error: Fatal Error (1): Class 'Google\Cloud\BigQuery\BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 244]
+2026-07-25 02:15:05 Error: [FatalErrorException] Class 'Google\Cloud\BigQuery\BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:15:06 Error: Fatal Error (1): Class 'Google\Cloud\BigQuery\BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 244]
+2026-07-25 02:15:06 Error: [FatalErrorException] Class 'Google\Cloud\BigQuery\BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:15:44 Error: Fatal Error (1): Class 'Google\Cloud\BigQuery\BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 244]
+2026-07-25 02:15:44 Error: [FatalErrorException] Class 'Google\Cloud\BigQuery\BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 244, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:17:04 Error: Fatal Error (1): Class 'Google\Cloud\BigQuery\BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 245]
+2026-07-25 02:17:04 Error: [FatalErrorException] Class 'Google\Cloud\BigQuery\BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 245)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 245, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 245, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:17:05 Error: Fatal Error (1): Class 'Google\Cloud\BigQuery\BigQueryClient' not found in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 245]
+2026-07-25 02:17:05 Error: [FatalErrorException] Class 'Google\Cloud\BigQuery\BigQueryClient' not found
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 245)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 245, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Class 'Google\\C...', 'C:\\xampp\\htdocs...', 245, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2026-07-25 02:27:26 Error: Fatal Error (1): Call to private method Google\Cloud\BigQuery\Job::wait() from context 'SeguimientosController' in [C:\xampp\htdocs\PIC\Controller\SeguimientosController.php, line 285]
+2026-07-25 02:27:26 Error: [FatalErrorException] Call to private method Google\Cloud\BigQuery\Job::wait() from context 'SeguimientosController'
+Request URL: /PIC/Seguimientos/reportDashBoard
+Stack Trace:
+#0 C:\xampp\htdocs\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to private...', 'C:\\xampp\\htdocs...', 285)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to private...', 'C:\\xampp\\htdocs...', 285, Array)
+#2 C:\xampp\htdocs\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to private...', 'C:\\xampp\\htdocs...', 285, Array)
+#3 C:\xampp\htdocs\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

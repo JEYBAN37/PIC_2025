@@ -1,22 +1,17 @@
 webroot/files
 # CakePHP 3
 
-/vendor/*
 /config/app.php
 
 tmp/cache/persistent/*
 tmp/cache/models/*
 # CakePHP 2
 
-<<<<<<< HEAD
 /app/tmp/*
 /app/Config/core.php
 !/app/config/database.php
-=======
-/tmp/*
-/config/core.php
-/config/database.php
->>>>>>> 533936b194abf2870f26af3937f55ee449a5a622
 /vendors/*
 Config/bootstrap.php
 Config/database.php
+
+Config/*.json
